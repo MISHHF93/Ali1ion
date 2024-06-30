@@ -1,0 +1,16 @@
+swagger: '2.0'
+info:
+  title: NAO-AI API
+  description: API for NAO-AI services
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Root endpoint
+      operationId: getRoot
+      responses:
+        200:
+          description: A successful response
+          schema:
+            type: string
+            example: Hello World!

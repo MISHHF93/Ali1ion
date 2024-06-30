@@ -1,0 +1,57 @@
+# /home/mishari_borah/nao-ai-function/compute-resources/kubernetes-engine/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nao-ai-deployment
+  labels:
+    app: nao-ai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nao-ai
+  template:
+    metadata:
+      labels:
+        app: nao-ai
+    spec:
+      containers:
+      - name: nao-ai-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: APP_NAME
+          value: "NAO-AI"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        volumeMounts:
+        - name: nao-ai-config
+          mountPath: /etc/config
+      volumes:
+      - name: nao-ai-config
+        configMap:
+          name: nao-ai-config
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nao-ai-service
+spec:
+  selector:
+    app: nao-ai
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer

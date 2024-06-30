@@ -1,0 +1,25 @@
+{
+    "name": "nao-ai-node-app",
+    "version": "1.0.0",
+    "description": "Backend Node.js application for NAO-AI integration",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "keywords": [
+      "NAO-AI",
+      "backend",
+      "nodejs"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.17.1",
+      "axios": "^0.21.1"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.7"
+    }
+  }
+  

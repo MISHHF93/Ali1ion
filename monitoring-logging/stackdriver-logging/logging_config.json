@@ -1,0 +1,22 @@
+{
+    "logName": "projects/nao-ai-project/logs/nao-ai-log",
+    "resource": {
+      "type": "global",
+      "labels": {
+        "project_id": "nao-ai-project"
+      }
+    },
+    "entries": [
+      {
+        "jsonPayload": {
+          "message": "NAO-AI log entry",
+          "severity": "INFO"
+        }
+      }
+    ],
+    "labels": {
+      "environment": "production",
+      "application": "nao-ai"
+    }
+  }
+  

@@ -1,0 +1,16 @@
+# service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nao-ai-service
+  labels:
+    app: nao-ai
+spec:
+  selector:
+    app: nao-ai
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
