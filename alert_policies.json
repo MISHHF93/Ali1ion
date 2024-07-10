@@ -1,0 +1,22 @@
+{
+  "displayName": "High CPU Usage Alert",
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "VM Instance CPU usage",
+      "conditionThreshold": {
+        "filter": "metric.type=\"compute.googleapis.com/instance/cpu/utilization\" AND resource.type=\"gce_instance\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0.8,
+        "duration": "60s",
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ],
+  "notificationChannels": [
+    "projects/proverbial-will-427815-r9/notificationChannels/9461453606176640131"
+  ],
+  "enabled": true
+}

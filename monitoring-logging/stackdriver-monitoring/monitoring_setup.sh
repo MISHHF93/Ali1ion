@@ -1,25 +1,49 @@
 #!/bin/bash
 
 # Set variables
-PROJECT_ID="nao-ai-project"
-REGION="us-central1"  # Modify if a different region is needed
-ALERT_POLICY_FILE="alert_policies.json"  # Path to the alert policies JSON file
-NOTIFICATION_CHANNEL_FILE="notification_channels.json"  # Path to the notification channels JSON file
+PROJECT_ID="proverbial-will-427815-r9"
+REGION="us-central1"
+ALERT_POLICY_FILE="alert_policies.json"
+NOTIFICATION_CHANNEL_FILE="notification_channels.json"
+AUTH_TOKEN=$(gcloud auth print-access-token)
 
 # Enable necessary APIs
-gcloud services enable monitoring.googleapis.com
-gcloud services enable logging.googleapis.com
+gcloud services enable monitoring.googleapis.com --project=$PROJECT_ID
+gcloud services enable logging.googleapis.com --project=$PROJECT_ID
 
 # Create a notification channel
-gcloud alpha monitoring channels create --channel-content-from-file=$NOTIFICATION_CHANNEL_FILE
+echo "Creating notification channel..."
+cat <<EOF > $NOTIFICATION_CHANNEL_FILE
+{
+  "type": "email",
+  "displayName": "NAO AI Alerts",
+  "labels": {
+    "email_address": "mishari.borah@gmail.com"
+  }
+}
+EOF
 
-# Get the channel ID from the created notification channel
-CHANNEL_ID=$(gcloud alpha monitoring channels list --filter="displayName:NAO AI Alerts" --format="value(name)")
+RESPONSE=$(curl -s -X POST \
+-H "Authorization: Bearer $AUTH_TOKEN" \
+-H "Content-Type: application/json" \
+-d @$NOTIFICATION_CHANNEL_FILE \
+"https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/notificationChannels")
+
+CHANNEL_ID=$(echo $RESPONSE | jq -r '.name')
+
+# Ensure CHANNEL_ID is not empty
+if [ -z "$CHANNEL_ID" ] || [ "$CHANNEL_ID" == "null" ]; then
+  echo "Failed to create or retrieve the notification channel."
+  echo "Response: $RESPONSE"
+  exit 1
+fi
 
 # Create alert policies
+echo "Creating alert policy..."
 cat <<EOF > $ALERT_POLICY_FILE
 {
   "displayName": "High CPU Usage Alert",
+  "combiner": "OR",
   "conditions": [
     {
       "displayName": "VM Instance CPU usage",
@@ -36,14 +60,20 @@ cat <<EOF > $ALERT_POLICY_FILE
   ],
   "notificationChannels": [
     "$CHANNEL_ID"
-  ]
+  ],
+  "enabled": true
 }
 EOF
 
-# Create the alert policy
-gcloud alpha monitoring policies create --policy-from-file=$ALERT_POLICY_FILE
+curl -s -X POST \
+-H "Authorization: Bearer $AUTH_TOKEN" \
+-H "Content-Type: application/json" \
+-d @$ALERT_POLICY_FILE \
+"https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/alertPolicies"
 
 # Output the created policies and channels
 echo "Created notification channel and alert policy:"
-gcloud alpha monitoring channels list
-gcloud alpha monitoring policies list
+curl -s -H "Authorization: Bearer $AUTH_TOKEN" \
+"https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/notificationChannels" | jq
+curl -s -H "Authorization: Bearer $AUTH_TOKEN" \
+"https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/alertPolicies" | jq

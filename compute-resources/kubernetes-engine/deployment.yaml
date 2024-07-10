@@ -1,5 +1,3 @@
-# /home/mishari_borah/nao-ai-function/compute-resources/kubernetes-engine/deployment.yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,7 +5,7 @@ metadata:
   labels:
     app: nao-ai
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nao-ai
@@ -40,18 +38,3 @@ spec:
       - name: nao-ai-config
         configMap:
           name: nao-ai-config
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: nao-ai-service
-spec:
-  selector:
-    app: nao-ai
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: LoadBalancer
