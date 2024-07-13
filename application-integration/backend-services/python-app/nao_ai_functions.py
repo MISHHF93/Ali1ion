@@ -1,234 +1,118 @@
+# /home/mishari_borah/nao-ai-function/application-integration/backend-services/python-app/nao_ai_functions.py
+
 import openai
 import json
 
 # Initialize the OpenAI client with your API key
-openai.api_key = "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"
+openai.api_key = "sk-proj-UgyvOY6W4dOe16ogKcZWT3BlbkFJk70y2k9tCs21Ry27oAq4"
 
 # Define placeholder functions
-def transcribe_audio(audio):
-    # Placeholder for actual transcription logic
+def transcribe_audio(audio_path):
     return "Transcribed text"
 
 def synthesize_speech_basic(text, voice=None):
-    # Placeholder for actual text-to-speech logic
     return "URL to basic synthesized speech"
 
 def synthesize_speech_hd(text, voice=None):
-    # Placeholder for actual HD text-to-speech logic
     return "URL to HD synthesized speech"
 
-def generate_image_standard(prompt, size=None):
-    # Placeholder for actual image generation logic
+def generate_image(prompt, size="1024x1024"):
     return "URL to generated image"
 
-def generate_image_hd(prompt, size=None):
-    # Placeholder for actual HD image generation logic
-    return "URL to HD generated image"
-
-def generate_text_standard(prompt, max_tokens=100):
-    # Placeholder for actual text generation logic
+def generate_text(prompt, max_tokens=100):
     return "Generated text"
 
-def generate_text_extended(prompt, max_tokens=100):
-    # Placeholder for actual extended text generation logic
-    return "Generated extended text"
+def create_embedding(text, size="small"):
+    return "Generated embedding"
 
-def generate_text_instruct(prompt, max_tokens=100):
-    # Placeholder for actual instructive text generation logic
-    return "Generated instructive text"
-
-def create_embedding_small(text):
-    # Placeholder for actual small embedding creation logic
-    return "Generated small embedding"
-
-def create_embedding_large(text):
-    # Placeholder for actual large embedding creation logic
-    return "Generated large embedding"
+# Your assistant ID
+assistant_id = "asst_8Q8CNm5hzJi2ynbC9mSmSOHf"
 
 def handle_function_calls():
-    # Example user query
     user_query = "What's the weather in San Francisco today and the stock price of AAPL?"
-
-    # Create chat completion request with function calling
+    
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0613",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "user", "content": user_query}
         ],
         functions=[
             {
                 "name": "transcribe_audio",
-                "description": "Transcribes audio to text.",
+                "description": "Transcribe audio file to text",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "audio": {
-                            "type": "string",
-                            "description": "Path to the audio file"
-                        }
+                        "audio_path": {"type": "string", "description": "Path to the audio file"}
                     },
-                    "required": ["audio"]
+                    "required": ["audio_path"]
                 }
             },
             {
                 "name": "synthesize_speech_basic",
-                "description": "Synthesizes basic speech.",
+                "description": "Convert text to basic speech",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "text": {
-                            "type": "string",
-                            "description": "Text to be synthesized"
-                        },
-                        "voice": {
-                            "type": "string",
-                            "description": "Optional voice parameter"
-                        }
+                        "text": {"type": "string", "description": "Text to synthesize"},
+                        "voice": {"type": "string", "description": "Voice to use"}
                     },
                     "required": ["text"]
                 }
             },
             {
                 "name": "synthesize_speech_hd",
-                "description": "Synthesizes high-definition speech.",
+                "description": "Convert text to HD speech",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "text": {
-                            "type": "string",
-                            "description": "Text to be synthesized"
-                        },
-                        "voice": {
-                            "type": "string",
-                            "description": "Optional voice parameter"
-                        }
+                        "text": {"type": "string", "description": "Text to synthesize"},
+                        "voice": {"type": "string", "description": "Voice to use"}
                     },
                     "required": ["text"]
                 }
             },
             {
-                "name": "generate_image_standard",
-                "description": "Generates standard quality images.",
+                "name": "generate_image",
+                "description": "Generate an image based on a prompt",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "prompt": {
-                            "type": "string",
-                            "description": "Prompt for image generation"
-                        },
-                        "size": {
-                            "type": "string",
-                            "description": "Optional size parameter"
-                        }
+                        "prompt": {"type": "string", "description": "Description of the image"},
+                        "size": {"type": "string", "enum": ["1024x1024", "256x256"], "description": "Size of the image"}
                     },
                     "required": ["prompt"]
                 }
             },
             {
-                "name": "generate_image_hd",
-                "description": "Generates high-definition images.",
+                "name": "generate_text",
+                "description": "Generate text based on a prompt",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "prompt": {
-                            "type": "string",
-                            "description": "Prompt for image generation"
-                        },
-                        "size": {
-                            "type": "string",
-                            "description": "Optional size parameter"
-                        }
+                        "prompt": {"type": "string", "description": "Prompt to generate text"},
+                        "max_tokens": {"type": "integer", "description": "Maximum number of tokens"}
                     },
                     "required": ["prompt"]
                 }
             },
             {
-                "name": "generate_text_standard",
-                "description": "Generates standard text.",
+                "name": "create_embedding",
+                "description": "Create an embedding from text",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "prompt": {
-                            "type": "string",
-                            "description": "Prompt for text generation"
-                        },
-                        "max_tokens": {
-                            "type": "integer",
-                            "description": "Maximum number of tokens"
-                        }
-                    },
-                    "required": ["prompt"]
-                }
-            },
-            {
-                "name": "generate_text_extended",
-                "description": "Generates extended text.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "prompt": {
-                            "type": "string",
-                            "description": "Prompt for text generation"
-                        },
-                        "max_tokens": {
-                            "type": "integer",
-                            "description": "Maximum number of tokens"
-                        }
-                    },
-                    "required": ["prompt"]
-                }
-            },
-            {
-                "name": "generate_text_instruct",
-                "description": "Generates instructive text.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "prompt": {
-                            "type": "string",
-                            "description": "Prompt for text generation"
-                        },
-                        "max_tokens": {
-                            "type": "integer",
-                            "description": "Maximum number of tokens"
-                        }
-                    },
-                    "required": ["prompt"]
-                }
-            },
-            {
-                "name": "create_embedding_small",
-                "description": "Creates small text embeddings.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "text": {
-                            "type": "string",
-                            "description": "Text to embed"
-                        }
-                    },
-                    "required": ["text"]
-                }
-            },
-            {
-                "name": "create_embedding_large",
-                "description": "Creates large text embeddings.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "text": {
-                            "type": "string",
-                            "description": "Text to embed"
-                        }
+                        "text": {"type": "string", "description": "Text to create embedding from"},
+                        "size": {"type": "string", "enum": ["small", "large"], "description": "Size of the embedding"}
                     },
                     "required": ["text"]
                 }
             }
         ],
-        function_call="auto"  # Auto-select functions to call based on user query
+        function_call="auto"
     )
 
-    # Extract and process function call data
+    results = []
     for choice in response.choices:
         if "function_call" in choice["message"]:
             func_name = choice["message"]["function_call"]["name"]
@@ -239,24 +123,18 @@ def handle_function_calls():
                 result = synthesize_speech_basic(**args)
             elif func_name == "synthesize_speech_hd":
                 result = synthesize_speech_hd(**args)
-            elif func_name == "generate_image_standard":
-                result = generate_image_standard(**args)
-            elif func_name == "generate_image_hd":
-                result = generate_image_hd(**args)
-            elif func_name == "generate_text_standard":
-                result = generate_text_standard(**args)
-            elif func_name == "generate_text_extended":
-                result = generate_text_extended(**args)
-            elif func_name == "generate_text_instruct":
-                result = generate_text_instruct(**args)
-            elif func_name == "create_embedding_small":
-                result = create_embedding_small(**args)
-            elif func_name == "create_embedding_large":
-                result = create_embedding_large(**args)
+            elif func_name == "generate_image":
+                result = generate_image(**args)
+            elif func_name == "generate_text":
+                result = generate_text(**args)
+            elif func_name == "create_embedding":
+                result = create_embedding(**args)
             else:
                 result = {}
 
-            print(f"Function '{func_name}' result:", result)
+            results.append({func_name: result})
+
+    return results
 
 if __name__ == "__main__":
-    handle_function_calls()
+    print(handle_function_calls())

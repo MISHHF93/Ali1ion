@@ -1,4 +1,4 @@
-#!/home/mishari_borah/venv/bin/python3
+#!/home/mishari_borah/nao-ai-function/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

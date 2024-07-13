@@ -1,4 +1,3 @@
-
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -21,9 +20,10 @@ def hello_world():
     return jsonify(message='Hello from NAO-AI Cloud Function!'), 200
 
 def main(request):
+    # Use the request context to handle requests in a Google Cloud Functions style
     with app.test_request_context(environ_base=request.environ):
         return hello_world()
 
 if __name__ == '__main__':
+    # Run the Flask app on port 5000
     app.run(host='0.0.0.0', port=5000)
-
