@@ -14,8 +14,7 @@ def callback(message):
     print(f"Received message: {message.data}")
     if message.attributes:
         print("Attributes:")
-        for key in message.attributes:
-            value = message.attributes[key]
+        for key, value in message.attributes.items():
             print(f"{key}: {value}")
     # Acknowledge the message
     message.ack()

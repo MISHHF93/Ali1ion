@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nao-ai-container
-        image: nginx:latest
+        image: gcr.io/your-project-id/nao-ai-module:latest
         ports:
         - containerPort: 80
         env:

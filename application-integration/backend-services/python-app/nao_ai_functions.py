@@ -55,7 +55,7 @@ def handle_function_calls():
                     "type": "object",
                     "properties": {
                         "text": {"type": "string", "description": "Text to synthesize"},
-                        "voice": {"type": "string", "description": "Voice to use"}
+                        "voice": {"type": "string", "description": "Voice to use", "default": None}
                     },
                     "required": ["text"]
                 }
@@ -67,7 +67,7 @@ def handle_function_calls():
                     "type": "object",
                     "properties": {
                         "text": {"type": "string", "description": "Text to synthesize"},
-                        "voice": {"type": "string", "description": "Voice to use"}
+                        "voice": {"type": "string", "description": "Voice to use", "default": None}
                     },
                     "required": ["text"]
                 }
@@ -79,7 +79,7 @@ def handle_function_calls():
                     "type": "object",
                     "properties": {
                         "prompt": {"type": "string", "description": "Description of the image"},
-                        "size": {"type": "string", "enum": ["1024x1024", "256x256"], "description": "Size of the image"}
+                        "size": {"type": "string", "enum": ["1024x1024", "256x256"], "description": "Size of the image", "default": "1024x1024"}
                     },
                     "required": ["prompt"]
                 }
@@ -91,7 +91,7 @@ def handle_function_calls():
                     "type": "object",
                     "properties": {
                         "prompt": {"type": "string", "description": "Prompt to generate text"},
-                        "max_tokens": {"type": "integer", "description": "Maximum number of tokens"}
+                        "max_tokens": {"type": "integer", "description": "Maximum number of tokens", "default": 100}
                     },
                     "required": ["prompt"]
                 }
@@ -103,7 +103,7 @@ def handle_function_calls():
                     "type": "object",
                     "properties": {
                         "text": {"type": "string", "description": "Text to create embedding from"},
-                        "size": {"type": "string", "enum": ["small", "large"], "description": "Size of the embedding"}
+                        "size": {"type": "string", "enum": ["small", "large"], "description": "Size of the embedding", "default": "small"}
                     },
                     "required": ["text"]
                 }

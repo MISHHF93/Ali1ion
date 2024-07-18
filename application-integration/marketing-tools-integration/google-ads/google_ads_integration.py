@@ -2,6 +2,7 @@
 
 from google.ads.googleads.client import GoogleAdsClient
 from google.ads.googleads.errors import GoogleAdsException
+import sys
 
 def main(client):
     customer_id = 'INSERT_CUSTOMER_ID_HERE'

@@ -1,656 +1,141 @@
 .
-├── nao-ai-function
-│   ├── alert_policies.json
-│   ├── application-integration
-│   │   ├── after-effects-plugin
-│   │   │   └── plugin.js
-│   │   ├── api-gateway
-│   │   │   ├── openapi.yaml
-│   │   │   └── swagger.yaml
-│   │   ├── backend-services
-│   │   │   ├── node-app
-│   │   │   │   ├── app.js
-│   │   │   │   ├── Dockerfile
-│   │   │   │   └── package.json
-│   │   │   └── python-app
-│   │   │       ├── Dockerfile
-│   │   │       ├── main.py
-│   │   │       ├── nao_ai_functions.py
-│   │   │       └── requirements.txt
-│   │   ├── marketing-tools-integration
-│   │   │   ├── facebook-ads
-│   │   │   │   └── facebook_ads_integration.py
-│   │   │   ├── google-ads
-│   │   │   │   ├── google_ads_integration.py
-│   │   │   │   └── google-ads.yaml
-│   │   │   └── hubspot
-│   │   │       └── hubspot_integration.py
-│   │   └── zapier-integration
-│   │       └── zapier_workflows.zap
-│   ├── compute-resources
-│   │   ├── cloud-functions
-│   │   │   ├── main.py
-│   │   │   └── requirements.txt
-│   │   ├── compute-engine
-│   │   │   └── startup_script.sh
-│   │   └── kubernetes-engine
-│   │       ├── deployment.yaml
-│   │       ├── k8s_config
-│   │       └── service.yaml
-│   ├── config
-│   │   └── nao-ai-config.yaml
-│   ├── data-processing-analytics
-│   │   ├── bigquery
-│   │   │   └── bigquery_queries.sql
-│   │   ├── dataflow
-│   │   │   ├── dataflow_job.py
-│   │   │   └── requirements.txt
-│   │   └── pub-sub
-│   │       └── pubsub_listener.py
-│   ├── data-synchronization
-│   │   ├── apache-kafka
-│   │   │   └── kafka_config.properties
-│   │   └── backup-solutions
-│   │       ├── backup-directory
-│   │       │   ├── backup-20240630014827.sql
-│   │       │   └── backup-20240630015154.sql
-│   │       ├── sql_backup.sh
-│   │       └── storage_backup.sh
-│   ├── monitoring-logging
-│   │   ├── alerts
-│   │   │   ├── alert_policies.json
-│   │   │   └── policy.json
-│   │   ├── stackdriver-logging
-│   │   │   └── logging_config.json
-│   │   └── stackdriver-monitoring
-│   │       └── monitoring_setup.sh
-│   ├── networking-security
-│   │   ├── cloud-armor
-│   │   │   └── armor_config.json
-│   │   ├── firewall-rules
-│   │   │   └── firewall_rules.sh
-│   │   ├── iam-roles
-│   │   │   └── iam_policy.json
-│   │   └── vpc-setup
-│   │       └── vpc_config.sh
-│   ├── nginx.conf
-│   ├── node_modules
-│   │   ├── accepts
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── array-flatten
-│   │   │   ├── array-flatten.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── body-parser
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── lib
-│   │   │   │   ├── read.js
-│   │   │   │   └── types
-│   │   │   │       ├── json.js
-│   │   │   │       ├── raw.js
-│   │   │   │       ├── text.js
-│   │   │   │       └── urlencoded.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── SECURITY.md
-│   │   ├── bytes
-│   │   │   ├── History.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── call-bind
-│   │   │   ├── callBound.js
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       ├── callBound.js
-│   │   │       └── index.js
-│   │   ├── content-disposition
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── content-type
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── cookie
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── SECURITY.md
-│   │   ├── cookie-signature
-│   │   │   ├── History.md
-│   │   │   ├── index.js
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── debug
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── component.json
-│   │   │   ├── karma.conf.js
-│   │   │   ├── LICENSE
-│   │   │   ├── Makefile
-│   │   │   ├── node.js
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── src
-│   │   │       ├── browser.js
-│   │   │       ├── debug.js
-│   │   │       ├── index.js
-│   │   │       ├── inspector-log.js
-│   │   │       └── node.js
-│   │   ├── define-data-property
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── test
-│   │   │   │   └── index.js
-│   │   │   └── tsconfig.json
-│   │   ├── depd
-│   │   │   ├── History.md
-│   │   │   ├── index.js
-│   │   │   ├── lib
-│   │   │   │   └── browser
-│   │   │   │       └── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── destroy
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── ee-first
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── encodeurl
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── escape-html
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── es-define-property
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── test
-│   │   │   │   └── index.js
-│   │   │   └── tsconfig.json
-│   │   ├── es-errors
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── eval.d.ts
-│   │   │   ├── eval.js
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── range.d.ts
-│   │   │   ├── range.js
-│   │   │   ├── README.md
-│   │   │   ├── ref.d.ts
-│   │   │   ├── ref.js
-│   │   │   ├── syntax.d.ts
-│   │   │   ├── syntax.js
-│   │   │   ├── test
-│   │   │   │   └── index.js
-│   │   │   ├── tsconfig.json
-│   │   │   ├── type.d.ts
-│   │   │   ├── type.js
-│   │   │   ├── uri.d.ts
-│   │   │   └── uri.js
-│   │   ├── etag
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── express
-│   │   │   ├── History.md
-│   │   │   ├── index.js
-│   │   │   ├── lib
-│   │   │   │   ├── application.js
-│   │   │   │   ├── express.js
-│   │   │   │   ├── middleware
-│   │   │   │   │   ├── init.js
-│   │   │   │   │   └── query.js
-│   │   │   │   ├── request.js
-│   │   │   │   ├── response.js
-│   │   │   │   ├── router
-│   │   │   │   │   ├── index.js
-│   │   │   │   │   ├── layer.js
-│   │   │   │   │   └── route.js
-│   │   │   │   ├── utils.js
-│   │   │   │   └── view.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── finalhandler
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── SECURITY.md
-│   │   ├── forwarded
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── fresh
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── function-bind
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── implementation.js
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       └── index.js
-│   │   ├── get-intrinsic
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       └── GetIntrinsic.js
-│   │   ├── gopd
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       └── index.js
-│   │   ├── hasown
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── tsconfig.json
-│   │   ├── has-property-descriptors
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       └── index.js
-│   │   ├── has-proto
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── test
-│   │   │   │   └── index.js
-│   │   │   └── tsconfig.json
-│   │   ├── has-symbols
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── shams.js
-│   │   │   └── test
-│   │   │       ├── index.js
-│   │   │       ├── shams
-│   │   │       │   ├── core-js.js
-│   │   │       │   └── get-own-property-symbols.js
-│   │   │       └── tests.js
-│   │   ├── http-errors
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── iconv-lite
-│   │   │   ├── Changelog.md
-│   │   │   ├── encodings
-│   │   │   │   ├── dbcs-codec.js
-│   │   │   │   ├── dbcs-data.js
-│   │   │   │   ├── index.js
-│   │   │   │   ├── internal.js
-│   │   │   │   ├── sbcs-codec.js
-│   │   │   │   ├── sbcs-data-generated.js
-│   │   │   │   ├── sbcs-data.js
-│   │   │   │   ├── tables
-│   │   │   │   │   ├── big5-added.json
-│   │   │   │   │   ├── cp936.json
-│   │   │   │   │   ├── cp949.json
-│   │   │   │   │   ├── cp950.json
-│   │   │   │   │   ├── eucjp.json
-│   │   │   │   │   ├── gb18030-ranges.json
-│   │   │   │   │   ├── gbk-added.json
-│   │   │   │   │   └── shiftjis.json
-│   │   │   │   ├── utf16.js
-│   │   │   │   └── utf7.js
-│   │   │   ├── lib
-│   │   │   │   ├── bom-handling.js
-│   │   │   │   ├── extend-node.js
-│   │   │   │   ├── index.d.ts
-│   │   │   │   ├── index.js
-│   │   │   │   └── streams.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── inherits
-│   │   │   ├── inherits_browser.js
-│   │   │   ├── inherits.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── ipaddr.js
-│   │   │   ├── ipaddr.min.js
-│   │   │   ├── lib
-│   │   │   │   ├── ipaddr.js
-│   │   │   │   └── ipaddr.js.d.ts
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── media-typer
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── merge-descriptors
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── methods
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── mime
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── cli.js
-│   │   │   ├── LICENSE
-│   │   │   ├── mime.js
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── src
-│   │   │   │   ├── build.js
-│   │   │   │   └── test.js
-│   │   │   └── types.json
-│   │   ├── mime-db
-│   │   │   ├── db.json
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── mime-types
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── ms
-│   │   │   ├── index.js
-│   │   │   ├── license.md
-│   │   │   ├── package.json
-│   │   │   └── readme.md
-│   │   ├── negotiator
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── lib
-│   │   │   │   ├── charset.js
-│   │   │   │   ├── encoding.js
-│   │   │   │   ├── language.js
-│   │   │   │   └── mediaType.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── object-inspect
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── example
-│   │   │   │   ├── all.js
-│   │   │   │   ├── circular.js
-│   │   │   │   ├── fn.js
-│   │   │   │   └── inspect.js
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── package-support.json
-│   │   │   ├── readme.markdown
-│   │   │   ├── test
-│   │   │   │   ├── bigint.js
-│   │   │   │   ├── browser
-│   │   │   │   │   └── dom.js
-│   │   │   │   ├── circular.js
-│   │   │   │   ├── deep.js
-│   │   │   │   ├── element.js
-│   │   │   │   ├── err.js
-│   │   │   │   ├── fakes.js
-│   │   │   │   ├── fn.js
-│   │   │   │   ├── global.js
-│   │   │   │   ├── has.js
-│   │   │   │   ├── holes.js
-│   │   │   │   ├── indent-option.js
-│   │   │   │   ├── inspect.js
-│   │   │   │   ├── lowbyte.js
-│   │   │   │   ├── number.js
-│   │   │   │   ├── quoteStyle.js
-│   │   │   │   ├── toStringTag.js
-│   │   │   │   ├── undef.js
-│   │   │   │   └── values.js
-│   │   │   ├── test-core-js.js
-│   │   │   └── util.inspect.js
-│   │   ├── on-finished
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── parseurl
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── path-to-regexp
-│   │   │   ├── History.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── Readme.md
-│   │   ├── proxy-addr
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── qs
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── dist
-│   │   │   │   └── qs.js
-│   │   │   ├── lib
-│   │   │   │   ├── formats.js
-│   │   │   │   ├── index.js
-│   │   │   │   ├── parse.js
-│   │   │   │   ├── stringify.js
-│   │   │   │   └── utils.js
-│   │   │   ├── LICENSE.md
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       ├── parse.js
-│   │   │       ├── stringify.js
-│   │   │       └── utils.js
-│   │   ├── range-parser
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── raw-body
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── SECURITY.md
-│   │   ├── safe-buffer
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── safer-buffer
-│   │   │   ├── dangerous.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── Porting-Buffer.md
-│   │   │   ├── Readme.md
-│   │   │   ├── safer.js
-│   │   │   └── tests.js
-│   │   ├── send
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── node_modules
-│   │   │   │   └── ms
-│   │   │   │       ├── index.js
-│   │   │   │       ├── license.md
-│   │   │   │       ├── package.json
-│   │   │   │       └── readme.md
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── SECURITY.md
-│   │   ├── serve-static
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── set-function-length
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── env.d.ts
-│   │   │   ├── env.js
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── tsconfig.json
-│   │   ├── setprototypeof
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   └── test
-│   │   │       └── index.js
-│   │   ├── side-channel
-│   │   │   ├── CHANGELOG.md
-│   │   │   ├── index.d.ts
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   ├── README.md
-│   │   │   ├── test
-│   │   │   │   └── index.js
-│   │   │   └── tsconfig.json
-│   │   ├── statuses
-│   │   │   ├── codes.json
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── toidentifier
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── type-is
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── unpipe
-│   │   │   ├── HISTORY.md
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   ├── utils-merge
-│   │   │   ├── index.js
-│   │   │   ├── LICENSE
-│   │   │   ├── package.json
-│   │   │   └── README.md
-│   │   └── vary
-│   │       ├── HISTORY.md
-│   │       ├── index.js
-│   │       ├── LICENSE
-│   │       ├── package.json
-│   │       └── README.md
-│   ├── notification_channels.json
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── source_directory
-│   │   └── test.txt
-│   ├── static
-│   │   ├── cdn-cgi
-│   │   │   └── trace
-│   │   └── favicon.ico
-│   └── storage-databases
-│       ├── bigtable
-│       │   └── bigtable_setup.sh
-│       ├── cloud-sql
-│       │   └── cloud_sql_setup.sh
-│       ├── cloud-storage
-│       │   └── storage_setup.sh
-│       └── firestore
-│           ├── add_sample_document.py
-│           └── firestore_setup.sh
+├── application-integration
+│   ├── after-effects-plugin
+│   │   ├── __init__.py
+│   │   └── plugin.js
+│   ├── api-gateway
+│   │   ├── __init__.py
+│   │   ├── openapi.yaml
+│   │   └── swagger.yaml
+│   ├── backend-services
+│   │   ├── __init__.py
+│   │   ├── node-app
+│   │   │   ├── app.js
+│   │   │   └── __init__.py
+│   │   └── python-app
+│   │       ├── __init__.py
+│   │       ├── nao_ai_functions.py
+│   │       └── test_nao_ai_functions.py
+│   ├── __init__.py
+│   ├── main.py
+│   ├── marketing-tools-integration
+│   │   ├── facebook-ads
+│   │   │   ├── facebook_ads_integration.py
+│   │   │   └── __init__.py
+│   │   ├── google-ads
+│   │   │   ├── google_ads_integration.py
+│   │   │   ├── google-ads.yaml
+│   │   │   └── __init__.py
+│   │   ├── hubspot
+│   │   │   ├── hubspot_integration.py
+│   │   │   └── __init__.py
+│   │   └── __init__.py
+│   └── zapier-integration
+│       ├── __init__.py
+│       └── zapier_workflows.zap
+├── compute-resources
+│   ├── compute-engine
+│   │   ├── __init__.py
+│   │   └── startup_script.sh
+│   ├── __init__.py
+│   └── kubernetes-engine
+│       ├── deployment.yaml
+│       ├── __init__.py
+│       ├── k8s_config
+│       └── service.yaml
+├── config
+│   ├── __init__.py
+│   └── nao-ai-config.yaml
+├── data-processing-analytics
+│   ├── bigquery
+│   │   ├── bigquery_queries.sql
+│   │   └── __init__.py
+│   ├── dataflow
+│   │   ├── dataflow_job.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── pub-sub
+│       ├── __init__.py
+│       └── pubsub_listener.py
+├── data-synchronization
+│   ├── apache-kafka
+│   │   ├── __init__.py
+│   │   └── kafka_config.properties
+│   ├── backup-solutions
+│   │   ├── backup-directory
+│   │   │   ├── backup-20240630014827.sql
+│   │   │   ├── backup-20240630015154.sql
+│   │   │   └── __init__.py
+│   │   ├── __init__.py
+│   │   ├── sql_backup.sh
+│   │   └── storage_backup.sh
+│   └── __init__.py
+├── Dockerfile
+├── __init__.py
+├── monitoring-logging
+│   ├── alerts
+│   │   ├── alert_policies.json
+│   │   ├── __init__.py
+│   │   └── policy.json
+│   ├── __init__.py
+│   ├── stackdriver-logging
+│   │   ├── __init__.py
+│   │   └── logging_config.json
+│   └── stackdriver-monitoring
+│       ├── __init__.py
+│       └── monitoring_setup.sh
+├── nao-ai-module
+│   ├── __init__.py
+│   ├── manage.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── networking-security
+│   ├── cloud-armor
+│   │   ├── armor_config.json
+│   │   └── __init__.py
+│   ├── firewall-rules
+│   │   ├── firewall_rules.sh
+│   │   └── __init__.py
+│   ├── iam-roles
+│   │   ├── iam_policy.json
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── vpc-setup
+│       ├── __init__.py
+│       └── vpc_config.sh
+├── nginx.conf
+├── notification_channels.json
+├── organize_project.sh
+├── package.json
+├── package-lock.json
 ├── README-cloudshell.txt
+├── requirements.txt
+├── source_directory
+│   ├── __init__.py
+│   └── test.txt
+├── static
+│   ├── cdn-cgi
+│   │   ├── __init__.py
+│   │   └── trace
+│   ├── favicon.ico
+│   └── __init__.py
+├── storage-databases
+│   ├── bigtable
+│   │   ├── bigtable_setup.sh
+│   │   └── __init__.py
+│   ├── cloud-sql
+│   │   ├── cloud_sql_setup.sh
+│   │   └── __init__.py
+│   ├── cloud-storage
+│   │   ├── __init__.py
+│   │   └── storage_setup.sh
+│   ├── firestore
+│   │   ├── add_sample_document.py
+│   │   ├── firestore_setup.sh
+│   │   └── __init__.py
+│   └── __init__.py
+├── test_install.py
 └── tree.txt
 
-141 directories, 512 files
+41 directories, 97 files
