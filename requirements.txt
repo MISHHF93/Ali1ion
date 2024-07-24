@@ -161,7 +161,6 @@ pylint==3.2.5
 pyls-mypy==0.1.8
 pymongo==4.8.0
 pyparsing==2.4.7
-python-apt==2.4.0+ubuntu3
 python-dateutil==2.9.0.post0
 python-jsonrpc-server==0.4.0
 python-language-server==0.36.2

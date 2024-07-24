@@ -9,15 +9,11 @@
 │   │   └── swagger.yaml
 │   ├── backend-services
 │   │   ├── __init__.py
-│   │   ├── node-app
-│   │   │   ├── app.js
-│   │   │   └── __init__.py
-│   │   └── python-app
-│   │       ├── __init__.py
-│   │       ├── nao_ai_functions.py
-│   │       └── test_nao_ai_functions.py
+│   │   ├── main.py
+│   │   └── node_app
+│   │       ├── app.js
+│   │       └── __init__.py
 │   ├── __init__.py
-│   ├── main.py
 │   ├── marketing-tools-integration
 │   │   ├── facebook-ads
 │   │   │   ├── facebook_ads_integration.py
@@ -41,7 +37,7 @@
 │   └── kubernetes-engine
 │       ├── deployment.yaml
 │       ├── __init__.py
-│       ├── k8s_config
+│       ├── kubernetes_config
 │       └── service.yaml
 ├── config
 │   ├── __init__.py
@@ -71,7 +67,6 @@
 │   │   └── storage_backup.sh
 │   └── __init__.py
 ├── Dockerfile
-├── __init__.py
 ├── monitoring-logging
 │   ├── alerts
 │   │   ├── alert_policies.json
@@ -85,10 +80,21 @@
 │       ├── __init__.py
 │       └── monitoring_setup.sh
 ├── nao-ai-module
+│   ├── admin.py
+│   ├── apps.py
 │   ├── __init__.py
 │   ├── manage.py
+│   ├── models.py
+│   ├── nao_ai_app
+│   │   ├── __init__.py
+│   │   └── nao_ai_functions.py
 │   ├── settings.py
+│   ├── tests
+│   │   ├── __init__.py
+│   │   └── test_nao_ai_functions.py
+│   ├── tests.py
 │   ├── urls.py
+│   ├── views.py
 │   └── wsgi.py
 ├── networking-security
 │   ├── cloud-armor
@@ -135,7 +141,8 @@
 │   │   ├── firestore_setup.sh
 │   │   └── __init__.py
 │   └── __init__.py
+├── test_environment.py
 ├── test_install.py
 └── tree.txt
 
-41 directories, 97 files
+42 directories, 103 files

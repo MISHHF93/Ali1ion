@@ -8,7 +8,7 @@ sudo apt-get install -y python3 python3-venv python3-pip git
 
 # Clone the project repository (Assuming there's a repository to clone)
 # Replace the URL with the actual repository URL
-git clone https://github.com/your-username/nao-ai-project.git /home/mishari_borah/nao-ai-function
+git clone https://github.com/MISHHF93/nao-ai-project.git /home/mishari_borah/nao-ai-function
 
 # Navigate to the project directory
 cd /home/mishari_borah/nao-ai-function/compute-resources/compute-engine/
