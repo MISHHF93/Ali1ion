@@ -3,16 +3,16 @@
 │   ├── after_effects_plugin
 │   │   ├── __init__.py
 │   │   └── plugin.js
-│   ├── api-gateway
+│   ├── api_gateway
 │   │   ├── __init__.py
 │   │   ├── openapi.yaml
 │   │   └── swagger.yaml
-│   ├── backend-services
+│   ├── backend_services
 │   │   ├── __init__.py
-│   │   ├── main.py
 │   │   └── node_app
 │   │       ├── app.js
-│   │       └── __init__.py
+│   │       ├── __init__.py
+│   │       └── main.py
 │   ├── __init__.py
 │   ├── marketing_tools_integration
 │   │   ├── facebook_ads
@@ -41,10 +41,12 @@
 │   ├── cloud
 │   │   ├── cloud_sql_setup.sh
 │   │   ├── firestore_setup.sh
+│   │   ├── __init__.py
 │   │   ├── nao-ai-config.yaml
 │   │   └── storage_setup.sh
 │   ├── kubernetes
 │   │   ├── deployment.yaml
+│   │   ├── __init__.py
 │   │   └── service.yaml
 │   ├── nginx.conf
 │   └── notification_channels.json
@@ -67,11 +69,17 @@
 │   │   ├── backup-directory
 │   │   │   ├── backup-20240630014827.sql
 │   │   │   └── backup-20240630015154.sql
+│   │   ├── backup_directory
+│   │   │   └── __init__.py
 │   │   ├── __init__.py
 │   │   ├── sql_backup.sh
 │   │   └── storage_backup.sh
 │   └── __init__.py
 ├── Dockerfile
+├── docs
+│   ├── CONTRIBUTING.md
+│   ├── deployment_guide.md
+│   └── README.md
 ├── monitoring_logging
 │   ├── alerts
 │   │   ├── alert_policies.json
@@ -84,7 +92,7 @@
 │   └── stackdriver_monitoring
 │       ├── __init__.py
 │       └── monitoring_setup.sh
-├── nao-ai-module
+├── nao_ai_module
 │   ├── admin.py
 │   ├── apps.py
 │   ├── __init__.py
@@ -118,11 +126,12 @@
 ├── package.json
 ├── package-lock.json
 ├── README-cloudshell.txt
+├── reorganize_project.sh
 ├── requirements.txt
 ├── scripts
+│   ├── __init__.py
 │   ├── organize_project.sh
 │   └── recreate_init_files.sh
-├── source_directory
 ├── static
 │   ├── cdn_cgi
 │   │   ├── __init__.py
@@ -145,4 +154,4 @@
 ├── test_install.py
 └── tree.txt
 
-45 directories, 100 files
+46 directories, 108 files
