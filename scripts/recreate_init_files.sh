@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# List of directories where __init__.py files are necessary
+necessary_dirs=(
+  "application-integration"
+  "application-integration/after-effects-plugin"
+  "application-integration/api-gateway"
+  "application-integration/backend-services"
+  "application-integration/backend-services/node_app"
+  "application-integration/marketing-tools-integration"
+  "application-integration/marketing-tools-integration/facebook-ads"
+  "application-integration/marketing-tools-integration/google-ads"
+  "application-integration/marketing-tools-integration/hubspot"
+  "application-integration/zapier-integration"
+  "compute-resources"
+  "compute-resources/compute-engine"
+  "compute-resources/kubernetes-engine"
+  "data-processing-analytics"
+  "data-processing-analytics/bigquery"
+  "data-processing-analytics/dataflow"
+  "data-processing-analytics/pub-sub"
+  "data-synchronization"
+  "data-synchronization/apache-kafka"
+  "data-synchronization/backup-solutions"
+  "monitoring-logging"
+  "monitoring-logging/alerts"
+  "monitoring-logging/stackdriver-logging"
+  "monitoring-logging/stackdriver-monitoring"
+  "nao-ai-module"
+  "nao-ai-module/nao_ai_app"
+  "nao-ai-module/tests"
+  "networking-security"
+  "networking-security/cloud-armor"
+  "networking-security/firewall-rules"
+  "networking-security/iam-roles"
+  "networking-security/vpc-setup"
+  "storage-databases"
+  "storage-databases/bigtable"
+  "storage-databases/cloud-sql"
+  "storage-databases/cloud-storage"
+  "storage-databases/firestore"
+  "static"
+  "static/cdn-cgi"
+)
+
+# Recreate necessary __init__.py files
+for dir in "${necessary_dirs[@]}"; do
+  mkdir -p "$dir"
+  touch "$dir/__init__.py"
+done
