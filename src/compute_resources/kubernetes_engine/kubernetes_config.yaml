@@ -1,0 +1,48 @@
+# k8s_config
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nao-ai-deployment
+  labels:
+    app: nao-ai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nao-ai
+  template:
+    metadata:
+      labels:
+        app: nao-ai
+    spec:
+      containers:
+      - name: nao-ai-container
+        image: gcr.io/nao-ai-project/nao-ai-node-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: NODE_ENV
+          value: "production"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nao-ai-service
+spec:
+  selector:
+    app: nao-ai
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+

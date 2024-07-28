@@ -1,0 +1,156 @@
+.
+├── application_integration
+│   ├── after_effects_plugin
+│   │   ├── __init__.py
+│   │   └── plugin.js
+│   ├── api_gateway
+│   │   ├── __init__.py
+│   │   ├── openapi.yaml
+│   │   └── swagger.yaml
+│   ├── backend_services
+│   │   ├── __init__.py
+│   │   └── node_app
+│   │       ├── app.js
+│   │       ├── __init__.py
+│   │       └── main.py
+│   ├── __init__.py
+│   ├── marketing_tools_integration
+│   │   ├── facebook_ads
+│   │   │   ├── facebook_ads_integration.py
+│   │   │   └── __init__.py
+│   │   ├── google_ads
+│   │   │   ├── google_ads_integration.py
+│   │   │   ├── google-ads.yaml
+│   │   │   └── __init__.py
+│   │   ├── hubspot
+│   │   │   ├── hubspot_integration.py
+│   │   │   └── __init__.py
+│   │   └── __init__.py
+│   └── zapier_integration
+│       ├── __init__.py
+│       └── zapier_workflows.zap
+├── compute_resources
+│   ├── compute_engine
+│   │   ├── __init__.py
+│   │   └── startup_script.sh
+│   ├── __init__.py
+│   └── kubernetes_engine
+│       ├── __init__.py
+│       └── kubernetes_config
+├── configs
+│   ├── cloud
+│   │   ├── cloud_sql_setup.sh
+│   │   ├── firestore_setup.sh
+│   │   ├── __init__.py
+│   │   ├── nao-ai-config.yaml
+│   │   └── storage_setup.sh
+│   ├── kubernetes
+│   │   ├── deployment.yaml
+│   │   ├── __init__.py
+│   │   └── service.yaml
+│   ├── nginx.conf
+│   └── notification_channels.json
+├── data_processing_analytics
+│   ├── bigquery
+│   │   ├── bigquery_queries.sql
+│   │   └── __init__.py
+│   ├── dataflow
+│   │   ├── dataflow_job.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── pubsub
+│       ├── __init__.py
+│       └── pubsub_listener.py
+├── data_synchronization
+│   ├── apache_kafka
+│   │   ├── __init__.py
+│   │   └── kafka_config.properties
+│   ├── backup_solutions
+│   │   ├── backup-directory
+│   │   │   ├── backup-20240630014827.sql
+│   │   │   └── backup-20240630015154.sql
+│   │   ├── backup_directory
+│   │   │   └── __init__.py
+│   │   ├── __init__.py
+│   │   ├── sql_backup.sh
+│   │   └── storage_backup.sh
+│   └── __init__.py
+├── Dockerfile
+├── docs
+│   ├── CONTRIBUTING.md
+│   ├── deployment_guide.md
+│   └── README.md
+├── monitoring_logging
+│   ├── alerts
+│   │   ├── alert_policies.json
+│   │   ├── __init__.py
+│   │   └── policy.json
+│   ├── __init__.py
+│   ├── stackdriver_logging
+│   │   ├── __init__.py
+│   │   └── logging_config.json
+│   └── stackdriver_monitoring
+│       ├── __init__.py
+│       └── monitoring_setup.sh
+├── nao_ai_module
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── manage.py
+│   ├── models.py
+│   ├── nao_ai_app
+│   │   ├── __init__.py
+│   │   └── nao_ai_functions.py
+│   ├── settings.py
+│   ├── tests
+│   │   ├── __init__.py
+│   │   └── test_nao_ai_functions.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── networking_security
+│   ├── cloud_armor
+│   │   ├── armor_config.json
+│   │   └── __init__.py
+│   ├── firewall_rules
+│   │   ├── firewall_rules.sh
+│   │   └── __init__.py
+│   ├── iam_roles
+│   │   ├── iam_policy.json
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── vpc_setup
+│       ├── __init__.py
+│       └── vpc_config.sh
+├── package.json
+├── package-lock.json
+├── README-cloudshell.txt
+├── requirements.txt
+├── scripts
+│   ├── __init__.py
+│   ├── organize_project.sh
+│   └── recreate_init_files.sh
+├── static
+│   ├── cdn_cgi
+│   │   ├── __init__.py
+│   │   └── trace
+│   ├── favicon.ico
+│   └── __init__.py
+├── storage_databases
+│   ├── bigtable
+│   │   ├── bigtable_setup.sh
+│   │   └── __init__.py
+│   ├── cloud_sql
+│   │   └── __init__.py
+│   ├── cloud_storage
+│   │   └── __init__.py
+│   ├── firestore
+│   │   ├── add_sample_document.py
+│   │   └── __init__.py
+│   └── __init__.py
+├── test_environment.py
+├── test_install.py
+└── tree.txt
+
+46 directories, 107 files

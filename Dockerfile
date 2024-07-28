@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r /home/mishari_borah/nao-ai-project/requirement
 COPY application-integration/backend-services/python-app /home/mishari_borah/nao-ai-project/application-integration/backend-services/python-app
 
 # Copy the test script
-COPY test_install.py /home/mishari_borah/nao-ai-project/test_install.py
+COPY src/tests/test_install.py /home/mishari_borah/nao-ai-project/src/tests/test_install.py
 
 # Debugging step: List the contents of the directory
 RUN ls -la /home/mishari_borah/nao-ai-project/application-integration/backend-services/python-app
@@ -21,7 +21,7 @@ RUN ls -la /home/mishari_borah/nao-ai-project/application-integration/backend-se
 # Verify the installation of packages
 RUN pip list
 
-CMD ["python3", "/home/mishari_borah/nao-ai-project/test_install.py"]
+CMD ["python3", "/home/mishari_borah/nao-ai-project/src/tests/test_install.py"]
 
 # Stage 2: Build Node.js App
 FROM node:14 AS node-app
@@ -79,7 +79,7 @@ COPY --from=node-app /home/mishari_borah/nao-ai-project/application-integration/
 COPY --from=cloud-functions-app /home/mishari_borah/nao-ai-project/application-integration /home/mishari_borah/nao-ai-project/application-integration
 
 # Copy the test script (optional, remove if not needed)
-COPY test_install.py /home/mishari_borah/nao-ai-project/test_install.py
+COPY src/tests/test_install.py /home/mishari_borah/nao-ai-project/src/tests/test_install.py
 
 # Debugging step: List the contents of the final directory
 RUN ls -la /home/mishari_borah/nao-ai-project
@@ -91,7 +91,7 @@ RUN node -v && npm -v
 
 # Define entrypoints for each service
 CMD ["sh", "-c", "\
-  python3 /home/mishari_borah/nao-ai-project/test_install.py && \
+  python3 /home/mishari_borah/nao-ai-project/src/tests/test_install.py && \
   python3 /home/mishari_borah/nao-ai-project/application-integration/backend-services/python-app/nao_ai_functions.py & \
   node /home/mishari_borah/nao-ai-project/application-integration/backend-services/node-app/app.js & \
   python3 /home/mishari_borah/nao-ai-project/application-integration/main.py \

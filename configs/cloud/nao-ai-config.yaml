@@ -3,4 +3,38 @@ kind: ConfigMap
 metadata:
   name: nao-ai-config
 data:
-  configKey: configValue
+  configKey: |
+    # Configuration file for NAO AI project
+
+    project:
+      id: proverbial-will-427815-r9
+      name: nao-ai-project
+
+    cloud:
+      provider: google
+      region: us-central1
+
+    database:
+      type: cloud_sql
+      instance: nao-ai-instance
+      name: nao_ai_db
+
+    storage:
+      type: cloud_storage
+      bucket: nao-ai-bucket
+
+    firestore:
+      enabled: true
+      project: proverbial-will-427815-r9
+
+    logging:
+      level: INFO
+      stackdriver: true
+
+    monitoring:
+      stackdriver: true
+      alerts: true
+
+    api:
+      endpoint: https://api.nao-ai-project.com
+      key: your-api-key

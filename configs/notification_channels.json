@@ -1,7 +1,39 @@
 {
-  "type": "email",
-  "displayName": "NAO AI Alerts",
-  "labels": {
-    "email_address": "mishari.borah@gmail.com"
-  }
+  "channels": [
+    {
+      "type": "email",
+      "displayName": "NAO AI Alerts",
+      "labels": {
+        "email_address": "mishari.borah@gmail.com"
+      },
+      "settings": {
+        "send_on_error": true,
+        "send_on_warning": false
+      }
+    },
+    {
+      "type": "email",
+      "address": "alerts@example.com",
+      "settings": {
+        "send_on_error": true,
+        "send_on_warning": false
+      }
+    },
+    {
+      "type": "sms",
+      "phone_number": "+1234567890",
+      "settings": {
+        "send_on_error": true,
+        "send_on_warning": true
+      }
+    },
+    {
+      "type": "webhook",
+      "url": "https://example.com/webhook",
+      "settings": {
+        "send_on_error": true,
+        "send_on_warning": true
+      }
+    }
+  ]
 }

@@ -1,0 +1,45 @@
+{
+    "policies": [
+        {
+            "name": "high_cpu_utilization",
+            "description": "Alert policy for high CPU utilization",
+            "displayName": "High CPU Usage",
+            "conditions": [
+                {
+                    "displayName": "VM Instance CPU Utilization",
+                    "conditionThreshold": {
+                        "filter": 'resource.type="gce_instance" AND metric.type="compute.googleapis.com/instance/cpu/utilization"',
+                        "comparison": "COMPARISON_GT",
+                        "thresholdValue": 0.8,
+                        "duration": "60s",
+                        "aggregations": [
+                            {
+                                "alignmentPeriod": "60s",
+                                "perSeriesAligner": "ALIGN_MEAN"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "notificationChannels": ["projects/proverbial-will-427815-r9/notificationChannels/1234567890"],
+            "combiner": "OR",
+            "enabled": true
+        },
+        {
+            "name": "low_disk_space",
+            "description": "Alert policy for low disk space",
+            "conditions": [
+                {
+                    "conditionThreshold": {
+                        "filter": "metric.type=\"compute.googleapis.com/instance/disk/bytes_used\" AND resource.type=\"gce_instance\"",
+                        "comparison": "COMPARISON_GT",
+                        "thresholdValue": 0.9,
+                        "duration": "300s"
+                    }
+                }
+            ],
+            "notificationChannels": ["projects/proverbial-will-427815-r9/notificationChannels/0987654321"],
+            "enabled": true
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+  "logs": [
+    {
+      "name": "requests_log",
+      "filter": "resource.type=http_load_balancer",
+      "destination": {
+        "log_name": "requests_log"
+      }
+    },
+    {
+      "name": "errors_log",
+      "filter": "severity>=ERROR",
+      "destination": {
+        "log_name": "errors_log"
+      }
+    },
+    {
+      "logName": "projects/nao-ai-project/logs/nao-ai-log",
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "nao-ai-project"
+        }
+      },
+      "entries": [
+        {
+          "jsonPayload": {
+            "message": "NAO-AI log entry",
+            "severity": "INFO"
+          }
+        }
+      ],
+      "labels": {
+        "environment": "production",
+        "application": "nao-ai"
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "name": "request_count",
+      "filter": "resource.type=http_load_balancer",
+      "metricDescriptor": {
+        "metricKind": "DELTA",
+        "valueType": "INT64",
+        "unit": "1",
+        "description": "Count of HTTP requests"
+      }
+    },
+    {
+      "name": "error_count",
+      "filter": "severity>=ERROR",
+      "metricDescriptor": {
+        "metricKind": "DELTA",
+        "valueType": "INT64",
+        "unit": "1",
+        "description": "Count of errors"
+      }
+    }
+  ]
+}

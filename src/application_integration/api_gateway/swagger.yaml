@@ -1,0 +1,20 @@
+cat << 'EOF' > /home/mishari_borah/nao_ai_project/src/application_integration/api_gateway/swagger.yaml
+swagger: "2.0"
+info:
+  title: NAO-AI API
+  description: API for NAO-AI services
+  version: "1.0.0"
+paths:
+  /:
+    get:
+      summary: Root endpoint
+      operationId: getRoot
+      responses:
+        200:
+          description: A successful response
+          schema:
+            type: string
+            example: Hello World!
+      x-google-backend:
+        address: https://your-backend-url  # Replace with your actual backend URL
+EOF

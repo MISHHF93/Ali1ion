@@ -1,0 +1,41 @@
+{
+  "bindings": [
+    {
+      "role": "roles/viewer",
+      "members": [
+        "serviceAccount:viewer-account@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/editor",
+      "members": [
+        "serviceAccount:editor-account@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/storage.admin",
+      "members": [
+        "serviceAccount:storage-admin@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/pubsub.publisher",
+      "members": [
+        "serviceAccount:pubsub-publisher@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/pubsub.subscriber",
+      "members": [
+        "serviceAccount:pubsub-subscriber@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/logging.logWriter",
+      "members": [
+        "serviceAccount:log-writer@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    }
+  ],
+  "etag": "BwWn6eT5kY4="
+}
