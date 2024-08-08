@@ -3,38 +3,75 @@ kind: ConfigMap
 metadata:
   name: nao-ai-config
 data:
-  configKey: |
-    # Configuration file for NAO AI project
+  nao-ai-config.yaml: |-
+    # Global configurations
+    global:
+      project_id: "proverbial-will-427815-r9"
+      region: "northamerica-northeast1"
 
-    project:
-      id: proverbial-will-427815-r9
-      name: nao-ai-project
+    # Compute Engine configurations
+    compute_engine:
+      instance_name: "nao-ai-vm"
+      instance_type: "e2-medium"
+      boot_disk_size: "250GB"
 
-    cloud:
-      provider: google
-      region: us-central1
+    # IAM configurations
+    iam:
+      service_account_email: "nao-ai-sa@proverbial-will-427815-r9.iam.gserviceaccount.com"
+      roles:
+        - "roles/compute.viewer"
+        - "roles/storage.admin"
+        - "roles/cloudsql.client"
 
-    database:
-      type: cloud_sql
-      instance: nao-ai-instance
-      name: nao_ai_db
-
+    # Cloud Storage configurations
     storage:
-      type: cloud_storage
-      bucket: nao-ai-bucket
+      bucket_name: "nao-ai-storage"
+      location: "northamerica-northeast1"
 
-    firestore:
-      enabled: true
-      project: proverbial-will-427815-r9
+    # Cloud SQL configurations
+    sql:
+      instance_name: "nao-ai-sql-instance"
+      database_name: "nao_ai_db"
+      user: "nao_ai_user"
+      password: "secure_password"
 
+    # Pub/Sub configurations
+    pubsub:
+      topic_name: "nao-ai-topic"
+      subscription_name: "nao-ai-subscription"
+
+    # Logging configurations
     logging:
-      level: INFO
-      stackdriver: true
+      log_name: "nao-ai-log"
+      log_level: "INFO"
 
-    monitoring:
-      stackdriver: true
-      alerts: true
-
+    # API configurations
     api:
-      endpoint: https://api.nao-ai-project.com
-      key: your-api-key
+      name: "nao-ai-api"
+      endpoint: "https://api.proverbial-will-427815-r9.cloudfunctions.net/nao-ai-endpoint"
+
+    # Cloud Functions configurations
+    cloud_functions:
+      function_name: "nao-ai-function"
+      runtime: "python39"
+      trigger_http: true
+      source_directory: "/home/mishari_borah/nao_ai_project/functions"
+
+    # App Engine configurations
+    app_engine:
+      service_name: "default"
+      runtime: "python39"
+      handlers:
+        - url: /.*
+          script: auto
+
+    # Environment variables
+    env_variables:
+      DEBUG: "false"
+      SECRET_KEY: "your_secret_key_here"
+      DATABASE_URL: "postgresql://nao_ai_user:secure_password@nao-ai-sql-instance/nao_ai_db"
+
+    # Misc configurations
+    misc:
+      max_instances: 5
+      min_instances: 1

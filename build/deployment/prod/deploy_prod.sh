@@ -1,4 +1,3 @@
-cat << 'EOF' > build/deployment/prod/deploy_prod.sh
 #!/bin/bash
 
 echo "Starting production deployment..."
@@ -16,13 +15,23 @@ git pull origin main || {
     exit 1
 }
 
-# Install/update dependencies
-echo "Installing/updating dependencies..."
-npm install || {
-    echo "npm install failed."
+# Set up the virtual environment
+echo "Setting up virtual environment..."
+python3.9 -m venv venv || {
+    echo "Failed to create virtual environment."
+    exit 1
+}
+source venv/bin/activate || {
+    echo "Failed to activate virtual environment."
     exit 1
 }
 
+# Install/update dependencies
+echo "Installing/updating dependencies..."
+pip install --upgrade pip || {
+    echo "Failed to upgrade pip."
+    exit 1
+}
 pip install -r requirements.txt || {
     echo "pip install failed."
     exit 1
@@ -50,4 +59,3 @@ sudo systemctl restart my_app.service || {
 }
 
 echo "Production deployment completed successfully."
-EOF

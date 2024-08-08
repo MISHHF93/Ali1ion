@@ -1,28 +1,14 @@
 #!/bin/bash
-
-# Trace script to log information
-
-# Log the current date and time
-echo "Current Date and Time: $(date)"
-
-# Log the current user
-echo "Current User: $(whoami)"
-
-# Log the current directory
-echo "Current Directory: $(pwd)"
-
-# Log the system uptime
-echo "System Uptime: $(uptime -p)"
-
-# Log the disk usage
-echo "Disk Usage:"
-df -h
-
-# Log the memory usage
-echo "Memory Usage:"
-free -h
-
-# Log the environment variables
-echo "Environment Variables:"
-printenv
-
+echo "Content-type: text/plain"
+echo ""
+echo "Trace information:"
+echo "Server Software: $SERVER_SOFTWARE"
+echo "Server Name: $SERVER_NAME"
+echo "Server Protocol: $SERVER_PROTOCOL"
+echo "Server Port: $SERVER_PORT"
+echo "Request Method: $REQUEST_METHOD"
+echo "Request URI: $REQUEST_URI"
+echo "Script Name: $SCRIPT_NAME"
+echo "Remote Address: $REMOTE_ADDR"
+echo "Remote Port: $REMOTE_PORT"
+echo "User Agent: $HTTP_USER_AGENT"

@@ -1,47 +1,61 @@
 pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+    agent {
+        docker {
+            image 'python:3.9'
         }
+    }
+    environment {
+        VENV_DIR = 'venv'
+    }
+    stages {
         stage('Build') {
             steps {
-                sh './build_and_test.sh'
+                script {
+                    echo 'Building..'
+                    sh '''
+                        python3 -m venv ${VENV_DIR}
+                        . ${VENV_DIR}/bin/activate
+                        pip install --upgrade pip setuptools
+                    '''
+                }
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh '''
+                        . ${VENV_DIR}/bin/activate
+                        pip install -r requirements.txt
+                    '''
+                }
             }
         }
         stage('Test') {
             steps {
-                sh 'pytest'
+                script {
+                    echo 'Testing..'
+                    sh '''
+                        . ${VENV_DIR}/bin/activate
+                        pytest
+                    '''
+                }
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'main') {
-                        sh './build/deployment/prod/deploy_prod.sh'
-                    } else if (env.BRANCH_NAME == 'staging') {
-                        sh './build/deployment/staging/deploy_staging.sh'
-                    }
+                    echo 'Deploying...'
+                    // Add deployment steps here
                 }
             }
         }
     }
     post {
         always {
-            junit 'reports/**/*.xml'
-            archiveArtifacts artifacts: 'build/**', allowEmptyArchive: true
-        }
-        success {
-            mail to: 'team@example.com',
-                 subject: "SUCCESS: ${env.JOB_NAME} [${env.BUILD_NUMBER}]",
-                 body: "Good news! The build ${env.BUILD_NUMBER} was successful. Check it out at ${env.BUILD_URL}"
-        }
-        failure {
-            mail to: 'team@example.com',
-                 subject: "FAILURE: ${env.JOB_NAME} [${env.BUILD_NUMBER}]",
-                 body: "Unfortunately, the build ${env.BUILD_NUMBER} failed. Please check the logs at ${env.BUILD_URL}"
+            script {
+                echo 'Cleaning up...'
+                deleteDir()
+            }
         }
     }
 }

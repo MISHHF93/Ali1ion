@@ -39,6 +39,73 @@ paths:
                   message:
                     type: string
                     example: Goodbye, World!
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Check if the API is running
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+  /predict:
+    post:
+      summary: Predict using the NAO-AI model
+      description: Submit data for prediction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  example: "Your input text here"
+      responses:
+        '200':
+          description: Prediction result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prediction:
+                    type: string
+                    example: "Prediction result"
+  /train:
+    post:
+      summary: Train the NAO-AI model
+      description: Submit data to train the model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                training_data:
+                  type: array
+                  items:
+                    type: string
+                  example: ["Training data example 1", "Training data example 2"]
+      responses:
+        '200':
+          description: Training result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "Training started"
 components:
   schemas:
     Error:
@@ -49,7 +116,32 @@ components:
           format: int32
         message:
           type: string
-
+    PredictionRequest:
+      type: object
+      properties:
+        input:
+          type: string
+          example: "Your input text here"
+    PredictionResponse:
+      type: object
+      properties:
+        prediction:
+          type: string
+          example: "Prediction result"
+    TrainingRequest:
+      type: object
+      properties:
+        training_data:
+          type: array
+          items:
+            type: string
+          example: ["Training data example 1", "Training data example 2"]
+    TrainingResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "Training started"
 ---
 swagger: '2.0'
 info:

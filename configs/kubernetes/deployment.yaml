@@ -1,12 +1,13 @@
-cat << 'EOF' > /home/mishari_borah/nao_ai_project/configs/kubernetes/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nao-ai-deployment
   labels:
     app: nao-ai
+  annotations:
+    description: "Deployment for NAO-AI module"
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nao-ai
@@ -35,8 +36,19 @@ spec:
         volumeMounts:
         - name: nao-ai-config
           mountPath: /etc/config
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
       volumes:
       - name: nao-ai-config
         configMap:
           name: nao-ai-config
-EOF

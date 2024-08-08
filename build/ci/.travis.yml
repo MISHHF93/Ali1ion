@@ -1,0 +1,37 @@
+language: python
+python:
+  - "3.9"
+
+# Caching to make the build faster
+cache:
+  pip: true
+  directories:
+    - $HOME/.cache/pip
+
+# Install system dependencies
+addons:
+  apt:
+    update: true
+    packages:
+      - build-essential
+      - libssl-dev
+      - libffi-dev
+      - libpq-dev
+      - pkg-config
+
+# Install dependencies
+install:
+  - pip install --upgrade pip setuptools
+  - pip install -r requirements.txt
+
+# Command to run tests
+script:
+  - pytest
+
+# Define notifications (optional)
+notifications:
+  email:
+    recipients:
+      - mishari.borah@example.com
+    on_success: never
+    on_failure: always

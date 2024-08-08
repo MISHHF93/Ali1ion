@@ -1,58 +1,63 @@
-cat << 'EOF' > /home/mishari_borah/nao_ai_project/configs/cloud/firestore_setup.sh
 #!/bin/bash
 
-# Variables
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Variables (Customize these according to your project)
 PROJECT_ID="proverbial-will-427815-r9"
-COLLECTION_NAME="sample_collection"
-DOCUMENT_NAME="sample_document"
+FIRESTORE_MODE="native"  # Options: 'native' or 'datastore'
+RULES_FILE="firestore.rules"
+INDEXES_FILE="firestore.indexes.json"
+DATA_FILE="initial_data.json"
+GCP_REGION="us-central"  # Choose your desired region
+
+# Check if gcloud is installed
+if ! command -v gcloud &> /dev/null
+then
+    echo "gcloud CLI not found. Please install it before running this script."
+    exit 1
+fi
+
+# Authenticate with Google Cloud
+echo "Authenticating with Google Cloud..."
+gcloud auth login --quiet
+
+# Set the desired project
+echo "Setting the project to $PROJECT_ID..."
+gcloud config set project $PROJECT_ID
 
 # Enable Firestore API
 echo "Enabling Firestore API..."
-gcloud services enable firestore.googleapis.com --project=$PROJECT_ID
+gcloud services enable firestore.googleapis.com
 
-# Check if the Firestore database already exists
-echo "Checking if Firestore database exists..."
-if gcloud firestore databases describe --project=$PROJECT_ID --format="value(name)" > /dev/null 2>&1; then
-  echo "Firestore database already exists."
+# Create Firestore Database
+echo "Setting up Firestore in $FIRESTORE_MODE mode..."
+gcloud alpha firestore databases create --region=$GCP_REGION --type=$FIRESTORE_MODE || {
+    echo "Firestore database already exists or an error occurred."
+}
+
+# Deploy Security Rules
+if [ -f "$RULES_FILE" ]; then
+    echo "Deploying Firestore security rules from $RULES_FILE..."
+    gcloud firestore security-rules update $RULES_FILE
 else
-  echo "Creating Firestore database..."
-  gcloud firestore databases create --location=me-central1 --project=$PROJECT_ID
+    echo "Security rules file $RULES_FILE not found. Skipping deployment of security rules."
 fi
 
-# Create Firestore collection and add a sample document using Python
-echo "Creating Firestore collection and adding a sample document..."
-python3 /home/mishari_borah/nao_ai_project/src/storage_databases/firestore/add_sample_document.py
+# Deploy Indexes
+if [ -f "$INDEXES_FILE" ]; then
+    echo "Deploying Firestore indexes from $INDEXES_FILE..."
+    gcloud firestore indexes composite create --file=$INDEXES_FILE
+else
+    echo "Indexes file $INDEXES_FILE not found. Skipping deployment of indexes."
+fi
 
-echo "Firestore setup complete."
+# Import Initial Data
+if [ -f "$DATA_FILE" ]; then
+    echo "Importing initial data from $DATA_FILE..."
+    gcloud firestore import gs://$PROJECT_ID.appspot.com/$DATA_FILE
+else
+    echo "Data file $DATA_FILE not found. Skipping data import."
+fi
 
-# Function to create Firestore indexes
-create_indexes() {
-  echo "Creating Firestore indexes..."
-  # Example of creating an index
-  gcloud firestore indexes composite create --collection-group="YOUR_COLLECTION" \
-    --field-config field-path="YOUR_FIELD_PATH",order="ASCENDING" \
-    --field-config field-path="ANOTHER_FIELD_PATH",order="DESCENDING"
-}
-
-# Function to set up Firestore rules
-setup_rules() {
-  echo "Setting up Firestore rules..."
-  # Example of setting rules from a local file
-  gcloud firestore security-rules update /path/to/your/firestore.rules
-}
-
-# Function to add initial data to Firestore
-add_initial_data() {
-  echo "Adding initial data to Firestore..."
-  # Example of adding a document
-  gcloud firestore documents create YOUR_COLLECTION/DOCUMENT_ID \
-    --data '{"key1": "value1", "key2": "value2"}'
-}
-
-# Main script execution
-echo "Starting Firestore setup..."
-create_indexes
-setup_rules
-add_initial_data
-echo "Firestore setup completed successfully."
-EOF
+echo "Firestore setup completed successfully!"
