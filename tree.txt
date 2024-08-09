@@ -25,8 +25,7 @@
 ├── docs
 │   ├── CONTRIBUTING.md
 │   ├── deployment_guide.md
-│   ├── README.md
-│   └── tree.txt
+│   └── README.md
 ├── package.json
 ├── package-lock.json
 ├── requirements.txt
@@ -44,7 +43,9 @@
 │   │   │   ├── __init__.py
 │   │   │   └── node_app
 │   │   │       ├── app.js
-│   │   │       └── main.py
+│   │   │       ├── main.py
+│   │   │       └── routes
+│   │   │           └── example.js
 │   │   ├── __init__.py
 │   │   ├── marketing_tools_integration
 │   │   │   ├── facebook_ads
@@ -128,7 +129,6 @@
 │   │   │   ├── bucket_policy.json
 │   │   │   └── cloud_storage_setup.sh
 │   │   ├── firestore
-│   │   │   ├── add_sample_document.py
 │   │   │   └── add_user_document.py
 │   │   └── __init__.py
 │   └── tests
@@ -148,9 +148,13 @@
 │       ├── css
 │       │   └── styles.css
 │       ├── images
+│       │   ├── logo.png
+│       │   ├── manage_images.sh
+│       │   ├── placeholder.png
+│       │   └── README.md
 │       ├── index.html
 │       └── js
 │           └── app.js
 └── tree.txt
 
-58 directories, 95 files
+59 directories, 98 files

@@ -1,35 +1,24 @@
-# pubsub_listener.py
-
 import os
 from google.cloud import pubsub_v1
 
-# Set Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/path/to/your/credentials.json"
+# Set up environment variable for authentication
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/path/to/your/service-account-file.json"
 
-# Define Pub/Sub project and subscription
-project_id = "your-project-id"
-subscription_id = "your-subscription-id"
+# Initialize Pub/Sub client
+subscriber = pubsub_v1.SubscriberClient()
+
+# Define subscription path
+subscription_path = 'projects/your-project-id/subscriptions/your-subscription-name'
 
 def callback(message):
-    print(f"Received message: {message.data}")
-    if message.attributes:
-        print("Attributes:")
-        for key, value in message.attributes.items():
-            print(f"{key}: {value}")
-    # Acknowledge the message
+    print(f'Received message: {message.data}')
     message.ack()
 
-def listen_for_messages():
-    subscriber = pubsub_v1.SubscriberClient()
-    subscription_path = subscriber.subscription_path(project_id, subscription_id)
+# Subscribe to the subscription and listen for messages
+streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
+print(f'Listening for messages on {subscription_path}...')
 
-    streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
-    print(f"Listening for messages on {subscription_path}...")
-
-    try:
-        streaming_pull_future.result()
-    except KeyboardInterrupt:
-        streaming_pull_future.cancel()
-
-if __name__ == "__main__":
-    listen_for_messages()
+try:
+    streaming_pull_future.result()
+except KeyboardInterrupt:
+    streaming_pull_future.cancel()

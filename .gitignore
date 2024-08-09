@@ -1,3 +1,62 @@
-node_modules
-node_modules
-node_modules
+# Ignore Python bytecode files
+*.py[cod]
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+
+# Ignore node_modules for Node.js projects
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore environment variable files
+.env
+.env.local
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore backup files
+*.bak
+*.swp
+*~
+
+# Ignore compiled libraries
+*.a
+*.o
+*.dll
+*.dylib
+*.exe
+*.out
+
+# Ignore dependency directories
+build/
+dist/
+
+# Ignore the build output directories
+/home/mishari_borah/nao_ai_project/build/
+
+/home/mishari_borah/nao_ai_project/configs/kubernetes/deployment.yaml
+/home/mishari_borah/nao_ai_project/configs/kubernetes/*.yaml
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore static files
+/home/mishari_borah/nao_ai_project/static/
+public/
+
+# Ignore temporary files
+/tmp
+*.tmp

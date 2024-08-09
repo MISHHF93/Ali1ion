@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const responseDiv = document.getElementById("response");
 
     sendButton.addEventListener("click", function() {
-        const userText = userInput.value;
+        const userText = userInput.value.trim();
         if (userText) {
+            displayResponse("Sending...");
             sendRequest(userText);
         }
     });
@@ -18,7 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({ message: userText })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
         .then(data => {
             displayResponse(data.response);
         })
@@ -29,9 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function displayResponse(responseText) {
+        responseDiv.innerHTML = "";  // Clear previous responses
         const responseElement = document.createElement("p");
         responseElement.textContent = responseText;
         responseDiv.appendChild(responseElement);
-        userInput.value = "";
+        userInput.value = "";  // Clear the input field
     }
 });

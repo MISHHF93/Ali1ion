@@ -1,45 +1,45 @@
 {
-    "name": "nao-ai-armor-policy",
-    "description": "Security policy for NAO-AI project",
-    "rules": [
+  "name": "nao-ai-armor-policy",
+  "description": "Security policy for NAO-AI project",
+  "rules": [
       {
-        "action": "deny(403)",
-        "description": "Deny traffic from blocked IP ranges",
-        "match": {
-          "versionedExpr": "SRC_IPS_V1",
-          "config": {
-            "srcIpRanges": [
-              "192.0.2.0/24",  // Example blocked IP range
-              "198.51.100.0/24" // Example blocked IP range
-            ]
-          }
-        },
-        "priority": 1000
+          "action": "deny(403)",
+          "description": "Deny traffic from blocked IP ranges",
+          "match": {
+              "versionedExpr": "SRC_IPS_V1",
+              "config": {
+                  "srcIpRanges": [
+                      "192.0.2.0/24", 
+                      "198.51.100.0/24"
+                  ]
+              }
+          },
+          "priority": 1000
       },
       {
-        "action": "allow",
-        "description": "Allow traffic from trusted IP ranges",
-        "match": {
-          "versionedExpr": "SRC_IPS_V1",
-          "config": {
-            "srcIpRanges": [
-              "203.0.113.0/24", // Example trusted IP range
-              "198.51.101.0/24" // Example trusted IP range
-            ]
-          }
-        },
-        "priority": 2000
+          "action": "allow",
+          "description": "Allow traffic from trusted IP ranges",
+          "match": {
+              "versionedExpr": "SRC_IPS_V1",
+              "config": {
+                  "srcIpRanges": [
+                      "203.0.113.0/24",
+                      "198.51.101.0/24"
+                  ]
+              }
+          },
+          "priority": 2000
       },
       {
-        "action": "allow",
-        "description": "Default rule to allow all other traffic",
-        "match": {
-          "versionedExpr": "SRC_IPS_V1",
-          "config": {
-            "srcIpRanges": ["0.0.0.0/0"]
-          }
-        },
-        "priority": 3000
+          "action": "allow",
+          "description": "Default rule to allow all other traffic",
+          "match": {
+              "versionedExpr": "SRC_IPS_V1",
+              "config": {
+                  "srcIpRanges": ["0.0.0.0/0"]
+              }
+          },
+          "priority": 3000
       }
-    ]
+  ]
 }

@@ -15,11 +15,11 @@
       }
     },
     {
-      "logName": "projects/nao-ai-project/logs/nao-ai-log",
+      "logName": "projects/proverbial-will-427815-r9/logs/nao-ai-log",
       "resource": {
         "type": "global",
         "labels": {
-          "project_id": "nao-ai-project"
+          "project_id": "proverbial-will-427815-r9"
         }
       },
       "entries": [

@@ -4,7 +4,7 @@
 PROJECT_ID="proverbial-will-427815-r9"
 INSTANCE_NAME="nao-ai-sql"
 DB_NAME="nao_ai_database"
-REGION="us-central1"
+REGION="northamerica-northeast1"
 TIER="db-f1-micro"
 ROOT_PASSWORD=${ROOT_PASSWORD:-"your-root-password"}
 

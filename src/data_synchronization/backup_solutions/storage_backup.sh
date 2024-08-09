@@ -7,6 +7,9 @@ DATE=$(date +%Y%m%d%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup-$DATE.tar.gz"
 GCS_BUCKET="nao-ai-backups"  # Replace with your new bucket name
 
+# Create backup directory if it doesn't exist
+mkdir -p $BACKUP_DIR
+
 # Create backup
 echo "Creating backup of $SOURCE_DIR..."
 tar -czf $BACKUP_FILE -C $SOURCE_DIR .
@@ -28,3 +31,16 @@ else
     echo "Backup upload failed."
     exit 1
 fi
+
+# Clean up local backup file
+echo "Cleaning up local backup file..."
+rm $BACKUP_FILE
+
+if [ $? -eq 0 ]; then
+    echo "Local backup file deleted successfully."
+else
+    echo "Failed to delete local backup file."
+    exit 1
+fi
+
+echo "Backup process completed successfully."

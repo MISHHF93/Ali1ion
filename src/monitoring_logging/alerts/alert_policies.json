@@ -27,7 +27,7 @@
       "name": "projects/proverbial-will-427815-r9/alertPolicies/0987654321",
       "displayName": "Low Disk Space",
       "documentation": {
-        "content": "This policy triggers when disk space is less than 10%.", 
+        "content": "This policy triggers when disk space is less than 10%.",
         "mimeType": "text/markdown"
       },
       "conditions": [

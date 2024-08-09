@@ -8,7 +8,7 @@
                 {
                     "displayName": "VM Instance CPU Utilization",
                     "conditionThreshold": {
-                        "filter": 'resource.type="gce_instance" AND metric.type="compute.googleapis.com/instance/cpu/utilization"',
+                        "filter": "resource.type=\"gce_instance\" AND metric.type=\"compute.googleapis.com/instance/cpu/utilization\"",
                         "comparison": "COMPARISON_GT",
                         "thresholdValue": 0.8,
                         "duration": "60s",
@@ -21,24 +21,36 @@
                     }
                 }
             ],
-            "notificationChannels": ["projects/proverbial-will-427815-r9/notificationChannels/1234567890"],
+            "notificationChannels": [
+                "projects/proverbial-will-427815-r9/notificationChannels/1234567890"
+            ],
             "combiner": "OR",
             "enabled": true
         },
         {
             "name": "low_disk_space",
             "description": "Alert policy for low disk space",
+            "displayName": "Low Disk Space",
             "conditions": [
                 {
+                    "displayName": "VM Instance Disk Space Utilization",
                     "conditionThreshold": {
-                        "filter": "metric.type=\"compute.googleapis.com/instance/disk/bytes_used\" AND resource.type=\"gce_instance\"",
+                        "filter": "resource.type=\"gce_instance\" AND metric.type=\"compute.googleapis.com/instance/disk/bytes_used\"",
                         "comparison": "COMPARISON_GT",
                         "thresholdValue": 0.9,
-                        "duration": "300s"
+                        "duration": "300s",
+                        "aggregations": [
+                            {
+                                "alignmentPeriod": "300s",
+                                "perSeriesAligner": "ALIGN_MEAN"
+                            }
+                        ]
                     }
                 }
             ],
-            "notificationChannels": ["projects/proverbial-will-427815-r9/notificationChannels/0987654321"],
+            "notificationChannels": [
+                "projects/proverbial-will-427815-r9/notificationChannels/0987654321"
+            ],
             "enabled": true
         }
     ]

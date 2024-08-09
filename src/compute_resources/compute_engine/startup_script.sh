@@ -28,4 +28,3 @@ python3 /home/mishari_borah/nao-ai-function/compute-resources/compute-engine/app
 
 # Print success message
 echo "Startup script completed successfully"
-

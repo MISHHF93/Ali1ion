@@ -51,15 +51,26 @@ echo "Creating missing static files..."
 [ ! -f static/favicon.ico ] && touch static/favicon.ico
 
 # Install dependencies
-echo "Installing dependencies..."
-npm install
-pip install -r requirements.txt
+echo "Installing Node.js dependencies..."
+npm install || {
+    echo "npm install failed."
+    exit 1
+}
+
+echo "Installing Python dependencies..."
+pip install -r requirements.txt || {
+    echo "pip install failed."
+    exit 1
+}
 
 # Install pytest if not already installed
 install_pytest
 
 # Run tests
 echo "Running tests..."
-pytest src/tests
+pytest src/tests || {
+    echo "Tests failed."
+    exit 1
+}
 
 echo "Build and test process completed successfully."

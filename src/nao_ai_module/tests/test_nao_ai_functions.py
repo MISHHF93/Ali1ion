@@ -1,7 +1,7 @@
 # /home/mishari_borah/nao_ai_project/src/nao_ai_module/tests/test_nao_ai_functions.py
 
 import unittest
-from .nao_ai_functions import (
+from nao_ai_module.nao_ai_app.nao_ai_functions import (
     transcribe_audio,
     synthesize_speech_basic,
     synthesize_speech_hd,

@@ -5,6 +5,18 @@
       "members": [
         "allUsers"
       ]
+    },
+    {
+      "role": "roles/storage.admin",
+      "members": [
+        "user:mishari.borah@gmail.com"
+      ]
+    },
+    {
+      "role": "roles/storage.objectAdmin",
+      "members": [
+        "serviceAccount:my-service-account@proverbial-will-427815-r9.iam.gserviceaccount.com"
+      ]
     }
   ]
 }

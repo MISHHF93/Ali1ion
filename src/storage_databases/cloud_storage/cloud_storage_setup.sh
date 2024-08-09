@@ -1,19 +1,37 @@
 #!/bin/bash
 
-# Variables
-PROJECT_ID="your-project-id"
+# Set variables
+PROJECT_ID="proverbial-will-427815-r9"
 BUCKET_NAME="nao-ai-bucket"
-LOCATION="US"
+REGION="northamerica-northeast1"
+SERVICE_ACCOUNT="nao-ai-sa@$PROJECT_ID.iam.gserviceaccount.com"
 
-# Enable the necessary services
-gcloud services enable storage.googleapis.com
+# Enable the Cloud Storage API
+echo "Enabling Cloud Storage API..."
+gcloud services enable storage.googleapis.com --project=$PROJECT_ID
 
-# Create a Cloud Storage bucket
+# Create a new Cloud Storage bucket in the Ontario region
 echo "Creating Cloud Storage bucket..."
-gsutil mb -p $PROJECT_ID -l $LOCATION gs://$BUCKET_NAME/
+gsutil mb -p $PROJECT_ID -c STANDARD -l $REGION gs://$BUCKET_NAME/
 
-# Set bucket permissions (public read for example, adjust as needed)
+# Set bucket permissions: Allow the service account to access the bucket
 echo "Setting bucket permissions..."
-gsutil iam ch allUsers:objectViewer gs://$BUCKET_NAME
+gsutil iam ch serviceAccount:$SERVICE_ACCOUNT:roles/storage.admin gs://$BUCKET_NAME
 
-echo "Cloud Storage setup complete. Bucket: $BUCKET_NAME"
+# Confirm the bucket creation and permission settings
+echo "Verifying bucket creation and permissions..."
+gsutil ls -L -b gs://$BUCKET_NAME
+
+# Set environment variables in a .env file for future reference
+echo "Setting up environment variables..."
+cat <<EOF > /home/mishari_borah/nao_ai_project/.env
+export GCS_BUCKET=$BUCKET_NAME
+export GCS_PROJECT=$PROJECT_ID
+export GCS_REGION=$REGION
+EOF
+
+# Source the .env file to apply the environment variables immediately
+echo "Loading environment variables..."
+source /home/mishari_borah/nao_ai_project/.env
+
+echo "Cloud Storage setup completed successfully."

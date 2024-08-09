@@ -6,11 +6,61 @@
 # For more information, run:
 #   $ gcloud topic gcloudignore
 #
+
 .gcloudignore
+
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
 .git
 .gitignore
 
+# Node modules directory (do not upload)
 node_modules
+
+# Python virtual environment
+venv/
+__pycache__/
+*.py[cod]
+
+# Compiled files
+*.o
+*.so
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Generated files and directories
+*.tmp
+*.temp
+*.pid
+*.gz
+*.zip
+*.tar.gz
+
+# Build files
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Ignore local environment files
+.env
+*.env
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Kubernetes configuration files (assuming you don't deploy them)
+configs/kubernetes/
+
+# Deployment scripts
+build/deployment/

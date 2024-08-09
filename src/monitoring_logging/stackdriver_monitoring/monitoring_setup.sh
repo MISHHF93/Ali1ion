@@ -1,16 +1,14 @@
-cat << 'EOF' > /home/mishari_borah/nao_ai_project/src/monitoring_logging/stackdriver_monitoring/monitoring_setup.sh
 #!/bin/bash
 
 # Set variables
 PROJECT_ID="proverbial-will-427815-r9"
-REGION="us-central1"
-ALERT_POLICY_FILE="alert_policies.json"
-NOTIFICATION_CHANNEL_FILE="notification_channels.json"
+REGION="northamerica-northeast1"
+ALERT_POLICY_FILE="/home/mishari_borah/nao_ai_project/src/monitoring_logging/stackdriver_monitoring/alert_policies.json"
+NOTIFICATION_CHANNEL_FILE="/home/mishari_borah/nao_ai_project/src/monitoring_logging/stackdriver_monitoring/notification_channels.json"
 AUTH_TOKEN=$(gcloud auth print-access-token)
 
 # Enable necessary APIs
-gcloud services enable monitoring.googleapis.com --project=$PROJECT_ID
-gcloud services enable logging.googleapis.com --project=$PROJECT_ID
+gcloud services enable monitoring.googleapis.com logging.googleapis.com --project=$PROJECT_ID
 
 # Create a notification channel
 echo "Creating notification channel..."
@@ -79,4 +77,4 @@ curl -s -H "Authorization: Bearer $AUTH_TOKEN" \
 curl -s -H "Authorization: Bearer $AUTH_TOKEN" \
 "https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/alertPolicies" | jq
 
-EOF
+echo "Monitoring setup completed successfully."

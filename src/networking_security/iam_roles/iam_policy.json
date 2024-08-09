@@ -35,6 +35,24 @@
       "members": [
         "serviceAccount:log-writer@nao-ai-project.iam.gserviceaccount.com"
       ]
+    },
+    {
+      "role": "roles/compute.instanceAdmin.v1",
+      "members": [
+        "serviceAccount:compute-admin@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/monitoring.metricWriter",
+      "members": [
+        "serviceAccount:monitoring-writer@nao-ai-project.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/cloudsql.client",
+      "members": [
+        "serviceAccount:cloudsql-client@nao-ai-project.iam.gserviceaccount.com"
+      ]
     }
   ],
   "etag": "BwWn6eT5kY4="

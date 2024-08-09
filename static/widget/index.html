@@ -17,6 +17,38 @@
             <button id="send-button">Send</button>
         </main>
     </div>
+
+    <!-- jQuery for handling AJAX requests -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Main JS file -->
     <script src="js/app.js"></script>
+    
+    <script>
+        // Handle the send button click event
+        \$('#send-button').click(function() {
+            var userInput = \$('#user-input').val();
+            if (userInput.trim() === "") {
+                alert("Please enter a message.");
+                return;
+            }
+
+            // Send an AJAX request to the backend API
+            \$.ajax({
+                url: '/api/nao_ai_query',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ query: userInput }),
+                success: function(response) {
+                    // Display the response in the response div
+                    \$('#response').html('<p>' + response.answer + '</p>');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                    \$('#response').html('<p>An error occurred. Please try again.</p>');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
