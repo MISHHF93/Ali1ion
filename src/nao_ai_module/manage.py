@@ -5,6 +5,9 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    # Add the project directory to the Python path to ensure that Django can find nao_ai_module
+    sys.path.append('/workspaces/NAO-AI/src/')
+    
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nao_ai_module.settings')
     try:
         from django.core.management import execute_from_command_line

@@ -1,0 +1,32 @@
+.
+├── __init__.py
+├── __pycache__
+│   ├── __init__.cpython-312.pyc
+│   ├── admin.cpython-312.pyc
+│   ├── apps.cpython-312.pyc
+│   ├── models.cpython-312.pyc
+│   ├── settings.cpython-312.pyc
+│   ├── signals.cpython-312.pyc
+│   ├── urls.cpython-312.pyc
+│   ├── views.cpython-312.pyc
+│   └── wsgi.cpython-312.pyc
+├── admin.py
+├── apps.py
+├── manage.py
+├── models.py
+├── nao_ai_app
+│   ├── __pycache__
+│   │   └── nao_ai_functions.cpython-312.pyc
+│   └── nao_ai_functions.py
+├── settings.py
+├── signals.py
+├── staticfiles
+├── tests
+│   └── test_nao_ai_functions.py
+├── tests.py
+├── tree.txt
+├── urls.py
+├── views.py
+└── wsgi.py
+
+5 directories, 24 files

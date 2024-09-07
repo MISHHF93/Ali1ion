@@ -1,4 +1,4 @@
-# /home/mishari_borah/nao_ai_project/src/nao_ai_module/apps.py
+# /workspaces/NAO-AI/src/nao_ai_module/apps.py
 
 from django.apps import AppConfig
 
@@ -8,4 +8,7 @@ class NaoAiModuleConfig(AppConfig):
     verbose_name = 'NAO AI Module'
 
     def ready(self):
-        import nao_ai_module.signals  # Import signals if any
+        try:
+            import nao_ai_module.signals  # Import signals if any
+        except ImportError:
+            pass  # Ignore the error if signals module does not exist
