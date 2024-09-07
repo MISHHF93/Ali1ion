@@ -1,8 +1,9 @@
 .
+├── Dockerfile
 ├── build
 │   ├── ci
-│   │   ├── circle.yml
-│   │   └── Jenkinsfile
+│   │   ├── Jenkinsfile
+│   │   └── circle.yml
 │   └── deployment
 │       ├── prod
 │       │   └── deploy_prod.sh
@@ -21,19 +22,22 @@
 │   ├── nginx.conf
 │   └── notification_channels.json
 ├── create_project_structure.sh
-├── Dockerfile
 ├── docs
 │   ├── CONTRIBUTING.md
-│   ├── deployment_guide.md
-│   └── README.md
-├── package.json
+│   ├── README.md
+│   └── deployment_guide.md
 ├── package-lock.json
+├── package.json
 ├── requirements.txt
 ├── scripts
 │   ├── organize_project.sh
 │   └── recreate_init_files.sh
 ├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-310.pyc
 │   ├── application_integration
+│   │   ├── __init__.py
 │   │   ├── after_effects_plugin
 │   │   │   └── plugin.js
 │   │   ├── api_gateway
@@ -46,61 +50,75 @@
 │   │   │       ├── main.py
 │   │   │       └── routes
 │   │   │           └── example.js
-│   │   ├── __init__.py
 │   │   ├── marketing_tools_integration
+│   │   │   ├── __init__.py
 │   │   │   ├── facebook_ads
 │   │   │   │   └── facebook_ads_integration.py
 │   │   │   ├── google_ads
-│   │   │   │   ├── google_ads_integration.py
-│   │   │   │   └── google-ads.yaml
-│   │   │   ├── hubspot
-│   │   │   │   └── hubspot_integration.py
-│   │   │   └── __init__.py
+│   │   │   │   ├── google-ads.yaml
+│   │   │   │   └── google_ads_integration.py
+│   │   │   └── hubspot
+│   │   │       └── hubspot_integration.py
 │   │   └── zapier_integration
 │   │       └── zapier_workflows.zap
 │   ├── compute_resources
+│   │   ├── __init__.py
 │   │   ├── compute_engine
 │   │   │   └── startup_script.sh
-│   │   ├── __init__.py
 │   │   └── kubernetes_engine
 │   │       └── kubernetes_config.yaml
 │   ├── data_processing_analytics
+│   │   ├── __init__.py
 │   │   ├── bigquery
 │   │   │   └── bigquery_queries.sql
 │   │   ├── dataflow
 │   │   │   └── dataflow_job.py
-│   │   ├── __init__.py
 │   │   └── pubsub
 │   │       └── pubsub_listener.py
 │   ├── data_synchronization
+│   │   ├── __init__.py
 │   │   ├── apache_kafka
 │   │   │   └── kafka_config.properties
-│   │   ├── backup_solutions
-│   │   │   ├── backup-directory
-│   │   │   │   ├── backup-20240630014827.sql
-│   │   │   │   └── backup-20240630015154.sql
-│   │   │   ├── sql_backup.sh
-│   │   │   └── storage_backup.sh
-│   │   └── __init__.py
-│   ├── __init__.py
+│   │   └── backup_solutions
+│   │       ├── backup-directory
+│   │       │   ├── backup-20240630014827.sql
+│   │       │   └── backup-20240630015154.sql
+│   │       ├── sql_backup.sh
+│   │       └── storage_backup.sh
+│   ├── logs
+│   │   └── debug.log
 │   ├── monitoring_logging
+│   │   ├── __init__.py
 │   │   ├── alerts
 │   │   │   ├── alert_policies.json
 │   │   │   └── policy.json
-│   │   ├── __init__.py
 │   │   ├── stackdriver_logging
 │   │   │   └── logging_config.json
 │   │   └── stackdriver_monitoring
 │   │       └── monitoring_setup.sh
 │   ├── nao_ai_module
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   ├── admin.cpython-312.pyc
+│   │   │   ├── apps.cpython-312.pyc
+│   │   │   ├── models.cpython-312.pyc
+│   │   │   ├── settings.cpython-312.pyc
+│   │   │   ├── signals.cpython-312.pyc
+│   │   │   ├── urls.cpython-312.pyc
+│   │   │   ├── views.cpython-312.pyc
+│   │   │   └── wsgi.cpython-312.pyc
 │   │   ├── admin.py
 │   │   ├── apps.py
-│   │   ├── __init__.py
 │   │   ├── manage.py
 │   │   ├── models.py
 │   │   ├── nao_ai_app
+│   │   │   ├── __pycache__
+│   │   │   │   └── nao_ai_functions.cpython-312.pyc
 │   │   │   └── nao_ai_functions.py
 │   │   ├── settings.py
+│   │   ├── signals.py
+│   │   ├── staticfiles
 │   │   ├── tests
 │   │   │   └── test_nao_ai_functions.py
 │   │   ├── tests.py
@@ -108,18 +126,26 @@
 │   │   ├── views.py
 │   │   └── wsgi.py
 │   ├── networking_security
+│   │   ├── __init__.py
 │   │   ├── cloud_armor
 │   │   │   └── armor_config.json
 │   │   ├── firewall_rules
 │   │   │   └── firewall_rules.sh
 │   │   ├── iam_roles
 │   │   │   └── iam_policy.json
-│   │   ├── __init__.py
 │   │   └── vpc_setup
 │   │       └── vpc_config.sh
-│   ├── __pycache__
-│   │   └── __init__.cpython-310.pyc
+│   ├── static
+│   │   ├── static_tree.txt
+│   │   └── widget
+│   │       ├── css
+│   │       │   └── styles.css
+│   │       ├── images
+│   │       │   └── logo.png
+│   │       └── js
+│   │           └── app.js
 │   ├── storage_databases
+│   │   ├── __init__.py
 │   │   ├── bigtable
 │   │   │   └── bigtable_setup.sh
 │   │   ├── cloud_sql
@@ -128,9 +154,8 @@
 │   │   ├── cloud_storage
 │   │   │   ├── bucket_policy.json
 │   │   │   └── cloud_storage_setup.sh
-│   │   ├── firestore
-│   │   │   └── add_user_document.py
-│   │   └── __init__.py
+│   │   └── firestore
+│   │       └── add_user_document.py
 │   └── tests
 │       ├── __init__.py
 │       ├── __pycache__
@@ -148,13 +173,13 @@
 │       ├── css
 │       │   └── styles.css
 │       ├── images
+│       │   ├── README.md
 │       │   ├── logo.png
 │       │   ├── manage_images.sh
-│       │   ├── placeholder.png
-│       │   └── README.md
+│       │   └── placeholder.png
 │       ├── index.html
 │       └── js
 │           └── app.js
 └── tree.txt
 
-59 directories, 98 files
+68 directories, 114 files

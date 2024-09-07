@@ -60,3 +60,4 @@ public/
 # Ignore temporary files
 /tmp
 *.tmp
+node_modules

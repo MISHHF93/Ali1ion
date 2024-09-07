@@ -1,0 +1,57 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Widget Container */
+.widget-container {
+    width: 300px;
+    height: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Header of the Widget */
+.widget-header {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Body content */
+.widget-body {
+    padding: 15px;
+    color: #555;
+}
+
+/* Button Styling */
+.widget-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6961;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.widget-button:hover {
+    background-color: #ff5c57;
+}
