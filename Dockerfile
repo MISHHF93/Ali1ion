@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code for nao_ai_functions.py
-COPY src/application_integration/backend_services/python_app/ ./application_integration/backend_services/python_app/
+COPY src/nao_ai_module/nao_ai_app/ ./application_integration/backend_services/python_app/
 
 # Verify the installation of packages
 RUN pip list
@@ -24,11 +24,11 @@ FROM node:14 AS node-app
 WORKDIR /home/mishari_borah/nao_ai_project
 
 # Copy package.json and install dependencies
-COPY src/application_integration/backend_services/node_app/package*.json ./application_integration/backend_services/node_app/
+COPY src/nao_ai_module/nao_ai_app/package*.json ./application_integration/backend_services/node_app/
 RUN npm install --only=production
 
 # Copy application code for Node.js app
-COPY src/application_integration/backend_services/node_app/ ./application_integration/backend_services/node_app/
+COPY src/nao_ai_module/nao_ai_app/ ./application_integration/backend_services/node_app/
 
 # Expose port for Node.js application
 EXPOSE 8080
@@ -46,7 +46,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code for main.py
-COPY src/application_integration/ ./application_integration/
+COPY src/nao_ai_module/ ./application_integration/
 
 # Verify the installation of packages
 RUN pip list
