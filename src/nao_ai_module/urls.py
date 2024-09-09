@@ -10,6 +10,9 @@ urlpatterns = [
     path('generate_text/', views.generate_text_view, name='generate_text'),  # Generate text route
     path('create_embedding/', views.create_embedding, name='create_embedding'),  # Create embedding route
 
-    # New route for NAO-AI widget interaction
+    # Route for NAO-AI widget interaction
     path('nao-ai-response/', views.nao_ai_response, name='nao-ai-response'),  # NAO-AI model response for the widget
+
+    # Route for rendering the widget interface
+    path('widget/', views.widget_view, name='widget'),  # Widget rendering route
 ]

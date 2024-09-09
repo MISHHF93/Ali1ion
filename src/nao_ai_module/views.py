@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .nao_ai_app.nao_ai_functions import generate_text, generate_image, create_embedding  # Corrected import
+from .nao_ai_app.nao_ai_functions import generate_text, generate_image, create_embedding  
 
 def home(request):
     """
@@ -30,7 +30,7 @@ def generate_image_view(request):
     """
     if request.method == 'POST':
         prompt = request.POST.get('prompt', '')
-        size = request.POST.get('size', '1024x1024')  # Default size is 1024x1024 if not provided
+        size = request.POST.get('size', '1024x1024')  
         generated_image_url = generate_image(prompt, size)
         return JsonResponse({'generated_image_url': generated_image_url})
     return render(request, 'generate_image.html')
@@ -53,7 +53,7 @@ def synthesize_speech_basic(request):
     """
     if request.method == 'POST':
         text_to_synthesize = request.POST.get('text', '')
-        synthesized_audio_url = "http://example.com/basic_synthesized_audio.mp3"  # Example URL
+        synthesized_audio_url = "http://example.com/basic_synthesized_audio.mp3"  
         return JsonResponse({'audio_url': synthesized_audio_url})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
@@ -64,7 +64,7 @@ def synthesize_speech_hd(request):
     """
     if request.method == 'POST':
         text_to_synthesize = request.POST.get('text', '')
-        synthesized_audio_url = "http://example.com/hd_synthesized_audio.mp3"  # Example URL
+        synthesized_audio_url = "http://example.com/hd_synthesized_audio.mp3"  
         return JsonResponse({'audio_url': synthesized_audio_url})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
@@ -76,7 +76,7 @@ def create_embedding(request):
     """
     if request.method == 'POST':
         text = request.POST.get('text', '')
-        embedding = create_embedding(text)  # Call to the embedding creation function
+        embedding = create_embedding(text)  
         return JsonResponse({'embedding': embedding})
     return JsonResponse({'error': 'Invalid request method. Use POST to create embedding.'})
 
@@ -109,3 +109,15 @@ def nao_ai_response(request):
             return JsonResponse({'status': 'error', 'message': 'Invalid action specified.'}, status=400)
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method. Use POST.'}, status=400)
+
+def widget_view(request):
+    """
+    Renders the NAO-AI widget page.
+    """
+    return render(request, 'widget/index.html')
+
+def widget_view(request):
+    """
+    Renders the widget page.
+    """
+    return render(request, 'widget/index.html')

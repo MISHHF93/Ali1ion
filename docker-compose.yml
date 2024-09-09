@@ -1,0 +1,33 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: nao_ai_db
+      POSTGRES_USER: nao_ai_user
+      POSTGRES_PASSWORD: 1122
+    ports:
+      - "5433:5432"  # Exposing PostgreSQL on 5433 (internal PostgreSQL port remains 5432)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    command: python3 src/nao_ai_module/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    environment:
+      DB_ENGINE: django.db.backends.postgresql
+      DB_NAME: nao_ai_db
+      DB_USER: nao_ai_user
+      DB_PASSWORD: 1122
+      DB_HOST: postgres
+      DB_PORT: 5433  # Ensure this matches your custom port
+    depends_on:
+      - postgres
+    volumes:
+      - .:/code
+
+volumes:
+  postgres_data:
