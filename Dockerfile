@@ -80,3 +80,4 @@ CMD ["sh", "-c", "\
   node application_integration/backend_services/node_app/app.js & \
   python3 application_integration/main.py \
 "]
+RUN pip install openai

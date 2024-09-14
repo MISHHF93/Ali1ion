@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .nao_ai_app.nao_ai_functions import generate_text, generate_image, create_embedding  
+from .nao_ai_functions import generate_text, generate_image, create_embedding  # Updated the import path
 
 def home(request):
     """
@@ -11,9 +11,6 @@ def home(request):
 def generate_text_view(request):
     """
     Handles text generation requests.
-    If the request method is POST, it retrieves the 'prompt' from the request,
-    generates text using the generate_text function, and returns the result as JSON.
-    Otherwise, it renders the text generation form page.
     """
     if request.method == 'POST':
         prompt = request.POST.get('prompt', '')
@@ -24,9 +21,6 @@ def generate_text_view(request):
 def generate_image_view(request):
     """
     Handles image generation requests.
-    If the request method is POST, it retrieves the 'prompt' and 'size' from the request,
-    generates an image using the generate_image function, and returns the image URL as JSON.
-    Otherwise, it renders the image generation form page.
     """
     if request.method == 'POST':
         prompt = request.POST.get('prompt', '')
@@ -38,41 +32,34 @@ def generate_image_view(request):
 def transcribe_audio(request):
     """
     Handles audio transcription requests.
-    For now, this is a placeholder that returns a static message as a response.
-    Later, you can integrate audio transcription logic here.
     """
     if request.method == 'POST':
-        # Placeholder for audio transcription logic
         return JsonResponse({'transcribed_text': 'Audio transcription will be implemented here.'})
     return JsonResponse({'error': 'Invalid request method. Use POST to transcribe audio.'})
 
 def synthesize_speech_basic(request):
     """
     Handles basic speech synthesis requests.
-    This is a placeholder for basic speech synthesis logic.
     """
     if request.method == 'POST':
         text_to_synthesize = request.POST.get('text', '')
-        synthesized_audio_url = "http://example.com/basic_synthesized_audio.mp3"  
+        synthesized_audio_url = "http://example.com/basic_synthesized_audio.mp3"  # Placeholder URL
         return JsonResponse({'audio_url': synthesized_audio_url})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def synthesize_speech_hd(request):
     """
     Handles HD speech synthesis requests.
-    This is a placeholder for HD speech synthesis logic.
     """
     if request.method == 'POST':
         text_to_synthesize = request.POST.get('text', '')
-        synthesized_audio_url = "http://example.com/hd_synthesized_audio.mp3"  
+        synthesized_audio_url = "http://example.com/hd_synthesized_audio.mp3"  # Placeholder URL
         return JsonResponse({'audio_url': synthesized_audio_url})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def create_embedding(request):
     """
     Handles embedding creation requests.
-    For now, this is a placeholder that returns a static message as a response.
-    Later, you can integrate the embedding creation logic here.
     """
     if request.method == 'POST':
         text = request.POST.get('text', '')
@@ -83,8 +70,6 @@ def create_embedding(request):
 def nao_ai_response(request):
     """
     Handles requests from the NAO-AI widget.
-    This function processes requests sent by the widget and returns the relevant response
-    such as generating text, images, or embeddings.
     """
     if request.method == 'POST':
         action = request.POST.get('action', '')
@@ -113,11 +98,5 @@ def nao_ai_response(request):
 def widget_view(request):
     """
     Renders the NAO-AI widget page.
-    """
-    return render(request, 'widget/index.html')
-
-def widget_view(request):
-    """
-    Renders the widget page.
     """
     return render(request, 'widget/index.html')
