@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME', 'nao_ai_db'),
         'USER': os.getenv('DB_USER', 'nao_ai_user'),
         'PASSWORD': os.getenv('DB_PASSWORD', '1122'),
-        'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+        'HOST': os.getenv('DB_HOST', '127.0.0.1'),  # Use 'db' for Docker-based environments
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }

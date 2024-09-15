@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .nao_ai_functions import generate_text, generate_image, create_embedding  # Updated the import path
+from .nao_ai_functions import generate_text, generate_image, create_embedding  # Import NAO-AI functions
 
 def home(request):
     """
@@ -24,7 +24,7 @@ def generate_image_view(request):
     """
     if request.method == 'POST':
         prompt = request.POST.get('prompt', '')
-        size = request.POST.get('size', '1024x1024')  
+        size = request.POST.get('size', '1024x1024')  # Default size set to 1024x1024
         generated_image_url = generate_image(prompt, size)
         return JsonResponse({'generated_image_url': generated_image_url})
     return render(request, 'generate_image.html')
@@ -63,7 +63,7 @@ def create_embedding(request):
     """
     if request.method == 'POST':
         text = request.POST.get('text', '')
-        embedding = create_embedding(text)  
+        embedding = create_embedding(text)
         return JsonResponse({'embedding': embedding})
     return JsonResponse({'error': 'Invalid request method. Use POST to create embedding.'})
 

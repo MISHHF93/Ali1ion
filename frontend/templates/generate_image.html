@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,7 @@
 <body>
     <h1>Generate Image</h1>
     <form method="POST">
+        {% csrf_token %}
         <label for="prompt">Enter a prompt:</label>
         <input type="text" id="prompt" name="prompt" required>
         <label for="size">Select image size:</label>
@@ -25,4 +25,3 @@
     {% endif %}
 </body>
 </html>
-
