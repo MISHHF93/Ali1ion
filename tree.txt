@@ -20,10 +20,13 @@
 │   │   └── service.yaml
 │   ├── nginx.conf
 │   └── notification_channels.json
+├── craft.sh
 ├── docker-compose.yml
 ├── docs
 │   ├── CONTRIBUTING.md
 │   ├── README.md
+│   ├── campaign_deployment_guide.md
+│   ├── data_privacy_compliance.md
 │   └── deployment_guide.md
 ├── frontend
 │   ├── templates
@@ -183,15 +186,22 @@
 │   │   │   ├── __init__.py
 │   │   │   ├── __pycache__
 │   │   │   │   └── __init__.cpython-312.pyc
+│   │   │   ├── analytics_tools
+│   │   │   ├── email_marketing
 │   │   │   ├── facebook_ads
 │   │   │   │   └── facebook_ads_integration.py
 │   │   │   ├── google_ads
 │   │   │   │   ├── google-ads.yaml
 │   │   │   │   └── google_ads_integration.py
-│   │   │   └── hubspot
-│   │   │       └── hubspot_integration.py
+│   │   │   ├── hubspot
+│   │   │   │   └── hubspot_integration.py
+│   │   │   └── social_media_engagement
 │   │   └── zapier_integration
 │   │       └── zapier_workflows.zap
+│   ├── campaign_management
+│   │   ├── campaign_creation.py
+│   │   ├── campaign_tracking.py
+│   │   └── realtime_analytics.py
 │   ├── compute_resources
 │   │   ├── __init__.py
 │   │   ├── __pycache__
@@ -200,6 +210,9 @@
 │   │   │   └── startup_script.sh
 │   │   └── kubernetes_engine
 │   │       └── kubernetes_config.yaml
+│   ├── data_privacy
+│   │   ├── data_anonymization_tool.py
+│   │   └── privacy_policy.md
 │   ├── data_processing_analytics
 │   │   ├── __init__.py
 │   │   ├── __pycache__
@@ -222,6 +235,10 @@
 │   │       │   └── backup-20240630015154.sql
 │   │       ├── sql_backup.sh
 │   │       └── storage_backup.sh
+│   ├── engagement
+│   │   ├── chatbot_integration.py
+│   │   ├── engagement_logs.log
+│   │   └── notification_services.py
 │   ├── logs
 │   │   ├── debug.log
 │   │   └── debug.log.bak
@@ -232,6 +249,7 @@
 │   │   ├── alerts
 │   │   │   ├── alert_policies.json
 │   │   │   └── policy.json
+│   │   ├── marketing_kpi_alerts.json
 │   │   ├── stackdriver_logging
 │   │   │   └── logging_config.json
 │   │   └── stackdriver_monitoring
@@ -257,6 +275,10 @@
 │   │   ├── logs
 │   │   │   └── debug.log
 │   │   ├── manage.py
+│   │   ├── marketing_ai
+│   │   │   ├── customer_engagement_bot.py
+│   │   │   ├── personalized_campaign_generator.py
+│   │   │   └── real_time_analysis.py
 │   │   ├── models.py
 │   │   ├── nao_ai_functions.py
 │   │   ├── server_output.txt
@@ -295,16 +317,20 @@
 │   │   │   └── cloud_storage_setup.sh
 │   │   └── firestore
 │   │       └── add_user_document.py
-│   └── tests
-│       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-312.pyc
-│       │   ├── test_environment.cpython-312.pyc
-│       │   ├── test_install.cpython-312.pyc
-│       │   └── test_nao_ai_functions.cpython-312.pyc
-│       ├── test_environment.py
-│       ├── test_install.py
-│       └── test_nao_ai_functions.py
+│   ├── tests
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   ├── test_environment.cpython-312.pyc
+│   │   │   ├── test_install.cpython-312.pyc
+│   │   │   └── test_nao_ai_functions.cpython-312.pyc
+│   │   ├── test_environment.py
+│   │   ├── test_install.py
+│   │   └── test_nao_ai_functions.py
+│   └── visual_content
+│       ├── brand_identity
+│       └── image_generation_logs
+│           └── generation_log.txt
 └── tree.txt
 
-68 directories, 239 files
+78 directories, 255 files

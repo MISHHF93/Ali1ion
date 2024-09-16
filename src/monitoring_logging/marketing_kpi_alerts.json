@@ -1,0 +1,12 @@
+{
+    "kpi_alerts": {
+        "campaign_engagement": {
+            "threshold": 50,
+            "alert_on": "decrease"
+        },
+        "real_time_analytics": {
+            "threshold": 70,
+            "alert_on": "increase"
+        }
+    }
+}
