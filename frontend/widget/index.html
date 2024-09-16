@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAO AI Widget</title>
-
-    <!-- Load the static tag -->
-    {% load static %}
-
-    <!-- Link to CSS file for styling -->
-    <link rel="stylesheet" type="text/css" href="{% static 'widget/css/styles.css' %}">
+    <title>NAO-AI: Text & Image Generation</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the NAO AI Widget</h1>
-        <!-- Logo for NAO AI -->
-        <img src="{% static 'widget/images/logo.png' %}" alt="NAO AI Logo" />
+        <h1>NAO-AI Widget</h1>
+        <img src="images/logo.png" alt="NAO-AI Logo">
     </header>
 
-    <main id="widget-content">
-        <!-- Widget content goes here -->
-        <p>This is where the interactive content for the NAO AI widget will appear.</p>
-    </main>
+    <section id="text-generation">
+        <h2>Generate Text</h2>
+        <textarea id="text-input" placeholder="Enter prompt"></textarea>
+        <button id="generate-text">Generate Text</button>
+        <p id="text-output"></p>
+    </section>
 
-    <!-- JavaScript for widget functionality -->
-    <script src="{% static 'widget/js/app.js' %}"></script>
+    <section id="image-generation">
+        <h2>Generate Image</h2>
+        <input type="text" id="image-input" placeholder="Enter image prompt">
+        <button id="generate-image">Generate Image</button>
+        <div id="image-output">
+            <img id="generated-image" src="" alt="Generated Image" style="display:none;">
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,43 +1,49 @@
-/* src/static/widget/css/styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #4A90E2;
+    padding: 20px;
     color: white;
-    text-align: center;
-    padding: 1rem;
 }
 
 h1 {
-    margin: 0;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
-main {
-    padding: 2rem;
-}
-
-#widget-content {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 4px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-img {
-    max-width: 150px;
+section {
     margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
 }
 
-p {
-    font-size: 1.1rem;
-    color: #333;
+textarea, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+#image-output img {
+    max-width: 100%;
+    margin-top: 10px;
 }

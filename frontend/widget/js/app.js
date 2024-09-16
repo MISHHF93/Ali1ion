@@ -1,15 +1,33 @@
-// src/static/widget/js/app.js
+// Handle Text Generation
+document.getElementById('generate-text').addEventListener('click', async () => {
+    const prompt = document.getElementById('text-input').value;
 
-// Placeholder for NAO AI Widget functionality
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("NAO AI Widget is ready!");
+    const response = await fetch('http://localhost:5000/api/generate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt })
+    });
 
-    // Example: A function to handle form submissions or interactions
-    function handleInteraction() {
-        // Logic for handling widget interaction goes here
-        console.log("User interaction detected!");
-    }
+    const data = await response.json();
+    document.getElementById('text-output').innerText = data.response;
+});
 
-    // Call the function to handle interactions
-    handleInteraction();
+// Handle Image Generation
+document.getElementById('generate-image').addEventListener('click', async () => {
+    const prompt = document.getElementById('image-input').value;
+
+    const response = await fetch('http://localhost:5000/api/generate-image', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt })
+    });
+
+    const data = await response.json();
+    const imageElement = document.getElementById('generated-image');
+    imageElement.src = data.response;  // URL from the API response
+    imageElement.style.display = 'block';
 });

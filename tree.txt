@@ -25,208 +25,147 @@
 │   ├── CONTRIBUTING.md
 │   ├── README.md
 │   └── deployment_guide.md
-├── enhance_ai_module.sh
 ├── frontend
-│   ├── admin
-│   │   ├── css
-│   │   │   ├── autocomplete.css
-│   │   │   ├── base.css
-│   │   │   ├── changelists.css
-│   │   │   ├── dark_mode.css
-│   │   │   ├── dashboard.css
-│   │   │   ├── forms.css
-│   │   │   ├── login.css
-│   │   │   ├── nav_sidebar.css
-│   │   │   ├── responsive.css
-│   │   │   ├── responsive_rtl.css
-│   │   │   ├── rtl.css
-│   │   │   ├── unusable_password_field.css
-│   │   │   ├── vendor
-│   │   │   │   └── select2
-│   │   │   │       ├── LICENSE-SELECT2.md
-│   │   │   │       ├── select2.css
-│   │   │   │       └── select2.min.css
-│   │   │   └── widgets.css
-│   │   ├── img
-│   │   │   ├── LICENSE
-│   │   │   ├── README.txt
-│   │   │   ├── calendar-icons.svg
-│   │   │   ├── gis
-│   │   │   │   ├── move_vertex_off.svg
-│   │   │   │   └── move_vertex_on.svg
-│   │   │   ├── icon-addlink.svg
-│   │   │   ├── icon-alert.svg
-│   │   │   ├── icon-calendar.svg
-│   │   │   ├── icon-changelink.svg
-│   │   │   ├── icon-clock.svg
-│   │   │   ├── icon-deletelink.svg
-│   │   │   ├── icon-hidelink.svg
-│   │   │   ├── icon-no.svg
-│   │   │   ├── icon-unknown-alt.svg
-│   │   │   ├── icon-unknown.svg
-│   │   │   ├── icon-viewlink.svg
-│   │   │   ├── icon-yes.svg
-│   │   │   ├── inline-delete.svg
-│   │   │   ├── search.svg
-│   │   │   ├── selector-icons.svg
-│   │   │   ├── sorting-icons.svg
-│   │   │   ├── tooltag-add.svg
-│   │   │   └── tooltag-arrowright.svg
-│   │   └── js
-│   │       ├── SelectBox.js
-│   │       ├── SelectFilter2.js
-│   │       ├── actions.js
-│   │       ├── admin
-│   │       │   ├── DateTimeShortcuts.js
-│   │       │   └── RelatedObjectLookups.js
-│   │       ├── autocomplete.js
-│   │       ├── calendar.js
-│   │       ├── cancel.js
-│   │       ├── change_form.js
-│   │       ├── core.js
-│   │       ├── filters.js
-│   │       ├── inlines.js
-│   │       ├── jquery.init.js
-│   │       ├── nav_sidebar.js
-│   │       ├── popup_response.js
-│   │       ├── prepopulate.js
-│   │       ├── prepopulate_init.js
-│   │       ├── theme.js
-│   │       ├── unusable_password_field.js
-│   │       ├── urlify.js
-│   │       └── vendor
-│   │           ├── jquery
-│   │           │   ├── LICENSE.txt
-│   │           │   ├── jquery.js
-│   │           │   └── jquery.min.js
-│   │           ├── select2
-│   │           │   ├── LICENSE.md
-│   │           │   ├── i18n
-│   │           │   │   ├── af.js
-│   │           │   │   ├── ar.js
-│   │           │   │   ├── az.js
-│   │           │   │   ├── bg.js
-│   │           │   │   ├── bn.js
-│   │           │   │   ├── bs.js
-│   │           │   │   ├── ca.js
-│   │           │   │   ├── cs.js
-│   │           │   │   ├── da.js
-│   │           │   │   ├── de.js
-│   │           │   │   ├── dsb.js
-│   │           │   │   ├── el.js
-│   │           │   │   ├── en.js
-│   │           │   │   ├── es.js
-│   │           │   │   ├── et.js
-│   │           │   │   ├── eu.js
-│   │           │   │   ├── fa.js
-│   │           │   │   ├── fi.js
-│   │           │   │   ├── fr.js
-│   │           │   │   ├── gl.js
-│   │           │   │   ├── he.js
-│   │           │   │   ├── hi.js
-│   │           │   │   ├── hr.js
-│   │           │   │   ├── hsb.js
-│   │           │   │   ├── hu.js
-│   │           │   │   ├── hy.js
-│   │           │   │   ├── id.js
-│   │           │   │   ├── is.js
-│   │           │   │   ├── it.js
-│   │           │   │   ├── ja.js
-│   │           │   │   ├── ka.js
-│   │           │   │   ├── km.js
-│   │           │   │   ├── ko.js
-│   │           │   │   ├── lt.js
-│   │           │   │   ├── lv.js
-│   │           │   │   ├── mk.js
-│   │           │   │   ├── ms.js
-│   │           │   │   ├── nb.js
-│   │           │   │   ├── ne.js
-│   │           │   │   ├── nl.js
-│   │           │   │   ├── pl.js
-│   │           │   │   ├── ps.js
-│   │           │   │   ├── pt-BR.js
-│   │           │   │   ├── pt.js
-│   │           │   │   ├── ro.js
-│   │           │   │   ├── ru.js
-│   │           │   │   ├── sk.js
-│   │           │   │   ├── sl.js
-│   │           │   │   ├── sq.js
-│   │           │   │   ├── sr-Cyrl.js
-│   │           │   │   ├── sr.js
-│   │           │   │   ├── sv.js
-│   │           │   │   ├── th.js
-│   │           │   │   ├── tk.js
-│   │           │   │   ├── tr.js
-│   │           │   │   ├── uk.js
-│   │           │   │   ├── vi.js
-│   │           │   │   ├── zh-CN.js
-│   │           │   │   └── zh-TW.js
-│   │           │   ├── select2.full.js
-│   │           │   └── select2.full.min.js
-│   │           └── xregexp
-│   │               ├── LICENSE.txt
-│   │               ├── xregexp.js
-│   │               └── xregexp.min.js
-│   ├── rest_framework
-│   │   ├── css
-│   │   │   ├── bootstrap-theme.min.css
-│   │   │   ├── bootstrap-theme.min.css.map
-│   │   │   ├── bootstrap-tweaks.css
-│   │   │   ├── bootstrap.min.css
-│   │   │   ├── bootstrap.min.css.map
-│   │   │   ├── default.css
-│   │   │   ├── font-awesome-4.0.3.css
-│   │   │   └── prettify.css
-│   │   ├── docs
-│   │   │   ├── css
-│   │   │   │   ├── base.css
-│   │   │   │   ├── highlight.css
-│   │   │   │   └── jquery.json-view.min.css
-│   │   │   ├── img
-│   │   │   │   ├── favicon.ico
-│   │   │   │   └── grid.png
-│   │   │   └── js
-│   │   │       ├── api.js
-│   │   │       ├── highlight.pack.js
-│   │   │       └── jquery.json-view.min.js
-│   │   ├── fonts
-│   │   │   ├── fontawesome-webfont.eot
-│   │   │   ├── fontawesome-webfont.svg
-│   │   │   ├── fontawesome-webfont.ttf
-│   │   │   ├── fontawesome-webfont.woff
-│   │   │   ├── glyphicons-halflings-regular.eot
-│   │   │   ├── glyphicons-halflings-regular.svg
-│   │   │   ├── glyphicons-halflings-regular.ttf
-│   │   │   ├── glyphicons-halflings-regular.woff
-│   │   │   └── glyphicons-halflings-regular.woff2
-│   │   ├── img
-│   │   │   ├── glyphicons-halflings-white.png
-│   │   │   ├── glyphicons-halflings.png
-│   │   │   └── grid.png
-│   │   └── js
-│   │       ├── ajax-form.js
-│   │       ├── bootstrap.min.js
-│   │       ├── coreapi-0.1.1.js
-│   │       ├── csrf.js
-│   │       ├── default.js
-│   │       ├── jquery-3.7.1.min.js
-│   │       ├── load-ajax-form.js
-│   │       └── prettify-min.js
+│   ├── templates
 │   └── widget
 │       ├── css
-│       │   └── styles.css
+│       │   ├── LICENSE-SELECT2.md
+│       │   ├── autocomplete.css
+│       │   ├── base.css
+│       │   ├── bootstrap-theme.min.css
+│       │   ├── bootstrap-theme.min.css.map
+│       │   ├── bootstrap-tweaks.css
+│       │   ├── bootstrap.min.css
+│       │   ├── bootstrap.min.css.map
+│       │   ├── changelists.css
+│       │   ├── default.css
+│       │   ├── font-awesome-4.0.3.css
+│       │   ├── login.css
+│       │   ├── responsive.css
+│       │   ├── responsive_rtl.css
+│       │   ├── select2.css
+│       │   ├── select2.min.css
+│       │   ├── styles.css
+│       │   ├── unusable_password_field.css
+│       │   └── widgets.css
+│       ├── fonts
+│       │   ├── fontawesome-webfont.eot
+│       │   ├── fontawesome-webfont.svg
+│       │   ├── fontawesome-webfont.ttf
+│       │   ├── fontawesome-webfont.woff
+│       │   ├── glyphicons-halflings-regular.eot
+│       │   ├── glyphicons-halflings-regular.svg
+│       │   ├── glyphicons-halflings-regular.ttf
+│       │   ├── glyphicons-halflings-regular.woff
+│       │   └── glyphicons-halflings-regular.woff2
+│       ├── generate_image.html
+│       ├── generate_text.html
+│       ├── home.html
 │       ├── images
 │       │   └── logo.png
+│       ├── index.html
 │       └── js
-│           └── app.js
+│           ├── DateTimeShortcuts.js
+│           ├── LICENSE.md
+│           ├── LICENSE.txt
+│           ├── RelatedObjectLookups.js
+│           ├── SelectBox.js
+│           ├── SelectFilter2.js
+│           ├── actions.js
+│           ├── af.js
+│           ├── ajax-form.js
+│           ├── app.js
+│           ├── ar.js
+│           ├── autocomplete.js
+│           ├── az.js
+│           ├── bg.js
+│           ├── bn.js
+│           ├── bootstrap.min.js
+│           ├── bs.js
+│           ├── ca.js
+│           ├── cancel.js
+│           ├── change_form.js
+│           ├── core.js
+│           ├── cs.js
+│           ├── csrf.js
+│           ├── da.js
+│           ├── de.js
+│           ├── default.js
+│           ├── dsb.js
+│           ├── el.js
+│           ├── en.js
+│           ├── es.js
+│           ├── et.js
+│           ├── eu.js
+│           ├── fa.js
+│           ├── fi.js
+│           ├── filters.js
+│           ├── fr.js
+│           ├── gl.js
+│           ├── he.js
+│           ├── hi.js
+│           ├── hr.js
+│           ├── hsb.js
+│           ├── hu.js
+│           ├── hy.js
+│           ├── id.js
+│           ├── inlines.js
+│           ├── is.js
+│           ├── it.js
+│           ├── ja.js
+│           ├── jquery-3.7.1.min.js
+│           ├── jquery.init.js
+│           ├── jquery.js
+│           ├── jquery.min.js
+│           ├── ka.js
+│           ├── km.js
+│           ├── ko.js
+│           ├── load-ajax-form.js
+│           ├── lt.js
+│           ├── lv.js
+│           ├── mk.js
+│           ├── ms.js
+│           ├── nav_sidebar.js
+│           ├── nb.js
+│           ├── ne.js
+│           ├── nl.js
+│           ├── pl.js
+│           ├── popup_response.js
+│           ├── prepopulate.js
+│           ├── prepopulate_init.js
+│           ├── ps.js
+│           ├── pt-BR.js
+│           ├── pt.js
+│           ├── ro.js
+│           ├── ru.js
+│           ├── select2.full.js
+│           ├── select2.full.min.js
+│           ├── sk.js
+│           ├── sl.js
+│           ├── sq.js
+│           ├── sr-Cyrl.js
+│           ├── sr.js
+│           ├── sv.js
+│           ├── th.js
+│           ├── theme.js
+│           ├── tk.js
+│           ├── tr.js
+│           ├── uk.js
+│           ├── unusable_password_field.js
+│           ├── urlify.js
+│           ├── vi.js
+│           ├── xregexp.js
+│           ├── xregexp.min.js
+│           ├── zh-CN.js
+│           └── zh-TW.js
 ├── package-lock.json
 ├── package.json
 ├── requirements.txt
-├── restructure_frontend.sh
 ├── scripts
 │   ├── organize_project.sh
 │   ├── organize_widget_module.sh
 │   └── recreate_init_files.sh
+├── setup_frontend.sh
 ├── src
 │   ├── __init__.py
 │   ├── __pycache__
@@ -323,16 +262,6 @@
 │   │   ├── server_output.txt
 │   │   ├── settings.py
 │   │   ├── signals.py
-│   │   ├── src
-│   │   │   └── nao_ai_module
-│   │   │       └── logs
-│   │   │           └── debug.log
-│   │   ├── templates
-│   │   │   ├── generate_image.html
-│   │   │   ├── generate_text.html
-│   │   │   ├── home.html
-│   │   │   └── widget
-│   │   │       └── index.html
 │   │   ├── tests
 │   │   │   └── test_nao_ai_functions.py
 │   │   ├── tests.py
@@ -378,4 +307,4 @@
 │       └── test_nao_ai_functions.py
 └── tree.txt
 
-93 directories, 285 files
+68 directories, 239 files
