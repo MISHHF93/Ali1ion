@@ -29,7 +29,6 @@
 │   ├── data_privacy_compliance.md
 │   └── deployment_guide.md
 ├── frontend
-│   ├── templates
 │   └── widget
 │       ├── css
 │       │   ├── LICENSE-SELECT2.md
@@ -63,6 +62,7 @@
 │       │   └── glyphicons-halflings-regular.woff2
 │       ├── generate_image.html
 │       ├── generate_text.html
+│       ├── generate_widget.html
 │       ├── home.html
 │       ├── images
 │       │   └── logo.png
@@ -157,10 +157,12 @@
 │           ├── unusable_password_field.js
 │           ├── urlify.js
 │           ├── vi.js
+│           ├── widget_interaction.js
 │           ├── xregexp.js
 │           ├── xregexp.min.js
 │           ├── zh-CN.js
 │           └── zh-TW.js
+├── frontend_tree_structure.txt
 ├── package-lock.json
 ├── package.json
 ├── requirements.txt
@@ -186,16 +188,13 @@
 │   │   │   ├── __init__.py
 │   │   │   ├── __pycache__
 │   │   │   │   └── __init__.cpython-312.pyc
-│   │   │   ├── analytics_tools
-│   │   │   ├── email_marketing
 │   │   │   ├── facebook_ads
 │   │   │   │   └── facebook_ads_integration.py
 │   │   │   ├── google_ads
 │   │   │   │   ├── google-ads.yaml
 │   │   │   │   └── google_ads_integration.py
-│   │   │   ├── hubspot
-│   │   │   │   └── hubspot_integration.py
-│   │   │   └── social_media_engagement
+│   │   │   └── hubspot
+│   │   │       └── hubspot_integration.py
 │   │   └── zapier_integration
 │   │       └── zapier_workflows.zap
 │   ├── campaign_management
@@ -328,9 +327,8 @@
 │   │   ├── test_install.py
 │   │   └── test_nao_ai_functions.py
 │   └── visual_content
-│       ├── brand_identity
 │       └── image_generation_logs
 │           └── generation_log.txt
 └── tree.txt
 
-78 directories, 255 files
+73 directories, 258 files

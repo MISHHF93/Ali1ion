@@ -1,94 +1,148 @@
 #!/bin/bash
 
-# Script to enhance the project structure for NAOAI integration
+# Script to configure the widget for interacting with NAOAI backend
 
-echo "Crafting project structure for NAOAI integration..."
+echo "Setting up the widget for NAOAI..."
 
-# Ensure permissions for the project folder
+# Ensure permissions are correct
 chmod -R 755 .
 
-# Create new directories for marketing tools integration
-echo "Creating additional marketing tool integrations..."
-mkdir -p src/application_integration/marketing_tools_integration/email_marketing
-mkdir -p src/application_integration/marketing_tools_integration/analytics_tools
-mkdir -p src/application_integration/marketing_tools_integration/social_media_engagement
+# Create additional frontend directories for widget functionality if not present
+echo "Ensuring frontend/widget structure exists..."
+mkdir -p frontend/widget/js
+mkdir -p frontend/widget/css
+mkdir -p frontend/widget/images
 
-# Create campaign management module
-echo "Creating campaign management module..."
-mkdir -p src/campaign_management
-touch src/campaign_management/campaign_creation.py
-touch src/campaign_management/campaign_tracking.py
-touch src/campaign_management/realtime_analytics.py
+# Create or update JavaScript files for handling interaction with NAOAI
+echo "Setting up JavaScript files for API calls to NAOAI..."
+cat <<EOL > frontend/widget/js/widget_interaction.js
+// This script will handle interaction with NAOAI through AJAX and APIs
 
-# Create engagement module
-echo "Creating real-time engagement module..."
-mkdir -p src/engagement
-touch src/engagement/chatbot_integration.py
-touch src/engagement/notification_services.py
-touch src/engagement/engagement_logs.log
-
-# Enhance NAO AI module with marketing AI functions
-echo "Enhancing NAO AI module with marketing AI functions..."
-mkdir -p src/nao_ai_module/marketing_ai
-touch src/nao_ai_module/marketing_ai/real_time_analysis.py
-touch src/nao_ai_module/marketing_ai/personalized_campaign_generator.py
-touch src/nao_ai_module/marketing_ai/customer_engagement_bot.py
-
-# Create directory for visual content management
-echo "Creating visual content management..."
-mkdir -p src/visual_content
-mkdir -p src/visual_content/image_generation_logs
-mkdir -p src/visual_content/brand_identity
-touch src/visual_content/image_generation_logs/generation_log.txt
-
-# Create directory for GDPR and data privacy compliance
-echo "Setting up GDPR and privacy compliance..."
-mkdir -p src/data_privacy
-touch src/data_privacy/data_anonymization_tool.py
-touch src/data_privacy/privacy_policy.md
-
-# Enhance monitoring and logging with marketing KPIs
-echo "Enhancing monitoring and logging for marketing KPIs..."
-touch src/monitoring_logging/marketing_kpi_alerts.json
-cat <<EOL > src/monitoring_logging/marketing_kpi_alerts.json
-{
-    "kpi_alerts": {
-        "campaign_engagement": {
-            "threshold": 50,
-            "alert_on": "decrease"
-        },
-        "real_time_analytics": {
-            "threshold": 70,
-            "alert_on": "increase"
-        }
+document.addEventListener('DOMContentLoaded', function () {
+  // Example interaction function for real-time market analysis
+  async function getMarketAnalysis() {
+    try {
+      let response = await fetch('/api/naoai/real_time_analysis', {
+        method: 'GET'
+      });
+      let data = await response.json();
+      document.getElementById('market-analysis').innerText = data.analysis;
+    } catch (error) {
+      console.error('Error fetching market analysis:', error);
     }
+  }
+
+  // Example function for generating personalized marketing content
+  async function generatePersonalizedCampaign() {
+    try {
+      let response = await fetch('/api/naoai/personalized_campaign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ customer_id: '12345', preferences: { language: 'en' } })
+      });
+      let data = await response.json();
+      document.getElementById('campaign-output').innerText = data.campaign;
+    } catch (error) {
+      console.error('Error generating campaign:', error);
+    }
+  }
+
+  // Hook these functions to buttons or events in the widget
+  document.getElementById('get-analysis-btn').addEventListener('click', getMarketAnalysis);
+  document.getElementById('generate-campaign-btn').addEventListener('click', generatePersonalizedCampaign);
+});
+EOL
+
+# Ensure proper HTML files are available for the widget
+echo "Setting up HTML files for widget..."
+cat <<EOL > frontend/widget/generate_widget.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/widgets.css">
+  <title>NAOAI Widget</title>
+</head>
+<body>
+  <div class="widget-container">
+    <h1>NAOAI Marketing Assistant</h1>
+
+    <button id="get-analysis-btn">Get Market Analysis</button>
+    <div id="market-analysis"></div>
+
+    <button id="generate-campaign-btn">Generate Personalized Campaign</button>
+    <div id="campaign-output"></div>
+  </div>
+
+  <script src="js/widget_interaction.js"></script>
+</body>
+</html>
+EOL
+
+# Set up CSS styles for the widget
+echo "Setting up CSS files for styling the widget..."
+cat <<EOL > frontend/widget/css/widgets.css
+/* Basic styles for the NAOAI widget */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.widget-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#market-analysis, #campaign-output {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
 }
 EOL
 
-# Expand documentation
-echo "Adding marketing and compliance documentation..."
-mkdir -p docs
-touch docs/campaign_deployment_guide.md
-touch docs/data_privacy_compliance.md
-cat <<EOL > docs/campaign_deployment_guide.md
-# Campaign Deployment Guide
-This guide outlines how to deploy marketing campaigns using the NAOAI platform.
+# Check if API routes are set up for NAOAI interactions
+echo "Ensuring API routes for NAOAI interactions are defined..."
+# Updated path for api.py under /workspaces/NAO-AI/src/nao_ai_module/api/api.py
+cat <<EOL > /workspaces/NAO-AI/src/nao_ai_module/api/api.py
+from flask import Flask, jsonify, request
 
-## Steps:
-1. Use the campaign creation script in \`src/campaign_management/campaign_creation.py\`.
-2. Monitor the performance using the tracking script \`campaign_tracking.py\`.
-3. Adjust strategies in real time with the \`realtime_analytics.py\` script.
+app = Flask(__name__)
 
+# Example route for real-time market analysis
+@app.route('/api/naoai/real_time_analysis', methods=['GET'])
+def real_time_analysis():
+    # Placeholder for actual analysis logic
+    data = {"analysis": "Real-time market analysis data from NAOAI"}
+    return jsonify(data)
+
+# Example route for generating a personalized campaign
+@app.route('/api/naoai/personalized_campaign', methods=['POST'])
+def personalized_campaign():
+    # Placeholder for personalized campaign generation
+    customer_data = request.json
+    campaign = {"campaign": f"Generated campaign for customer {customer_data['customer_id']}"}
+    return jsonify(campaign)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 EOL
 
-cat <<EOL > docs/data_privacy_compliance.md
-# Data Privacy and GDPR Compliance
-This document ensures that all customer data is handled according to GDPR guidelines.
-
-## Privacy Best Practices:
-- Use the anonymization tool in \`src/data_privacy/data_anonymization_tool.py\`.
-- Ensure all data is compliant with the policies outlined in this document.
-
-EOL
-
-echo "Project structure crafted successfully!"
+echo "Widget and API interaction setup completed!"
