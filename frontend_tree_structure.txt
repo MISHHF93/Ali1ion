@@ -1,136 +1,140 @@
-/workspaces/NAO-AI/frontend
+frontend
+├── nao-ai-widget
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── autocomplete.css
+│   │   │   ├── base.css
+│   │   │   ├── bootstrap-theme.min.css
+│   │   │   ├── bootstrap-tweaks.css
+│   │   │   ├── bootstrap.min.css
+│   │   │   ├── changelists.css
+│   │   │   ├── default.css
+│   │   │   ├── font-awesome-4.0.3.css
+│   │   │   ├── login.css
+│   │   │   ├── responsive.css
+│   │   │   ├── responsive_rtl.css
+│   │   │   ├── select2.css
+│   │   │   ├── select2.min.css
+│   │   │   ├── styles.css
+│   │   │   ├── unusable_password_field.css
+│   │   │   └── widgets.css
+│   │   ├── fonts
+│   │   │   ├── fontawesome-webfont.eot
+│   │   │   ├── fontawesome-webfont.svg
+│   │   │   ├── fontawesome-webfont.ttf
+│   │   │   ├── fontawesome-webfont.woff
+│   │   │   ├── glyphicons-halflings-regular.eot
+│   │   │   ├── glyphicons-halflings-regular.svg
+│   │   │   ├── glyphicons-halflings-regular.ttf
+│   │   │   ├── glyphicons-halflings-regular.woff
+│   │   │   └── glyphicons-halflings-regular.woff2
+│   │   ├── images
+│   │   │   └── logo.png
+│   │   └── js
+│   │       ├── DateTimeShortcuts.js
+│   │       ├── RelatedObjectLookups.js
+│   │       ├── SelectBox.js
+│   │       ├── SelectFilter2.js
+│   │       ├── actions.js
+│   │       ├── af.js
+│   │       ├── ajax-form.js
+│   │       ├── app.js
+│   │       ├── ar.js
+│   │       ├── autocomplete.js
+│   │       ├── az.js
+│   │       ├── bg.js
+│   │       ├── bn.js
+│   │       ├── bootstrap.min.js
+│   │       ├── bs.js
+│   │       ├── ca.js
+│   │       ├── cancel.js
+│   │       ├── change_form.js
+│   │       ├── core.js
+│   │       ├── cs.js
+│   │       ├── csrf.js
+│   │       ├── da.js
+│   │       ├── de.js
+│   │       ├── default.js
+│   │       ├── dsb.js
+│   │       ├── el.js
+│   │       ├── en.js
+│   │       ├── es.js
+│   │       ├── et.js
+│   │       ├── eu.js
+│   │       ├── fa.js
+│   │       ├── fi.js
+│   │       ├── filters.js
+│   │       ├── fr.js
+│   │       ├── gl.js
+│   │       ├── he.js
+│   │       ├── hi.js
+│   │       ├── hr.js
+│   │       ├── hsb.js
+│   │       ├── hu.js
+│   │       ├── hy.js
+│   │       ├── id.js
+│   │       ├── inlines.js
+│   │       ├── is.js
+│   │       ├── it.js
+│   │       ├── ja.js
+│   │       ├── jquery-3.7.1.min.js
+│   │       ├── jquery.init.js
+│   │       ├── jquery.js
+│   │       ├── jquery.min.js
+│   │       ├── ka.js
+│   │       ├── km.js
+│   │       ├── ko.js
+│   │       ├── load-ajax-form.js
+│   │       ├── lt.js
+│   │       ├── lv.js
+│   │       ├── mk.js
+│   │       ├── ms.js
+│   │       ├── nav_sidebar.js
+│   │       ├── nb.js
+│   │       ├── ne.js
+│   │       ├── nl.js
+│   │       ├── pl.js
+│   │       ├── popup_response.js
+│   │       ├── prepopulate.js
+│   │       ├── prepopulate_init.js
+│   │       ├── ps.js
+│   │       ├── pt-BR.js
+│   │       ├── pt.js
+│   │       ├── ro.js
+│   │       ├── ru.js
+│   │       ├── select2.full.js
+│   │       ├── select2.full.min.js
+│   │       ├── sk.js
+│   │       ├── sl.js
+│   │       ├── sq.js
+│   │       ├── sr-Cyrl.js
+│   │       ├── sr.js
+│   │       ├── sv.js
+│   │       ├── th.js
+│   │       ├── theme.js
+│   │       ├── tk.js
+│   │       ├── tr.js
+│   │       ├── uk.js
+│   │       ├── unusable_password_field.js
+│   │       ├── urlify.js
+│   │       ├── vi.js
+│   │       ├── widget_interaction.js
+│   │       ├── xregexp.js
+│   │       ├── xregexp.min.js
+│   │       ├── zh-CN.js
+│   │       └── zh-TW.js
+│   ├── components
+│   │   ├── footer.html
+│   │   ├── header.html
+│   │   └── sidebar.html
+│   ├── config
+│   │   └── api_config.js
+│   └── templates
+│       ├── generate_image.html
+│       ├── generate_text.html
+│       ├── generate_widget.html
+│       └── index.html
 └── widget
-    ├── css
-    │   ├── LICENSE-SELECT2.md
-    │   ├── autocomplete.css
-    │   ├── base.css
-    │   ├── bootstrap-theme.min.css
-    │   ├── bootstrap-theme.min.css.map
-    │   ├── bootstrap-tweaks.css
-    │   ├── bootstrap.min.css
-    │   ├── bootstrap.min.css.map
-    │   ├── changelists.css
-    │   ├── default.css
-    │   ├── font-awesome-4.0.3.css
-    │   ├── login.css
-    │   ├── responsive.css
-    │   ├── responsive_rtl.css
-    │   ├── select2.css
-    │   ├── select2.min.css
-    │   ├── styles.css
-    │   ├── unusable_password_field.css
-    │   └── widgets.css
-    ├── fonts
-    │   ├── fontawesome-webfont.eot
-    │   ├── fontawesome-webfont.svg
-    │   ├── fontawesome-webfont.ttf
-    │   ├── fontawesome-webfont.woff
-    │   ├── glyphicons-halflings-regular.eot
-    │   ├── glyphicons-halflings-regular.svg
-    │   ├── glyphicons-halflings-regular.ttf
-    │   ├── glyphicons-halflings-regular.woff
-    │   └── glyphicons-halflings-regular.woff2
-    ├── generate_image.html
-    ├── generate_text.html
-    ├── generate_widget.html
-    ├── home.html
-    ├── images
-    │   └── logo.png
-    ├── index.html
-    └── js
-        ├── DateTimeShortcuts.js
-        ├── LICENSE.md
-        ├── LICENSE.txt
-        ├── RelatedObjectLookups.js
-        ├── SelectBox.js
-        ├── SelectFilter2.js
-        ├── actions.js
-        ├── af.js
-        ├── ajax-form.js
-        ├── app.js
-        ├── ar.js
-        ├── autocomplete.js
-        ├── az.js
-        ├── bg.js
-        ├── bn.js
-        ├── bootstrap.min.js
-        ├── bs.js
-        ├── ca.js
-        ├── cancel.js
-        ├── change_form.js
-        ├── core.js
-        ├── cs.js
-        ├── csrf.js
-        ├── da.js
-        ├── de.js
-        ├── default.js
-        ├── dsb.js
-        ├── el.js
-        ├── en.js
-        ├── es.js
-        ├── et.js
-        ├── eu.js
-        ├── fa.js
-        ├── fi.js
-        ├── filters.js
-        ├── fr.js
-        ├── gl.js
-        ├── he.js
-        ├── hi.js
-        ├── hr.js
-        ├── hsb.js
-        ├── hu.js
-        ├── hy.js
-        ├── id.js
-        ├── inlines.js
-        ├── is.js
-        ├── it.js
-        ├── ja.js
-        ├── jquery-3.7.1.min.js
-        ├── jquery.init.js
-        ├── jquery.js
-        ├── jquery.min.js
-        ├── ka.js
-        ├── km.js
-        ├── ko.js
-        ├── load-ajax-form.js
-        ├── lt.js
-        ├── lv.js
-        ├── mk.js
-        ├── ms.js
-        ├── nav_sidebar.js
-        ├── nb.js
-        ├── ne.js
-        ├── nl.js
-        ├── pl.js
-        ├── popup_response.js
-        ├── prepopulate.js
-        ├── prepopulate_init.js
-        ├── ps.js
-        ├── pt-BR.js
-        ├── pt.js
-        ├── ro.js
-        ├── ru.js
-        ├── select2.full.js
-        ├── select2.full.min.js
-        ├── sk.js
-        ├── sl.js
-        ├── sq.js
-        ├── sr-Cyrl.js
-        ├── sr.js
-        ├── sv.js
-        ├── th.js
-        ├── theme.js
-        ├── tk.js
-        ├── tr.js
-        ├── uk.js
-        ├── unusable_password_field.js
-        ├── urlify.js
-        ├── vi.js
-        ├── widget_interaction.js
-        ├── xregexp.js
-        ├── xregexp.min.js
-        ├── zh-CN.js
-        └── zh-TW.js
+    └── home.html
 
-5 directories, 128 files
+10 directories, 127 files
