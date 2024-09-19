@@ -1,1 +1,97 @@
-<!-- Sidebar HTML -->
+<aside class="sidebar bg-light border-end vh-100">
+    <div class="sidebar-header p-3 bg-primary text-white">
+      <!-- Sidebar Logo -->
+      <a href="/" class="navbar-brand text-white">
+        <img src="/assets/images/logo.png" alt="NAOAI Logo" height="40">
+        <span class="ms-2">NAOAI</span>
+      </a>
+    </div>
+  
+    <div class="sidebar-body p-3">
+      <!-- Navigation Links -->
+      <nav class="nav flex-column">
+        <a href="/" class="nav-link text-dark">
+          <i class="bi bi-house-door-fill"></i> Home
+        </a>
+        <a href="/dashboard" class="nav-link text-dark">
+          <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+        <a href="/analytics" class="nav-link text-dark">
+          <i class="bi bi-bar-chart-fill"></i> Analytics
+        </a>
+        <a href="/settings" class="nav-link text-dark">
+          <i class="bi bi-gear-fill"></i> Settings
+        </a>
+      </nav>
+  
+      <!-- Collapsible Section for Categories -->
+      <div class="accordion mt-4" id="categoriesAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <i class="bi bi-grid-fill"></i> Categories
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#categoriesAccordion">
+            <div class="accordion-body">
+              <nav class="nav flex-column">
+                <a href="/category/ai-tools" class="nav-link text-dark">AI Tools</a>
+                <a href="/category/market-insights" class="nav-link text-dark">Market Insights</a>
+                <a href="/category/reports" class="nav-link text-dark">Reports</a>
+                <a href="/category/tutorials" class="nav-link text-dark">Tutorials</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Dynamic Section: User Profile & Actions -->
+      <!-- This section assumes user authentication, replace with dynamic data in your backend -->
+      <div class="user-section mt-4 p-3 bg-light rounded border">
+        <!-- Example of dynamic user info, replace with templating logic like {{ user.username }} -->
+        <div class="d-flex align-items-center">
+          <img src="/assets/images/user-avatar.jpg" alt="User Avatar" class="rounded-circle me-2" height="40">
+          <div>
+            <h6 class="mb-0">John Doe</h6>
+            <small class="text-muted">johndoe@example.com</small>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <nav class="nav flex-column mt-2">
+          <a href="/profile" class="nav-link text-dark">
+            <i class="bi bi-person-circle"></i> Profile
+          </a>
+          <a href="/settings" class="nav-link text-dark">
+            <i class="bi bi-gear"></i> Settings
+          </a>
+          <a href="/logout" class="nav-link text-danger">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </nav>
+      </div>
+    </div>
+  
+    <!-- Footer Section within Sidebar -->
+    <div class="sidebar-footer text-center mt-auto p-3 bg-light border-top">
+      <small class="text-muted">&copy; 2024 NAOAI. All rights reserved.</small>
+    </div>
+  </aside>
+  
+  <!-- Sidebar CSS -->
+  <style>
+    .sidebar {
+      width: 250px;
+    }
+    .sidebar .nav-link:hover {
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+    .sidebar .nav-link.active {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    .accordion-button {
+      background-color: #f8f9fa;
+    }
+  </style>
+  

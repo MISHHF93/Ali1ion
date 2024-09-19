@@ -1,21 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - NAO AI</title>
-    <link rel="stylesheet" href="{% static 'widget/css/styles.css' %}">
+    <title>NAO-AI Widget Home</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/widget.css"> <!-- Custom styles for widgets -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/widget_interaction.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to NAO AI</h1>
+
+    <!-- Header Section -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="logo">NAO-AI Widget</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#feedback">Feedback</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main>
-        <p>This is the home page for NAO AI. Explore the features!</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 NAO AI</p>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-5 bg-light">
+        <div class="container">
+            <h2 class="display-4">Welcome to NAO-AI Widget</h2>
+            <p class="lead">Enhance your business with GPT-4 powered solutions for real-time data, AI-generated text, and personalized marketing content.</p>
+            <a href="#start-widget" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container py-5">
+        <h2 class="text-center mb-4">Features</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>AI Text Generation</h3>
+                <p>Generate accurate and contextually intelligent text based on user prompts.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>AI Image Creation</h3>
+                <p>Transform text-based descriptions into visually stunning images.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Real-Time Data Insights</h3>
+                <p>Access the latest data-driven insights for better decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Widget Section -->
+    <section id="start-widget" class="container py-5">
+        <h2 class="text-center mb-4">Start Using NAO-AI Widget</h2>
+        <div class="row">
+            <!-- Text Generation Widget -->
+            <div class="col-md-6 mb-5">
+                <h3 class="text-center">Text Generation</h3>
+                <form id="text-widget-form">
+                    <div class="form-group">
+                        <label for="text-prompt">Enter your prompt:</label>
+                        <input type="text" id="text-prompt" class="form-control" placeholder="Type your prompt here" required>
+                    </div>
+                    <button type="button" id="generate-text" class="btn btn-primary btn-block">Generate Text</button>
+                </form>
+                <div id="text-result" class="mt-4">
+                    <h4>Generated Text:</h4>
+                    <pre class="output-box"></pre>
+                </div>
+            </div>
+
+            <!-- Image Generation Widget -->
+            <div class="col-md-6 mb-5">
+                <h3 class="text-center">Image Generation</h3>
+                <form id="image-widget-form">
+                    <div class="form-group">
+                        <label for="image-prompt">Enter image description:</label>
+                        <input type="text" id="image-prompt" class="form-control" placeholder="Describe the image you want" required>
+                    </div>
+                    <button type="button" id="generate-image" class="btn btn-primary btn-block">Generate Image</button>
+                </form>
+                <div id="image-result" class="mt-4 text-center">
+                    <h4>Generated Image:</h4>
+                    <img id="generated-image" src="" alt="Generated Image" class="img-fluid" style="display:none;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Data Widget -->
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mb-5">
+                <h3 class="text-center">Real-Time Data</h3>
+                <form id="real-time-widget-form">
+                    <div class="form-group">
+                        <label for="real-time-query">Enter your query:</label>
+                        <input type="text" id="real-time-query" class="form-control" placeholder="Ask about current market trends..." required>
+                    </div>
+                    <button type="button" id="real-time-btn" class="btn btn-secondary btn-block">Get Real-Time Data</button>
+                </form>
+                <div id="real-time-result" class="mt-4">
+                    <h4>Real-Time Data Result:</h4>
+                    <pre class="output-box"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="container py-5">
+        <h2 class="text-center mb-4">Give Us Your Feedback</h2>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="feedback-input">Your Feedback:</label>
+                <textarea id="feedback-input" class="form-control" rows="4" placeholder="Tell us your experience..." required></textarea>
+            </div>
+            <button type="button" id="submit-feedback" class="btn btn-success btn-block">Submit Feedback</button>
+        </form>
+        <div id="feedback-status" class="mt-3" style="display:none;">
+            <h4>Thank you for your feedback!</h4>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 NAO-AI Widget. All rights reserved.</p>
     </footer>
+
+    <!-- Scripts for interaction -->
+    <script>
+        // Handle text generation
+        document.getElementById('generate-text').addEventListener('click', async () => {
+            const prompt = document.getElementById('text-prompt').value;
+            const response = await fetch('/api/naoai/generate-text', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+            const data = await response.json();
+            document.getElementById('text-result').querySelector('.output-box').innerText = data.response;
+        });
+
+        // Handle image generation
+        document.getElementById('generate-image').addEventListener('click', async () => {
+            const prompt = document.getElementById('image-prompt').value;
+            const response = await fetch('/api/naoai/generate-image', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+            const data = await response.json();
+            const imageElement = document.getElementById('generated-image');
+            imageElement.src = data.response;
+            imageElement.style.display = 'block';
+        });
+
+        // Handle real-time data requests
+        document.getElementById('real-time-btn').addEventListener('click', async () => {
+            const query = document.getElementById('real-time-query').value;
+            const response = await fetch('/api/naoai/real-time-query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+            const data = await response.json();
+            document.getElementById('real-time-result').querySelector('.output-box').innerText = data.response;
+        });
+
+        // Handle feedback submission
+        document.getElementById('submit-feedback').addEventListener('click', async () => {
+            const feedback = document.getElementById('feedback-input').value;
+            const response = await fetch('/api/naoai/submit-feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ feedback })
+            });
+            document.getElementById('feedback-status').style.display = 'block';
+        });
+    </script>
+
 </body>
 </html>

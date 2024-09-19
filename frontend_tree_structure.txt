@@ -5,10 +5,7 @@
 │   │   │   ├── bootstrap-theme.min.css
 │   │   │   ├── bootstrap.min.css
 │   │   │   ├── font-awesome-4.0.3.css
-│   │   │   ├── main.css
-│   │   │   ├── responsive_rtl.css
-│   │   │   ├── select2.css
-│   │   │   └── select2.min.css
+│   │   │   └── main.css
 │   │   ├── fonts
 │   │   │   ├── fontawesome-webfont.eot
 │   │   │   ├── fontawesome-webfont.svg
@@ -20,11 +17,7 @@
 │   │       ├── ajax-form.js
 │   │       ├── app.js
 │   │       ├── bootstrap.min.js
-│   │       ├── bs.js
 │   │       ├── gpt_interaction.js
-│   │       ├── jquery-3.7.1.min.js
-│   │       ├── jquery.init.js
-│   │       ├── jquery.js
 │   │       ├── jquery.min.js
 │   │       ├── voice_interaction.js
 │   │       └── widget_interaction.js
@@ -40,4 +33,4 @@
 └── widget
     └── home.html
 
-10 directories, 30 files
+10 directories, 23 files

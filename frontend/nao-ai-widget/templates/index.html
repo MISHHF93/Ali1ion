@@ -3,34 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAO-AI: Text & Image Generation</title>
-    <link rel="stylesheet" href="css/styles.css">
-n    <link rel="stylesheet" href="assets/css/main.css">
+    <title>NAO-AI - AI-Powered Solutions</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css"> <!-- Custom styles for enhancement -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/widget_interaction.js"></script>
 </head>
 <body>
-    <header>
-        <h1>NAO-AI Widget</h1>
-        <img src="images/logo.png" alt="NAO-AI Logo">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NAO-AI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Welcome to NAO-AI</h1>
+        <p class="lead">Unlock the power of AI for your business with GPT-4 powered solutions.</p>
+        <a class="btn btn-primary btn-lg" href="#get-started" role="button">Get Started</a>
     </header>
 
-    <section id="text-generation">
-        <h2>Generate Text</h2>
-        <textarea id="text-input" placeholder="Enter prompt"></textarea>
-        <button id="generate-text">Generate Text</button>
-        <p id="text-output"></p>
-    </section>
-
-    <section id="image-generation">
-        <h2>Generate Image</h2>
-        <input type="text" id="image-input" placeholder="Enter image prompt">
-        <button id="generate-image">Generate Image</button>
-        <div id="image-output">
-            <img id="generated-image" src="" alt="Generated Image" style="display:none;">
+    <!-- Features Section -->
+    <section id="features" class="container my-5">
+        <h2 class="text-center mb-4">Explore NAO-AI's Features</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Text Generation</h3>
+                <p>Generate intelligent responses to complex prompts using the latest GPT-4 model.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Image Generation</h3>
+                <p>Create stunning visuals from text-based descriptions with the AI-powered image generator.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Real-Time Data</h3>
+                <p>Access real-time market analysis and data-driven insights instantly.</p>
+            </div>
         </div>
     </section>
 
-    <script src="js/app.js"></script>
-n    <script src="assets/js/gpt_interaction.js"></script>
-n    <script src="assets/js/voice_interaction.js"></script>
+    <!-- Main Interaction Section -->
+    <section id="get-started" class="container my-5">
+        <h2 class="text-center mb-4">Interact with NAO-AI</h2>
+
+        <!-- Text Generation Form -->
+        <div class="row mb-5">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">Generate Text</h3>
+                <form id="text-generation-form">
+                    <div class="form-group">
+                        <label for="text-input">Enter your prompt:</label>
+                        <input type="text" id="text-input" class="form-control" placeholder="Describe what you'd like to generate" required>
+                    </div>
+                    <button type="button" id="generate-text" class="btn btn-primary btn-block">Generate</button>
+                </form>
+                <div id="text-output" class="output mt-4">
+                    <h4>Generated Response:</h4>
+                    <pre class="output-box"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Generation Form -->
+        <div class="row mb-5">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">Generate Image</h3>
+                <form id="image-generation-form">
+                    <div class="form-group">
+                        <label for="image-input">Enter your image description:</label>
+                        <input type="text" id="image-input" class="form-control" placeholder="Describe the image you want" required>
+                    </div>
+                    <button type="button" id="generate-image" class="btn btn-primary btn-block">Generate</button>
+                </form>
+                <div id="image-output" class="output mt-4 text-center">
+                    <h4>Generated Image:</h4>
+                    <img id="generated-image" src="" alt="Generated Image" class="img-fluid" style="display: none;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Data Form -->
+        <div class="row mb-5">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">Real-Time Data</h3>
+                <form id="real-time-form">
+                    <div class="form-group">
+                        <label for="real-time-input">Ask a real-time question:</label>
+                        <input type="text" id="real-time-input" class="form-control" placeholder="Enter your query" required>
+                    </div>
+                    <button type="button" id="real-time-btn" class="btn btn-primary btn-block">Get Data</button>
+                </form>
+                <div id="real-time-output" class="output mt-4">
+                    <h4>Real-Time Response:</h4>
+                    <pre class="output-box"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalized Campaign Generation Form -->
+        <div class="row mb-5">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center">Generate Personalized Campaign</h3>
+                <form id="campaign-form">
+                    <div class="form-group">
+                        <label for="customer-id">Customer ID:</label>
+                        <input type="text" id="customer-id" class="form-control" placeholder="Enter the customer ID" required>
+                    </div>
+                    <button type="button" id="generate-campaign-btn" class="btn btn-secondary btn-block">Generate Campaign</button>
+                </form>
+                <div id="campaign-output" class="output mt-4">
+                    <h4>Campaign Output:</h4>
+                    <pre class="output-box"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="container my-5">
+        <h2 class="text-center mb-4">We Value Your Feedback</h2>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="feedback-input">Tell us your experience:</label>
+                <textarea id="feedback-input" class="form-control" placeholder="Let us know your thoughts..." rows="4" required></textarea>
+            </div>
+            <button type="button" id="submit-feedback" class="btn btn-success btn-block">Submit Feedback</button>
+        </form>
+        <div id="feedback-status" class="mt-3" style="display: none;">
+            <h4>Thank you for your feedback!</h4>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 NAO-AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Text Generation Script
+        document.getElementById('generate-text').addEventListener('click', async () => {
+            const prompt = document.getElementById('text-input').value;
+            const response = await fetch('/api/naoai/generate-text', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+
+            const data = await response.json();
+            document.getElementById('text-output').querySelector('.output-box').innerText = data.response;
+        });
+
+        // Image Generation Script
+        document.getElementById('generate-image').addEventListener('click', async () => {
+            const prompt = document.getElementById('image-input').value;
+            const response = await fetch('/api/naoai/generate-image', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+
+            const data = await response.json();
+            const imageElement = document.getElementById('generated-image');
+            imageElement.src = data.response;
+            imageElement.style.display = 'block';
+        });
+
+        // Real-Time Data Script
+        document.getElementById('real-time-btn').addEventListener('click', async () => {
+            const query = document.getElementById('real-time-input').value;
+            const response = await fetch('/api/naoai/real-time-query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await response.json();
+            document.getElementById('real-time-output').querySelector('.output-box').innerText = data.response;
+        });
+
+        // Personalized Campaign Script
+        document.getElementById('generate-campaign-btn').addEventListener('click', async () => {
+            const customerID = document.getElementById('customer-id').value;
+            const response = await fetch('/api/naoai/personalized_campaign', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ customer_id: customerID, preferences: { language: 'en' } })
+            });
+
+            const data = await response.json();
+            document.getElementById('campaign-output').querySelector('.output-box').innerText = data.campaign;
+        });
+
+        // Feedback Submission Script
+        document.getElementById('submit-feedback').addEventListener('click', async () => {
+            const feedback = document.getElementById('feedback-input').value;
+            const response = await fetch('/api/naoai/submit-feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ feedback })
+            });
+
+            document.getElementById('feedback-status').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
