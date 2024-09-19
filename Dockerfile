@@ -9,8 +9,8 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code for nao_ai_functions.py
-COPY src/nao_ai_module/nao_ai_app/ ./application_integration/backend_services/python_app/
+# Copy application code (Adjust path here)
+COPY src/nao_ai_module/ ./application_integration/backend_services/python_app/
 
 # Verify the installation of packages
 RUN pip list
@@ -24,11 +24,11 @@ FROM node:14 AS node-app
 WORKDIR /home/mishari_borah/nao_ai_project
 
 # Copy package.json and install dependencies
-COPY src/nao_ai_module/nao_ai_app/package*.json ./application_integration/backend_services/node_app/
+COPY src/nao_ai_module/package*.json ./application_integration/backend_services/node_app/
 RUN npm install --only=production
 
-# Copy application code for Node.js app
-COPY src/nao_ai_module/nao_ai_app/ ./application_integration/backend_services/node_app/
+# Copy application code (Adjust path here)
+COPY src/nao_ai_module/ ./application_integration/backend_services/node_app/
 
 # Expose port for Node.js application
 EXPOSE 8080
@@ -45,7 +45,7 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code for main.py
+# Copy application code (Adjust path here)
 COPY src/nao_ai_module/ ./application_integration/
 
 # Verify the installation of packages
@@ -61,7 +61,7 @@ WORKDIR /home/mishari_borah/nao_ai_project
 # Install Node.js for the Node.js app
 RUN apt-get update && apt-get install -y nodejs npm
 
-# Copy Python App (nao_ai_functions.py)
+# Copy Python App (Adjust path here)
 COPY --from=python-app /home/mishari_borah/nao_ai_project/application_integration/backend_services/python_app/ ./application_integration/backend_services/python_app/
 
 # Copy Node.js App
@@ -74,10 +74,12 @@ COPY --from=cloud-functions-app /home/mishari_borah/nao_ai_project/application_i
 RUN ls -la ./application_integration/backend_services/python_app/
 RUN ls -la ./application_integration/
 
+# Install OpenAI package for Python
+RUN pip install openai
+
 # Define entrypoints for each service
 CMD ["sh", "-c", "\
   python3 application_integration/backend_services/python_app/nao_ai_functions.py & \
   node application_integration/backend_services/node_app/app.js & \
   python3 application_integration/main.py \
 "]
-RUN pip install openai
