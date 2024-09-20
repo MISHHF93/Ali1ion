@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "forward-dream-436204-t3",
+  "private_key_id": "f94dd9725d1d7b4322d9b4b184c1da29340eda3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCl1mAtTd5o+XzQ\nv3EOKI1CPTsJflcZSqPbn0Th4f5RRJvE+h2OZJt8ll2IqoptsSJndEmQLea3eKFL\n4ZQWl8oW/8G/iAyONFS1FGaraGVhTOL9iXPhzzTgEy+wEyuaYwlqIB+yXtcI+5BU\nskT1vyhgtOzFsyIbGAGDr5hPTorQZCj7ppJSynLe3Wm2vSiQxLz/KAZcLxjLkTIq\nEo6dskpeIgjaZAgGF4mZcFnu0ORK7g4gKEPrxg57PT/XGB7YU8ifn4NRTQFSOVB2\nGxjb83mILFKYHVDNBELVP/x0aVxtO2cFZn995nt5sOhysYVNREwGcbOKCC268ba1\njSe13uG5AgMBAAECggEAJffNYEH2PEl2gqJ6A1hUcwhqxlMnJNK6bjNqRV8E511S\nXog3ER1GngEdHAeTluaZrl7o4ronmvTi1OkqCvwomBhpJu1ClqIzjJvFn9PQdjTw\nuURphBb5D55E6kaRUpD/HE2LhD6Dc/qIgmOoNy1TVMTHesH2+oYF/rzKncmpLWmK\nugbhZToQl+M9y3EYfkxQCRTfiMvrn7pNsqc/qyijyDO3DaXuQfkVsaMF9/iApT7h\nPk1SqPVkib2sndKf7P4Nw2hHEeJ60lj9U+So271Ld9WFY0725DNDjYz7rvqpDU1X\n+hDyz3CtJnjCeWLs6S1klwM/UfLLlU+PBVe1PnuKCQKBgQDTNdYfTZf1iYVebBzC\nxnJp6VJtf3S+Yj3YBs7ui8ttxzPG3ZgmFzJFjpmpSmy40cXTYWFA7GnWTEeKLKvh\nJTtE0F6pV9LOscVajsOqA9fx3+Rwd3ArmoanRncKULxxg/ydy2cdh5PnfxddGGS/\nXzaN4YvtJuYUYgc7GFPJCdBchQKBgQDJAVcVUzHcgxSJd5GL8Ra23x6Z/EIqGWBc\n4HpGxXgmejDI8Cmg+0STyMOa2JvQZyyA6pCRpyAjJO65sTnsGcohOFfeLWudekfu\nJIZDPJA11iR1siVH4WuI/3nRpXLBGAnQTwKZ0tfjDFHaRucSnqtt9wn08eKcyaXQ\nIVYXaUpApQKBgASD3Rz0MrBsDS7UjtTXGzEKbNmsZNmBDiNlGd1dna6uGHxC1nLS\nAiAciUpmLebRjTIUndiedTDAlrLse4wnmJnC/pMOLpJ+mGJ0NNiYlnA0QhTpaLt1\n5TUEO5071ptyn97br0uhT1cej2hNEjJJHchwruYV88sxwUfRIFFm5U5lAoGAH5pW\nVsP90u3JDNP/zkDZkWcDKLLAtF3JCNFCaF4jxejwQqd/5A+deJ7YIkBsPxf5p0s5\n76yXIO9tmUSEFtr3LMHvDr+Va+0N4iNb+LZM9in1EYww0Fxgy+le/ddFc5aT9Gx3\nvDeqOch2FhuPuR25VlDBAAIH3x7VMyQKpSOoyQECgYAZkDCKgVQsOhZ+SfpzgVRX\nX2VOD8OARQq+VInn6LqHMBmbL46o1TjihUswNnTlBRwiWrfQ3469Vg3eMhPR/Wfk\nSBrpMbtlElfaxrdKs7PXf+jAIw6LVRlR2bZo8xpLCkfEVzgD0LLk7ZdO7jeah5+p\n734DcRdvOLwjAtdfFh56Zg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "nao-ai@forward-dream-436204-t3.iam.gserviceaccount.com",
+  "client_id": "114015988173941154382",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nao-ai%40forward-dream-436204-t3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

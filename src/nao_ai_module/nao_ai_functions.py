@@ -13,7 +13,7 @@ logging.basicConfig(filename=log_file_path, level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Load OpenAI API key from environment variables
-openai.api_key = os.getenv('Osk-proj-UgyvOY6W4dOe16ogKcZWT3BlbkFJk70y2k9tCs21Ry27oAq4')
+openai.api_key = os.getenv('OPENAI_API_KEY')  # Correct environment variable
 
 def generate_text(prompt):
     """

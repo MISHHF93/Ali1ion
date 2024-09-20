@@ -9,6 +9,9 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Manually install Flask in case it's not in the requirements
+RUN pip install Flask==2.3.2
+
 # Copy application code (Adjust path here)
 COPY src/nao_ai_module/ ./application_integration/backend_services/python_app/
 
@@ -24,11 +27,11 @@ FROM node:14 AS node-app
 WORKDIR /home/mishari_borah/nao_ai_project
 
 # Copy package.json and install dependencies
-COPY src/nao_ai_module/package*.json ./application_integration/backend_services/node_app/
+COPY src/backend/package*.json ./application_integration/backend_services/node_app/
 RUN npm install --only=production
 
 # Copy application code (Adjust path here)
-COPY src/nao_ai_module/ ./application_integration/backend_services/node_app/
+COPY src/backend/ ./application_integration/backend_services/node_app/
 
 # Expose port for Node.js application
 EXPOSE 8080
@@ -44,6 +47,9 @@ RUN pip install --upgrade pip
 # Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Manually install Flask in case it's not in the requirements
+RUN pip install Flask==2.3.2
 
 # Copy application code (Adjust path here)
 COPY src/nao_ai_module/ ./application_integration/
@@ -76,6 +82,9 @@ RUN ls -la ./application_integration/
 
 # Install OpenAI package for Python
 RUN pip install openai
+
+# Install Flask explicitly if still needed
+RUN pip install Flask==2.3.2
 
 # Define entrypoints for each service
 CMD ["sh", "-c", "\

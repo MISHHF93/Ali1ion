@@ -1,0 +1,161 @@
+/workspaces/NAO-AI/src
+├── __init__.py
+├── __pycache__
+│   └── __init__.cpython-312.pyc
+├── application_integration
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── after_effects_plugin
+│   │   └── plugin.js
+│   ├── api_gateway
+│   │   ├── openapi.yaml
+│   │   └── swagger.yaml
+│   ├── marketing_tools_integration
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-312.pyc
+│   │   ├── facebook_ads
+│   │   │   └── facebook_ads_integration.py
+│   │   ├── google_ads
+│   │   │   ├── google-ads.yaml
+│   │   │   └── google_ads_integration.py
+│   │   └── hubspot
+│   │       └── hubspot_integration.py
+│   └── zapier_integration
+│       └── zapier_workflows.zap
+├── campaign_management
+│   ├── campaign_creation.py
+│   ├── campaign_tracking.py
+│   └── realtime_analytics.py
+├── compute_resources
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── compute_engine
+│   │   └── startup_script.sh
+│   └── kubernetes_engine
+│       └── kubernetes_config.yaml
+├── data_privacy
+│   ├── data_anonymization_tool.py
+│   └── privacy_policy.md
+├── data_processing_analytics
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── bigquery
+│   │   └── bigquery_queries.sql
+│   ├── dataflow
+│   │   └── dataflow_job.py
+│   └── pubsub
+│       └── pubsub_listener.py
+├── data_synchronization
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── apache_kafka
+│   │   └── kafka_config.properties
+│   └── backup_solutions
+│       ├── backup-directory
+│       │   ├── backup-20240630014827.sql
+│       │   └── backup-20240630015154.sql
+│       ├── sql_backup.sh
+│       └── storage_backup.sh
+├── engagement
+│   ├── chatbot_integration.py
+│   ├── engagement_logs.log
+│   └── notification_services.py
+├── logs
+│   ├── debug.log
+│   └── debug.log.bak
+├── monitoring_logging
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── alerts
+│   │   ├── alert_policies.json
+│   │   └── policy.json
+│   ├── marketing_kpi_alerts.json
+│   ├── stackdriver_logging
+│   │   └── logging_config.json
+│   └── stackdriver_monitoring
+│       └── monitoring_setup.sh
+├── nao_ai_module
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── nao_ai_functions.cpython-312.pyc
+│   │   ├── settings.cpython-312.pyc
+│   │   ├── signals.cpython-312.pyc
+│   │   ├── tests.cpython-312.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   ├── views.cpython-312.pyc
+│   │   └── wsgi.cpython-312.pyc
+│   ├── admin.py
+│   ├── api
+│   │   └── api.py
+│   ├── apps.py
+│   ├── logs
+│   │   └── debug.log
+│   ├── main.py
+│   ├── manage.py
+│   ├── marketing_ai
+│   │   ├── customer_engagement_bot.py
+│   │   ├── personalized_campaign_generator.py
+│   │   └── real_time_analysis.py
+│   ├── models.py
+│   ├── nao_ai_functions.py
+│   ├── server_output.txt
+│   ├── settings.py
+│   ├── signals.py
+│   ├── tests
+│   │   └── test_nao_ai_functions.py
+│   ├── tests.py
+│   ├── tree.txt
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── networking_security
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── cloud_armor
+│   │   └── armor_config.json
+│   ├── firewall_rules
+│   │   └── firewall_rules.sh
+│   ├── iam_roles
+│   │   └── iam_policy.json
+│   └── vpc_setup
+│       └── vpc_config.sh
+├── storage_databases
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── bigtable
+│   │   └── bigtable_setup.sh
+│   ├── cloud_sql
+│   │   ├── cloud_sql_setup.sh
+│   │   └── init_db.sql
+│   ├── cloud_storage
+│   │   ├── bucket_policy.json
+│   │   └── cloud_storage_setup.sh
+│   └── firestore
+│       └── add_user_document.py
+├── tests
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── test_environment.cpython-312.pyc
+│   │   ├── test_install.cpython-312.pyc
+│   │   └── test_nao_ai_functions.cpython-312.pyc
+│   ├── test_environment.py
+│   ├── test_install.py
+│   └── test_nao_ai_functions.py
+└── visual_content
+    └── image_generation_logs
+        └── generation_log.txt
+
+56 directories, 102 files

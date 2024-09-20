@@ -10,13 +10,13 @@
   "author": "Mishari Borah",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.2",
-    "mongoose": "^6.11.0",
-    "morgan": "^1.10.0",
-    "helmet": "^5.0.2",
+    "body-parser": "^1.20.3",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "express": "^4.21.0",
+    "helmet": "^5.0.2",
+    "mongoose": "^6.11.0",
+    "morgan": "^1.10.0"
   },
   "directories": {
     "doc": "docs"

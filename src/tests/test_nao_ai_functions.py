@@ -1,17 +1,29 @@
 import unittest
-from src.nao_ai_module.nao_ai_functions import openai_request
+from unittest.mock import patch
+from src.nao_ai_module.nao_ai_functions import generate_text
 
 class TestNaoAiFunctions(unittest.TestCase):
-    def test_openai_request(self):
+
+    @patch('src.nao_ai_module.nao_ai_functions.openai.ChatCompletion.create')
+    def test_openai_request(self, mock_chat_completion):
+        """
+        Tests the generate_text (openai_request) function with a mock API response.
+        """
         # Arrange
         prompt = "Say hello"
-        
+        mock_chat_completion.return_value = {
+            'choices': [
+                {'message': {'content': 'Hello, how can I help you?'}}
+            ]
+        }
+
         # Act
-        response = openai_request(prompt)
-        
+        response = generate_text(prompt)
+
         # Assert
         self.assertIsNotNone(response, "The response should not be None")
         self.assertIsInstance(response, str, "The response should be a string")
+        self.assertEqual(response, 'Hello, how can I help you?', "The response should be 'Hello, how can I help you?'")
 
 if __name__ == '__main__':
     unittest.main()
