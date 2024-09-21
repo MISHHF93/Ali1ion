@@ -20,7 +20,7 @@ spec:
       - name: nao-ai-container
         image: gcr.io/nao-ai-project/nao-ai-node-app:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 7860
         env:
         - name: NODE_ENV
           value: "production"
@@ -43,5 +43,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 7860
   type: LoadBalancer

@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Simulate tracking data for an active campaign
     campaign_name = "Super Summer Sale"
     status = "Active"
-    clicks = 1245
+    clicks = 7860
     conversions = 237
 
     # Echo the tracking process

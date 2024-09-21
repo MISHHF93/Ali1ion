@@ -1,36 +1,4678 @@
 /workspaces/NAO-AI/frontend
-├── nao-ai-widget
-│   ├── assets
-│   │   ├── css
-│   │   │   ├── bootstrap-theme.min.css
-│   │   │   ├── bootstrap.min.css
-│   │   │   ├── font-awesome-4.0.3.css
-│   │   │   └── main.css
-│   │   ├── fonts
-│   │   │   ├── fontawesome-webfont.eot
-│   │   │   ├── fontawesome-webfont.svg
-│   │   │   ├── fontawesome-webfont.ttf
-│   │   │   └── fontawesome-webfont.woff
-│   │   ├── images
-│   │   │   └── logo.png
-│   │   └── js
-│   │       ├── ajax-form.js
-│   │       ├── app.js
-│   │       ├── bootstrap.min.js
-│   │       ├── gpt_interaction.js
-│   │       ├── jquery.min.js
-│   │       ├── voice_interaction.js
-│   │       └── widget_interaction.js
-│   ├── components
-│   │   ├── footer.html
-│   │   ├── header.html
-│   │   └── sidebar.html
-│   ├── config
-│   │   └── api_config.js
-│   └── templates
-│       ├── gpt_widget.html
-│       └── index.html
-└── widget
-    └── home.html
+├── README.md
+├── assets
+│   ├── css
+│   └── js
+└── gradio_interface
+    ├── CHANGELOG.md
+    ├── CITATION.cff
+    ├── CONTRIBUTING.md
+    ├── LICENSE
+    ├── README.md
+    ├── SECURITY.md
+    ├── build_pypi.sh
+    ├── client
+    │   ├── js
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── gradio-client-1.4.0.tgz
+    │   │   ├── index.html
+    │   │   ├── node_modules
+    │   │   │   ├── @types
+    │   │   │   │   ├── eventsource -> ../../../../node_modules/.pnpm/@types+eventsource@1.1.15/node_modules/@types/eventsource
+    │   │   │   │   └── ws -> ../../../../node_modules/.pnpm/@types+ws@8.5.10/node_modules/@types/ws
+    │   │   │   ├── bufferutil -> ../../../node_modules/.pnpm/bufferutil@4.0.7/node_modules/bufferutil
+    │   │   │   ├── esbuild -> ../../../node_modules/.pnpm/esbuild@0.21.0/node_modules/esbuild
+    │   │   │   ├── eventsource -> ../../../node_modules/.pnpm/eventsource@2.0.2/node_modules/eventsource
+    │   │   │   ├── fetch-event-stream -> ../../../node_modules/.pnpm/fetch-event-stream@0.1.5/node_modules/fetch-event-stream
+    │   │   │   ├── msw -> ../../../node_modules/.pnpm/msw@2.2.8_typescript@5.4.3/node_modules/msw
+    │   │   │   ├── semiver -> ../../../node_modules/.pnpm/semiver@1.1.0/node_modules/semiver
+    │   │   │   ├── textlinestream -> ../../../node_modules/.pnpm/textlinestream@1.1.1/node_modules/textlinestream
+    │   │   │   ├── typescript -> ../../../node_modules/.pnpm/typescript@5.4.3/node_modules/typescript
+    │   │   │   └── ws -> ../../../node_modules/.pnpm/ws@8.13.0_bufferutil@4.0.7/node_modules/ws
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   ├── client.ts
+    │   │   │   ├── constants.ts
+    │   │   │   ├── globals.d.ts
+    │   │   │   ├── helpers
+    │   │   │   │   ├── api_info.ts
+    │   │   │   │   ├── data.ts
+    │   │   │   │   ├── init_helpers.ts
+    │   │   │   │   └── spaces.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── test
+    │   │   │   │   ├── api_info.test.ts
+    │   │   │   │   ├── data.test.ts
+    │   │   │   │   ├── handlers.ts
+    │   │   │   │   ├── init.test.ts
+    │   │   │   │   ├── init_helpers.test.ts
+    │   │   │   │   ├── mock_eventsource.ts
+    │   │   │   │   ├── post_data.test.ts
+    │   │   │   │   ├── server.ts
+    │   │   │   │   ├── spaces.test.ts
+    │   │   │   │   ├── stream.test.ts
+    │   │   │   │   ├── test_data.ts
+    │   │   │   │   ├── upload_files.test.ts
+    │   │   │   │   └── view_api.test.ts
+    │   │   │   ├── types.ts
+    │   │   │   ├── upload.ts
+    │   │   │   ├── utils
+    │   │   │   │   ├── duplicate.ts
+    │   │   │   │   ├── handle_blob.ts
+    │   │   │   │   ├── post_data.ts
+    │   │   │   │   ├── predict.ts
+    │   │   │   │   ├── stream.ts
+    │   │   │   │   ├── submit.ts
+    │   │   │   │   ├── upload_files.ts
+    │   │   │   │   └── view_api.ts
+    │   │   │   └── vite-env.d.ts
+    │   │   ├── tsconfig.json
+    │   │   └── vite.config.js
+    │   └── python
+    │       ├── CHANGELOG.md
+    │       ├── README.md
+    │       ├── build_pypi.sh
+    │       ├── gradio_client
+    │       │   ├── CHANGELOG.md
+    │       │   ├── __init__.py
+    │       │   ├── cli
+    │       │   │   ├── __init__.py
+    │       │   │   └── deploy_discord.py
+    │       │   ├── client.py
+    │       │   ├── compatibility.py
+    │       │   ├── data_classes.py
+    │       │   ├── documentation.py
+    │       │   ├── exceptions.py
+    │       │   ├── media_data.py
+    │       │   ├── package.json
+    │       │   ├── serializing.py
+    │       │   ├── templates
+    │       │   │   └── discord_chat.py
+    │       │   ├── types.json
+    │       │   └── utils.py
+    │       ├── pyproject.toml
+    │       ├── requirements.txt
+    │       ├── scripts
+    │       │   └── test.sh
+    │       └── test
+    │           ├── conftest.py
+    │           ├── files
+    │           │   ├── alphabet.txt
+    │           │   └── cheetah1.jpg
+    │           ├── requirements.txt
+    │           ├── test_client.py
+    │           ├── test_documentation.py
+    │           └── test_utils.py
+    ├── demo
+    │   ├── __init__.py
+    │   ├── agent_chatbot
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── utils.py
+    │   ├── all_demos
+    │   │   ├── image.png
+    │   │   ├── run.py
+    │   │   └── templates
+    │   │       └── index.html
+    │   ├── animeganv2
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── gongyoo.jpeg
+    │   │   ├── groot.jpeg
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── annotatedimage_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── asr
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── audio_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── audio_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── audio_debugger
+    │   │   ├── cantina.wav
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── audio_mixer
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── autocomplete
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── automatic-speech-recognition
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── bar_plot
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── bar_plot_demo
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── barplot_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_chained_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_essay
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_essay_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_flag
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_flashcards
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_flipper
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── blocks_form
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_gpt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_group
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_hello
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_inputs
+    │   │   ├── lion.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_joined
+    │   │   ├── files
+    │   │   │   └── cheetah1.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_js_load
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_js_methods
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_kinematics
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_layout
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_multiple_event_triggers
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_neural_instrument_coding
+    │   │   ├── flute.wav
+    │   │   ├── new-sax-1.mp3
+    │   │   ├── new-sax-1.wav
+    │   │   ├── new-sax.wav
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── sax.wav
+    │   │   ├── sax2.wav
+    │   │   └── trombone.wav
+    │   ├── blocks_outputs
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_page_load
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_plug
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_random_slider
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_scroll
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_simple_squares
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_speech_text_sentiment
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_static
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_textbox_max_lines
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_update
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_webcam
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── blocks_xray
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── bokeh_plot
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── button_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── calculator
+    │   │   ├── examples
+    │   │   │   └── log.csv
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── calculator_blocks
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── calculator_blocks_cached
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── calculator_list_and_dict
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── calculator_live
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── cancel_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── change_vs_input
+    │   │   ├── files
+    │   │   │   ├── cantina.wav
+    │   │   │   ├── lion.jpg
+    │   │   │   └── world.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_consecutive
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_core_components
+    │   │   ├── files
+    │   │   │   ├── audio.wav
+    │   │   │   ├── avatar.png
+    │   │   │   ├── sample.txt
+    │   │   │   └── world.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_core_components_simple
+    │   │   ├── files
+    │   │   │   ├── audio.wav
+    │   │   │   ├── avatar.png
+    │   │   │   ├── sample.txt
+    │   │   │   └── world.mp4
+    │   │   ├── messages_testcase.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_dialogpt
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.gif
+    │   │   └── screenshot.png
+    │   ├── chatbot_multimodal
+    │   │   ├── files
+    │   │   │   └── avatar.png
+    │   │   ├── messages_testcase.py
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatbot_streaming
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── testcase_messages.py
+    │   ├── chatbot_with_tools
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatinterface_multimodal
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatinterface_random_response
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── chatinterface_streaming_echo
+    │   │   ├── messages_testcase.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chatinterface_system_prompt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── checkbox_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── checkboxgroup_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── chicago-bikeshare-dashboard
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── clear_components
+    │   │   ├── __init__.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── clearbutton_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── code
+    │   │   ├── file.css
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── code_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── color_generator
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── color_picker
+    │   │   ├── rabbit.png
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.gif
+    │   │   └── screenshot.png
+    │   ├── colorpicker_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── concurrency_with_queue
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── concurrency_without_queue
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── count_generator
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── custom_css
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── custom_path
+    │   │   └── run.py
+    │   ├── dashboard
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── helpers.py
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataframe_block-ui-test
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataframe_colorful
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataframe_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataframe_datatype
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataframe_tab
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataset
+    │   │   ├── files
+    │   │   │   ├── Bunny.obj
+    │   │   │   ├── cantina.wav
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── time.csv
+    │   │   │   ├── titanic.csv
+    │   │   │   └── world.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dataset_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── datetime_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── datetimes
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── depth_estimation
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── examples
+    │   │   │   └── 1-jonathan-borba-CgWTqYxHEkg-unsplash.jpg
+    │   │   ├── packages.txt
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── diff_texts
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── diffusers_with_batching
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── downloadbutton_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dropdown_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── dropdown_key_up
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── duplicatebutton_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── english_translator
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── event_trigger
+    │   │   ├── img
+    │   │   │   ├── a.jpg
+    │   │   │   └── b.jpg
+    │   │   ├── mp4
+    │   │   │   ├── a.mp4
+    │   │   │   └── b.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── examples_component
+    │   │   ├── images
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── lion.jpg
+    │   │   │   ├── lion.webp
+    │   │   │   └── logo.png
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── fake_diffusion
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── fake_diffusion_with_gif
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── fake_gan
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── fake_gan_2
+    │   │   ├── files
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── elephant.jpg
+    │   │   │   ├── tiger.jpg
+    │   │   │   └── zebra.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── fake_gan_no_input
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── file_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── file_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── file_explorer
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── file_explorer_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── file_explorer_component_events
+    │   │   ├── dir1
+    │   │   │   ├── bar.txt
+    │   │   │   └── foo.txt
+    │   │   ├── dir2
+    │   │   │   ├── baz.png
+    │   │   │   └── foo.png
+    │   │   ├── dir3
+    │   │   │   ├── dir3_bar.log
+    │   │   │   ├── dir3_foo.txt
+    │   │   │   └── dir4
+    │   │   │       ├── dir5
+    │   │   │       │   └── dir5_foo.txt
+    │   │   │       ├── dir7
+    │   │   │       │   └── dir7_foo.txt
+    │   │   │       ├── dir_4_bar.log
+    │   │   │       └── dir_4_foo.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── filter_records
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── fraud_detector
+    │   │   ├── fraud.csv
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── function_values
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gallery_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gallery_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gallery_selections
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── generate_english_german
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── generate_tone
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── gif_maker
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gpt2_xl
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gpt2_xl_unified
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── gradio_pdf_demo
+    │   │   ├── contract.pdf
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── hangman
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── hello_blocks
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── hello_blocks_decorator
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── hello_login
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── hello_world
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.gif
+    │   │   └── screenshot.png
+    │   ├── hello_world_2
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── hello_world_3
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── hello_world_4
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── highlightedtext_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── html_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image-simple
+    │   │   ├── cheetah.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_classification
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── cheetah.jpg
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_classifier
+    │   │   ├── files
+    │   │   │   └── imagenet_labels.json
+    │   │   ├── images
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   └── lion.jpg
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.gif
+    │   │   └── screenshot.png
+    │   ├── image_classifier_2
+    │   │   ├── files
+    │   │   │   └── imagenet_labels.json
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_classifier_interface_load
+    │   │   ├── cheetah1.jpeg
+    │   │   ├── cheetah1.jpg
+    │   │   ├── lion.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_editor
+    │   │   ├── cheetah.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_editor_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_editor_layers
+    │   │   ├── cheetah.jpg
+    │   │   ├── layer1.png
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_mod
+    │   │   ├── images
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── lion.jpg
+    │   │   │   ├── logo.png
+    │   │   │   └── tower.jpg
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── image_mod_default_image
+    │   │   ├── images
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── lion.jpg
+    │   │   │   └── logo.png
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_remote_url
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_segmentation
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── image_selections
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── imageeditor_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── input_output
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── interface_random_slider
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── interface_state
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── interface_with_additional_inputs
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── json_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── kitchen_sink
+    │   │   ├── files
+    │   │   │   ├── cantina.wav
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   ├── lion.jpg
+    │   │   │   ├── logo.png
+    │   │   │   ├── time.csv
+    │   │   │   ├── titanic.csv
+    │   │   │   ├── tower.jpg
+    │   │   │   └── world.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── kitchen_sink_random
+    │   │   ├── __init__.py
+    │   │   ├── constants.py
+    │   │   ├── files
+    │   │   │   ├── cheetah1.jpeg
+    │   │   │   ├── cheetah1.jpg
+    │   │   │   └── lion.jpg
+    │   │   └── run.py
+    │   ├── label_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── latex
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── leaderboard
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── line_plot
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── line_plot_demo
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── lineplot_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── live_dashboard
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── live_with_vars
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── load_space
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── login_with_huggingface
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── loginbutton_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── logoutbutton_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── longest_word
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── main_note
+    │   │   ├── audio
+    │   │   │   ├── cantina.wav
+    │   │   │   └── recording1.wav
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── map_airbnb
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── markdown_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── markdown_example
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── matrix_transpose
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── mini_leaderboard
+    │   │   ├── assets
+    │   │   │   ├── __init__.py
+    │   │   │   ├── custom_css.css
+    │   │   │   └── leaderboard_data.json
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── model3D
+    │   │   ├── files
+    │   │   │   ├── Bunny.obj
+    │   │   │   ├── Duck.glb
+    │   │   │   ├── Fox.gltf
+    │   │   │   ├── face.obj
+    │   │   │   ├── sofia.stl
+    │   │   │   └── source.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── model3D_demo.zip
+    │   ├── model3d_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── model3d_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── multimodaltextbox_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── musical_instrument_identification
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── data_setups.py
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── native_plots
+    │   │   ├── bar_plot_demo.py
+    │   │   ├── data.py
+    │   │   ├── line_plot_demo.py
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── scatter_plot_demo.py
+    │   ├── neon-tts-plugin-coqui
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── packages.txt
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── ner_pipeline
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── no_input
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── number_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── on_listener_basic
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── on_listener_decorator
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── on_listener_live
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── on_listener_test
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── outbreak_forecast
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── paramviewer_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_aggregate_nominal
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_aggregate_quantitative
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_aggregate_temporal
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_datetime
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_datetimerange
+    │   │   ├── data.py
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_filters
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_filters_events
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_interactive
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_line
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_scatter
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_scatter_nominal
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_selection
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_series_nominal
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_series_quantitative
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_tables_stats
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_temporal
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_zoom
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── plot_guide_zoom_sync
+    │   │   ├── data.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── progress
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── progress_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── progress_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── question-answering
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── queue_full_e2e_test
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── radio_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── random_demos.py
+    │   ├── rapid_generation
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── render_merge
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── render_merge_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── render_split
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── render_split_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── request_ip_headers
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── reverse_audio
+    │   │   ├── audio
+    │   │   │   ├── cantina.wav
+    │   │   │   └── recording1.wav
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── reverse_audio_2
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── reversible_flow
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── rows_and_columns
+    │   │   ├── images
+    │   │   │   └── cheetah.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sales_projections
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── same-person-or-different
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── packages.txt
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── samples
+    │   │       ├── cate_blanch.mp3
+    │   │       ├── cate_blanch_2.mp3
+    │   │       └── heath_ledger.mp3
+    │   ├── save_file_no_output
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── scatter_plot
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── scatter_plot_demo
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── scatterplot_component
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── score_tracker
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sentence_builder
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── sentiment_analysis
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sepia_filter
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.gif
+    │   ├── simple_state
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sine_curve
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── slider_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── slider_release
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sort_records
+    │   │   ├── polars_sort.csv
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sound_alert
+    │   │   ├── beep.mp3
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── spectogram
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── stable-diffusion
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── state_change
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── state_cleanup
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── state_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stock_forecast
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── stream_asr
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stream_audio
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stream_audio_out
+    │   │   ├── audio
+    │   │   │   └── cantina.wav
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stream_frames
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stream_video_out
+    │   │   └── requirements.txt
+    │   ├── streaming_wav2vec
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── stt_or_tts
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── sub_block_render
+    │   │   ├── cheetah.jpg
+    │   │   ├── frog.jpg
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── tabbed_interface_lite
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── tabs
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── tax_calculator
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── test_chatinterface_streaming_echo
+    │   │   ├── messages_testcase.py
+    │   │   ├── multimodal_messages_testcase.py
+    │   │   ├── multimodal_non_stream_testcase.py
+    │   │   ├── multimodal_tuples_testcase.py
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── text_analysis
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.png
+    │   │   └── setup.sh
+    │   ├── text_generation
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── textbox_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_builder
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_extended_step_1
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_extended_step_2
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_extended_step_3
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_extended_step_4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_new_step_1
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_new_step_2
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_new_step_3
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── theme_soft
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── tictactoe
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── timer
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── timer_simple
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── timeseries-forecasting-with-prophet
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── titanic_survival
+    │   │   ├── files
+    │   │   │   └── titanic.csv
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── todo_list
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── translation
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── unified_demo_text_generation
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── unispeech-speaker-verification
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── samples
+    │   │       ├── cate_blanch.mp3
+    │   │       ├── cate_blanch_2.mp3
+    │   │       ├── cate_blanch_3.mp3
+    │   │       ├── heath_ledger.mp3
+    │   │       ├── heath_ledger_2.mp3
+    │   │       └── kirsten_dunst.wav
+    │   ├── unload_event_test
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── upload_and_download
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── upload_button
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── upload_button_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── upload_file_limit_test
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── uploadbutton_component
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── variable_outputs
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── video_component
+    │   │   ├── files
+    │   │   │   ├── a.mp4
+    │   │   │   ├── b.mp4
+    │   │   │   └── world.mp4
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── video_component_events
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── video_identity
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   ├── screenshot.png
+    │   │   └── video
+    │   │       └── video_sample.mp4
+    │   ├── video_identity_2
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── video_subtitle
+    │   │   ├── files
+    │   │   │   ├── a.mp4
+    │   │   │   ├── b.mp4
+    │   │   │   ├── s1.srt
+    │   │   │   └── s2.vtt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── video_watermark
+    │   │   ├── files
+    │   │   │   ├── a.mp4
+    │   │   │   ├── b.mp4
+    │   │   │   ├── w1.jpg
+    │   │   │   └── w2.png
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── waveform
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── webcam
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   ├── white_noise_vid_not_playable
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── xgboost-income-prediction-with-explainability
+    │   │   ├── DESCRIPTION.md
+    │   │   ├── requirements.txt
+    │   │   ├── run.ipynb
+    │   │   └── run.py
+    │   ├── zip_files
+    │   │   ├── files
+    │   │   │   └── titanic.csv
+    │   │   ├── run.ipynb
+    │   │   ├── run.py
+    │   │   └── screenshot.png
+    │   └── zip_to_json
+    │       ├── run.ipynb
+    │       ├── run.py
+    │       └── screenshot.png
+    ├── globals.d.ts
+    ├── gradio
+    │   ├── CHANGELOG.md
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-312.pyc
+    │   │   ├── analytics.cpython-312.pyc
+    │   │   ├── blocks.cpython-312.pyc
+    │   │   ├── blocks_events.cpython-312.pyc
+    │   │   ├── chat_interface.cpython-312.pyc
+    │   │   ├── component_meta.cpython-312.pyc
+    │   │   ├── context.cpython-312.pyc
+    │   │   ├── data_classes.cpython-312.pyc
+    │   │   ├── events.cpython-312.pyc
+    │   │   ├── exceptions.cpython-312.pyc
+    │   │   ├── external.cpython-312.pyc
+    │   │   ├── external_utils.cpython-312.pyc
+    │   │   ├── flagging.cpython-312.pyc
+    │   │   ├── helpers.cpython-312.pyc
+    │   │   ├── http_server.cpython-312.pyc
+    │   │   ├── image_utils.cpython-312.pyc
+    │   │   ├── interface.cpython-312.pyc
+    │   │   ├── ipython_ext.cpython-312.pyc
+    │   │   ├── networking.cpython-312.pyc
+    │   │   ├── oauth.cpython-312.pyc
+    │   │   ├── pipelines.cpython-312.pyc
+    │   │   ├── pipelines_utils.cpython-312.pyc
+    │   │   ├── processing_utils.cpython-312.pyc
+    │   │   ├── queueing.cpython-312.pyc
+    │   │   ├── ranged_response.cpython-312.pyc
+    │   │   ├── renderable.cpython-312.pyc
+    │   │   ├── route_utils.cpython-312.pyc
+    │   │   ├── routes.cpython-312.pyc
+    │   │   ├── server_messages.cpython-312.pyc
+    │   │   ├── state_holder.cpython-312.pyc
+    │   │   ├── strings.cpython-312.pyc
+    │   │   ├── templates.cpython-312.pyc
+    │   │   ├── tunneling.cpython-312.pyc
+    │   │   ├── utils.cpython-312.pyc
+    │   │   └── wasm_utils.cpython-312.pyc
+    │   ├── _simple_templates
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-312.pyc
+    │   │   │   ├── simpledropdown.cpython-312.pyc
+    │   │   │   ├── simpleimage.cpython-312.pyc
+    │   │   │   └── simpletextbox.cpython-312.pyc
+    │   │   ├── simpledropdown.py
+    │   │   ├── simpledropdown.pyi
+    │   │   ├── simpleimage.py
+    │   │   ├── simpleimage.pyi
+    │   │   ├── simpletextbox.py
+    │   │   └── simpletextbox.pyi
+    │   ├── analytics.py
+    │   ├── blocks.py
+    │   ├── blocks_events.py
+    │   ├── blocks_events.pyi
+    │   ├── chat_interface.py
+    │   ├── cli
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-312.pyc
+    │   │   │   └── cli.cpython-312.pyc
+    │   │   ├── cli.py
+    │   │   └── commands
+    │   │       ├── __init__.py
+    │   │       ├── __pycache__
+    │   │       │   ├── __init__.cpython-312.pyc
+    │   │       │   ├── cli_env_info.cpython-312.pyc
+    │   │       │   ├── deploy_space.cpython-312.pyc
+    │   │       │   ├── display.cpython-312.pyc
+    │   │       │   └── reload.cpython-312.pyc
+    │   │       ├── cli_env_info.py
+    │   │       ├── components
+    │   │       │   ├── __init__.py
+    │   │       │   ├── __pycache__
+    │   │       │   │   ├── __init__.cpython-312.pyc
+    │   │       │   │   ├── _create_utils.cpython-312.pyc
+    │   │       │   │   ├── _docs_assets.cpython-312.pyc
+    │   │       │   │   ├── _docs_utils.cpython-312.pyc
+    │   │       │   │   ├── app.cpython-312.pyc
+    │   │       │   │   ├── build.cpython-312.pyc
+    │   │       │   │   ├── create.cpython-312.pyc
+    │   │       │   │   ├── dev.cpython-312.pyc
+    │   │       │   │   ├── docs.cpython-312.pyc
+    │   │       │   │   ├── install_component.cpython-312.pyc
+    │   │       │   │   ├── publish.cpython-312.pyc
+    │   │       │   │   └── show.cpython-312.pyc
+    │   │       │   ├── _create_utils.py
+    │   │       │   ├── _docs_assets.py
+    │   │       │   ├── _docs_utils.py
+    │   │       │   ├── app.py
+    │   │       │   ├── build.py
+    │   │       │   ├── create.py
+    │   │       │   ├── dev.py
+    │   │       │   ├── docs.py
+    │   │       │   ├── files
+    │   │       │   │   ├── README.md
+    │   │       │   │   ├── gitignore
+    │   │       │   │   ├── gradio.config.js
+    │   │       │   │   └── pyproject_.toml
+    │   │       │   ├── install_component.py
+    │   │       │   ├── publish.py
+    │   │       │   └── show.py
+    │   │       ├── deploy_space.py
+    │   │       ├── deploy_space_action.yaml
+    │   │       ├── display.py
+    │   │       ├── reload.py
+    │   │       └── utils.py
+    │   ├── component_meta.py
+    │   ├── components
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-312.pyc
+    │   │   │   ├── annotated_image.cpython-312.pyc
+    │   │   │   ├── audio.cpython-312.pyc
+    │   │   │   ├── base.cpython-312.pyc
+    │   │   │   ├── button.cpython-312.pyc
+    │   │   │   ├── chatbot.cpython-312.pyc
+    │   │   │   ├── checkbox.cpython-312.pyc
+    │   │   │   ├── checkboxgroup.cpython-312.pyc
+    │   │   │   ├── clear_button.cpython-312.pyc
+    │   │   │   ├── code.cpython-312.pyc
+    │   │   │   ├── color_picker.cpython-312.pyc
+    │   │   │   ├── dataframe.cpython-312.pyc
+    │   │   │   ├── dataset.cpython-312.pyc
+    │   │   │   ├── datetime.cpython-312.pyc
+    │   │   │   ├── download_button.cpython-312.pyc
+    │   │   │   ├── dropdown.cpython-312.pyc
+    │   │   │   ├── duplicate_button.cpython-312.pyc
+    │   │   │   ├── fallback.cpython-312.pyc
+    │   │   │   ├── file.cpython-312.pyc
+    │   │   │   ├── file_explorer.cpython-312.pyc
+    │   │   │   ├── gallery.cpython-312.pyc
+    │   │   │   ├── highlighted_text.cpython-312.pyc
+    │   │   │   ├── html.cpython-312.pyc
+    │   │   │   ├── image.cpython-312.pyc
+    │   │   │   ├── image_editor.cpython-312.pyc
+    │   │   │   ├── json_component.cpython-312.pyc
+    │   │   │   ├── label.cpython-312.pyc
+    │   │   │   ├── login_button.cpython-312.pyc
+    │   │   │   ├── logout_button.cpython-312.pyc
+    │   │   │   ├── markdown.cpython-312.pyc
+    │   │   │   ├── model3d.cpython-312.pyc
+    │   │   │   ├── multimodal_textbox.cpython-312.pyc
+    │   │   │   ├── native_plot.cpython-312.pyc
+    │   │   │   ├── number.cpython-312.pyc
+    │   │   │   ├── paramviewer.cpython-312.pyc
+    │   │   │   ├── plot.cpython-312.pyc
+    │   │   │   ├── radio.cpython-312.pyc
+    │   │   │   ├── slider.cpython-312.pyc
+    │   │   │   ├── state.cpython-312.pyc
+    │   │   │   ├── textbox.cpython-312.pyc
+    │   │   │   ├── timer.cpython-312.pyc
+    │   │   │   ├── upload_button.cpython-312.pyc
+    │   │   │   └── video.cpython-312.pyc
+    │   │   ├── annotated_image.py
+    │   │   ├── annotated_image.pyi
+    │   │   ├── audio.py
+    │   │   ├── audio.pyi
+    │   │   ├── bar_plot.py
+    │   │   ├── base.py
+    │   │   ├── base.pyi
+    │   │   ├── button.py
+    │   │   ├── button.pyi
+    │   │   ├── chatbot.py
+    │   │   ├── chatbot.pyi
+    │   │   ├── checkbox.py
+    │   │   ├── checkbox.pyi
+    │   │   ├── checkboxgroup.py
+    │   │   ├── checkboxgroup.pyi
+    │   │   ├── clear_button.py
+    │   │   ├── clear_button.pyi
+    │   │   ├── code.py
+    │   │   ├── code.pyi
+    │   │   ├── color_picker.py
+    │   │   ├── color_picker.pyi
+    │   │   ├── dataframe.py
+    │   │   ├── dataframe.pyi
+    │   │   ├── dataset.py
+    │   │   ├── dataset.pyi
+    │   │   ├── datetime.py
+    │   │   ├── datetime.pyi
+    │   │   ├── download_button.py
+    │   │   ├── download_button.pyi
+    │   │   ├── dropdown.py
+    │   │   ├── dropdown.pyi
+    │   │   ├── duplicate_button.py
+    │   │   ├── duplicate_button.pyi
+    │   │   ├── fallback.py
+    │   │   ├── fallback.pyi
+    │   │   ├── file.py
+    │   │   ├── file.pyi
+    │   │   ├── file_explorer.py
+    │   │   ├── file_explorer.pyi
+    │   │   ├── gallery.py
+    │   │   ├── gallery.pyi
+    │   │   ├── highlighted_text.py
+    │   │   ├── highlighted_text.pyi
+    │   │   ├── html.py
+    │   │   ├── html.pyi
+    │   │   ├── image.py
+    │   │   ├── image.pyi
+    │   │   ├── image_editor.py
+    │   │   ├── image_editor.pyi
+    │   │   ├── json_component.py
+    │   │   ├── json_component.pyi
+    │   │   ├── label.py
+    │   │   ├── label.pyi
+    │   │   ├── line_plot.py
+    │   │   ├── login_button.py
+    │   │   ├── login_button.pyi
+    │   │   ├── logout_button.py
+    │   │   ├── logout_button.pyi
+    │   │   ├── markdown.py
+    │   │   ├── markdown.pyi
+    │   │   ├── model3d.py
+    │   │   ├── model3d.pyi
+    │   │   ├── multimodal_textbox.py
+    │   │   ├── multimodal_textbox.pyi
+    │   │   ├── native_plot.py
+    │   │   ├── native_plot.pyi
+    │   │   ├── number.py
+    │   │   ├── number.pyi
+    │   │   ├── paramviewer.py
+    │   │   ├── paramviewer.pyi
+    │   │   ├── plot.py
+    │   │   ├── plot.pyi
+    │   │   ├── radio.py
+    │   │   ├── radio.pyi
+    │   │   ├── scatter_plot.py
+    │   │   ├── slider.py
+    │   │   ├── slider.pyi
+    │   │   ├── state.py
+    │   │   ├── state.pyi
+    │   │   ├── textbox.py
+    │   │   ├── textbox.pyi
+    │   │   ├── timer.py
+    │   │   ├── timer.pyi
+    │   │   ├── upload_button.py
+    │   │   ├── upload_button.pyi
+    │   │   ├── video.py
+    │   │   └── video.pyi
+    │   ├── context.py
+    │   ├── data_classes.py
+    │   ├── events.py
+    │   ├── exceptions.py
+    │   ├── external.py
+    │   ├── external_utils.py
+    │   ├── flagging.py
+    │   ├── frpc_linux_amd64_v0.2
+    │   ├── helpers.py
+    │   ├── http_server.py
+    │   ├── image_utils.py
+    │   ├── interface.py
+    │   ├── ipython_ext.py
+    │   ├── launches.json
+    │   ├── layouts
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-312.pyc
+    │   │   │   ├── accordion.cpython-312.pyc
+    │   │   │   ├── column.cpython-312.pyc
+    │   │   │   ├── form.cpython-312.pyc
+    │   │   │   ├── group.cpython-312.pyc
+    │   │   │   ├── row.cpython-312.pyc
+    │   │   │   └── tabs.cpython-312.pyc
+    │   │   ├── accordion.py
+    │   │   ├── accordion.pyi
+    │   │   ├── column.py
+    │   │   ├── column.pyi
+    │   │   ├── form.py
+    │   │   ├── form.pyi
+    │   │   ├── group.py
+    │   │   ├── group.pyi
+    │   │   ├── row.py
+    │   │   ├── row.pyi
+    │   │   ├── tabs.py
+    │   │   └── tabs.pyi
+    │   ├── monitoring_dashboard.py
+    │   ├── networking.py
+    │   ├── oauth.py
+    │   ├── package.json
+    │   ├── pipelines.py
+    │   ├── pipelines_utils.py
+    │   ├── processing_utils.py
+    │   ├── queueing.py
+    │   ├── ranged_response.py
+    │   ├── renderable.py
+    │   ├── route_utils.py
+    │   ├── routes.py
+    │   ├── server_messages.py
+    │   ├── state_holder.py
+    │   ├── strings.py
+    │   ├── stubs
+    │   │   └── anyio.pyi
+    │   ├── templates
+    │   │   └── frontend
+    │   │       ├── assets
+    │   │       │   ├── AltairPlot-CSe9xcFj.css
+    │   │       │   ├── AltairPlot-DLblSEAH.js
+    │   │       │   ├── AltairPlot-DLblSEAH.js.map
+    │   │       │   ├── BlockLabel-BXXlQleC.js
+    │   │       │   ├── BlockLabel-BXXlQleC.js.map
+    │   │       │   ├── BlockTitle-COFLSASJ.js
+    │   │       │   ├── BlockTitle-COFLSASJ.js.map
+    │   │       │   ├── Blocks-Dw_9NR1K.js
+    │   │       │   ├── Blocks-Dw_9NR1K.js.map
+    │   │       │   ├── Blocks-yLdzXwzS.css
+    │   │       │   ├── BokehPlot-CHWxUyLl.js
+    │   │       │   ├── BokehPlot-CHWxUyLl.js.map
+    │   │       │   ├── BokehPlot-Cd-I2ErV.css
+    │   │       │   ├── Button-CTZL5Nos.css
+    │   │       │   ├── Button-uOcat6Z0.js
+    │   │       │   ├── Button-uOcat6Z0.js.map
+    │   │       │   ├── Canvas3D-D4iwCt0B.js
+    │   │       │   ├── Canvas3D-D4iwCt0B.js.map
+    │   │       │   ├── Canvas3DGS-XWV0DqKq.js
+    │   │       │   ├── Canvas3DGS-XWV0DqKq.js.map
+    │   │       │   ├── Check-CZUQOzJl.js
+    │   │       │   ├── Check-CZUQOzJl.js.map
+    │   │       │   ├── Code-DGNrTu_I.js
+    │   │       │   ├── Code-DGNrTu_I.js.map
+    │   │       │   ├── Copy-B6RcHnoK.js
+    │   │       │   ├── Copy-B6RcHnoK.js.map
+    │   │       │   ├── Download-DVtk-Jv3.js
+    │   │       │   ├── Download-DVtk-Jv3.js.map
+    │   │       │   ├── DownloadLink-BgAM71ly.js
+    │   │       │   ├── DownloadLink-BgAM71ly.js.map
+    │   │       │   ├── DropdownArrow-BJ6rp2o2.js
+    │   │       │   ├── DropdownArrow-BJ6rp2o2.js.map
+    │   │       │   ├── Empty-CLiqUlWX.js
+    │   │       │   ├── Empty-CLiqUlWX.js.map
+    │   │       │   ├── Example-0pSwPtAl.js
+    │   │       │   ├── Example-0pSwPtAl.js.map
+    │   │       │   ├── Example-6rv12T44.css
+    │   │       │   ├── Example-B5CSTz0f.css
+    │   │       │   ├── Example-BBLMS951.js
+    │   │       │   ├── Example-BBLMS951.js.map
+    │   │       │   ├── Example-BOThR97Y.css
+    │   │       │   ├── Example-BQyGztrG.js
+    │   │       │   ├── Example-BQyGztrG.js.map
+    │   │       │   ├── Example-BT2jlY4j.js
+    │   │       │   ├── Example-BT2jlY4j.js.map
+    │   │       │   ├── Example-BYoSRMfB.js
+    │   │       │   ├── Example-BYoSRMfB.js.map
+    │   │       │   ├── Example-BaLyJYAe.js
+    │   │       │   ├── Example-BaLyJYAe.js.map
+    │   │       │   ├── Example-BoMLuz1A.js
+    │   │       │   ├── Example-BoMLuz1A.js.map
+    │   │       │   ├── Example-BrizabXh.js
+    │   │       │   ├── Example-BrizabXh.js.map
+    │   │       │   ├── Example-Bw8Q_3wB.css
+    │   │       │   ├── Example-C2a4WxRl.js
+    │   │       │   ├── Example-C2a4WxRl.js.map
+    │   │       │   ├── Example-C7XUkkid.js
+    │   │       │   ├── Example-C7XUkkid.js.map
+    │   │       │   ├── Example-C9__vDgN.js
+    │   │       │   ├── Example-C9__vDgN.js.map
+    │   │       │   ├── Example-CCTTJ5R1.css
+    │   │       │   ├── Example-CIFMxn5c.js
+    │   │       │   ├── Example-CIFMxn5c.js.map
+    │   │       │   ├── Example-CRm1Pmw_.js
+    │   │       │   ├── Example-CRm1Pmw_.js.map
+    │   │       │   ├── Example-CSw4pLi5.css
+    │   │       │   ├── Example-CUwox43B.js
+    │   │       │   ├── Example-CUwox43B.js.map
+    │   │       │   ├── Example-CX34aPix.css
+    │   │       │   ├── Example-CZ-iEz1g.js
+    │   │       │   ├── Example-CZ-iEz1g.js.map
+    │   │       │   ├── Example-Cj3ii62O.css
+    │   │       │   ├── Example-CoyKMtl3.js
+    │   │       │   ├── Example-CoyKMtl3.js.map
+    │   │       │   ├── Example-CqL1e7EB.js
+    │   │       │   ├── Example-CqL1e7EB.js.map
+    │   │       │   ├── Example-Creifpe8.js
+    │   │       │   ├── Example-Creifpe8.js.map
+    │   │       │   ├── Example-D7K5RtQ2.css
+    │   │       │   ├── Example-DXkut_Rg.js
+    │   │       │   ├── Example-DXkut_Rg.js.map
+    │   │       │   ├── Example-DfhEULNF.css
+    │   │       │   ├── Example-DikqVAPo.css
+    │   │       │   ├── Example-DpWs9cEC.css
+    │   │       │   ├── Example-DrmWnoSo.js
+    │   │       │   ├── Example-DrmWnoSo.js.map
+    │   │       │   ├── Example-DxdiEFS_.js
+    │   │       │   ├── Example-DxdiEFS_.js.map
+    │   │       │   ├── Example-FcrQjIK1.js
+    │   │       │   ├── Example-FcrQjIK1.js.map
+    │   │       │   ├── Example-Wp-_4AVX.js
+    │   │       │   ├── Example-Wp-_4AVX.js.map
+    │   │       │   ├── Example-oomIF0ca.css
+    │   │       │   ├── Example-uQ8MuYg6.js
+    │   │       │   ├── Example-uQ8MuYg6.js.map
+    │   │       │   ├── Example.svelte_svelte_type_style_lang-qahm4PWk.js
+    │   │       │   ├── Example.svelte_svelte_type_style_lang-qahm4PWk.js.map
+    │   │       │   ├── File-BQ_9P3Ye.js
+    │   │       │   ├── File-BQ_9P3Ye.js.map
+    │   │       │   ├── FileUpload-2TE7T7kD.css
+    │   │       │   ├── FileUpload-BWzg-N5i.js
+    │   │       │   ├── FileUpload-BWzg-N5i.js.map
+    │   │       │   ├── Gallery-CFGnKqpc.js
+    │   │       │   ├── Gallery-CFGnKqpc.js.map
+    │   │       │   ├── Gallery-D-mOALVO.css
+    │   │       │   ├── Image-B8dFOee4.css
+    │   │       │   ├── Image-Bsh8Umrh.js
+    │   │       │   ├── Image-Bsh8Umrh.js.map
+    │   │       │   ├── Image-DG8jX6JY.js
+    │   │       │   ├── Image-DG8jX6JY.js.map
+    │   │       │   ├── ImagePreview-CieM3r9y.js
+    │   │       │   ├── ImagePreview-CieM3r9y.js.map
+    │   │       │   ├── ImagePreview-DlqNSi_R.css
+    │   │       │   ├── ImageUploader-B6gmy4oE.js
+    │   │       │   ├── ImageUploader-B6gmy4oE.js.map
+    │   │       │   ├── ImageUploader-r0sXxVKa.css
+    │   │       │   ├── Index-3Ud1cpPD.js
+    │   │       │   ├── Index-3Ud1cpPD.js.map
+    │   │       │   ├── Index-4G3-Gu8a.js
+    │   │       │   ├── Index-4G3-Gu8a.js.map
+    │   │       │   ├── Index-8jBbArya.js
+    │   │       │   ├── Index-8jBbArya.js.map
+    │   │       │   ├── Index-B0JJ6p9c.css
+    │   │       │   ├── Index-B6tpubC5.css
+    │   │       │   ├── Index-BAQumg2K.css
+    │   │       │   ├── Index-BEyjvDG_.css
+    │   │       │   ├── Index-BEzrmV9X.css
+    │   │       │   ├── Index-BM4_tjMk.css
+    │   │       │   ├── Index-BMLc4VxK.js
+    │   │       │   ├── Index-BMLc4VxK.js.map
+    │   │       │   ├── Index-BSqct-uf.css
+    │   │       │   ├── Index-BTCbxfal.css
+    │   │       │   ├── Index-BUolJ3qq.css
+    │   │       │   ├── Index-BUublr_b.css
+    │   │       │   ├── Index-BgZMFz-N.js
+    │   │       │   ├── Index-BgZMFz-N.js.map
+    │   │       │   ├── Index-BhDD_Y03.css
+    │   │       │   ├── Index-BicZ6NTU.css
+    │   │       │   ├── Index-BnHFvydQ.js
+    │   │       │   ├── Index-BnHFvydQ.js.map
+    │   │       │   ├── Index-BpBoLkq9.js
+    │   │       │   ├── Index-BpBoLkq9.js.map
+    │   │       │   ├── Index-Bv-uU_Ly.css
+    │   │       │   ├── Index-C-7D3Y3j.css
+    │   │       │   ├── Index-C43SQM_O.css
+    │   │       │   ├── Index-C5NYahSl.css
+    │   │       │   ├── Index-CJeiS5ET.css
+    │   │       │   ├── Index-CS2xVf8J.js
+    │   │       │   ├── Index-CS2xVf8J.js.map
+    │   │       │   ├── Index-CWcDktiU.js
+    │   │       │   ├── Index-CWcDktiU.js.map
+    │   │       │   ├── Index-CaGZNVQT.js
+    │   │       │   ├── Index-CaGZNVQT.js.map
+    │   │       │   ├── Index-CcmKne06.js
+    │   │       │   ├── Index-CcmKne06.js.map
+    │   │       │   ├── Index-CkUqDkVC.css
+    │   │       │   ├── Index-CptIZeFZ.css
+    │   │       │   ├── Index-CvVJ_4HA.js
+    │   │       │   ├── Index-CvVJ_4HA.js.map
+    │   │       │   ├── Index-CwNLzWTz.js
+    │   │       │   ├── Index-CwNLzWTz.js.map
+    │   │       │   ├── Index-CzlZdV35.js
+    │   │       │   ├── Index-CzlZdV35.js.map
+    │   │       │   ├── Index-D21IHG0c.js
+    │   │       │   ├── Index-D21IHG0c.js.map
+    │   │       │   ├── Index-D3d6dpgr.js
+    │   │       │   ├── Index-D3d6dpgr.js.map
+    │   │       │   ├── Index-D3f6Hf9S.css
+    │   │       │   ├── Index-D6eIu-OY.js
+    │   │       │   ├── Index-D6eIu-OY.js.map
+    │   │       │   ├── Index-D8AsxGpL.js
+    │   │       │   ├── Index-D8AsxGpL.js.map
+    │   │       │   ├── Index-D8Ugac1I.js
+    │   │       │   ├── Index-D8Ugac1I.js.map
+    │   │       │   ├── Index-D8o7u_T6.css
+    │   │       │   ├── Index-D9RVvV4H.css
+    │   │       │   ├── Index-DDCF2BFd.js
+    │   │       │   ├── Index-DDCF2BFd.js.map
+    │   │       │   ├── Index-DDqzdfNS.js
+    │   │       │   ├── Index-DDqzdfNS.js.map
+    │   │       │   ├── Index-DLaE6XNB.css
+    │   │       │   ├── Index-DLfGgEnY.js
+    │   │       │   ├── Index-DLfGgEnY.js.map
+    │   │       │   ├── Index-DYDmCduo.css
+    │   │       │   ├── Index-DYc0bzYY.js
+    │   │       │   ├── Index-DYc0bzYY.js.map
+    │   │       │   ├── Index-DZruPJqq.css
+    │   │       │   ├── Index-DdLQBPJO.js
+    │   │       │   ├── Index-DdLQBPJO.js.map
+    │   │       │   ├── Index-Dfqs1LS-.js
+    │   │       │   ├── Index-Dfqs1LS-.js.map
+    │   │       │   ├── Index-DgbvCnJk.js
+    │   │       │   ├── Index-DgbvCnJk.js.map
+    │   │       │   ├── Index-Di94hlAd.js
+    │   │       │   ├── Index-Di94hlAd.js.map
+    │   │       │   ├── Index-DjIb8LtA.css
+    │   │       │   ├── Index-DjlyOtKO.js
+    │   │       │   ├── Index-DjlyOtKO.js.map
+    │   │       │   ├── Index-Ds424-vk.js
+    │   │       │   ├── Index-Ds424-vk.js.map
+    │   │       │   ├── Index-DvmFt2zS.css
+    │   │       │   ├── Index-DwSO5GE1.js
+    │   │       │   ├── Index-DwSO5GE1.js.map
+    │   │       │   ├── Index-Dwy3Ni24.css
+    │   │       │   ├── Index-Dy8Dg10V.js
+    │   │       │   ├── Index-Dy8Dg10V.js.map
+    │   │       │   ├── Index-DzvE-ly6.css
+    │   │       │   ├── Index-Ix1HTuFr.js
+    │   │       │   ├── Index-Ix1HTuFr.js.map
+    │   │       │   ├── Index-JIsj1tvJ.js
+    │   │       │   ├── Index-JIsj1tvJ.js.map
+    │   │       │   ├── Index-PWsHZhLu.js
+    │   │       │   ├── Index-PWsHZhLu.js.map
+    │   │       │   ├── Index-QFLfeHqR.js
+    │   │       │   ├── Index-QFLfeHqR.js.map
+    │   │       │   ├── Index-Xv8ZQETB.css
+    │   │       │   ├── Index-YPTlsVjp.css
+    │   │       │   ├── Index-fcqlymNz.js
+    │   │       │   ├── Index-fcqlymNz.js.map
+    │   │       │   ├── Index-gv3yLxlE.js
+    │   │       │   ├── Index-gv3yLxlE.js.map
+    │   │       │   ├── Index-oMWJcoQV.js
+    │   │       │   ├── Index-oMWJcoQV.js.map
+    │   │       │   ├── Index-okbUHx0N.js
+    │   │       │   ├── Index-okbUHx0N.js.map
+    │   │       │   ├── Index-q5DoCKkE.js
+    │   │       │   ├── Index-q5DoCKkE.js.map
+    │   │       │   ├── Index-qZ00DhtO.js
+    │   │       │   ├── Index-qZ00DhtO.js.map
+    │   │       │   ├── Index-tcNSQSor.css
+    │   │       │   ├── Index-thdqX2vf.css
+    │   │       │   ├── Index-uRgjJb4U.js
+    │   │       │   ├── Index-uRgjJb4U.js.map
+    │   │       │   ├── Index-xiD-wJnc.js
+    │   │       │   ├── Index-xiD-wJnc.js.map
+    │   │       │   ├── Index.svelte_svelte_type_style_lang-D199jKmZ.js
+    │   │       │   ├── Index.svelte_svelte_type_style_lang-D199jKmZ.js.map
+    │   │       │   ├── Info-CMIMfBX8.js
+    │   │       │   ├── Info-CMIMfBX8.js.map
+    │   │       │   ├── KaTeX_AMS-Regular-BQhdFMY1.woff2
+    │   │       │   ├── KaTeX_AMS-Regular-DMm9YOAa.woff
+    │   │       │   ├── KaTeX_AMS-Regular-DRggAlZN.ttf
+    │   │       │   ├── KaTeX_Caligraphic-Bold-ATXxdsX0.ttf
+    │   │       │   ├── KaTeX_Caligraphic-Bold-BEiXGLvX.woff
+    │   │       │   ├── KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2
+    │   │       │   ├── KaTeX_Caligraphic-Regular-CTRA-rTL.woff
+    │   │       │   ├── KaTeX_Caligraphic-Regular-Di6jR-x-.woff2
+    │   │       │   ├── KaTeX_Caligraphic-Regular-wX97UBjC.ttf
+    │   │       │   ├── KaTeX_Fraktur-Bold-BdnERNNW.ttf
+    │   │       │   ├── KaTeX_Fraktur-Bold-BsDP51OF.woff
+    │   │       │   ├── KaTeX_Fraktur-Bold-CL6g_b3V.woff2
+    │   │       │   ├── KaTeX_Fraktur-Regular-CB_wures.ttf
+    │   │       │   ├── KaTeX_Fraktur-Regular-CTYiF6lA.woff2
+    │   │       │   ├── KaTeX_Fraktur-Regular-Dxdc4cR9.woff
+    │   │       │   ├── KaTeX_Main-Bold-Cx986IdX.woff2
+    │   │       │   ├── KaTeX_Main-Bold-Jm3AIy58.woff
+    │   │       │   ├── KaTeX_Main-Bold-waoOVXN0.ttf
+    │   │       │   ├── KaTeX_Main-BoldItalic-DxDJ3AOS.woff2
+    │   │       │   ├── KaTeX_Main-BoldItalic-DzxPMmG6.ttf
+    │   │       │   ├── KaTeX_Main-BoldItalic-SpSLRI95.woff
+    │   │       │   ├── KaTeX_Main-Italic-3WenGoN9.ttf
+    │   │       │   ├── KaTeX_Main-Italic-BMLOBm91.woff
+    │   │       │   ├── KaTeX_Main-Italic-NWA7e6Wa.woff2
+    │   │       │   ├── KaTeX_Main-Regular-B22Nviop.woff2
+    │   │       │   ├── KaTeX_Main-Regular-Dr94JaBh.woff
+    │   │       │   ├── KaTeX_Main-Regular-ypZvNtVU.ttf
+    │   │       │   ├── KaTeX_Math-BoldItalic-B3XSjfu4.ttf
+    │   │       │   ├── KaTeX_Math-BoldItalic-CZnvNsCZ.woff2
+    │   │       │   ├── KaTeX_Math-BoldItalic-iY-2wyZ7.woff
+    │   │       │   ├── KaTeX_Math-Italic-DA0__PXp.woff
+    │   │       │   ├── KaTeX_Math-Italic-flOr_0UB.ttf
+    │   │       │   ├── KaTeX_Math-Italic-t53AETM-.woff2
+    │   │       │   ├── KaTeX_SansSerif-Bold-CFMepnvq.ttf
+    │   │       │   ├── KaTeX_SansSerif-Bold-D1sUS0GD.woff2
+    │   │       │   ├── KaTeX_SansSerif-Bold-DbIhKOiC.woff
+    │   │       │   ├── KaTeX_SansSerif-Italic-C3H0VqGB.woff2
+    │   │       │   ├── KaTeX_SansSerif-Italic-DN2j7dab.woff
+    │   │       │   ├── KaTeX_SansSerif-Italic-YYjJ1zSn.ttf
+    │   │       │   ├── KaTeX_SansSerif-Regular-BNo7hRIc.ttf
+    │   │       │   ├── KaTeX_SansSerif-Regular-CS6fqUqJ.woff
+    │   │       │   ├── KaTeX_SansSerif-Regular-DDBCnlJ7.woff2
+    │   │       │   ├── KaTeX_Script-Regular-C5JkGWo-.ttf
+    │   │       │   ├── KaTeX_Script-Regular-D3wIWfF6.woff2
+    │   │       │   ├── KaTeX_Script-Regular-D5yQViql.woff
+    │   │       │   ├── KaTeX_Size1-Regular-C195tn64.woff
+    │   │       │   ├── KaTeX_Size1-Regular-Dbsnue_I.ttf
+    │   │       │   ├── KaTeX_Size1-Regular-mCD8mA8B.woff2
+    │   │       │   ├── KaTeX_Size2-Regular-B7gKUWhC.ttf
+    │   │       │   ├── KaTeX_Size2-Regular-Dy4dx90m.woff2
+    │   │       │   ├── KaTeX_Size2-Regular-oD1tc_U0.woff
+    │   │       │   ├── KaTeX_Size3-Regular-CTq5MqoE.woff
+    │   │       │   ├── KaTeX_Size3-Regular-DgpXs0kz.ttf
+    │   │       │   ├── KaTeX_Size4-Regular-BF-4gkZK.woff
+    │   │       │   ├── KaTeX_Size4-Regular-DWFBv043.ttf
+    │   │       │   ├── KaTeX_Size4-Regular-Dl5lxZxV.woff2
+    │   │       │   ├── KaTeX_Typewriter-Regular-C0xS9mPB.woff
+    │   │       │   ├── KaTeX_Typewriter-Regular-CO6r4hn1.woff2
+    │   │       │   ├── KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf
+    │   │       │   ├── LineChart-CKh1Fdep.js
+    │   │       │   ├── LineChart-CKh1Fdep.js.map
+    │   │       │   ├── Login-BCwzjozv.css
+    │   │       │   ├── Login-C71KLpsi.js
+    │   │       │   ├── Login-C71KLpsi.js.map
+    │   │       │   ├── MatplotlibPlot-AF_QcUtc.css
+    │   │       │   ├── MatplotlibPlot-CgZqwhB9.js
+    │   │       │   ├── MatplotlibPlot-CgZqwhB9.js.map
+    │   │       │   ├── Minimize-X5PPawdt.js
+    │   │       │   ├── Minimize-X5PPawdt.js.map
+    │   │       │   ├── ModifyUpload-By7WzcPJ.js
+    │   │       │   ├── ModifyUpload-By7WzcPJ.js.map
+    │   │       │   ├── ModifyUpload-C849vsWf.css
+    │   │       │   ├── Music-CDm0RGMk.js
+    │   │       │   ├── Music-CDm0RGMk.js.map
+    │   │       │   ├── Plot-BaG7oz5l.js
+    │   │       │   ├── Plot-BaG7oz5l.js.map
+    │   │       │   ├── PlotlyPlot-jIRHgAA-.js
+    │   │       │   ├── PlotlyPlot-jIRHgAA-.js.map
+    │   │       │   ├── SelectSource-lBfDLlH8.js
+    │   │       │   ├── SelectSource-lBfDLlH8.js.map
+    │   │       │   ├── ShareButton-OlciWAJu.js
+    │   │       │   ├── ShareButton-OlciWAJu.js.map
+    │   │       │   ├── StaticAudio-CCdGW_0q.css
+    │   │       │   ├── StaticAudio-ivH08Mmp.js
+    │   │       │   ├── StaticAudio-ivH08Mmp.js.map
+    │   │       │   ├── Tabs-DX5TEub2.css
+    │   │       │   ├── Tabs-DhLS2PCT.js
+    │   │       │   ├── Tabs-DhLS2PCT.js.map
+    │   │       │   ├── Textbox-CF9-08gf.js
+    │   │       │   ├── Textbox-CF9-08gf.js.map
+    │   │       │   ├── Textbox-D8IAzrZj.css
+    │   │       │   ├── Trim-UKwaW4UI.js
+    │   │       │   ├── Trim-UKwaW4UI.js.map
+    │   │       │   ├── Undo-CpmTQw3B.js
+    │   │       │   ├── Undo-CpmTQw3B.js.map
+    │   │       │   ├── Upload-46YxStuW.js
+    │   │       │   ├── Upload-46YxStuW.js.map
+    │   │       │   ├── Upload-Cp8Go_XF.js
+    │   │       │   ├── Upload-Cp8Go_XF.js.map
+    │   │       │   ├── UploadText-Dnj0K08n.js
+    │   │       │   ├── UploadText-Dnj0K08n.js.map
+    │   │       │   ├── Video-ClgvEI2i.js
+    │   │       │   ├── Video-ClgvEI2i.js.map
+    │   │       │   ├── Video-DJw86Ppo.css
+    │   │       │   ├── Video-fsmLZWjA.js
+    │   │       │   ├── Video-fsmLZWjA.js.map
+    │   │       │   ├── VideoPreview-BESo86b-.js
+    │   │       │   ├── VideoPreview-BESo86b-.js.map
+    │   │       │   ├── VideoPreview-Dvitrirr.css
+    │   │       │   ├── __vite-browser-external-D7Ct-6yo.js
+    │   │       │   ├── __vite-browser-external-D7Ct-6yo.js.map
+    │   │       │   ├── browser-Dff5j3YP.js
+    │   │       │   ├── browser-Dff5j3YP.js.map
+    │   │       │   ├── clike-CFERkOWz.js
+    │   │       │   ├── clike-CFERkOWz.js.map
+    │   │       │   ├── color-llR14loa.js
+    │   │       │   ├── color-llR14loa.js.map
+    │   │       │   ├── dockerfile-C8FRPiPq.js
+    │   │       │   ├── dockerfile-C8FRPiPq.js.map
+    │   │       │   ├── dsv-DB8NKgIY.js
+    │   │       │   ├── dsv-DB8NKgIY.js.map
+    │   │       │   ├── file-url-BIHPd7vS.js
+    │   │       │   ├── file-url-BIHPd7vS.js.map
+    │   │       │   ├── frontmatter-DfkSKe_d.js
+    │   │       │   ├── frontmatter-DfkSKe_d.js.map
+    │   │       │   ├── index-9Q6eVs93.js
+    │   │       │   ├── index-9Q6eVs93.js.map
+    │   │       │   ├── index-BTDJHSno.js
+    │   │       │   ├── index-BTDJHSno.js.map
+    │   │       │   ├── index-C3IvyYRC.js
+    │   │       │   ├── index-C3IvyYRC.js.map
+    │   │       │   ├── index-C5qVevwb.js
+    │   │       │   ├── index-C5qVevwb.js.map
+    │   │       │   ├── index-CFBZQE_H.css
+    │   │       │   ├── index-CGhWAI4v.js
+    │   │       │   ├── index-CGhWAI4v.js.map
+    │   │       │   ├── index-CnqicUFC.js
+    │   │       │   ├── index-CnqicUFC.js.map
+    │   │       │   ├── index-D5ROCp7B.js
+    │   │       │   ├── index-D5ROCp7B.js.map
+    │   │       │   ├── index-DC03cf5q.js
+    │   │       │   ├── index-DC03cf5q.js.map
+    │   │       │   ├── index-DWXCD-iT.js
+    │   │       │   ├── index-DWXCD-iT.js.map
+    │   │       │   ├── index-DoOJcblZ.js
+    │   │       │   ├── index-DoOJcblZ.js.map
+    │   │       │   ├── index-DuXXhepF.css
+    │   │       │   ├── index-Q7jrnAkz.js
+    │   │       │   ├── index-Q7jrnAkz.js.map
+    │   │       │   ├── index-SseFt3T1.js
+    │   │       │   ├── index-SseFt3T1.js.map
+    │   │       │   ├── index-eMSj2v_Y.js
+    │   │       │   ├── index-eMSj2v_Y.js.map
+    │   │       │   ├── index-h4xPCdhH.css
+    │   │       │   ├── module-BA06XY8_.js
+    │   │       │   ├── module-BA06XY8_.js.map
+    │   │       │   ├── module-C-VadMaF.js
+    │   │       │   ├── module-C-VadMaF.js.map
+    │   │       │   ├── module-LTv20P1S.js
+    │   │       │   ├── module-LTv20P1S.js.map
+    │   │       │   ├── prism-python-Bw3EYPE-.js
+    │   │       │   ├── prism-python-Bw3EYPE-.js.map
+    │   │       │   ├── r-DUYO_cvP.js
+    │   │       │   ├── r-DUYO_cvP.js.map
+    │   │       │   ├── shell-bahM2fKw.js
+    │   │       │   ├── shell-bahM2fKw.js.map
+    │   │       │   ├── sql-C4g8LzGK.js
+    │   │       │   ├── sql-C4g8LzGK.js.map
+    │   │       │   ├── svelte
+    │   │       │   │   ├── svelte-submodules.js
+    │   │       │   │   └── svelte.js
+    │   │       │   ├── utils-Gtzs_Zla.js
+    │   │       │   ├── utils-Gtzs_Zla.js.map
+    │   │       │   ├── vega-embed.module-BjTBAHSW.js
+    │   │       │   ├── vega-embed.module-BjTBAHSW.js.map
+    │   │       │   ├── worker-DJ3jufjD.js
+    │   │       │   ├── worker-DJ3jufjD.js.map
+    │   │       │   ├── yaml-DsCXHVTH.js
+    │   │       │   └── yaml-DsCXHVTH.js.map
+    │   │       ├── favicon.png
+    │   │       ├── gradio.js
+    │   │       ├── index.html
+    │   │       ├── share.html
+    │   │       └── static
+    │   │           └── img
+    │   │               ├── Bunny.obj
+    │   │               ├── Duck.glb
+    │   │               ├── api-logo.svg
+    │   │               ├── camera.svg
+    │   │               ├── clear.svg
+    │   │               ├── edit.svg
+    │   │               ├── javascript.svg
+    │   │               ├── logo.svg
+    │   │               ├── logo_error.svg
+    │   │               ├── python.svg
+    │   │               └── undo-solid.svg
+    │   ├── templates.py
+    │   ├── templates.pyi
+    │   ├── test_data
+    │   │   ├── __init__.py
+    │   │   ├── blocks_configs.py
+    │   │   ├── cheetah1-copy.jpg
+    │   │   ├── cheetah1.jpg
+    │   │   ├── cheetah2.jpg
+    │   │   ├── flagged_no_log
+    │   │   │   ├── a.txt
+    │   │   │   ├── b.txt
+    │   │   │   └── c.txt
+    │   │   ├── flagged_with_log
+    │   │   │   └── log.csv
+    │   │   ├── lion.jpg
+    │   │   ├── rectangles.gif
+    │   │   ├── test_audio.wav
+    │   │   └── test_image.png
+    │   ├── themes
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-312.pyc
+    │   │   │   ├── base.cpython-312.pyc
+    │   │   │   ├── default.cpython-312.pyc
+    │   │   │   ├── glass.cpython-312.pyc
+    │   │   │   ├── monochrome.cpython-312.pyc
+    │   │   │   └── soft.cpython-312.pyc
+    │   │   ├── app.py
+    │   │   ├── base.py
+    │   │   ├── builder_app.py
+    │   │   ├── default.py
+    │   │   ├── glass.py
+    │   │   ├── monochrome.py
+    │   │   ├── soft.py
+    │   │   ├── upload_theme.py
+    │   │   └── utils
+    │   │       ├── __init__.py
+    │   │       ├── __pycache__
+    │   │       │   ├── __init__.cpython-312.pyc
+    │   │       │   ├── colors.cpython-312.pyc
+    │   │       │   ├── fonts.cpython-312.pyc
+    │   │       │   ├── readme_content.cpython-312.pyc
+    │   │       │   ├── semver_match.cpython-312.pyc
+    │   │       │   └── sizes.cpython-312.pyc
+    │   │       ├── colors.py
+    │   │       ├── fonts.py
+    │   │       ├── readme_content.py
+    │   │       ├── semver_match.py
+    │   │       ├── sizes.py
+    │   │       └── theme_dropdown.py
+    │   ├── tunneling.py
+    │   ├── utils.py
+    │   └── wasm_utils.py
+    ├── gradio_app.py
+    ├── guides
+    │   ├── 01_getting-started
+    │   │   └── 01_quickstart.md
+    │   ├── 02_building-interfaces
+    │   │   ├── 00_the-interface-class.md
+    │   │   ├── 01_more-on-examples.md
+    │   │   ├── 02_flagging.md
+    │   │   ├── 03_interface-state.md
+    │   │   ├── 04_reactive-interfaces.md
+    │   │   └── 05_four-kinds-of-interfaces.md
+    │   ├── 03_building-with-blocks
+    │   │   ├── 01_blocks-and-event-listeners.md
+    │   │   ├── 02_controlling-layout.md
+    │   │   ├── 03_state-in-blocks.md
+    │   │   ├── 04_dynamic-apps-with-render-decorator.md
+    │   │   ├── 05_more-blocks-features
+    │   │   ├── 06_custom-CSS-and-JS.md
+    │   │   └── 07_using-blocks-like-functions.md
+    │   ├── 04_additional-features
+    │   │   ├── 01_queuing.md
+    │   │   ├── 02_streaming-outputs.md
+    │   │   ├── 03_alerts.md
+    │   │   ├── 04_styling.md
+    │   │   ├── 05_progress-bars.md
+    │   │   ├── 06_batch-functions.md
+    │   │   ├── 07_sharing-your-app.md
+    │   │   ├── 08_environment-variables.md
+    │   │   └── 09_resource-cleanup.md
+    │   ├── 05_chatbots
+    │   │   ├── 01_creating-a-chatbot-fast.md
+    │   │   ├── 02_creating-a-custom-chatbot-with-blocks.md
+    │   │   ├── 03_messages-format.md
+    │   │   ├── 04_agents-and-tool-usage.md
+    │   │   └── 05_creating-a-discord-bot-from-a-gradio-app.md
+    │   ├── 06_data-science-and-plots
+    │   │   ├── 01_creating-plots.md
+    │   │   ├── 02_time-plots.md
+    │   │   ├── 03_filters-tables-and-stats.md
+    │   │   └── 04_connecting-to-a-database.md
+    │   ├── 07_custom-components
+    │   │   ├── 01_custom-components-in-five-minutes.md
+    │   │   ├── 02_key-component-concepts.md
+    │   │   ├── 03_configuration.md
+    │   │   ├── 04_backend.md
+    │   │   ├── 05_frontend.md
+    │   │   ├── 06_frequently-asked-questions.md
+    │   │   ├── 07_pdf-component-example.md
+    │   │   ├── 08_multimodal-chatbot-part1.md
+    │   │   └── 09_documenting-custom-components.md
+    │   ├── 08_gradio-clients-and-lite
+    │   │   ├── 01_getting-started-with-the-python-client.md
+    │   │   ├── 02_getting-started-with-the-js-client.md
+    │   │   ├── 03_querying-gradio-apps-with-curl.md
+    │   │   ├── 04_gradio-and-llm-agents.md
+    │   │   ├── 05_gradio-lite.md
+    │   │   ├── 06_gradio-lite-and-transformers-js.md
+    │   │   └── 07_fastapi-app-with-the-gradio-client.md
+    │   ├── 09_other-tutorials
+    │   │   ├── 01_using-hugging-face-integrations.md
+    │   │   ├── Gradio-and-Comet.md
+    │   │   ├── Gradio-and-ONNX-on-Hugging-Face.md
+    │   │   ├── Gradio-and-Wandb-Integration.md
+    │   │   ├── create-your-own-friends-with-a-gan.md
+    │   │   ├── creating-a-dashboard-from-bigquery-data.md
+    │   │   ├── creating-a-dashboard-from-supabase-data.md
+    │   │   ├── creating-a-realtime-dashboard-from-google-sheets.md
+    │   │   ├── deploying-gradio-with-docker.md
+    │   │   ├── developing-faster-with-reload-mode.md
+    │   │   ├── how-to-use-3D-model-component.md
+    │   │   ├── image-classification-in-pytorch.md
+    │   │   ├── image-classification-in-tensorflow.md
+    │   │   ├── image-classification-with-vision-transformers.md
+    │   │   ├── installing-gradio-in-a-virtual-environment.md
+    │   │   ├── named-entity-recognition.md
+    │   │   ├── plot-component-for-maps.md
+    │   │   ├── real-time-speech-recognition.md
+    │   │   ├── running-background-tasks.md
+    │   │   ├── running-gradio-on-your-web-server-with-nginx.md
+    │   │   ├── setting-up-a-demo-for-maximum-performance.md
+    │   │   ├── styling-the-gradio-dataframe.md
+    │   │   ├── theming-guide.md
+    │   │   ├── using-flagging.md
+    │   │   ├── using-gradio-for-tabular-workflows.md
+    │   │   └── wrapping-layouts.md
+    │   ├── CONTRIBUTING.md
+    │   ├── assets
+    │   │   ├── access_token.png
+    │   │   ├── annotated.png
+    │   │   ├── dataflow.svg
+    │   │   ├── embed_this_space.png
+    │   │   ├── flagging-callback-hf.png
+    │   │   ├── hf_demo.mp4
+    │   │   ├── logo.png
+    │   │   ├── secrets.png
+    │   │   ├── share_icon.png
+    │   │   ├── sharing.svg
+    │   │   └── use_via_api.png
+    │   └── cn
+    │       ├── 01_getting-started
+    │       │   ├── 01_quickstart.md
+    │       │   ├── 02_key-features.md
+    │       │   └── 03_sharing-your-app.md
+    │       ├── 02_building-interfaces
+    │       │   ├── 01_interface-state.md
+    │       │   ├── 02_reactive-interfaces.md
+    │       │   ├── 03_more-on-examples.md
+    │       │   └── 04_four-kinds-of-interfaces.md
+    │       ├── 03_building-with-blocks
+    │       │   ├── 01_blocks-and-event-listeners.md
+    │       │   ├── 02_controlling-layout.md
+    │       │   ├── 03_state-in-blocks.md
+    │       │   ├── 04_custom-CSS-and-JS.md
+    │       │   └── 05_using-blocks-like-functions.md
+    │       ├── 04_integrating-other-frameworks
+    │       │   ├── 01_using-hugging-face-integrations.md
+    │       │   ├── Gradio-and-Comet.md
+    │       │   ├── Gradio-and-ONNX-on-Hugging-Face.md
+    │       │   ├── Gradio-and-Wandb-Integration.md
+    │       │   ├── image-classification-in-pytorch.md
+    │       │   ├── image-classification-in-tensorflow.md
+    │       │   └── image-classification-with-vision-transformers.md
+    │       ├── 05_tabular-data-science-and-plots
+    │       │   ├── 01_connecting-to-a-database.md
+    │       │   ├── creating-a-dashboard-from-bigquery-data.md
+    │       │   ├── creating-a-dashboard-from-supabase-data.md
+    │       │   ├── creating-a-realtime-dashboard-from-google-sheets.md
+    │       │   ├── plot-component-for-maps.md
+    │       │   └── using-gradio-for-tabular-workflows.md
+    │       ├── 06_client-libraries
+    │       │   ├── 01_getting-started-with-the-python-client.md
+    │       │   ├── 02_getting-started-with-the-js-client.md
+    │       │   ├── fastapi-app-with-the-gradio-client.md
+    │       │   └── gradio-and-llm-agents.md
+    │       ├── 07_other-tutorials
+    │       │   ├── create-your-own-friends-with-a-gan.md
+    │       │   ├── creating-a-chatbot.md
+    │       │   ├── creating-a-new-component.md
+    │       │   ├── developing-faster-with-reload-mode.md
+    │       │   ├── how-to-use-3D-model-component.md
+    │       │   ├── named-entity-recognition.md
+    │       │   ├── real-time-speech-recognition.md
+    │       │   ├── running-background-tasks.md
+    │       │   ├── running-gradio-on-your-web-server-with-nginx.md
+    │       │   ├── theming-guide.md
+    │       │   └── using-flagging.md
+    │       ├── CONTRIBUTING.md
+    │       └── assets
+    │           ├── access_token.png
+    │           ├── annotated.png
+    │           ├── embed_this_space.png
+    │           ├── flagging-callback-hf.png
+    │           ├── hf_demo.mp4
+    │           ├── logo.png
+    │           ├── secrets.png
+    │           ├── sharing.svg
+    │           └── use_via_api.png
+    ├── home
+    │   └── runner
+    │       └── work
+    │           └── gradio
+    │               └── gradio
+    │                   └── client
+    │                       └── js
+    │                           └── src
+    │                               ├── client.d.ts
+    │                               ├── constants.d.ts
+    │                               ├── helpers
+    │                               │   ├── api_info.d.ts
+    │                               │   ├── data.d.ts
+    │                               │   ├── init_helpers.d.ts
+    │                               │   └── spaces.d.ts
+    │                               ├── index.d.ts
+    │                               ├── types.d.ts
+    │                               ├── upload.d.ts
+    │                               └── utils
+    │                                   ├── duplicate.d.ts
+    │                                   ├── handle_blob.d.ts
+    │                                   ├── post_data.d.ts
+    │                                   ├── predict.d.ts
+    │                                   ├── stream.d.ts
+    │                                   ├── submit.d.ts
+    │                                   ├── upload_files.d.ts
+    │                                   └── view_api.d.ts
+    ├── js
+    │   ├── README.md
+    │   ├── _cdn-test
+    │   │   ├── favicon.svg
+    │   │   ├── index.html
+    │   │   ├── package.json
+    │   │   └── style.css
+    │   ├── _spaces-test
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   └── @gradio
+    │   │   │       ├── client -> ../../../../client/js
+    │   │   │       ├── form -> ../../../form
+    │   │   │       └── theme -> ../../../theme
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   ├── app.d.ts
+    │   │   │   ├── app.html
+    │   │   │   ├── lib
+    │   │   │   │   ├── EndpointInputs.svelte
+    │   │   │   │   ├── ResponsePreview.svelte
+    │   │   │   │   ├── Spinner.svelte
+    │   │   │   │   ├── Success.svelte
+    │   │   │   │   └── Warning.svelte
+    │   │   │   └── routes
+    │   │   │       ├── +layout.svelte
+    │   │   │       ├── +page.svelte
+    │   │   │       ├── client-browser
+    │   │   │       │   └── +page.svelte
+    │   │   │       ├── client-node
+    │   │   │       │   └── +page.svelte
+    │   │   │       └── embeds
+    │   │   │           └── +page.svelte
+    │   │   ├── static
+    │   │   │   └── favicon.png
+    │   │   ├── svelte.config.js
+    │   │   └── vite.config.js
+    │   ├── _website
+    │   │   ├── CHANGELOG.md
+    │   │   ├── generate_jsons
+    │   │   │   ├── generate.py
+    │   │   │   └── src
+    │   │   │       ├── changelog
+    │   │   │       │   └── __init__.py
+    │   │   │       ├── demos
+    │   │   │       │   └── __init__.py
+    │   │   │       ├── docs
+    │   │   │       │   └── __init__.py
+    │   │   │       └── guides
+    │   │   │           └── __init__.py
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── code -> ../../../code
+    │   │   │   │   └── paramviewer -> ../../../paramviewer
+    │   │   │   ├── @sindresorhus
+    │   │   │   │   └── slugify -> ../../../../node_modules/.pnpm/@sindresorhus+slugify@2.2.0/node_modules/@sindresorhus/slugify
+    │   │   │   ├── @sveltejs
+    │   │   │   │   ├── adapter-auto -> ../../../../node_modules/.pnpm/@sveltejs+adapter-auto@3.2.2_@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4_5utf6vweveveo3xjqrmwoh74oe/node_modules/@sveltejs/adapter-auto
+    │   │   │   │   ├── adapter-static -> ../../../../node_modules/.pnpm/@sveltejs+adapter-static@3.0.2_@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte_gtfdsbplms6r7xn44kefxz7mya/node_modules/@sveltejs/adapter-static
+    │   │   │   │   ├── adapter-vercel -> ../../../../node_modules/.pnpm/@sveltejs+adapter-vercel@5.3.0_@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte_t5bmfpgsmtkhsuea4c7bhda5hu/node_modules/@sveltejs/adapter-vercel
+    │   │   │   │   └── kit -> ../../../../node_modules/.pnpm/@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node_o7pp2p5svq4h5udxa4yf4mjnc4/node_modules/@sveltejs/kit
+    │   │   │   ├── @tailwindcss
+    │   │   │   │   ├── forms -> ../../../../node_modules/.pnpm/@tailwindcss+forms@0.5.0_tailwindcss@3.1.6_postcss@8.4.38_/node_modules/@tailwindcss/forms
+    │   │   │   │   └── typography -> ../../../../node_modules/.pnpm/@tailwindcss+typography@0.5.4_tailwindcss@3.1.6_postcss@8.4.38_/node_modules/@tailwindcss/typography
+    │   │   │   ├── @types
+    │   │   │   │   └── prismjs -> ../../../../node_modules/.pnpm/@types+prismjs@1.26.1/node_modules/@types/prismjs
+    │   │   │   ├── flexsearch -> ../../../node_modules/.pnpm/flexsearch@0.7.43/node_modules/flexsearch
+    │   │   │   ├── hast-util-to-string -> ../../../node_modules/.pnpm/hast-util-to-string@3.0.0/node_modules/hast-util-to-string
+    │   │   │   ├── mdsvex -> ../../../node_modules/.pnpm/mdsvex@0.11.0_svelte@4.2.15/node_modules/mdsvex
+    │   │   │   ├── postcss -> ../../../node_modules/.pnpm/postcss@8.4.38/node_modules/postcss
+    │   │   │   ├── prism-svelte -> ../../../node_modules/.pnpm/prism-svelte@0.5.0/node_modules/prism-svelte
+    │   │   │   ├── prismjs -> ../../../node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs
+    │   │   │   ├── tailwindcss -> ../../../node_modules/.pnpm/tailwindcss@3.1.6_postcss@8.4.38/node_modules/tailwindcss
+    │   │   │   └── wrangler -> ../../../node_modules/.pnpm/wrangler@3.72.3_bufferutil@4.0.7/node_modules/wrangler
+    │   │   ├── package.json
+    │   │   ├── postcss.config.cjs
+    │   │   ├── src
+    │   │   │   ├── app.d.ts
+    │   │   │   ├── app.html
+    │   │   │   ├── lib
+    │   │   │   │   ├── assets
+    │   │   │   │   │   ├── brand-assets
+    │   │   │   │   │   │   ├── gradio-logo-with-title.png
+    │   │   │   │   │   │   ├── gradio-logo-with-title.svg
+    │   │   │   │   │   │   ├── gradio-logo.png
+    │   │   │   │   │   │   └── gradio-logo.svg
+    │   │   │   │   │   ├── copy.js
+    │   │   │   │   │   ├── demo_code.js
+    │   │   │   │   │   ├── gradio.svg
+    │   │   │   │   │   ├── img
+    │   │   │   │   │   │   ├── anchor.svg
+    │   │   │   │   │   │   ├── anchor_gray.svg
+    │   │   │   │   │   │   ├── anchor_orange.svg
+    │   │   │   │   │   │   ├── dataflow.svg
+    │   │   │   │   │   │   ├── esc.svg
+    │   │   │   │   │   │   ├── github-black.svg
+    │   │   │   │   │   │   ├── github.svg
+    │   │   │   │   │   │   ├── header-faded.jpg
+    │   │   │   │   │   │   ├── header-image.jpg
+    │   │   │   │   │   │   ├── logo-melted.png
+    │   │   │   │   │   │   ├── logo.png
+    │   │   │   │   │   │   ├── meta-image.png
+    │   │   │   │   │   │   ├── share_gray.svg
+    │   │   │   │   │   │   ├── spaces-logo.svg
+    │   │   │   │   │   │   └── twitter.svg
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   ├── logos
+    │   │   │   │   │   │   ├── amazon.svg
+    │   │   │   │   │   │   ├── cisco.svg
+    │   │   │   │   │   │   ├── factmata.svg
+    │   │   │   │   │   │   ├── fb.svg
+    │   │   │   │   │   │   ├── google.svg
+    │   │   │   │   │   │   ├── gradio.svg
+    │   │   │   │   │   │   ├── huggingface.svg
+    │   │   │   │   │   │   ├── humaniseai.svg
+    │   │   │   │   │   │   ├── mit-svg-50.png
+    │   │   │   │   │   │   ├── siemens.svg
+    │   │   │   │   │   │   ├── stanford.svg
+    │   │   │   │   │   │   ├── twitter.svg
+    │   │   │   │   │   │   ├── uipath.svg
+    │   │   │   │   │   │   ├── unifyid.svg
+    │   │   │   │   │   │   ├── vmware.svg
+    │   │   │   │   │   │   └── wns.png
+    │   │   │   │   │   ├── prism.css
+    │   │   │   │   │   ├── style.css
+    │   │   │   │   │   ├── tweets.json
+    │   │   │   │   │   └── twitter
+    │   │   │   │   │       ├── 0Hxb1ESL_x96.png
+    │   │   │   │   │       ├── 1013607349943058433.jpg
+    │   │   │   │   │       ├── 1116115321218146304.jpg
+    │   │   │   │   │       ├── 1362781887098454025.jpg
+    │   │   │   │   │       ├── 810912649827364864.jpg
+    │   │   │   │   │       ├── 889312280092999680.jpg
+    │   │   │   │   │       ├── 8vyTl51q_400x400.jpeg
+    │   │   │   │   │       ├── GDLc7Oe4_400x400.jpeg
+    │   │   │   │   │       ├── ITFspAMm_x96.jpg
+    │   │   │   │   │       ├── LsCnjnsl_400x400.jpeg
+    │   │   │   │   │       ├── R1gj6nb3_x96.jpg
+    │   │   │   │   │       ├── d8qFeBSq_x96.png
+    │   │   │   │   │       ├── heart.svg
+    │   │   │   │   │       ├── ksO1TT2P_400x400.jpeg
+    │   │   │   │   │       ├── logo.svg
+    │   │   │   │   │       ├── pwMrDOBv_400x400.jpeg
+    │   │   │   │   │       └── redheart.svg
+    │   │   │   │   ├── components
+    │   │   │   │   │   ├── CopyButton.svelte
+    │   │   │   │   │   ├── Demos.svelte
+    │   │   │   │   │   ├── DemosLanding.svelte
+    │   │   │   │   │   ├── DemosLite.svelte
+    │   │   │   │   │   ├── DemosSection.svelte
+    │   │   │   │   │   ├── Details.svelte
+    │   │   │   │   │   ├── DocsNav.svelte
+    │   │   │   │   │   ├── DocsNavCustom.svelte
+    │   │   │   │   │   ├── EventListeners.svelte
+    │   │   │   │   │   ├── Footer.svelte
+    │   │   │   │   │   ├── FunctionDoc.svelte
+    │   │   │   │   │   ├── FunctionsSection.svelte
+    │   │   │   │   │   ├── GuidesSection.svelte
+    │   │   │   │   │   ├── Header.svelte
+    │   │   │   │   │   ├── HelpersSection.svelte
+    │   │   │   │   │   ├── JSDocsNav.svelte
+    │   │   │   │   │   ├── MetaTags.svelte
+    │   │   │   │   │   ├── ParamTable.svelte
+    │   │   │   │   │   ├── ShortcutTable.svelte
+    │   │   │   │   │   ├── Slider.svelte
+    │   │   │   │   │   ├── VersionDropdown.svelte
+    │   │   │   │   │   ├── clickOutside.ts
+    │   │   │   │   │   ├── icons
+    │   │   │   │   │   │   ├── Close.svelte
+    │   │   │   │   │   │   ├── DownloadIcon.svelte
+    │   │   │   │   │   │   ├── Fullscreen.svelte
+    │   │   │   │   │   │   └── Lightbulb.svelte
+    │   │   │   │   │   └── search
+    │   │   │   │   │       ├── SearchIcon.svelte
+    │   │   │   │   │       ├── index.ts
+    │   │   │   │   │       ├── search-worker.ts
+    │   │   │   │   │       ├── search.svelte
+    │   │   │   │   │       └── search.ts
+    │   │   │   │   ├── icons
+    │   │   │   │   │   ├── Close.svelte
+    │   │   │   │   │   └── CopyButton.svelte
+    │   │   │   │   ├── templates
+    │   │   │   │   │   ├── gradio
+    │   │   │   │   │   │   ├── 01_building-demos
+    │   │   │   │   │   │   │   ├── 01_interface.svx
+    │   │   │   │   │   │   │   ├── 02_chatinterface.svx
+    │   │   │   │   │   │   │   ├── 03_tabbedinterface.svx
+    │   │   │   │   │   │   │   └── 04_blocks.svx
+    │   │   │   │   │   │   ├── 02_blocks-layout
+    │   │   │   │   │   │   │   ├── 01_render.svx
+    │   │   │   │   │   │   │   ├── accordion.svx
+    │   │   │   │   │   │   │   ├── column.svx
+    │   │   │   │   │   │   │   ├── group.svx
+    │   │   │   │   │   │   │   ├── row.svx
+    │   │   │   │   │   │   │   └── tab.svx
+    │   │   │   │   │   │   ├── 03_components
+    │   │   │   │   │   │   │   ├── 01_introduction.svx
+    │   │   │   │   │   │   │   ├── annotatedimage.svx
+    │   │   │   │   │   │   │   ├── audio.svx
+    │   │   │   │   │   │   │   ├── barplot.svx
+    │   │   │   │   │   │   │   ├── button.svx
+    │   │   │   │   │   │   │   ├── chatbot.svx
+    │   │   │   │   │   │   │   ├── checkbox.svx
+    │   │   │   │   │   │   │   ├── checkboxgroup.svx
+    │   │   │   │   │   │   │   ├── clearbutton.svx
+    │   │   │   │   │   │   │   ├── code.svx
+    │   │   │   │   │   │   │   ├── colorpicker.svx
+    │   │   │   │   │   │   │   ├── dataframe.svx
+    │   │   │   │   │   │   │   ├── dataset.svx
+    │   │   │   │   │   │   │   ├── datetime.svx
+    │   │   │   │   │   │   │   ├── downloadbutton.svx
+    │   │   │   │   │   │   │   ├── dropdown.svx
+    │   │   │   │   │   │   │   ├── duplicatebutton.svx
+    │   │   │   │   │   │   │   ├── file.svx
+    │   │   │   │   │   │   │   ├── fileexplorer.svx
+    │   │   │   │   │   │   │   ├── gallery.svx
+    │   │   │   │   │   │   │   ├── highlightedtext.svx
+    │   │   │   │   │   │   │   ├── html.svx
+    │   │   │   │   │   │   │   ├── image.svx
+    │   │   │   │   │   │   │   ├── imageeditor.svx
+    │   │   │   │   │   │   │   ├── json.svx
+    │   │   │   │   │   │   │   ├── label.svx
+    │   │   │   │   │   │   │   ├── lineplot.svx
+    │   │   │   │   │   │   │   ├── loginbutton.svx
+    │   │   │   │   │   │   │   ├── logoutbutton.svx
+    │   │   │   │   │   │   │   ├── markdown.svx
+    │   │   │   │   │   │   │   ├── model3d.svx
+    │   │   │   │   │   │   │   ├── multimodaltextbox.svx
+    │   │   │   │   │   │   │   ├── number.svx
+    │   │   │   │   │   │   │   ├── paramviewer.svx
+    │   │   │   │   │   │   │   ├── plot.svx
+    │   │   │   │   │   │   │   ├── radio.svx
+    │   │   │   │   │   │   │   ├── scatterplot.svx
+    │   │   │   │   │   │   │   ├── simpleimage.svx
+    │   │   │   │   │   │   │   ├── slider.svx
+    │   │   │   │   │   │   │   ├── state.svx
+    │   │   │   │   │   │   │   ├── textbox.svx
+    │   │   │   │   │   │   │   ├── timer.svx
+    │   │   │   │   │   │   │   ├── uploadbutton.svx
+    │   │   │   │   │   │   │   └── video.svx
+    │   │   │   │   │   │   ├── 04_helpers
+    │   │   │   │   │   │   │   ├── 01_eventdata.svx
+    │   │   │   │   │   │   │   ├── 02_deletedfiledata.svx
+    │   │   │   │   │   │   │   ├── 03_keyupdata.svx
+    │   │   │   │   │   │   │   ├── 04_likedata.svx
+    │   │   │   │   │   │   │   ├── 05_selectdata.svx
+    │   │   │   │   │   │   │   ├── 06_filedata.svx
+    │   │   │   │   │   │   │   ├── 10_progress.svx
+    │   │   │   │   │   │   │   ├── 11_examples.svx
+    │   │   │   │   │   │   │   ├── 12_dependency.svx
+    │   │   │   │   │   │   │   ├── load.svx
+    │   │   │   │   │   │   │   ├── make_waveform.svx
+    │   │   │   │   │   │   │   ├── on.svx
+    │   │   │   │   │   │   │   └── set_static_paths.svx
+    │   │   │   │   │   │   ├── 05_modals
+    │   │   │   │   │   │   │   ├── error.svx
+    │   │   │   │   │   │   │   ├── info.svx
+    │   │   │   │   │   │   │   └── warning.svx
+    │   │   │   │   │   │   ├── 06_routes
+    │   │   │   │   │   │   │   ├── mount_gradio_app.svx
+    │   │   │   │   │   │   │   └── request.svx
+    │   │   │   │   │   │   └── other
+    │   │   │   │   │   │       ├── 01_flagging.svx
+    │   │   │   │   │   │       ├── 02_themes.svx
+    │   │   │   │   │   │       └── NO_RELOAD.svx
+    │   │   │   │   │   ├── process_json.ts
+    │   │   │   │   │   ├── python-client
+    │   │   │   │   │   │   └── gradio_client
+    │   │   │   │   │   │       ├── 01_introduction.svx
+    │   │   │   │   │   │       ├── 02_version-1-release.svx
+    │   │   │   │   │   │       ├── 03_using-zero-gpu-spaces.svx
+    │   │   │   │   │   │       ├── client.svx
+    │   │   │   │   │   │       └── job.svx
+    │   │   │   │   │   └── third-party-clients
+    │   │   │   │   │       └── third-party-clients
+    │   │   │   │   │           ├── 01_introduction.svx
+    │   │   │   │   │           └── rust-client.svx
+    │   │   │   │   ├── text.ts
+    │   │   │   │   └── utils.ts
+    │   │   │   └── routes
+    │   │   │       ├── +error.svelte
+    │   │   │       ├── +layout.server.ts
+    │   │   │       ├── +layout.svelte
+    │   │   │       ├── +page.server.ts
+    │   │   │       ├── +page.svelte
+    │   │   │       ├── [[version]]
+    │   │   │       │   ├── docs
+    │   │   │       │   │   ├── +layout.server.ts
+    │   │   │       │   │   ├── +page.server.ts
+    │   │   │       │   │   ├── +page.svelte
+    │   │   │       │   │   ├── gradio
+    │   │   │       │   │   │   ├── +page.server.ts
+    │   │   │       │   │   │   └── [doc]
+    │   │   │       │   │   │       ├── +page.svelte
+    │   │   │       │   │   │       └── +page.ts
+    │   │   │       │   │   ├── js
+    │   │   │       │   │   │   ├── +page.server.ts
+    │   │   │       │   │   │   ├── [jsdoc]
+    │   │   │       │   │   │   │   ├── +page.server.ts
+    │   │   │       │   │   │   │   └── +page.svelte
+    │   │   │       │   │   │   └── storybook
+    │   │   │       │   │   │       ├── +page.server.ts
+    │   │   │       │   │   │       └── +page.svelte
+    │   │   │       │   │   ├── js-client
+    │   │   │       │   │   │   ├── +page.server.ts
+    │   │   │       │   │   │   └── +page.svelte
+    │   │   │       │   │   ├── python-client
+    │   │   │       │   │   │   ├── +page.server.ts
+    │   │   │       │   │   │   └── [doc]
+    │   │   │       │   │   │       ├── +page.svelte
+    │   │   │       │   │   │       └── +page.ts
+    │   │   │       │   │   └── third-party-clients
+    │   │   │       │   │       ├── +page.server.ts
+    │   │   │       │   │       └── [doc]
+    │   │   │       │   │           ├── +page.svelte
+    │   │   │       │   │           └── +page.ts
+    │   │   │       │   └── guides
+    │   │   │       │       ├── +page.server.ts
+    │   │   │       │       └── [guide]
+    │   │   │       │           ├── +page.server.ts
+    │   │   │       │           └── +page.svelte
+    │   │   │       ├── brand
+    │   │   │       │   └── +page.svelte
+    │   │   │       ├── changelog
+    │   │   │       │   ├── +page.server.ts
+    │   │   │       │   └── +page.svelte
+    │   │   │       ├── custom-components
+    │   │   │       │   └── gallery
+    │   │   │       │       ├── +page.svelte
+    │   │   │       │       ├── Card.svelte
+    │   │   │       │       └── utils.ts
+    │   │   │       ├── playground
+    │   │   │       │   ├── +page.server.ts
+    │   │   │       │   └── +page.svelte
+    │   │   │       ├── redirects.js
+    │   │   │       ├── search-api
+    │   │   │       │   └── +server.ts
+    │   │   │       └── version.json
+    │   │   ├── static
+    │   │   │   ├── assets
+    │   │   │   │   └── gradio.svg
+    │   │   │   └── favicon.png
+    │   │   ├── svelte.config.js
+    │   │   ├── tailwind.config.cjs
+    │   │   ├── tsconfig.json
+    │   │   ├── vercel.json
+    │   │   └── vite.config.ts
+    │   ├── accordion
+    │   │   ├── Accordion.stories.svelte
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── column -> ../../../column
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Accordion.svelte
+    │   ├── annotatedimage
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── app
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @sveltejs
+    │   │   │   │   ├── adapter-auto -> ../../../../node_modules/.pnpm/@sveltejs+adapter-auto@3.2.2_@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4_rqol4qadw25ul4rlhk5dp2jqwe/node_modules/@sveltejs/adapter-auto
+    │   │   │   │   ├── kit -> ../../../../node_modules/.pnpm/@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node_7fs7omth74rfo6qchqm72cmcoe/node_modules/@sveltejs/kit
+    │   │   │   │   └── vite-plugin-svelte -> ../../../../node_modules/.pnpm/@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node@20.12.8_lightningcss_rxr5oqrkxc7hflkhk7xicxzg6y/node_modules/@sveltejs/vite-plugin-svelte
+    │   │   │   ├── prettier -> ../../../node_modules/.pnpm/prettier@3.2.5/node_modules/prettier
+    │   │   │   ├── prettier-plugin-svelte -> ../../../node_modules/.pnpm/prettier-plugin-svelte@3.2.3_prettier@3.2.5_svelte@4.2.15/node_modules/prettier-plugin-svelte
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   ├── svelte-check -> ../../../node_modules/.pnpm/svelte-check@3.7.0_@babel+core@7.24.5_coffeescript@2.7.0_postcss-load-config@4.0.2_postcss@8._w3n6icqki5msr2nl43i3fcdf6u/node_modules/svelte-check
+    │   │   │   ├── typescript -> ../../../node_modules/.pnpm/typescript@5.5.4/node_modules/typescript
+    │   │   │   └── vite -> ../../../node_modules/.pnpm/vite@5.2.11_@types+node@20.12.8_lightningcss@1.24.1_sass@1.66.1_stylus@0.63.0_sugarss@4.0.1_postcss@8.4.38_/node_modules/vite
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   ├── app.d.ts
+    │   │   │   ├── app.html
+    │   │   │   ├── lib
+    │   │   │   │   └── index.ts
+    │   │   │   └── routes
+    │   │   │       └── +page.svelte
+    │   │   ├── static
+    │   │   │   └── favicon.png
+    │   │   ├── svelte.config.js
+    │   │   ├── tsconfig.json
+    │   │   └── vite.config.ts
+    │   ├── atoms
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── Block.svelte
+    │   │       ├── BlockLabel.svelte
+    │   │       ├── BlockTitle.svelte
+    │   │       ├── Empty.svelte
+    │   │       ├── IconButton.svelte
+    │   │       ├── Info.svelte
+    │   │       ├── SelectSource.svelte
+    │   │       ├── ShareButton.svelte
+    │   │       ├── Toolbar.svelte
+    │   │       ├── UploadText.svelte
+    │   │       ├── icons
+    │   │       │   ├── clear.svg
+    │   │       │   ├── edit.svg
+    │   │       │   └── file.svg
+    │   │       ├── index.ts
+    │   │       └── utils
+    │   │           └── parse_placeholder.ts
+    │   ├── audio
+    │   │   ├── Audio.stories.svelte
+    │   │   ├── AudioExample.stories.svelte
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── audio.test.ts
+    │   │   ├── index.ts
+    │   │   ├── interactive
+    │   │   │   └── InteractiveAudio.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── button -> ../../../button
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @types
+    │   │   │   │   └── wavesurfer.js -> ../../../../node_modules/.pnpm/@types+wavesurfer.js@6.0.10/node_modules/@types/wavesurfer.js
+    │   │   │   ├── extendable-media-recorder -> ../../../node_modules/.pnpm/extendable-media-recorder@9.0.0/node_modules/extendable-media-recorder
+    │   │   │   ├── extendable-media-recorder-wav-encoder -> ../../../node_modules/.pnpm/extendable-media-recorder-wav-encoder@7.0.76/node_modules/extendable-media-recorder-wav-encoder
+    │   │   │   ├── resize-observer-polyfill -> ../../../node_modules/.pnpm/resize-observer-polyfill@1.5.1/node_modules/resize-observer-polyfill
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   ├── svelte-range-slider-pips -> ../../../node_modules/.pnpm/svelte-range-slider-pips@2.0.1/node_modules/svelte-range-slider-pips
+    │   │   │   └── wavesurfer.js -> ../../../node_modules/.pnpm/wavesurfer.js@7.4.2/node_modules/wavesurfer.js
+    │   │   ├── package.json
+    │   │   ├── player
+    │   │   │   └── AudioPlayer.svelte
+    │   │   ├── recorder
+    │   │   │   └── AudioRecorder.svelte
+    │   │   ├── shared
+    │   │   │   ├── Audio.svelte
+    │   │   │   ├── DeviceSelect.svelte
+    │   │   │   ├── VolumeControl.svelte
+    │   │   │   ├── VolumeLevels.svelte
+    │   │   │   ├── WaveformControls.svelte
+    │   │   │   ├── WaveformRecordControls.svelte
+    │   │   │   ├── audioBufferToWav.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── types.ts
+    │   │   │   └── utils.ts
+    │   │   ├── static
+    │   │   │   └── StaticAudio.svelte
+    │   │   └── streaming
+    │   │       └── StreamAudio.svelte
+    │   ├── box
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   └── atoms -> ../../../atoms
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── build
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   └── theme -> ../../../theme
+    │   │   │   ├── esbuild -> ../../../node_modules/.pnpm/esbuild@0.21.0/node_modules/esbuild
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   └── svelte-i18n -> ../../../node_modules/.pnpm/svelte-i18n@3.6.0_svelte@4.2.15/node_modules/svelte-i18n
+    │   │   ├── out
+    │   │   │   ├── component_loader.js
+    │   │   │   └── index.js
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── component_loader.js
+    │   │       └── index.ts
+    │   ├── button
+    │   │   ├── Button.stories.svelte
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── main.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Button.svelte
+    │   ├── chatbot
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Chatbot.stories.svelte
+    │   │   ├── Chatbot.test.ts
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── audio -> ../../../audio
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── gallery -> ../../../gallery
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── markdown -> ../../../markdown
+    │   │   │   │   ├── plot -> ../../../plot
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   ├── video -> ../../../video
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @types
+    │   │   │   │   ├── dompurify -> ../../../../node_modules/.pnpm/@types+dompurify@3.0.2/node_modules/@types/dompurify
+    │   │   │   │   ├── katex -> ../../../../node_modules/.pnpm/@types+katex@0.16.0/node_modules/@types/katex
+    │   │   │   │   └── prismjs -> ../../../../node_modules/.pnpm/@types+prismjs@1.26.4/node_modules/@types/prismjs
+    │   │   │   ├── dequal -> ../../../node_modules/.pnpm/dequal@2.0.2/node_modules/dequal
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   ├── shared
+    │   │   │   ├── ButtonPanel.svelte
+    │   │   │   ├── ChatBot.svelte
+    │   │   │   ├── Component.svelte
+    │   │   │   ├── Copy.svelte
+    │   │   │   ├── CopyAll.svelte
+    │   │   │   ├── Download.svelte
+    │   │   │   ├── LikeDislike.svelte
+    │   │   │   ├── MessageBox.svelte
+    │   │   │   ├── Pending.svelte
+    │   │   │   ├── ThumbDownActive.svelte
+    │   │   │   ├── ThumbDownDefault.svelte
+    │   │   │   ├── ThumbUpActive.svelte
+    │   │   │   ├── ThumbUpDefault.svelte
+    │   │   │   ├── autorender.d.ts
+    │   │   │   └── utils.ts
+    │   │   └── types.ts
+    │   ├── checkbox
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Checkbox.svelte
+    │   ├── checkboxgroup
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Checkboxgroup.stories.svelte
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── checkboxgroup.test.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── code
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @codemirror
+    │   │   │   │   ├── autocomplete -> ../../../../node_modules/.pnpm/@codemirror+autocomplete@6.3.0_@codemirror+language@6.6.0_@codemirror+state@6.1.2_@codemirror_hhzmbjm3lun7j5cnqgi6zqvj5e/node_modules/@codemirror/autocomplete
+    │   │   │   │   ├── commands -> ../../../../node_modules/.pnpm/@codemirror+commands@6.1.2/node_modules/@codemirror/commands
+    │   │   │   │   ├── lang-css -> ../../../../node_modules/.pnpm/@codemirror+lang-css@6.1.0_@codemirror+view@6.4.1_@lezer+common@1.0.2/node_modules/@codemirror/lang-css
+    │   │   │   │   ├── lang-html -> ../../../../node_modules/.pnpm/@codemirror+lang-html@6.4.2/node_modules/@codemirror/lang-html
+    │   │   │   │   ├── lang-javascript -> ../../../../node_modules/.pnpm/@codemirror+lang-javascript@6.1.4/node_modules/@codemirror/lang-javascript
+    │   │   │   │   ├── lang-json -> ../../../../node_modules/.pnpm/@codemirror+lang-json@6.0.1/node_modules/@codemirror/lang-json
+    │   │   │   │   ├── lang-markdown -> ../../../../node_modules/.pnpm/@codemirror+lang-markdown@6.1.0/node_modules/@codemirror/lang-markdown
+    │   │   │   │   ├── lang-python -> ../../../../node_modules/.pnpm/@codemirror+lang-python@6.0.4/node_modules/@codemirror/lang-python
+    │   │   │   │   ├── language -> ../../../../node_modules/.pnpm/@codemirror+language@6.6.0/node_modules/@codemirror/language
+    │   │   │   │   ├── legacy-modes -> ../../../../node_modules/.pnpm/@codemirror+legacy-modes@6.3.1/node_modules/@codemirror/legacy-modes
+    │   │   │   │   ├── lint -> ../../../../node_modules/.pnpm/@codemirror+lint@6.0.0/node_modules/@codemirror/lint
+    │   │   │   │   ├── search -> ../../../../node_modules/.pnpm/@codemirror+search@6.2.2/node_modules/@codemirror/search
+    │   │   │   │   ├── state -> ../../../../node_modules/.pnpm/@codemirror+state@6.1.2/node_modules/@codemirror/state
+    │   │   │   │   └── view -> ../../../../node_modules/.pnpm/@codemirror+view@6.4.1/node_modules/@codemirror/view
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @lezer
+    │   │   │   │   ├── common -> ../../../../node_modules/.pnpm/@lezer+common@1.0.2/node_modules/@lezer/common
+    │   │   │   │   ├── highlight -> ../../../../node_modules/.pnpm/@lezer+highlight@1.1.3/node_modules/@lezer/highlight
+    │   │   │   │   └── markdown -> ../../../../node_modules/.pnpm/@lezer+markdown@1.0.2/node_modules/@lezer/markdown
+    │   │   │   ├── cm6-theme-basic-dark -> ../../../node_modules/.pnpm/cm6-theme-basic-dark@0.2.0_@codemirror+language@6.6.0_@codemirror+state@6.1.2_@codemirror+vie_ci74lmenmwwjo556ouu4dk2mv4/node_modules/cm6-theme-basic-dark
+    │   │   │   ├── cm6-theme-basic-light -> ../../../node_modules/.pnpm/cm6-theme-basic-light@0.2.0_@codemirror+language@6.6.0_@codemirror+state@6.1.2_@codemirror+vi_xorgw6e55jbyac7uqhpk6uoxhq/node_modules/cm6-theme-basic-light
+    │   │   │   ├── codemirror -> ../../../node_modules/.pnpm/codemirror@6.0.1_@lezer+common@1.0.2/node_modules/codemirror
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Code.svelte
+    │   │       ├── Copy.svelte
+    │   │       ├── Download.svelte
+    │   │       ├── Widgets.svelte
+    │   │       ├── extensions.ts
+    │   │       ├── frontmatter.ts
+    │   │       └── language.ts
+    │   ├── colorpicker
+    │   │   ├── CHANGELOG.md
+    │   │   ├── ColorPicker.stories.svelte
+    │   │   ├── ColorPickerExample.stories.svelte
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Colorpicker.svelte
+    │   ├── column
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Column.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── component-test
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   └── video -> ../../../video
+    │   │   │   ├── @self
+    │   │   │   │   └── build -> ../../../build
+    │   │   │   └── @sveltejs
+    │   │   │       ├── adapter-auto -> ../../../../node_modules/.pnpm/@sveltejs+adapter-auto@3.2.2_@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4_5utf6vweveveo3xjqrmwoh74oe/node_modules/@sveltejs/adapter-auto
+    │   │   │       └── kit -> ../../../../node_modules/.pnpm/@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node_o7pp2p5svq4h5udxa4yf4mjnc4/node_modules/@sveltejs/kit
+    │   │   ├── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── src
+    │   │   │   ├── app.css
+    │   │   │   ├── app.d.ts
+    │   │   │   ├── app.html
+    │   │   │   ├── defs.d.ts
+    │   │   │   ├── lib
+    │   │   │   │   ├── component_json.ts
+    │   │   │   │   └── images
+    │   │   │   │       ├── Bunny.obj
+    │   │   │   │       ├── Duck.glb
+    │   │   │   │       ├── base.webp
+    │   │   │   │       ├── cantina.wav
+    │   │   │   │       ├── cheetah1.jpg
+    │   │   │   │       ├── images_mask.png
+    │   │   │   │       ├── lion.jpg
+    │   │   │   │       ├── logo.png
+    │   │   │   │       ├── time.csv
+    │   │   │   │       ├── titanic.csv
+    │   │   │   │       ├── tower.jpg
+    │   │   │   │       └── world.mp4
+    │   │   │   ├── routes
+    │   │   │   │   ├── +layout.svelte
+    │   │   │   │   ├── +page.svelte
+    │   │   │   │   ├── Counter.svelte
+    │   │   │   │   ├── Header.svelte
+    │   │   │   │   └── [...all]
+    │   │   │   │       ├── +page.svelte
+    │   │   │   │       └── +page.ts
+    │   │   │   └── theme.css
+    │   │   ├── static
+    │   │   │   ├── favicon.png
+    │   │   │   └── robots.txt
+    │   │   ├── svelte.config.js
+    │   │   ├── tsconfig.json
+    │   │   └── vite.config.js
+    │   ├── core
+    │   │   ├── CHANGELOG.md
+    │   │   ├── blocks.ts
+    │   │   ├── index.ts
+    │   │   ├── login.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── accordion -> ../../../accordion
+    │   │   │   │   ├── annotatedimage -> ../../../annotatedimage
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── audio -> ../../../audio
+    │   │   │   │   ├── box -> ../../../box
+    │   │   │   │   ├── button -> ../../../button
+    │   │   │   │   ├── chatbot -> ../../../chatbot
+    │   │   │   │   ├── checkbox -> ../../../checkbox
+    │   │   │   │   ├── checkboxgroup -> ../../../checkboxgroup
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── code -> ../../../code
+    │   │   │   │   ├── colorpicker -> ../../../colorpicker
+    │   │   │   │   ├── column -> ../../../column
+    │   │   │   │   ├── dataframe -> ../../../dataframe
+    │   │   │   │   ├── dataset -> ../../../dataset
+    │   │   │   │   ├── datetime -> ../../../datetime
+    │   │   │   │   ├── downloadbutton -> ../../../downloadbutton
+    │   │   │   │   ├── dropdown -> ../../../dropdown
+    │   │   │   │   ├── fallback -> ../../../fallback
+    │   │   │   │   ├── file -> ../../../file
+    │   │   │   │   ├── fileexplorer -> ../../../fileexplorer
+    │   │   │   │   ├── form -> ../../../form
+    │   │   │   │   ├── gallery -> ../../../gallery
+    │   │   │   │   ├── group -> ../../../group
+    │   │   │   │   ├── highlightedtext -> ../../../highlightedtext
+    │   │   │   │   ├── html -> ../../../html
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── imageeditor -> ../../../imageeditor
+    │   │   │   │   ├── json -> ../../../json
+    │   │   │   │   ├── label -> ../../../label
+    │   │   │   │   ├── markdown -> ../../../markdown
+    │   │   │   │   ├── model3d -> ../../../model3D
+    │   │   │   │   ├── multimodaltextbox -> ../../../multimodaltextbox
+    │   │   │   │   ├── nativeplot -> ../../../nativeplot
+    │   │   │   │   ├── number -> ../../../number
+    │   │   │   │   ├── paramviewer -> ../../../paramviewer
+    │   │   │   │   ├── plot -> ../../../plot
+    │   │   │   │   ├── radio -> ../../../radio
+    │   │   │   │   ├── row -> ../../../row
+    │   │   │   │   ├── simpledropdown -> ../../../simpledropdown
+    │   │   │   │   ├── simpleimage -> ../../../simpleimage
+    │   │   │   │   ├── simpletextbox -> ../../../simpletextbox
+    │   │   │   │   ├── slider -> ../../../slider
+    │   │   │   │   ├── state -> ../../../state
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── tabitem -> ../../../tabitem
+    │   │   │   │   ├── tabs -> ../../../tabs
+    │   │   │   │   ├── textbox -> ../../../textbox
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   ├── timer -> ../../../timer
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── uploadbutton -> ../../../uploadbutton
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   ├── video -> ../../../video
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   ├── public
+    │   │   │   ├── favicon.png
+    │   │   │   └── static
+    │   │   │       └── img
+    │   │   │           ├── Bunny.obj
+    │   │   │           ├── Duck.glb
+    │   │   │           ├── api-logo.svg
+    │   │   │           ├── camera.svg
+    │   │   │           ├── clear.svg
+    │   │   │           ├── edit.svg
+    │   │   │           ├── javascript.svg
+    │   │   │           ├── logo.svg
+    │   │   │           ├── logo_error.svg
+    │   │   │           ├── python.svg
+    │   │   │           └── undo-solid.svg
+    │   │   └── src
+    │   │       ├── Blocks.svelte
+    │   │       ├── Embed.svelte
+    │   │       ├── Login.stories.svelte
+    │   │       ├── Login.svelte
+    │   │       ├── MountComponents.svelte
+    │   │       ├── Render.svelte
+    │   │       ├── RenderComponent.svelte
+    │   │       ├── api_docs
+    │   │       │   ├── ApiBanner.svelte
+    │   │       │   ├── ApiDocs.svelte
+    │   │       │   ├── ApiRecorder.svelte
+    │   │       │   ├── CodeSnippet.svelte
+    │   │       │   ├── CopyButton.svelte
+    │   │       │   ├── EndpointDetail.svelte
+    │   │       │   ├── InputPayload.svelte
+    │   │       │   ├── InstallSnippet.svelte
+    │   │       │   ├── NoApi.svelte
+    │   │       │   ├── ParametersSnippet.svelte
+    │   │       │   ├── RecordingSnippet.svelte
+    │   │       │   ├── ResponseSnippet.svelte
+    │   │       │   ├── TryButton.svelte
+    │   │       │   ├── img
+    │   │       │   │   ├── api-logo.svg
+    │   │       │   │   ├── bash.svg
+    │   │       │   │   ├── clear.svelte
+    │   │       │   │   ├── javascript.svg
+    │   │       │   │   └── python.svg
+    │   │       │   ├── index.ts
+    │   │       │   └── utils.ts
+    │   │       ├── css.ts
+    │   │       ├── gradio_helper.ts
+    │   │       ├── i18n.test.ts
+    │   │       ├── i18n.ts
+    │   │       ├── images
+    │   │       │   ├── lightning.svg
+    │   │       │   ├── logo.svg
+    │   │       │   ├── play.svg
+    │   │       │   └── spaces.svg
+    │   │       ├── init.test.ts
+    │   │       ├── init.ts
+    │   │       ├── lang
+    │   │       │   ├── BCP47_codes.js
+    │   │       │   ├── README.md
+    │   │       │   ├── ar.json
+    │   │       │   ├── ca.json
+    │   │       │   ├── ckb.json
+    │   │       │   ├── de.json
+    │   │       │   ├── en.json
+    │   │       │   ├── es.json
+    │   │       │   ├── eu.json
+    │   │       │   ├── fa.json
+    │   │       │   ├── fr.json
+    │   │       │   ├── he.json
+    │   │       │   ├── hi.json
+    │   │       │   ├── ja.json
+    │   │       │   ├── ko.json
+    │   │       │   ├── lt.json
+    │   │       │   ├── nl.json
+    │   │       │   ├── pl.json
+    │   │       │   ├── pt-BR.json
+    │   │       │   ├── ru.json
+    │   │       │   ├── ta.json
+    │   │       │   ├── tr.json
+    │   │       │   ├── uk.json
+    │   │       │   ├── ur.json
+    │   │       │   ├── uz.json
+    │   │       │   ├── zh-CN.json
+    │   │       │   └── zh-TW.json
+    │   │       ├── s-blocks.ts
+    │   │       ├── s-login.ts
+    │   │       ├── stores.ts
+    │   │       ├── types.ts
+    │   │       └── vite-env-override.d.ts
+    │   ├── dataframe
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Dataframe.stories.svelte
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── button -> ../../../button
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── markdown -> ../../../markdown
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @types
+    │   │   │   │   ├── d3-dsv -> ../../../../node_modules/.pnpm/@types+d3-dsv@3.0.0/node_modules/@types/d3-dsv
+    │   │   │   │   ├── dompurify -> ../../../../node_modules/.pnpm/@types+dompurify@3.0.2/node_modules/@types/dompurify
+    │   │   │   │   └── katex -> ../../../../node_modules/.pnpm/@types+katex@0.16.0/node_modules/@types/katex
+    │   │   │   ├── d3-dsv -> ../../../node_modules/.pnpm/d3-dsv@3.0.1/node_modules/d3-dsv
+    │   │   │   ├── dequal -> ../../../node_modules/.pnpm/dequal@2.0.2/node_modules/dequal
+    │   │   │   ├── dompurify -> ../../../node_modules/.pnpm/dompurify@3.0.3/node_modules/dompurify
+    │   │   │   ├── katex -> ../../../node_modules/.pnpm/katex@0.16.10/node_modules/katex
+    │   │   │   ├── marked -> ../../../node_modules/.pnpm/marked@12.0.0/node_modules/marked
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── EditableCell.svelte
+    │   │       ├── Example.svelte
+    │   │       ├── Table.svelte
+    │   │       ├── VirtualTable.svelte
+    │   │       └── utils.ts
+    │   ├── dataset
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── textbox -> ../../../textbox
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── datetime
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── downloadbutton
+    │   │   ├── CHANGELOG.md
+    │   │   ├── DownloadButton.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── button -> ../../../button
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── DownloadButton.svelte
+    │   ├── dropdown
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Dropdown.stories.svelte
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── Multiselect.stories.svelte
+    │   │   ├── README.md
+    │   │   ├── dropdown.test.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Dropdown.svelte
+    │   │       ├── DropdownOptions.svelte
+    │   │       ├── Multiselect.svelte
+    │   │       └── utils.ts
+    │   ├── fallback
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @zerodevx
+    │   │   │   │   └── svelte-json-view -> ../../../../node_modules/.pnpm/@zerodevx+svelte-json-view@1.0.7_svelte@4.2.15/node_modules/@zerodevx/svelte-json-view
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── file
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── File.stories.svelte
+    │   │   ├── FileUpload.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── File.svelte
+    │   │       ├── FilePreview.svelte
+    │   │       ├── FileUpload.svelte
+    │   │       └── utils.ts
+    │   ├── fileexplorer
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── icons
+    │   │   │   ├── light-file.svg
+    │   │   │   └── light-folder.svg
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── checkbox -> ../../../checkbox
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── file -> ../../../file
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── dequal -> ../../../node_modules/.pnpm/dequal@2.0.2/node_modules/dequal
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── ArrowIcon.svelte
+    │   │       ├── Checkbox.svelte
+    │   │       ├── DirectoryExplorer.svelte
+    │   │       ├── FileTree.svelte
+    │   │       └── types.ts
+    │   ├── form
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── gallery
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Gallery.stories.svelte
+    │   │   ├── Gallery.test.ts
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── file -> ../../../file
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── dequal -> ../../../node_modules/.pnpm/dequal@2.0.2/node_modules/dequal
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Gallery.svelte
+    │   │       └── utils.ts
+    │   ├── group
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Group.stories.svelte
+    │   │   ├── Group.test.ts
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   └── preview -> ../../../preview
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── highlightedtext
+    │   │   ├── CHANGELOG.md
+    │   │   ├── HighlightedText.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── highlightedtext.test.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── InteractiveHighlightedtext.svelte
+    │   │       ├── LabelInput.svelte
+    │   │       ├── StaticHighlightedtext.svelte
+    │   │       └── utils.ts
+    │   ├── html
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── HTML.svelte
+    │   ├── icons
+    │   │   ├── CHANGELOG.md
+    │   │   ├── node_modules
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── Back.svelte
+    │   │       ├── Backward.svelte
+    │   │       ├── Brush.svelte
+    │   │       ├── BrushSize.svelte
+    │   │       ├── Calendar.svelte
+    │   │       ├── Camera.svelte
+    │   │       ├── Chart.svelte
+    │   │       ├── Chat.svelte
+    │   │       ├── Check.svelte
+    │   │       ├── Circle.svelte
+    │   │       ├── Clear.svelte
+    │   │       ├── Code.svelte
+    │   │       ├── Color.svelte
+    │   │       ├── Community.svelte
+    │   │       ├── Copy.svelte
+    │   │       ├── Crop.svelte
+    │   │       ├── Download.svelte
+    │   │       ├── DropdownArrow.svelte
+    │   │       ├── Edit.svelte
+    │   │       ├── Erase.svelte
+    │   │       ├── Error.svelte
+    │   │       ├── Eyedropper.svelte
+    │   │       ├── File.svelte
+    │   │       ├── Forward.svelte
+    │   │       ├── Image.svelte
+    │   │       ├── ImagePaste.svelte
+    │   │       ├── Info.svelte
+    │   │       ├── JSON.svelte
+    │   │       ├── Layers.svelte
+    │   │       ├── LineChart.svelte
+    │   │       ├── Maximise.svelte
+    │   │       ├── Maximize.svelte
+    │   │       ├── Microphone.svelte
+    │   │       ├── Minimize.svelte
+    │   │       ├── Music.svelte
+    │   │       ├── Palette.svelte
+    │   │       ├── Paperclip.svelte
+    │   │       ├── Pause.svelte
+    │   │       ├── Play.svelte
+    │   │       ├── Plot.svelte
+    │   │       ├── Redo.svelte
+    │   │       ├── Remove.svelte
+    │   │       ├── Rotate.svelte
+    │   │       ├── Send.svelte
+    │   │       ├── Settings.svelte
+    │   │       ├── Sketch.svelte
+    │   │       ├── Square.svelte
+    │   │       ├── Table.svelte
+    │   │       ├── TextHighlight.svelte
+    │   │       ├── Trash.svelte
+    │   │       ├── Tree.svelte
+    │   │       ├── Trim.svelte
+    │   │       ├── Undo.svelte
+    │   │       ├── Upload.svelte
+    │   │       ├── Video.svelte
+    │   │       ├── VolumeHigh.svelte
+    │   │       ├── VolumeLow.svelte
+    │   │       ├── VolumeMuted.svelte
+    │   │       ├── Warning.svelte
+    │   │       ├── Webcam.svelte
+    │   │       └── index.ts
+    │   ├── image
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Image.stories.svelte
+    │   │   ├── Image.test.ts
+    │   │   ├── ImageExample.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── cropperjs -> ../../../node_modules/.pnpm/cropperjs@1.5.12/node_modules/cropperjs
+    │   │   │   ├── lazy-brush -> ../../../node_modules/.pnpm/lazy-brush@1.0.1/node_modules/lazy-brush
+    │   │   │   ├── resize-observer-polyfill -> ../../../node_modules/.pnpm/resize-observer-polyfill@1.5.1/node_modules/resize-observer-polyfill
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── ClearImage.svelte
+    │   │       ├── Image.svelte
+    │   │       ├── ImagePreview.svelte
+    │   │       ├── ImageUploader.svelte
+    │   │       ├── Webcam.svelte
+    │   │       ├── WebcamPermissions.svelte
+    │   │       ├── index.ts
+    │   │       ├── stream_utils.test.ts
+    │   │       ├── stream_utils.ts
+    │   │       └── utils.ts
+    │   ├── imageeditor
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── ImageEditor.stories.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @types
+    │   │   │   │   └── tinycolor2 -> ../../../../node_modules/.pnpm/@types+tinycolor2@1.4.6/node_modules/@types/tinycolor2
+    │   │   │   ├── pixi.js -> ../../../node_modules/.pnpm/pixi.js@7.3.2_@pixi+utils@7.3.2/node_modules/pixi.js
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   └── tinycolor2 -> ../../../node_modules/.pnpm/tinycolor2@1.6.0/node_modules/tinycolor2
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Controls.svelte
+    │   │       ├── ImageEditor.svelte
+    │   │       ├── InteractiveImageEditor.svelte
+    │   │       ├── layers
+    │   │       │   ├── Layers.svelte
+    │   │       │   └── utils.ts
+    │   │       ├── tools
+    │   │       │   ├── Brush.svelte
+    │   │       │   ├── BrushOptions.svelte
+    │   │       │   ├── BrushSize.svelte
+    │   │       │   ├── ColorField.svelte
+    │   │       │   ├── ColorPicker.svelte
+    │   │       │   ├── ColorSwatch.svelte
+    │   │       │   ├── Crop.svelte
+    │   │       │   ├── Cropper.svelte
+    │   │       │   ├── Handle.svelte
+    │   │       │   ├── Sources.svelte
+    │   │       │   ├── Tools.svelte
+    │   │       │   ├── brush.ts
+    │   │       │   ├── crop.ts
+    │   │       │   ├── index.ts
+    │   │       │   ├── sources.ts
+    │   │       │   └── types.ts
+    │   │       └── utils
+    │   │           ├── commands.ts
+    │   │           ├── events.ts
+    │   │           ├── parse_placeholder.ts
+    │   │           └── pixi.ts
+    │   ├── json
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── JSON.stories.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── JSON.svelte
+    │   │       └── JSONNode.svelte
+    │   ├── jsx.d.ts
+    │   ├── label
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── Label.component.spec.ts
+    │   │   ├── Label.stories.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Label.svelte
+    │   ├── lite
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── for_e2e.html
+    │   │   ├── index.html
+    │   │   ├── index2.html
+    │   │   ├── lite.html
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── core -> ../../../core
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @self
+    │   │   │   │   ├── build -> ../../../build
+    │   │   │   │   └── spa -> ../../../spa
+    │   │   │   └── gradio -> ../../../gradio
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   ├── ErrorDisplay.svelte
+    │   │   │   ├── LiteIndex.svelte
+    │   │   │   ├── Playground.svelte
+    │   │   │   ├── css.ts
+    │   │   │   ├── custom-element
+    │   │   │   │   ├── indent.ts
+    │   │   │   │   ├── index.test.ts
+    │   │   │   │   └── index.ts
+    │   │   │   ├── dev
+    │   │   │   │   └── App.svelte
+    │   │   │   ├── fetch.ts
+    │   │   │   ├── images
+    │   │   │   │   ├── lightning.svg
+    │   │   │   │   ├── logo.svg
+    │   │   │   │   ├── play.svg
+    │   │   │   │   └── spaces.svg
+    │   │   │   ├── index.ts
+    │   │   │   ├── sse.ts
+    │   │   │   └── theme.css
+    │   │   └── vite.config.ts
+    │   ├── markdown
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── Markdown.stories.svelte
+    │   │   ├── Markdown.test.ts
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @types
+    │   │   │   │   ├── dompurify -> ../../../../node_modules/.pnpm/@types+dompurify@3.0.2/node_modules/@types/dompurify
+    │   │   │   │   ├── katex -> ../../../../node_modules/.pnpm/@types+katex@0.16.0/node_modules/@types/katex
+    │   │   │   │   └── prismjs -> ../../../../node_modules/.pnpm/@types+prismjs@1.26.4/node_modules/@types/prismjs
+    │   │   │   ├── github-slugger -> ../../../node_modules/.pnpm/github-slugger@2.0.0/node_modules/github-slugger
+    │   │   │   ├── isomorphic-dompurify -> ../../../node_modules/.pnpm/isomorphic-dompurify@2.14.0_bufferutil@4.0.7/node_modules/isomorphic-dompurify
+    │   │   │   ├── katex -> ../../../node_modules/.pnpm/katex@0.16.10/node_modules/katex
+    │   │   │   ├── marked -> ../../../node_modules/.pnpm/marked@12.0.0/node_modules/marked
+    │   │   │   ├── marked-gfm-heading-id -> ../../../node_modules/.pnpm/marked-gfm-heading-id@3.1.2_marked@12.0.0/node_modules/marked-gfm-heading-id
+    │   │   │   ├── marked-highlight -> ../../../node_modules/.pnpm/marked-highlight@2.0.1_marked@12.0.0/node_modules/marked-highlight
+    │   │   │   ├── prismjs -> ../../../node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Markdown.svelte
+    │   │       ├── MarkdownCode.svelte
+    │   │       ├── prism-dark.css
+    │   │       ├── prism.css
+    │   │       └── utils.ts
+    │   ├── model3D
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @types
+    │   │   │   │   └── babylon -> ../../../../node_modules/.pnpm/@types+babylon@6.16.6/node_modules/@types/babylon
+    │   │   │   ├── babylonjs -> ../../../node_modules/.pnpm/babylonjs@4.2.1/node_modules/babylonjs
+    │   │   │   ├── babylonjs-loaders -> ../../../node_modules/.pnpm/babylonjs-loaders@4.2.1/node_modules/babylonjs-loaders
+    │   │   │   ├── dequal -> ../../../node_modules/.pnpm/dequal@2.0.3/node_modules/dequal
+    │   │   │   ├── gsplat -> ../../../node_modules/.pnpm/gsplat@1.0.5/node_modules/gsplat
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── Canvas3D.svelte
+    │   │       ├── Canvas3DGS.svelte
+    │   │       ├── Model3D.svelte
+    │   │       └── Model3DUpload.svelte
+    │   ├── multimodaltextbox
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── MultimodalTextbox.stories.svelte
+    │   │   ├── MultimodalTextbox.test.ts
+    │   │   ├── MultimodalTextboxExample.stories.svelte
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── video -> ../../../video
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── MultimodalTextbox.svelte
+    │   │       └── utils.ts
+    │   ├── nativeplot
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   ├── vega -> ../../../node_modules/.pnpm/vega@5.23.0/node_modules/vega
+    │   │   │   ├── vega-embed -> ../../../node_modules/.pnpm/vega-embed@6.25.0_vega-lite@5.12.0_vega@5.23.0__vega@5.23.0/node_modules/vega-embed
+    │   │   │   └── vega-lite -> ../../../node_modules/.pnpm/vega-lite@5.12.0_vega@5.23.0/node_modules/vega-lite
+    │   │   └── package.json
+    │   ├── number
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── Number.stories.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── paramviewer
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── ParamViewer.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @types
+    │   │   │   │   └── prismjs -> ../../../../node_modules/.pnpm/@types+prismjs@1.26.3/node_modules/@types/prismjs
+    │   │   │   ├── prismjs -> ../../../node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── prism.css
+    │   ├── plot
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── Plot.stories.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @rollup
+    │   │   │   │   └── plugin-json -> ../../../../node_modules/.pnpm/@rollup+plugin-json@6.0.0_rollup@3.28.0/node_modules/@rollup/plugin-json
+    │   │   │   ├── plotly.js-dist-min -> ../../../node_modules/.pnpm/plotly.js-dist-min@2.10.1/node_modules/plotly.js-dist-min
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   ├── vega -> ../../../node_modules/.pnpm/vega@5.23.0/node_modules/vega
+    │   │   │   ├── vega-embed -> ../../../node_modules/.pnpm/vega-embed@6.25.0_vega-lite@5.12.0_vega@5.23.0__vega@5.23.0/node_modules/vega-embed
+    │   │   │   └── vega-lite -> ../../../node_modules/.pnpm/vega-lite@5.12.0_vega@5.23.0/node_modules/vega-lite
+    │   │   ├── package.json
+    │   │   ├── shared
+    │   │   │   ├── Plot.svelte
+    │   │   │   └── plot_types
+    │   │   │       ├── AltairPlot.svelte
+    │   │   │       ├── BokehPlot.svelte
+    │   │   │       ├── MatplotlibPlot.svelte
+    │   │   │       ├── PlotlyPlot.svelte
+    │   │   │       └── altair_utils.ts
+    │   │   └── testplot.js
+    │   ├── preview
+    │   │   ├── CHANGELOG.md
+    │   │   ├── dist
+    │   │   │   ├── examine.py
+    │   │   │   └── index.js
+    │   │   ├── node_modules
+    │   │   │   ├── @originjs
+    │   │   │   │   └── vite-plugin-commonjs -> ../../../../node_modules/.pnpm/@originjs+vite-plugin-commonjs@1.0.3/node_modules/@originjs/vite-plugin-commonjs
+    │   │   │   ├── @rollup
+    │   │   │   │   ├── plugin-commonjs -> ../../../../node_modules/.pnpm/@rollup+plugin-commonjs@25.0.4_rollup@3.28.0/node_modules/@rollup/plugin-commonjs
+    │   │   │   │   ├── plugin-json -> ../../../../node_modules/.pnpm/@rollup+plugin-json@6.0.0_rollup@3.28.0/node_modules/@rollup/plugin-json
+    │   │   │   │   ├── plugin-node-resolve -> ../../../../node_modules/.pnpm/@rollup+plugin-node-resolve@15.1.0_rollup@3.28.0/node_modules/@rollup/plugin-node-resolve
+    │   │   │   │   ├── plugin-sucrase -> ../../../../node_modules/.pnpm/@rollup+plugin-sucrase@5.0.1_rollup@3.28.0/node_modules/@rollup/plugin-sucrase
+    │   │   │   │   └── plugin-typescript -> ../../../../node_modules/.pnpm/@rollup+plugin-typescript@11.1.2_rollup@3.28.0_tslib@2.6.2_typescript@5.4.3/node_modules/@rollup/plugin-typescript
+    │   │   │   ├── @sveltejs
+    │   │   │   │   └── vite-plugin-svelte -> ../../../../node_modules/.pnpm/@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.9_@types+node@20.12.8_lightningcss@_lkz3zr5enmkaixdffgohcqwxty/node_modules/@sveltejs/vite-plugin-svelte
+    │   │   │   ├── @types
+    │   │   │   │   └── which -> ../../../../node_modules/.pnpm/@types+which@3.0.0/node_modules/@types/which
+    │   │   │   ├── coffeescript -> ../../../node_modules/.pnpm/coffeescript@2.7.0/node_modules/coffeescript
+    │   │   │   ├── lightningcss -> ../../../node_modules/.pnpm/lightningcss@1.21.7/node_modules/lightningcss
+    │   │   │   ├── pug -> ../../../node_modules/.pnpm/pug@3.0.2/node_modules/pug
+    │   │   │   ├── rollup -> ../../../node_modules/.pnpm/rollup@3.28.0/node_modules/rollup
+    │   │   │   ├── sass -> ../../../node_modules/.pnpm/sass@1.66.1/node_modules/sass
+    │   │   │   ├── stylus -> ../../../node_modules/.pnpm/stylus@0.63.0/node_modules/stylus
+    │   │   │   ├── sucrase -> ../../../node_modules/.pnpm/sucrase@3.34.0/node_modules/sucrase
+    │   │   │   ├── sugarss -> ../../../node_modules/.pnpm/sugarss@4.0.1_postcss@8.4.38/node_modules/sugarss
+    │   │   │   ├── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   │   ├── svelte-hmr -> ../../../node_modules/.pnpm/svelte-hmr@0.16.0_svelte@4.2.15/node_modules/svelte-hmr
+    │   │   │   ├── svelte-preprocess -> ../../../node_modules/.pnpm/svelte-preprocess@5.1.3_@babel+core@7.24.5_coffeescript@2.7.0_postcss-load-config@4.0.2_postc_6lzimol57hc726ic6c7zxqblc4/node_modules/svelte-preprocess
+    │   │   │   ├── typescript -> ../../../node_modules/.pnpm/typescript@5.4.3/node_modules/typescript
+    │   │   │   ├── vite -> ../../../node_modules/.pnpm/vite@5.2.9_@types+node@20.12.8_lightningcss@1.21.7_sass@1.66.1_stylus@0.63.0_sugarss@4.0.1_postcss@8.4.38_/node_modules/vite
+    │   │   │   ├── which -> ../../../node_modules/.pnpm/which@4.0.0/node_modules/which
+    │   │   │   └── yootils -> ../../../node_modules/.pnpm/yootils@0.3.1/node_modules/yootils
+    │   │   ├── package.json
+    │   │   ├── rollup.config.js
+    │   │   ├── src
+    │   │   │   ├── build.ts
+    │   │   │   ├── compiler.ts
+    │   │   │   ├── dev.ts
+    │   │   │   ├── examine.py
+    │   │   │   ├── index.ts
+    │   │   │   ├── placeholder.ts
+    │   │   │   ├── plugins.ts
+    │   │   │   ├── svelte-disclose.ts
+    │   │   │   ├── svelte-internal.ts
+    │   │   │   ├── svelte-submodules.ts
+    │   │   │   └── svelte.ts
+    │   │   ├── test
+    │   │   │   └── test
+    │   │   │       ├── backend
+    │   │   │       │   └── gradio_test
+    │   │   │       │       ├── __init__.py
+    │   │   │       │       └── test.py
+    │   │   │       ├── demo
+    │   │   │       │   ├── __init__.py
+    │   │   │       │   └── app.py
+    │   │   │       ├── frontend
+    │   │   │       │   ├── CHANGELOG.md
+    │   │   │       │   ├── Example.svelte
+    │   │   │       │   ├── Index.svelte
+    │   │   │       │   ├── gradio.config.js
+    │   │   │       │   ├── main.css
+    │   │   │       │   └── package.json
+    │   │   │       └── pyproject.toml
+    │   │   └── vite.config.ts
+    │   ├── radio
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── Radio.stories.svelte
+    │   │   ├── Radio.test.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Radio.svelte
+    │   ├── row
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── Row.stories.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── simpledropdown
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── simpleimage
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── cropperjs -> ../../../node_modules/.pnpm/cropperjs@1.5.12/node_modules/cropperjs
+    │   │   │   ├── lazy-brush -> ../../../node_modules/.pnpm/lazy-brush@1.0.1/node_modules/lazy-brush
+    │   │   │   ├── resize-observer-polyfill -> ../../../node_modules/.pnpm/resize-observer-polyfill@1.5.1/node_modules/resize-observer-polyfill
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── ClearImage.svelte
+    │   │       ├── ImagePreview.svelte
+    │   │       └── ImageUploader.svelte
+    │   ├── simpletextbox
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── slider
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── Slider.component.spec.ts
+    │   │   ├── Slider.stories.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── spa
+    │   │   ├── CHANGELOG.md
+    │   │   ├── component_loader.js
+    │   │   ├── index.html
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── core -> ../../../core
+    │   │   │   │   ├── theme -> ../../../theme
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── @huggingface
+    │   │   │   │   └── space-header -> ../../../../node_modules/.pnpm/@huggingface+space-header@1.0.3/node_modules/@huggingface/space-header
+    │   │   │   ├── @self
+    │   │   │   │   └── build -> ../../../build
+    │   │   │   ├── @types
+    │   │   │   │   └── eventsource -> ../../../../node_modules/.pnpm/@types+eventsource@1.1.15/node_modules/@types/eventsource
+    │   │   │   ├── cross-env -> ../../../node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   ├── postcss.config.js
+    │   │   ├── public
+    │   │   │   ├── favicon.png
+    │   │   │   └── static
+    │   │   │       └── img
+    │   │   │           ├── Bunny.obj
+    │   │   │           ├── Duck.glb
+    │   │   │           ├── api-logo.svg
+    │   │   │           ├── camera.svg
+    │   │   │           ├── clear.svg
+    │   │   │           ├── edit.svg
+    │   │   │           ├── javascript.svg
+    │   │   │           ├── logo.svg
+    │   │   │           ├── logo_error.svg
+    │   │   │           ├── python.svg
+    │   │   │           └── undo-solid.svg
+    │   │   ├── src
+    │   │   │   ├── Index.svelte
+    │   │   │   ├── main.ts
+    │   │   │   └── vite-env-override.d.ts
+    │   │   ├── test
+    │   │   │   ├── audio_component_events.spec.ts
+    │   │   │   ├── audio_debugger.spec.ts
+    │   │   │   ├── blocks_chained_events.spec.ts
+    │   │   │   ├── blocks_essay.spec.ts
+    │   │   │   ├── blocks_flashcards.spec.ts
+    │   │   │   ├── blocks_flipper.spec.ts
+    │   │   │   ├── blocks_inputs.spec.ts
+    │   │   │   ├── blocks_page_load.spec.ts
+    │   │   │   ├── blocks_xray.spec.ts
+    │   │   │   ├── cancel_events.spec.ts
+    │   │   │   ├── chatbot_core_components_simple.spec.ts
+    │   │   │   ├── chatbot_multimodal.spec.ts
+    │   │   │   ├── chatbot_with_tools.spec.ts
+    │   │   │   ├── clear_components.spec.ts
+    │   │   │   ├── components.test.ts
+    │   │   │   ├── custom_css.spec.ts
+    │   │   │   ├── dataframe_colorful.spec.ts
+    │   │   │   ├── datetimes.spec.ts
+    │   │   │   ├── file_component_events.spec.ts
+    │   │   │   ├── file_explorer_component_events.spec.ts
+    │   │   │   ├── files
+    │   │   │   │   ├── alphabet.txt
+    │   │   │   │   ├── bus.png
+    │   │   │   │   ├── cheetah1.jpg
+    │   │   │   │   ├── contract.pdf
+    │   │   │   │   ├── face.obj
+    │   │   │   │   ├── file_test.ogg
+    │   │   │   │   ├── gradio-logo.svg
+    │   │   │   │   ├── time.csv
+    │   │   │   │   ├── titanic.csv
+    │   │   │   │   └── world.mp4
+    │   │   │   ├── function_values.spec.ts
+    │   │   │   ├── gallery_component_events.spec.ts
+    │   │   │   ├── gradio_pdf_demo.spec.ts
+    │   │   │   ├── hello_world.reload.spec.ts
+    │   │   │   ├── image_component_events.spec.ts
+    │   │   │   ├── image_editor_events.spec.ts
+    │   │   │   ├── image_mod.spec.ts
+    │   │   │   ├── input_output.spec.ts
+    │   │   │   ├── kitchen_sink.spec.ts
+    │   │   │   ├── media_data.ts
+    │   │   │   ├── mini_leaderboard.spec.ts
+    │   │   │   ├── model3d_component_events.spec.ts
+    │   │   │   ├── on_listener_test.spec.ts
+    │   │   │   ├── outbreak_forecast.spec.ts
+    │   │   │   ├── queue_full_e2e_test.spec.ts
+    │   │   │   ├── rapid_generation.spec.ts
+    │   │   │   ├── render_merge.spec.ts
+    │   │   │   ├── state_change.spec.ts
+    │   │   │   ├── stream_audio_out.spec.ts
+    │   │   │   ├── sub_block_render.spec.ts
+    │   │   │   ├── tabs.spec.ts
+    │   │   │   ├── test_chatinterface.reload.spec.ts
+    │   │   │   ├── test_chatinterface_streaming_echo.spec.ts
+    │   │   │   ├── tests.md
+    │   │   │   ├── theme_builder.spec.ts
+    │   │   │   ├── todo_list.spec.ts
+    │   │   │   ├── unload_event_test.spec.ts
+    │   │   │   ├── upload_button_component_events.spec.ts
+    │   │   │   ├── upload_file_limit_test.spec.ts
+    │   │   │   ├── utils.ts
+    │   │   │   └── video_component_events.spec.ts
+    │   │   └── vite.config.ts
+    │   ├── state
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── statustracker
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── index.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   ├── @types
+    │   │   │   │   └── dompurify -> ../../../../node_modules/.pnpm/@types+dompurify@3.0.2/node_modules/@types/dompurify
+    │   │   │   ├── dompurify -> ../../../node_modules/.pnpm/dompurify@3.0.3/node_modules/dompurify
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── static
+    │   │       ├── Loader.svelte
+    │   │       ├── Toast.svelte
+    │   │       ├── ToastContent.svelte
+    │   │       ├── index.svelte
+    │   │       ├── index.ts
+    │   │       ├── types.ts
+    │   │       └── utils.ts
+    │   ├── storybook
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Introduction.mdx
+    │   │   ├── design-tokens
+    │   │   │   ├── Colors.stories.svelte
+    │   │   │   ├── Icons.stories.svelte
+    │   │   │   ├── Radii.stories.svelte
+    │   │   │   ├── Spacing.stories.svelte
+    │   │   │   └── TextSize.stories.svelte
+    │   │   ├── helpers
+    │   │   │   ├── ColorRow.svelte
+    │   │   │   ├── RadiusRow.svelte
+    │   │   │   ├── SpaceRow.svelte
+    │   │   │   └── TextSizeRow.svelte
+    │   │   ├── main.ts
+    │   │   ├── manager.js
+    │   │   ├── modes.js
+    │   │   ├── package.json
+    │   │   ├── preview.ts
+    │   │   ├── public
+    │   │   │   ├── HF_logo.svg
+    │   │   │   └── gradio.svg
+    │   │   ├── test_files
+    │   │   │   ├── image_100x100.webp
+    │   │   │   └── image_100x1000.webp
+    │   │   ├── themeLight.js
+    │   │   └── vite.config.js
+    │   ├── tabitem
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── column -> ../../../column
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── tabs -> ../../../tabs
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── TabItem.svelte
+    │   ├── tabs
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Tabs.svelte
+    │   ├── textbox
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── Textbox.stories.svelte
+    │   │   ├── Textbox.test.ts
+    │   │   ├── TextboxExample.stories.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── Textbox.svelte
+    │   ├── theme
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── colors.ts
+    │   │       ├── global.css
+    │   │       ├── index.ts
+    │   │       ├── pollen.config.cjs
+    │   │       ├── pollen.css
+    │   │       ├── reset.css
+    │   │       ├── tokens.css
+    │   │       └── typography.css
+    │   ├── timer
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   └── package.json
+    │   ├── tooltip
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── Tooltip.svelte
+    │   │       ├── index.ts
+    │   │       └── tooltip.ts
+    │   ├── tootils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── index.ts
+    │   │       └── render.ts
+    │   ├── upload
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── ModifyUpload.svelte
+    │   │       ├── Upload.svelte
+    │   │       ├── UploadProgress.svelte
+    │   │       └── index.ts
+    │   ├── uploadbutton
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── UploadButton.stories.svelte
+    │   │   ├── UploadButton.test.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── button -> ../../../button
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   └── utils -> ../../../utils
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       └── UploadButton.svelte
+    │   ├── utils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── README.md
+    │   │   ├── node_modules
+    │   │   │   ├── @gradio
+    │   │   │   │   └── theme -> ../../../theme
+    │   │   │   └── svelte-i18n -> ../../../node_modules/.pnpm/svelte-i18n@3.6.0_svelte@4.2.15/node_modules/svelte-i18n
+    │   │   ├── package.json
+    │   │   └── src
+    │   │       ├── color.ts
+    │   │       ├── index.ts
+    │   │       └── utils.ts
+    │   ├── video
+    │   │   ├── CHANGELOG.md
+    │   │   ├── Example.svelte
+    │   │   ├── Index.svelte
+    │   │   ├── README.md
+    │   │   ├── Video.stories.svelte
+    │   │   ├── Video.test.ts
+    │   │   ├── index.ts
+    │   │   ├── node_modules
+    │   │   │   ├── @ffmpeg
+    │   │   │   │   ├── ffmpeg -> ../../../../node_modules/.pnpm/@ffmpeg+ffmpeg@0.12.7/node_modules/@ffmpeg/ffmpeg
+    │   │   │   │   └── util -> ../../../../node_modules/.pnpm/@ffmpeg+util@0.12.1_patch_hash=x7vlbpaf44zdrkz5rus4uvldii/node_modules/@ffmpeg/util
+    │   │   │   ├── @gradio
+    │   │   │   │   ├── atoms -> ../../../atoms
+    │   │   │   │   ├── client -> ../../../../client/js
+    │   │   │   │   ├── icons -> ../../../icons
+    │   │   │   │   ├── image -> ../../../image
+    │   │   │   │   ├── preview -> ../../../preview
+    │   │   │   │   ├── statustracker -> ../../../statustracker
+    │   │   │   │   ├── upload -> ../../../upload
+    │   │   │   │   ├── utils -> ../../../utils
+    │   │   │   │   └── wasm -> ../../../wasm
+    │   │   │   ├── mrmime -> ../../../node_modules/.pnpm/mrmime@2.0.0/node_modules/mrmime
+    │   │   │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │   │   ├── package.json
+    │   │   └── shared
+    │   │       ├── InteractiveVideo.svelte
+    │   │       ├── Player.svelte
+    │   │       ├── Video.svelte
+    │   │       ├── VideoControls.svelte
+    │   │       ├── VideoPreview.svelte
+    │   │       ├── VideoTimeline.svelte
+    │   │       ├── index.ts
+    │   │       └── utils.ts
+    │   └── wasm
+    │       ├── CHANGELOG.md
+    │       ├── network
+    │       │   ├── host.ts
+    │       │   └── index.ts
+    │       ├── node_modules
+    │       │   ├── @types
+    │       │   │   └── path-browserify -> ../../../../node_modules/.pnpm/@types+path-browserify@1.0.0/node_modules/@types/path-browserify
+    │       │   ├── path-browserify -> ../../../node_modules/.pnpm/path-browserify@1.0.1/node_modules/path-browserify
+    │       │   ├── pyodide -> ../../../node_modules/.pnpm/pyodide@0.26.1_bufferutil@4.0.7/node_modules/pyodide
+    │       │   └── svelte -> ../../../node_modules/.pnpm/svelte@4.2.15/node_modules/svelte
+    │       ├── package.json
+    │       ├── src
+    │       │   ├── asgi-types.ts
+    │       │   ├── cross-origin-worker.ts
+    │       │   ├── http.ts
+    │       │   ├── index.ts
+    │       │   ├── message-types.ts
+    │       │   ├── promise-delegate.ts
+    │       │   ├── sse.ts
+    │       │   ├── webworker
+    │       │   │   ├── asgi.ts
+    │       │   │   ├── awaitable-queue.ts
+    │       │   │   ├── file.test.ts
+    │       │   │   ├── file.ts
+    │       │   │   ├── index.ts
+    │       │   │   ├── py
+    │       │   │   │   ├── script_runner.py
+    │       │   │   │   └── unload_modules.py
+    │       │   │   ├── random.ts
+    │       │   │   ├── requirements.test.ts
+    │       │   │   └── requirements.ts
+    │       │   └── worker-proxy.ts
+    │       ├── svelte
+    │       │   ├── DownloadLink.svelte
+    │       │   ├── context.ts
+    │       │   ├── file-url.ts
+    │       │   └── index.ts
+    │       └── vite.worker.config.js
+    ├── node_modules
+    │   ├── @changesets
+    │   │   ├── changelog-github -> ../.pnpm/@changesets+changelog-github@0.5.0/node_modules/@changesets/changelog-github
+    │   │   ├── cli -> ../.pnpm/@changesets+cli@2.27.1/node_modules/@changesets/cli
+    │   │   └── get-github-info -> ../.pnpm/@changesets+get-github-info@0.6.0/node_modules/@changesets/get-github-info
+    │   ├── @chromatic-com
+    │   │   └── storybook -> ../.pnpm/@chromatic-com+storybook@1.5.0_react@18.3.1/node_modules/@chromatic-com/storybook
+    │   ├── @csstools
+    │   │   └── postcss-global-data -> ../.pnpm/@csstools+postcss-global-data@2.1.1_postcss@8.4.38/node_modules/@csstools/postcss-global-data
+    │   ├── @eslint
+    │   │   ├── eslintrc -> ../.pnpm/@eslint+eslintrc@3.0.2/node_modules/@eslint/eslintrc
+    │   │   └── js -> ../.pnpm/@eslint+js@9.1.1/node_modules/@eslint/js
+    │   ├── @eslint-community
+    │   │   ├── eslint-utils -> ../.pnpm/@eslint-community+eslint-utils@4.4.0_eslint@9.1.1/node_modules/@eslint-community/eslint-utils
+    │   │   └── regexpp -> ../.pnpm/@eslint-community+regexpp@4.10.0/node_modules/@eslint-community/regexpp
+    │   ├── @gradio
+    │   │   ├── accordion -> ../../js/accordion
+    │   │   ├── annotatedimage -> ../../js/annotatedimage
+    │   │   ├── audio -> ../../js/audio
+    │   │   ├── box -> ../../js/box
+    │   │   ├── button -> ../../js/button
+    │   │   ├── chatbot -> ../../js/chatbot
+    │   │   ├── checkbox -> ../../js/checkbox
+    │   │   ├── checkboxgroup -> ../../js/checkboxgroup
+    │   │   ├── client -> ../../client/js
+    │   │   ├── code -> ../../js/code
+    │   │   ├── colorpicker -> ../../js/colorpicker
+    │   │   ├── column -> ../../js/column
+    │   │   ├── core -> ../../js/core
+    │   │   ├── dataframe -> ../../js/dataframe
+    │   │   ├── dataset -> ../../js/dataset
+    │   │   ├── datetime -> ../../js/datetime
+    │   │   ├── downloadbutton -> ../../js/downloadbutton
+    │   │   ├── dropdown -> ../../js/dropdown
+    │   │   ├── fallback -> ../../js/fallback
+    │   │   ├── file -> ../../js/file
+    │   │   ├── fileexplorer -> ../../js/fileexplorer
+    │   │   ├── form -> ../../js/form
+    │   │   ├── gallery -> ../../js/gallery
+    │   │   ├── group -> ../../js/group
+    │   │   ├── highlightedtext -> ../../js/highlightedtext
+    │   │   ├── html -> ../../js/html
+    │   │   ├── image -> ../../js/image
+    │   │   ├── imageeditor -> ../../js/imageeditor
+    │   │   ├── json -> ../../js/json
+    │   │   ├── label -> ../../js/label
+    │   │   ├── markdown -> ../../js/markdown
+    │   │   ├── model3d -> ../../js/model3D
+    │   │   ├── multimodaltextbox -> ../../js/multimodaltextbox
+    │   │   ├── nativeplot -> ../../js/nativeplot
+    │   │   ├── number -> ../../js/number
+    │   │   ├── paramviewer -> ../../js/paramviewer
+    │   │   ├── plot -> ../../js/plot
+    │   │   ├── radio -> ../../js/radio
+    │   │   ├── row -> ../../js/row
+    │   │   ├── simpledropdown -> ../../js/simpledropdown
+    │   │   ├── simpleimage -> ../../js/simpleimage
+    │   │   ├── simpletextbox -> ../../js/simpletextbox
+    │   │   ├── slider -> ../../js/slider
+    │   │   ├── state -> ../../js/state
+    │   │   ├── statustracker -> ../../js/statustracker
+    │   │   ├── tabitem -> ../../js/tabitem
+    │   │   ├── tabs -> ../../js/tabs
+    │   │   ├── textbox -> ../../js/textbox
+    │   │   ├── timer -> ../../js/timer
+    │   │   ├── upload -> ../../js/upload
+    │   │   ├── uploadbutton -> ../../js/uploadbutton
+    │   │   └── video -> ../../js/video
+    │   ├── @manypkg
+    │   │   └── get-packages -> ../.pnpm/@manypkg+get-packages@2.2.1/node_modules/@manypkg/get-packages
+    │   ├── @playwright
+    │   │   ├── experimental-ct-svelte -> ../.pnpm/@playwright+experimental-ct-svelte@1.44.1_@types+node@20.12.8_lightningcss@1.24.1_sass@1.66.1_qvvsxm4rvwuofix4jib3b7m4zq/node_modules/@playwright/experimental-ct-svelte
+    │   │   └── test -> ../.pnpm/@playwright+test@1.44.1/node_modules/@playwright/test
+    │   ├── @self
+    │   │   ├── build -> ../../js/build
+    │   │   └── tootils -> ../../js/tootils
+    │   ├── @storybook
+    │   │   ├── addon-a11y -> ../.pnpm/@storybook+addon-a11y@8.1.8/node_modules/@storybook/addon-a11y
+    │   │   ├── addon-essentials -> ../.pnpm/@storybook+addon-essentials@8.1.8_@types+react@18.3.1_prettier@3.2.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@storybook/addon-essentials
+    │   │   ├── addon-interactions -> ../.pnpm/@storybook+addon-interactions@8.1.8_@types+jest@29.5.12_vitest@1.5.3_@types+node@20.12.8_happ_3feivqyj5yhfyo2vgcnpqznxei/node_modules/@storybook/addon-interactions
+    │   │   ├── addon-links -> ../.pnpm/@storybook+addon-links@8.1.8_react@18.3.1/node_modules/@storybook/addon-links
+    │   │   ├── addon-svelte-csf -> ../.pnpm/@storybook+addon-svelte-csf@4.1.3_@storybook+svelte@8.1.8_prettier@3.2.5_svelte@4.2.15__@svel_ak6f2ixr2qiyoyahi2btmvo2xy/node_modules/@storybook/addon-svelte-csf
+    │   │   ├── blocks -> ../.pnpm/@storybook+blocks@8.1.8_@types+react@18.3.1_prettier@3.2.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@storybook/blocks
+    │   │   ├── manager-api -> ../.pnpm/@storybook+manager-api@8.1.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@storybook/manager-api
+    │   │   ├── svelte -> ../.pnpm/@storybook+svelte@8.1.8_prettier@3.2.5_svelte@4.2.15/node_modules/@storybook/svelte
+    │   │   ├── svelte-vite -> ../.pnpm/@storybook+svelte-vite@8.1.8_@babel+core@7.24.5_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2_onnzy5zb6noeo7jpsb7zmacfrq/node_modules/@storybook/svelte-vite
+    │   │   ├── test -> ../.pnpm/@storybook+test@8.1.8_@types+jest@29.5.12_vitest@1.5.3_@types+node@20.12.8_happy-dom@14.7.1_j_a4pdpcvc5cdcft2cjbg65c2kxm/node_modules/@storybook/test
+    │   │   └── theming -> ../.pnpm/@storybook+theming@8.1.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@storybook/theming
+    │   ├── @sveltejs
+    │   │   ├── package -> ../.pnpm/@sveltejs+package@2.3.4_patch_hash=flygqco6z3nrhhrndh6d2cl72q_svelte@4.2.15_typescript@5.5.4/node_modules/@sveltejs/package
+    │   │   └── vite-plugin-svelte -> ../.pnpm/@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node@20.12.8_lightningcss_rxr5oqrkxc7hflkhk7xicxzg6y/node_modules/@sveltejs/vite-plugin-svelte
+    │   ├── @tailwindcss
+    │   │   └── forms -> ../.pnpm/@tailwindcss+forms@0.5.7_tailwindcss@3.4.3/node_modules/@tailwindcss/forms
+    │   ├── @testing-library
+    │   │   ├── dom -> ../.pnpm/@testing-library+dom@10.1.0/node_modules/@testing-library/dom
+    │   │   ├── jest-dom -> ../.pnpm/@testing-library+jest-dom@6.4.2_@types+jest@29.5.12_vitest@1.5.3_@types+node@20.12.8_happy-do_3fbgsghnt5dlr4ok7ug6k3lwga/node_modules/@testing-library/jest-dom
+    │   │   └── user-event -> ../.pnpm/@testing-library+user-event@14.5.2_@testing-library+dom@10.1.0/node_modules/@testing-library/user-event
+    │   ├── @types
+    │   │   ├── node -> ../.pnpm/@types+node@20.12.8/node_modules/@types/node
+    │   │   ├── testing-library__jest-dom -> ../.pnpm/@types+testing-library__jest-dom@5.14.9/node_modules/@types/testing-library__jest-dom
+    │   │   └── wavesurfer.js -> ../.pnpm/@types+wavesurfer.js@6.0.12/node_modules/@types/wavesurfer.js
+    │   ├── @typescript-eslint
+    │   │   ├── eslint-plugin -> ../.pnpm/@typescript-eslint+eslint-plugin@7.8.0_@typescript-eslint+parser@7.8.0_eslint@9.1.1_typescrip_7kmolwlg7qcz6xih3kz2bbzm6i/node_modules/@typescript-eslint/eslint-plugin
+    │   │   ├── parser -> ../.pnpm/@typescript-eslint+parser@7.8.0_eslint@9.1.1_typescript@5.5.4/node_modules/@typescript-eslint/parser
+    │   │   ├── scope-manager -> ../.pnpm/@typescript-eslint+scope-manager@7.8.0/node_modules/@typescript-eslint/scope-manager
+    │   │   ├── type-utils -> ../.pnpm/@typescript-eslint+type-utils@7.8.0_eslint@9.1.1_typescript@5.5.4/node_modules/@typescript-eslint/type-utils
+    │   │   ├── types -> ../.pnpm/@typescript-eslint+types@7.8.0/node_modules/@typescript-eslint/types
+    │   │   ├── typescript-estree -> ../.pnpm/@typescript-eslint+typescript-estree@7.8.0_typescript@5.5.4/node_modules/@typescript-eslint/typescript-estree
+    │   │   ├── utils -> ../.pnpm/@typescript-eslint+utils@7.8.0_eslint@9.1.1_typescript@5.5.4/node_modules/@typescript-eslint/utils
+    │   │   └── visitor-keys -> ../.pnpm/@typescript-eslint+visitor-keys@7.8.0/node_modules/@typescript-eslint/visitor-keys
+    │   ├── autoprefixer -> .pnpm/autoprefixer@10.4.19_postcss@8.4.38/node_modules/autoprefixer
+    │   ├── babylonjs -> .pnpm/babylonjs@5.57.1/node_modules/babylonjs
+    │   ├── babylonjs-loaders -> .pnpm/babylonjs-loaders@5.57.1/node_modules/babylonjs-loaders
+    │   ├── chromatic -> .pnpm/chromatic@11.3.0/node_modules/chromatic
+    │   ├── esbuild -> .pnpm/esbuild@0.21.0/node_modules/esbuild
+    │   ├── eslint -> .pnpm/eslint@9.1.1/node_modules/eslint
+    │   ├── eslint-compat-utils -> .pnpm/eslint-compat-utils@0.5.0_eslint@9.1.1/node_modules/eslint-compat-utils
+    │   ├── eslint-plugin-jsdoc -> .pnpm/eslint-plugin-jsdoc@48.2.3_eslint@9.1.1/node_modules/eslint-plugin-jsdoc
+    │   ├── eslint-plugin-svelte -> .pnpm/eslint-plugin-svelte@2.38.0_eslint@9.1.1_svelte@4.2.15/node_modules/eslint-plugin-svelte
+    │   ├── eslint-scope -> .pnpm/eslint-scope@8.0.1/node_modules/eslint-scope
+    │   ├── eslint-utils -> .pnpm/eslint-utils@3.0.0_eslint@8.4.1/node_modules/eslint-utils
+    │   ├── eslint-visitor-keys -> .pnpm/eslint-visitor-keys@4.0.0/node_modules/eslint-visitor-keys
+    │   ├── globals -> .pnpm/globals@15.1.0/node_modules/globals
+    │   ├── happy-dom -> .pnpm/happy-dom@14.7.1/node_modules/happy-dom
+    │   ├── jsdom -> .pnpm/jsdom@24.0.0_bufferutil@4.0.7/node_modules/jsdom
+    │   ├── kleur -> .pnpm/kleur@4.1.5/node_modules/kleur
+    │   ├── msw -> .pnpm/msw@2.2.14_typescript@5.5.4/node_modules/msw
+    │   ├── node-html-parser -> .pnpm/node-html-parser@6.1.13/node_modules/node-html-parser
+    │   ├── npm-run-all2 -> .pnpm/npm-run-all2@6.1.2/node_modules/npm-run-all2
+    │   ├── playwright -> .pnpm/playwright@1.44.1/node_modules/playwright
+    │   ├── plotly.js-dist-min -> .pnpm/plotly.js-dist-min@2.32.0/node_modules/plotly.js-dist-min
+    │   ├── polka -> .pnpm/polka@1.0.0-next.25/node_modules/polka
+    │   ├── pollen-css -> .pnpm/pollen-css@4.6.2/node_modules/pollen-css
+    │   ├── postcss -> .pnpm/postcss@8.4.38/node_modules/postcss
+    │   ├── postcss-custom-media -> .pnpm/postcss-custom-media@10.0.4_postcss@8.4.38/node_modules/postcss-custom-media
+    │   ├── postcss-nested -> .pnpm/postcss-nested@5.0.6_postcss@8.4.38/node_modules/postcss-nested
+    │   ├── postcss-prefix-selector -> .pnpm/postcss-prefix-selector@1.16.1_postcss@8.4.38/node_modules/postcss-prefix-selector
+    │   ├── prettier -> .pnpm/prettier@3.2.5/node_modules/prettier
+    │   ├── prettier-fallback -> .pnpm/prettier@3.2.5/node_modules/prettier
+    │   ├── prettier-plugin-css-order -> .pnpm/prettier-plugin-css-order@2.1.2_postcss@8.4.38_prettier@3.2.5/node_modules/prettier-plugin-css-order
+    │   ├── prettier-plugin-svelte -> .pnpm/prettier-plugin-svelte@3.2.3_prettier@3.2.5_svelte@4.2.15/node_modules/prettier-plugin-svelte
+    │   ├── sirv -> .pnpm/sirv@2.0.4/node_modules/sirv
+    │   ├── sirv-cli -> .pnpm/sirv-cli@2.0.2/node_modules/sirv-cli
+    │   ├── storybook -> .pnpm/storybook@8.1.8_@babel+preset-env@7.24.5_@babel+core@7.24.5__bufferutil@4.0.7_react-dom@18.3._7qqnj3sskesrsh74olhs6ve42y/node_modules/storybook
+    │   ├── svelte -> .pnpm/svelte@4.2.15/node_modules/svelte
+    │   ├── svelte-check -> .pnpm/svelte-check@3.7.0_@babel+core@7.24.5_coffeescript@2.7.0_postcss-load-config@4.0.2_postcss@8._w3n6icqki5msr2nl43i3fcdf6u/node_modules/svelte-check
+    │   ├── svelte-eslint-parser -> .pnpm/svelte-eslint-parser@0.36.0_svelte@4.2.15/node_modules/svelte-eslint-parser
+    │   ├── svelte-i18n -> .pnpm/svelte-i18n@4.0.0_svelte@4.2.15/node_modules/svelte-i18n
+    │   ├── svelte-preprocess -> .pnpm/svelte-preprocess@5.1.4_@babel+core@7.24.5_coffeescript@2.7.0_postcss-load-config@4.0.2_postc_prou7suhu5qu3xzhwgjzjl44r4/node_modules/svelte-preprocess
+    │   ├── tailwindcss -> .pnpm/tailwindcss@3.4.3/node_modules/tailwindcss
+    │   ├── tinyspy -> .pnpm/tinyspy@3.0.0/node_modules/tinyspy
+    │   ├── typescript -> .pnpm/typescript@5.5.4/node_modules/typescript
+    │   ├── typescript-svelte-plugin -> .pnpm/typescript-svelte-plugin@0.3.40_svelte@4.2.15_typescript@5.5.4/node_modules/typescript-svelte-plugin
+    │   ├── vite -> .pnpm/vite@5.2.11_@types+node@20.12.8_lightningcss@1.24.1_sass@1.66.1_stylus@0.63.0_sugarss@4.0.1_postcss@8.4.38_/node_modules/vite
+    │   ├── vite-plugin-turbosnap -> .pnpm/vite-plugin-turbosnap@1.0.3/node_modules/vite-plugin-turbosnap
+    │   ├── vitest -> .pnpm/vitest@1.5.3_@types+node@20.12.8_happy-dom@14.7.1_jsdom@24.0.0_bufferutil@4.0.7__lightningcss_zgllpgh3j3vkun6twxpt6dau7m/node_modules/vitest
+    │   └── wikidata-lang -> .pnpm/wikidata-lang@4.1.2/node_modules/wikidata-lang
+    ├── package.json
+    ├── patches
+    │   ├── @ffmpeg__util@0.12.1.patch
+    │   └── @sveltejs__package@2.3.4.patch
+    ├── pnpm-lock.yaml
+    ├── pnpm-workspace.yaml
+    ├── pyproject.toml
+    ├── readme_files
+    │   ├── chromatic.svg
+    │   ├── encode.svg
+    │   ├── fastapi.svg
+    │   ├── gradio.svg
+    │   ├── header-image.jpg
+    │   ├── huggingface_mini.svg
+    │   ├── pnpm.svg
+    │   ├── python.svg
+    │   ├── storybook.svg
+    │   ├── svelte.svg
+    │   ├── tailwind.svg
+    │   ├── vite.svg
+    │   └── zh-cn
+    │       └── README.md
+    ├── readme_template.md
+    ├── render_readme.py
+    ├── renovate.json
+    ├── requirements-oauth.txt
+    ├── requirements.txt
+    ├── scripts
+    │   ├── benchmark_queue.py
+    │   ├── build_frontend.sh
+    │   ├── build_lite.sh
+    │   ├── copy_demos.py
+    │   ├── create_test_requirements-37.sh
+    │   ├── create_test_requirements.sh
+    │   ├── delete_old_spaces.py
+    │   ├── download_artifacts.py
+    │   ├── format_backend.sh
+    │   ├── format_frontend.sh
+    │   ├── format_release_notes.py
+    │   ├── generate_notebooks.py
+    │   ├── generate_theme.py
+    │   ├── helpers.sh
+    │   ├── install_gradio.sh
+    │   ├── install_test_requirements.sh
+    │   ├── launch_website.sh
+    │   ├── lint_backend.sh
+    │   ├── load_test
+    │   │   ├── README.md
+    │   │   ├── gradio_app.py
+    │   │   ├── load.ipynb
+    │   │   ├── nginx.conf
+    │   │   ├── simple.py
+    │   │   └── workers.py
+    │   ├── overwrite_xray_config.py
+    │   ├── run_all_tests.sh
+    │   ├── run_frontend.sh
+    │   ├── run_lite.sh
+    │   ├── type_check_backend.sh
+    │   ├── upload_demo_to_space.py
+    │   └── upload_website_demos.py
+    ├── style.md
+    ├── test
+    │   ├── README.md
+    │   ├── __init__.py
+    │   ├── components
+    │   │   ├── __init__.py
+    │   │   ├── plot_data.py
+    │   │   ├── test_annotated_image.py
+    │   │   ├── test_audio.py
+    │   │   ├── test_button.py
+    │   │   ├── test_chatbot.py
+    │   │   ├── test_checkbox.py
+    │   │   ├── test_checkbox_group.py
+    │   │   ├── test_code.py
+    │   │   ├── test_color_picker.py
+    │   │   ├── test_dataframe.py
+    │   │   ├── test_dataset.py
+    │   │   ├── test_datetime.py
+    │   │   ├── test_dropdown.py
+    │   │   ├── test_file.py
+    │   │   ├── test_file_explorer.py
+    │   │   ├── test_gallery.py
+    │   │   ├── test_highlighted_text.py
+    │   │   ├── test_html.py
+    │   │   ├── test_image.py
+    │   │   ├── test_image_editor.py
+    │   │   ├── test_json.py
+    │   │   ├── test_label.py
+    │   │   ├── test_markdown.py
+    │   │   ├── test_model3d.py
+    │   │   ├── test_native_plots.py
+    │   │   ├── test_number.py
+    │   │   ├── test_plot.py
+    │   │   ├── test_radio.py
+    │   │   ├── test_slider.py
+    │   │   ├── test_state.py
+    │   │   ├── test_textbox.py
+    │   │   ├── test_upload_button.py
+    │   │   └── test_video.py
+    │   ├── conftest.py
+    │   ├── golden
+    │   │   ├── diff_texts
+    │   │   │   └── magic_trick.png
+    │   │   ├── image_mod
+    │   │   │   └── cheetah1.png
+    │   │   ├── longest_word
+    │   │   │   └── wonderful.png
+    │   │   └── sentence_builder
+    │   │       └── two_cats.png
+    │   ├── requirements.in
+    │   ├── requirements.txt
+    │   ├── test_analytics.py
+    │   ├── test_api_info.py
+    │   ├── test_blocks.py
+    │   ├── test_buttons.py
+    │   ├── test_chat_interface.py
+    │   ├── test_components.py
+    │   ├── test_custom_component_compatibility.py
+    │   ├── test_events.py
+    │   ├── test_external.py
+    │   ├── test_files
+    │   │   ├── Box.gltf
+    │   │   ├── Fox.gltf
+    │   │   ├── README.md
+    │   │   ├── alphabet.txt
+    │   │   ├── audio_sample-0-100.wav
+    │   │   ├── audio_sample-1-4.wav
+    │   │   ├── audio_sample.wav
+    │   │   ├── bad_video_sample.mp4
+    │   │   ├── bus.png
+    │   │   ├── cheetah1.jpg
+    │   │   ├── images
+    │   │   │   ├── bus.png
+    │   │   │   └── bus_copy.png
+    │   │   ├── images_log
+    │   │   │   ├── im
+    │   │   │   │   ├── bus.png
+    │   │   │   │   └── bus_copy.png
+    │   │   │   └── log.csv
+    │   │   ├── muted_video_sample.mp4
+    │   │   ├── playable_but_bad_container.mkv
+    │   │   ├── playable_but_bad_container.mp4
+    │   │   ├── rotated_image.jpeg
+    │   │   ├── s1.srt
+    │   │   ├── sample_file.pdf
+    │   │   ├── test_label_json.json
+    │   │   ├── video_sample.avi
+    │   │   ├── video_sample.mp4
+    │   │   ├── video_sample.ogg
+    │   │   ├── video_sample.webm
+    │   │   ├── xray_config.json
+    │   │   ├── xray_config_diff_ids.json
+    │   │   └── xray_config_wrong.json
+    │   ├── test_flagging.py
+    │   ├── test_gradio_component_cli.py
+    │   ├── test_helpers.py
+    │   ├── test_http_server.py
+    │   ├── test_interfaces.py
+    │   ├── test_networking.py
+    │   ├── test_pipelines.py
+    │   ├── test_processing_utils.py
+    │   ├── test_queueing.py
+    │   ├── test_reload.py
+    │   ├── test_routes.py
+    │   ├── test_theme_sharing.py
+    │   ├── test_tunneling.py
+    │   ├── test_utils.py
+    │   └── tmp
+    │       └── tmp.txt
+    ├── testing-guidelines
+    │   ├── ci.md
+    │   ├── gh-actions-flow.png
+    │   ├── gh-actions-flow.svg
+    │   ├── git-tree.svg
+    │   ├── playwright.md
+    │   └── quality-strategy.md
+    └── tsconfig.json
 
-10 directories, 23 files
+1536 directories, 3139 files

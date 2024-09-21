@@ -9,7 +9,7 @@ class TestCampaignCreation(unittest.TestCase):
         Simulates creating a campaign and checks the output.
         """
         campaign_name = "Test Campaign"
-        budget = "$1000"
+        budget = "$7860"
         target_audience = "Age 18-35, Tech Enthusiasts"
         print(f"Creating campaign with name: {campaign_name}, budget: {budget}, target: {target_audience}")
         result = create_campaign(campaign_name, budget, target_audience)

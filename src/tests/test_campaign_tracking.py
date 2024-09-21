@@ -10,7 +10,7 @@ class TestCampaignTracking(unittest.TestCase):
         """
         campaign_name = "Super Summer Sale"
         status = "Active"
-        clicks = 1245
+        clicks = 7860
         conversions = 237
         print(f"Tracking campaign: {campaign_name} with status: {status}")
         result = track_campaign(campaign_name, status, clicks, conversions)

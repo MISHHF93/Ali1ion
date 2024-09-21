@@ -21,8 +21,8 @@ def analyze_campaign_performance(campaign_name, clicks, impressions, conversions
 if __name__ == "__main__":
     # Simulate data for a live campaign
     campaign_name = "Winter Holiday Promo"
-    clicks = 1200
-    impressions = 25000
+    clicks = 7860
+    impressions = 7860
     conversions = 180
 
     # Echo the real-time analysis

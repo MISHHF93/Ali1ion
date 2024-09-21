@@ -4,7 +4,7 @@
   "description": "NAO AI project",
   "main": "index.js",
   "scripts": {
-    "start": "node src/application_integration/backend_services/node_app/app.js",
+    "start": "node src/backend/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mishari Borah",

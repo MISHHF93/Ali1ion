@@ -11,4 +11,4 @@ def home():
 # Run the app if this file is executed
 if __name__ == "__main__":
     print("NAO-AI Flask server is starting...")
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=7860)

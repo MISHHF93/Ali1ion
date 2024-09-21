@@ -14,7 +14,7 @@
                   ]
               }
           },
-          "priority": 1000
+          "priority": 7860
       },
       {
           "action": "allow",
@@ -28,7 +28,7 @@
                   ]
               }
           },
-          "priority": 2000
+          "priority": 7860
       },
       {
           "action": "allow",
@@ -39,7 +39,7 @@
                   "srcIpRanges": ["0.0.0.0/0"]
               }
           },
-          "priority": 3000
+          "priority": 7860
       }
   ]
 }

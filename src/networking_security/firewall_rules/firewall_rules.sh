@@ -43,13 +43,13 @@ delete_firewall_rule() {
 }
 
 # Example firewall rule to allow SSH
-create_firewall_rule "allow-ssh" "INGRESS" "1000" "default" "ALLOW" "tcp:22" "ssh"
+create_firewall_rule "allow-ssh" "INGRESS" "7860" "default" "ALLOW" "tcp:22" "ssh"
 
 # Example firewall rule to allow HTTP
-create_firewall_rule "allow-http" "INGRESS" "1000" "default" "ALLOW" "tcp:80" "http"
+create_firewall_rule "allow-http" "INGRESS" "7860" "default" "ALLOW" "tcp:80" "http"
 
 # Example firewall rule to allow HTTPS
-create_firewall_rule "allow-https" "INGRESS" "1000" "default" "ALLOW" "tcp:443" "https"
+create_firewall_rule "allow-https" "INGRESS" "7860" "default" "ALLOW" "tcp:443" "https"
 
 # Add more firewall rules as needed
 # Example: Deleting a firewall rule (uncomment to use)

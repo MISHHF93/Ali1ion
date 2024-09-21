@@ -15,7 +15,7 @@ def create_campaign(campaign_name, budget, target_audience):
 if __name__ == "__main__":
     # Simulate user inputs for campaign creation
     campaign_name = "Super Summer Sale"
-    budget = "$5000"
+    budget = "$7860"
     target_audience = "Age 18-35, Tech Enthusiasts"
 
     # Echo the creation process

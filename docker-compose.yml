@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "7860:7860"
     depends_on:
       - postgres
       - redis
     environment:
       FLASK_RUN_HOST: "0.0.0.0"
-      FLASK_RUN_PORT: "8000"
+      FLASK_RUN_PORT: "7860"
       DEBUG: "true"
       SECRET_KEY: "your_secret_key_here"
       OPENAI_API_KEY: "${OPENAI_API_KEY}"
@@ -23,8 +23,8 @@ services:
       DB_USER: "${DB_USER}"
       DB_PASSWORD: "${DB_PASSWORD}"
       DB_HOST: "postgres"
-      DB_PORT: "5432"
-      REDIS_URL: "redis://redis:6379"
+      DB_PORT: "7860"
+      REDIS_URL: "redis://redis:7860"
     volumes:
       - ./src:/usr/src/app
     networks:
@@ -37,7 +37,7 @@ services:
       POSTGRES_USER: "${DB_USER}"
       POSTGRES_PASSWORD: "${DB_PASSWORD}"
     ports:
-      - "5432:5432"
+      - "7860:7860"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -46,7 +46,7 @@ services:
   redis:
     image: "redis:alpine"
     ports:
-      - "6379:6379"
+      - "7860:7860"
     networks:
       - nao-ai-network
 

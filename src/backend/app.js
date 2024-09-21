@@ -1,26 +1,26 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
+const path = require('path');
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 7860;
 
-app.use(bodyParser.json());
-app.use(cors());
+// Serve static files from the frontend assets
+app.use('/assets', express.static(path.join(__dirname, '../../frontend/assets')));
 
-// API for text generation
-app.post('/api/generate', (req, res) => {
-  const { prompt } = req.body;
-  res.json({ response: `Generated text for: ${prompt}` });
+// Serve the Gradio interface HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/gradio_interface/index.html'));
 });
 
-// API for image generation
-app.post('/api/generate-image', (req, res) => {
-  const { prompt } = req.body;
-  res.json({ response: 'https://via.placeholder.com/150' });
+// Handle any additional API routes here
+app.post('/api/naoai/generate-text', (req, res) => {
+    // Sample text generation API response
+    res.json({ response: 'Sample generated text from GPT-4.' });
 });
+
+// You can add more routes as needed for other features like image generation, feedback, etc.
+// Example: app.post('/api/naoai/generate-image', ...
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

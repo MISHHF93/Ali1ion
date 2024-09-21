@@ -34,7 +34,7 @@ RUN npm install --only=production
 COPY src/backend/ ./application_integration/backend_services/node_app/
 
 # Expose port for Node.js application
-EXPOSE 8080
+EXPOSE 7860
 CMD ["node", "application_integration/backend_services/node_app/app.js"]
 
 # Stage 3: Build Another Python App (main.py)

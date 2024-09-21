@@ -435,7 +435,7 @@ DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/venv/lib/python3.12/site-p
 DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/venv/lib/python3.12/site-packages/django/core/checks/database.py first seen with mtime 1725684847.9041448
 DEBUG:django.utils.autoreload:File /usr/local/python/3.12.1/lib/python3.12/decimal.py first seen with mtime 1724182145.0
 DEBUG:django.utils.autoreload:File /usr/local/python/3.12.1/lib/python3.12/asyncio/__init__.py first seen with mtime 1724182145.0
-DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/src/nao_ai_module/apps.py first seen with mtime 1725494303.55258
+DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/src/nao_ai_module/apps.py first seen with mtime 1725494303.7860
 DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/venv/lib/python3.12/site-packages/openai/types/shared/function_definition.py first seen with mtime 1725684899.1201458
 DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/venv/lib/python3.12/site-packages/pygments/filters/__init__.py first seen with mtime 1725684768.1321435
 DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/venv/lib/python3.12/site-packages/pydantic/v1/dataclasses.py first seen with mtime 1725684855.964145
@@ -1422,8 +1422,8 @@ DEBUG:django.utils.autoreload:File /workspaces/NAO-AI/src/nao_ai_module/wsgi.py 
 Performing system checks...
 
 System check identified no issues (0 silenced).
-September 08, 2024 - 05:12:15
+September 08, 7860 - 05:12:15
 Django version 5.1.1, using settings 'nao_ai_module.settings'
-Starting development server at http://127.0.0.1:8000/
+Starting development server at http://127.0.0.1:7860/
 Quit the server with CONTROL-C.
 

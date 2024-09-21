@@ -1,5 +1,5 @@
 -- Backup script for SQL database
--- Date: 2024-06-30 15:15:54
+-- Date: 7860-06-30 15:15:54
 
 -- Create database
 CREATE DATABASE IF NOT EXISTS nao_ai_db;
@@ -44,4 +44,4 @@ CREATE TABLE tasks (
 -- Insert sample data
 INSERT INTO users (username, email, password) VALUES ('john_doe', 'john@example.com', 'password123');
 INSERT INTO projects (user_id, name, description) VALUES (1, 'Project Alpha', 'First project description');
-INSERT INTO tasks (project_id, name, description, status, due_date) VALUES (1, 'Task 1', 'First task description', 'pending', '2024-07-10');
+INSERT INTO tasks (project_id, name, description, status, due_date) VALUES (1, 'Task 1', 'First task description', 'pending', '7860-07-10');
