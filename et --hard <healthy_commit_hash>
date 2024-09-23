@@ -1,0 +1,19 @@
+[33m592d9eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to origin/master
+[33ma13dc2d[m HEAD@{1}: commit: Track large files with LFS
+[33m3719fd0[m HEAD@{2}: commit: NAO-AI Major Updates:
+[33m592d9eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: commit: - Removed unnecessary embedded git repository in the directory to avoid conflict warnings during the commit process.
+[33m98bf584[m HEAD@{4}: commit: Updated environment config, database, Google Cloud setup, and fixed pytest issues
+[33m114e0d4[m HEAD@{5}: commit: Comprehensive updates and fixes:
+[33m8f1cdf1[m HEAD@{6}: commit: Updated NAO-AI widget components, templates, and scripts for dynamic interaction and AI functionalities
+[33me643a96[m HEAD@{7}: commit: Optimized frontend structure for NAO-AI GPT-4o module, removed unnecessary files
+[33m73a7d14[m HEAD@{8}: commit: Reorganize frontend structure for NAO-AI widget integration
+[33m73c00f3[m HEAD@{9}: commit: Updated requirements, removed empty directories, and added frontend directory tree structure.
+[33m715e2bd[m HEAD@{10}: commit: Enhanced project structure for NAO-AI widget integration and marketing automation
+[33meedab17[m HEAD@{11}: commit: Set up NAO-AI module and widget framework, prepped for future integration
+[33m775cc12[m HEAD@{12}: commit: Move frontend-related templates and HTML files to frontend directory
+[33m7970ea9[m HEAD@{13}: commit: Deleted empty directories and made project adjustments
+[33m124c62e[m HEAD@{14}: commit: Descriptive commit message explaining the changes
+[33m1eb1d50[m HEAD@{15}: commit: Consolidated directories, removed venv and node_modules, and cleaned up empty directories
+[33m4481392[m HEAD@{16}: commit: Enhanced functionality and fixed bugs in NAO-AI module
+[33m5d59d23[m HEAD@{17}: commit: Enhanced functionality and fixed bugs in NAO-AI module
+[33md5f0b1d[m HEAD@{18}: clone: from https://github.com/MISHHF93/NAO-AI
