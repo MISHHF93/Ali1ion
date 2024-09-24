@@ -1,0 +1,5 @@
+# GPT-4o Configuration
+api_key: 'your-gpt4o-api-key'
+model: 'gpt-4o'
+temperature: 0.7
+max_tokens: 2000

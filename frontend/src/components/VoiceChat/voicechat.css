@@ -1,0 +1,149 @@
+/* Base body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container for the sphere and UI elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure all elements are center aligned */
+    gap: 25px; /* Increased gap to position the text and button lower */
+}
+
+/* The sophisticated sphere */
+.sphere {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e6e6e6, #d4d4d4, #bbbbbb);
+    box-shadow: 0 0 40px rgba(0, 200, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.8); /* Stronger shadow and glow */
+    position: relative;
+    z-index: 2;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+/* Multi-layered reflections using ::before */
+.sphere::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 80%);
+    opacity: 0.6;
+}
+
+/* Centered glow ring around the sphere (dynamic halo) */
+.glow-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 0px 40px 25px rgba(0, 255, 255, 0.6), 0px 0px 100px 50px rgba(0, 255, 255, 0.2); /* Softer glow */
+    z-index: 1;
+    animation: pulseGlow 1s infinite ease-in-out;
+}
+
+/* Particle system */
+.particle-system {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Text status styling */
+.text-status {
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 20px; /* Increased margin above text */
+    text-align: center; /* Ensure center alignment */
+}
+
+/* Speak action button styling */
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: #00b0ff;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 4px rgba(0, 176, 255, 0.6);
+    transition: background-color 0.1s ease, box-shadow 0.2s ease;
+    margin-top: 30px; /* Increased margin to move the button lower */
+}
+
+.action-button:hover {
+    background-color: #008fcc;
+    box-shadow: 0px 0px 20px 6px rgba(0, 176, 255, 0.8); /* Stronger hover effect */
+}
+
+/* Breathing animation when idle */
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(0, 200, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 50px rgba(0, 255, 255, 0.7), 0 0 35px rgba(0, 255, 255, 0.8); /* Increased intensity */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(0, 200, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+}
+
+/* Glow ring animation (outer circle) */
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.04);
+        opacity: 0.8;
+    }
+}
+
+/* Particle movement */
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -250px) scale(0.6) rotate(45deg); /* Higher float and slight rotation */
+        opacity: 0;
+    }
+}
+
+/* Generate particles - smaller and more dynamic */
+.particle {
+    position: absolute;
+    width: 2px; /* Small particle size */
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: particleFloat 3s infinite ease-in-out;
+    /* Random starting positions to make particles appear more dynamic */
+    left: calc(50% + (Math.random() * 80px - 40px)); /* Random starting X position */
+    top: calc(50% + (Math.random() * 80px - 40px));  /* Random starting Y position */
+}
