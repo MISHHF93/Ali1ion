@@ -1,58 +1,88 @@
-// Get references to the sphere, status text, and button
-const sphere = document.getElementById('sphere');
-const statusText = document.getElementById('statusText');
-const speakButton = document.getElementById('speakButton');
-const particlesContainer = document.getElementById('particles');
+import React, { useEffect, useRef, useState } from 'react';
+import './voicechat.css'; // Make sure the CSS is imported
 
-// Helper function to create a particle
-function createParticle() {
+const VoiceChat = () => {
+  const sphereRef = useRef(null); // Sphere reference
+  const statusTextRef = useRef(null); // Status text reference
+  const particlesContainerRef = useRef(null); // Particle container reference
+  const glowRingRef = useRef(null); // Glow ring reference
+  const [isSpeaking, setIsSpeaking] = useState(false); // State to control speaking animation
+  const particleIntervalRef = useRef(null); // Interval reference for cleanup
+
+  // Helper function to create a particle
+  const createParticle = () => {
     const particle = document.createElement('div');
     particle.classList.add('particle');
 
     // Randomize starting position around the sphere (x and y axis)
     particle.style.left = `calc(50% + ${(Math.random() * 120) - 60}px)`; // Wider range for X position
-    particle.style.top = `calc(50% + ${(Math.random() * 120) - 60}px)`;  // Wider range for Y position
+    particle.style.top = `calc(50% + ${(Math.random() * 120) - 60}px)`; // Wider range for Y position
 
     // Duration and scale for more visibility
-    particle.style.animationDuration = `${2 + Math.random() * 2}s`; 
-    particle.style.opacity = 0.4 + Math.random() * 0.6;  // More opacity for better visibility
-    particle.style.transform = `scale(${0.7 + Math.random() * 0.6})`;  // Scale for larger particles
+    particle.style.animationDuration = `${2 + Math.random() * 2}s`;
+    particle.style.opacity = 0.4 + Math.random() * 0.6; // More opacity for better visibility
+    particle.style.transform = `scale(${0.7 + Math.random() * 0.6})`; // Scale for larger particles
 
-    particlesContainer.appendChild(particle);
+    particlesContainerRef.current.appendChild(particle);
 
     // Remove particle after it finishes the animation
-    setTimeout(() => particle.remove(), 5000);  // Extended lifespan for better visibility
-}
+    setTimeout(() => particle.remove(), 5000); // Extended lifespan for better visibility
+  };
 
-// Simulate NAO-AI speaking with synchronized sphere and halo animations + enhanced particles
-function naoAISpeaks() {
-    // Update status text
-    statusText.textContent = 'NAO-AI is speaking...';
+  // Simulate NAO-AI speaking with synchronized sphere and halo animations + enhanced particles
+  const naoAISpeaks = () => {
+    setIsSpeaking(true); // Set state to speaking
+    statusTextRef.current.textContent = 'NAO-AI is speaking...';
 
-    // Make the sphere and halo "breathe" faster and more vibrantly
-    sphere.style.animation = 'breathing 0.6s infinite ease-in-out';
-    document.querySelector('.glow-ring').style.animation = 'pulseGlow 0.6s infinite ease-in-out';
+    // Generate particles more frequently
+    particleIntervalRef.current = setInterval(createParticle, 25); // Particles created every 25ms
 
-    // Generate particles much more frequently
-    let particleInterval = setInterval(createParticle, 25);  // Particles created every 25ms (4x frequency)
-
-    // Simulate speaking duration
+    // Simulate speaking duration for 5 seconds
     setTimeout(() => {
-        // Return to idle animation for both sphere and halo
-        sphere.style.animation = 'breathing 1s infinite ease-in-out';
-        document.querySelector('.glow-ring').style.animation = 'pulseGlow 1s infinite ease-in-out';
+      setIsSpeaking(false); // Return to idle
+      statusTextRef.current.textContent = 'NAO-AI is idle...';
 
-        // Update status text
-        statusText.textContent = 'NAO-AI is idle...';
+      clearInterval(particleIntervalRef.current); // Stop particle generation
+    }, 5000);
+  };
 
-        // Stop generating particles
-        clearInterval(particleInterval);
-    }, 5000);  // Simulate speaking for 5 seconds
-}
+  // Add event listener for the button click and animations on component mount
+  useEffect(() => {
+    // Add the breathing animation on idle
+    if (sphereRef.current) {
+      sphereRef.current.style.animation = 'breathing 1s infinite ease-in-out';
+    }
+    if (glowRingRef.current) {
+      glowRingRef.current.style.animation = 'pulseGlow 1s infinite ease-in-out';
+    }
 
-// Add event listener for the button
-speakButton.addEventListener('click', naoAISpeaks);
+    // Cleanup function when component unmounts
+    return () => {
+      if (particleIntervalRef.current) {
+        clearInterval(particleIntervalRef.current); // Clear the particle interval if active
+      }
+    };
+  }, []);
 
-// Start idle breathing animation for sphere and halo
-sphere.style.animation = 'breathing 1s infinite ease-in-out';
-document.querySelector('.glow-ring').style.animation = 'pulseGlow 1s infinite ease-in-out';
+  return (
+    <div className="container">
+      {/* Sphere and its glow effect */}
+      <div className="sphere" id="sphere" ref={sphereRef}>
+        <div className="glow-ring" ref={glowRingRef}></div>
+        <div className="particle-system" id="particles" ref={particlesContainerRef}></div>
+      </div>
+
+      {/* Status text below the sphere */}
+      <div className="text-status" id="statusText" ref={statusTextRef}>
+        NAO-AI is idle...
+      </div>
+
+      {/* Speak button */}
+      <button className="action-button" id="speakButton" onClick={naoAISpeaks}>
+        Speak
+      </button>
+    </div>
+  );
+};
+
+export default VoiceChat;

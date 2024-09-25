@@ -10,7 +10,7 @@ body {
 }
 
 /* Container for the sphere and UI elements */
-.container {
+.vc-container {
     display: flex;
     flex-direction: column;
     align-items: center; /* Ensure all elements are center aligned */
@@ -18,7 +18,7 @@ body {
 }
 
 /* The sophisticated sphere */
-.sphere {
+.vc-sphere {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -30,7 +30,7 @@ body {
 }
 
 /* Multi-layered reflections using ::before */
-.sphere::before {
+.vc-sphere::before {
     content: '';
     position: absolute;
     top: 5px;
@@ -43,7 +43,7 @@ body {
 }
 
 /* Centered glow ring around the sphere (dynamic halo) */
-.glow-ring {
+.vc-glow-ring {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -54,11 +54,11 @@ body {
     border: 2px solid rgba(0, 255, 255, 0.4);
     box-shadow: 0px 0px 40px 25px rgba(0, 255, 255, 0.6), 0px 0px 100px 50px rgba(0, 255, 255, 0.2); /* Softer glow */
     z-index: 1;
-    animation: pulseGlow 1s infinite ease-in-out;
+    animation: vc-pulseGlow 1s infinite ease-in-out;
 }
 
 /* Particle system */
-.particle-system {
+.vc-particle-system {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,7 +69,7 @@ body {
 }
 
 /* Text status styling */
-.text-status {
+.vc-text-status {
     color: #ffffff;
     font-size: 14px;
     margin-top: 20px; /* Increased margin above text */
@@ -77,7 +77,7 @@ body {
 }
 
 /* Speak action button styling */
-.action-button {
+.vc-action-button {
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
@@ -90,13 +90,13 @@ body {
     margin-top: 30px; /* Increased margin to move the button lower */
 }
 
-.action-button:hover {
+.vc-action-button:hover {
     background-color: #008fcc;
     box-shadow: 0px 0px 20px 6px rgba(0, 176, 255, 0.8); /* Stronger hover effect */
 }
 
 /* Breathing animation when idle */
-@keyframes breathing {
+@keyframes vc-breathing {
     0% {
         transform: scale(1);
         box-shadow: 0 0 40px rgba(0, 200, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.5);
@@ -112,7 +112,7 @@ body {
 }
 
 /* Glow ring animation (outer circle) */
-@keyframes pulseGlow {
+@keyframes vc-pulseGlow {
     0%, 100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.4;
@@ -124,7 +124,7 @@ body {
 }
 
 /* Particle movement */
-@keyframes particleFloat {
+@keyframes vc-particleFloat {
     0% {
         transform: translate(0, 0) scale(1);
         opacity: 1;
@@ -135,15 +135,15 @@ body {
     }
 }
 
-/* Generate particles - smaller and more dynamic */
-.particle {
+/* Generate particles - larger, more frequent, and more dynamic */
+.vc-particle {
     position: absolute;
     width: 2px; /* Small particle size */
     height: 2px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
-    animation: particleFloat 3s infinite ease-in-out;
+    animation: vc-particleFloat 3s infinite ease-in-out;
     /* Random starting positions to make particles appear more dynamic */
-    left: calc(50% + (Math.random() * 80px - 40px)); /* Random starting X position */
-    top: calc(50% + (Math.random() * 80px - 40px));  /* Random starting Y position */
+    left: calc(50% + (Math.random() * 120px - 60px)); /* Wider range for X position */
+    top: calc(50% + (Math.random() * 120px - 60px));  /* Wider range for Y position */
 }
