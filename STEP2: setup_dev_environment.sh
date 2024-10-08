@@ -1,3 +1,21 @@
+#!/bin/bash
+
+# Exit on any error
+set -e
+
+# Define paths
+FRONTEND_DIR="./frontend"
+BACKEND_DIR="./src" # Modify this path if your backend is in a different directory
+
+# Step 1: Set up the .env file for environment variables
+echo "Setting up environment variables..."
+
+# Check if .env file exists
+if [ ! -f ".env" ]; then
+  echo ".env file not found, creating a new one..."
+  touch .env
+  # Add your environment variables
+  cat <<EOT >> .env
 # .env - Environment Configuration for NAO-AI Project
 
 # General settings
@@ -53,3 +71,35 @@ PROJECT_ID="forward-dream-436204-t3"
 VPC_NAME="your_vpc_name"  # Replace with your VPC name if needed
 SUBNET_NAME="your_subnet_name"  # Replace with your Subnet name if needed
 NAO_AI_INSTANCE="nao-ai-instance"
+EOT
+  echo ".env file created with placeholder values. Please update sensitive data appropriately."
+else
+  echo ".env file already exists."
+fi
+
+# Step 2: Install frontend dependencies
+echo "Setting up frontend..."
+cd $FRONTEND_DIR
+
+# Check if node_modules already exist
+if [ -d "node_modules" ]; then
+  echo "node_modules found. Skipping npm install..."
+else
+  echo "Installing frontend dependencies..."
+  npm install --legacy-peer-deps
+fi
+
+# Fix vulnerabilities (optional, but recommended)
+npm audit fix || echo "Some vulnerabilities may need manual review."
+
+# Check if index.js exists
+if [ ! -f "src/index.js" ]; then
+  echo "index.js not found in src/. Please create an index.js file to proceed."
+  exit 1
+fi
+
+# Build frontend (optional, depending on whether it needs to be built beforehand)
+echo "Building frontend..."
+npm run build
+
+cd ..
