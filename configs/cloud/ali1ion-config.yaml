@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nao-ai-config
+  name: ali1ion-config
 data:
-  nao-ai-config.yaml: |-
+  ali1ion-config.yaml: |-
     # Global configurations
     global:
       project_id: "proverbial-will-427815-r9"
@@ -11,13 +11,13 @@ data:
 
     # Compute Engine configurations
     compute_engine:
-      instance_name: "nao-ai-vm"
+      instance_name: "ali1ion-vm"
       instance_type: "e2-medium"
       boot_disk_size: "250GB"
 
     # IAM configurations
     iam:
-      service_account_email: "nao-ai-sa@proverbial-will-427815-r9.iam.gserviceaccount.com"
+      service_account_email: "ali1ion-sa@proverbial-will-427815-r9.iam.gserviceaccount.com"
       roles:
         - "roles/compute.viewer"
         - "roles/storage.admin"
@@ -25,37 +25,37 @@ data:
 
     # Cloud Storage configurations
     storage:
-      bucket_name: "nao-ai-storage"
+      bucket_name: "ali1ion-storage"
       location: "northamerica-northeast1"
 
     # Cloud SQL configurations
     sql:
-      instance_name: "nao-ai-sql-instance"
-      database_name: "nao_ai_db"
-      user: "nao_ai_user"
+      instance_name: "ali1ion-sql-instance"
+      database_name: "ali1ion_db"
+      user: "ali1ion_user"
       password: "secure_password"
 
     # Pub/Sub configurations
     pubsub:
-      topic_name: "nao-ai-topic"
-      subscription_name: "nao-ai-subscription"
+      topic_name: "ali1ion-topic"
+      subscription_name: "ali1ion-subscription"
 
     # Logging configurations
     logging:
-      log_name: "nao-ai-log"
+      log_name: "ali1ion-log"
       log_level: "INFO"
 
     # API configurations
     api:
-      name: "nao-ai-api"
-      endpoint: "https://api.proverbial-will-427815-r9.cloudfunctions.net/nao-ai-endpoint"
+      name: "ali1ion-api"
+      endpoint: "https://api.proverbial-will-427815-r9.cloudfunctions.net/ali1ion-endpoint"
 
     # Cloud Functions configurations
     cloud_functions:
-      function_name: "nao-ai-function"
+      function_name: "ali1ion-function"
       runtime: "python39"
       trigger_http: true
-      source_directory: "/home/mishari_borah/nao_ai_project/functions"
+      source_directory: "/home/mishari_borah/ali1ion_project/functions"
 
     # App Engine configurations
     app_engine:
@@ -69,7 +69,7 @@ data:
     env_variables:
       DEBUG: "false"
       SECRET_KEY: "your_secret_key_here"
-      DATABASE_URL: "postgresql://nao_ai_user:secure_password@nao-ai-sql-instance/nao_ai_db"
+      DATABASE_URL: "postgresql://ali1ion_user:secure_password@ali1ion-sql-instance/ali1ion_db"
 
     # Misc configurations
     misc:

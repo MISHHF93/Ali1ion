@@ -3,7 +3,7 @@
 echo "Starting production deployment..."
 
 # Navigate to the project directory
-cd /home/mishari_borah/nao_ai_project || {
+cd /home/mishari_borah/ali1ion_project || {
     echo "Failed to change directory to project root."
     exit 1
 }

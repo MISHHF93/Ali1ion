@@ -3,10 +3,10 @@
 echo "Starting deployment to staging environment..."
 
 # Ensure the necessary directories exist
-mkdir -p /home/mishari_borah/nao_ai_project/build/deployment/staging
+mkdir -p /home/mishari_borah/ali1ion_project/build/deployment/staging
 
 # Navigate to the project directory
-cd /home/mishari_borah/nao_ai_project || {
+cd /home/mishari_borah/ali1ion_project || {
     echo "Failed to change directory to project root."
     exit 1
 }

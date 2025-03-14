@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to set up and manage firewall rules for the NAO-AI project
+# Script to set up and manage firewall rules for the Ali1ion project
 
 # Function to create a firewall rule
 create_firewall_rule() {

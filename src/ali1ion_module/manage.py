@@ -5,11 +5,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    # Add the project directory to the Python path to ensure that Django can find nao_ai_module
-    sys.path.append('/workspaces/NAO-AI/src/')
+    # Add the project directory to the Python path to ensure that Django can find ali1ion_module
+    sys.path.append('/workspaces/Ali1ion/src/')
     
     # Ensure the DJANGO_SETTINGS_MODULE points to your settings module
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nao_ai_module.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ali1ion_module.settings')
     
     try:
         from django.core.management import execute_from_command_line

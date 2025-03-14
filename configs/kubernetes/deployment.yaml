@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nao-ai-deployment
+  name: ali1ion-deployment
   labels:
-    app: nao-ai
+    app: ali1ion
   annotations:
-    description: "Deployment for NAO-AI module"
+    description: "Deployment for Ali1ion module"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nao-ai
+      app: ali1ion
   template:
     metadata:
       labels:
-        app: nao-ai
+        app: ali1ion
     spec:
       containers:
-      - name: nao-ai-container
-        image: gcr.io/your-project-id/nao-ai-module:latest
+      - name: ali1ion-container
+        image: gcr.io/your-project-id/ali1ion-module:latest
         ports:
         - containerPort: 80
         env:
         - name: ENVIRONMENT
           value: "production"
         - name: APP_NAME
-          value: "NAO-AI"
+          value: "Ali1ion"
         resources:
           limits:
             memory: "256Mi"
@@ -34,7 +34,7 @@ spec:
             memory: "128Mi"
             cpu: "250m"
         volumeMounts:
-        - name: nao-ai-config
+        - name: ali1ion-config
           mountPath: /etc/config
         readinessProbe:
           httpGet:
@@ -49,6 +49,6 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 20
       volumes:
-      - name: nao-ai-config
+      - name: ali1ion-config
         configMap:
-          name: nao-ai-config
+          name: ali1ion-config

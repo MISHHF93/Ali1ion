@@ -2,7 +2,7 @@
 
 # Variables
 PROJECT_ID="proverbial-will-427815-r9"
-BUCKET_NAME="nao-ai-storage-bucket"
+BUCKET_NAME="ali1ion-storage-bucket"
 FILE_PATH="/path/to/your/file.txt"
 PERMISSION_EMAIL="user-email@example.com"
 

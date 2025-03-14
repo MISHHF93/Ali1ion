@@ -1,6 +1,6 @@
 {
-  "name": "nao-ai-armor-policy",
-  "description": "Security policy for NAO-AI project",
+  "name": "ali1ion-armor-policy",
+  "description": "Security policy for Ali1ion project",
   "rules": [
       {
           "action": "deny(403)",

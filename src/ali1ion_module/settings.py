@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nao_ai_module',  # Add your application here
+    'ali1ion_module',  # Add your application here
     'rest_framework',  # Django REST framework
 ]
 
@@ -41,7 +41,7 @@ MIDDLEWARE = [
 ]
 
 # URL configuration
-ROOT_URLCONF = 'nao_ai_module.urls'
+ROOT_URLCONF = 'ali1ion_module.urls'
 
 # Templates configuration
 TEMPLATES = [
@@ -63,14 +63,14 @@ TEMPLATES = [
 ]
 
 # WSGI application
-WSGI_APPLICATION = 'nao_ai_module.wsgi.application'
+WSGI_APPLICATION = 'ali1ion_module.wsgi.application'
 
 # Database configuration (PostgreSQL)
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('DB_NAME', 'nao_ai_db'),
-        'USER': os.getenv('DB_USER', 'nao_ai_user'),
+        'NAME': os.getenv('DB_NAME', 'ali1ion_db'),
+        'USER': os.getenv('DB_USER', 'ali1ion_user'),
         'PASSWORD': os.getenv('DB_PASSWORD', '7860'),
         'HOST': os.getenv('DB_HOST', '127.0.0.1'),  # Use 'db' for Docker-based environments
         'PORT': os.getenv('DB_PORT', '7860'),

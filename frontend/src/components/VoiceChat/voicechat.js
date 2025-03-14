@@ -29,10 +29,10 @@ const VoiceChat = () => {
     setTimeout(() => particle.remove(), 5000); // Extended lifespan for better visibility
   };
 
-  // Simulate NAO-AI speaking with synchronized sphere and halo animations + enhanced particles
+  // Simulate Ali1ion speaking with synchronized sphere and halo animations + enhanced particles
   const naoAISpeaks = () => {
     setIsSpeaking(true); // Set state to speaking
-    statusTextRef.current.textContent = 'NAO-AI is speaking...';
+    statusTextRef.current.textContent = 'Ali1ion is speaking...';
 
     // Generate particles more frequently
     particleIntervalRef.current = setInterval(createParticle, 25); // Particles created every 25ms
@@ -40,7 +40,7 @@ const VoiceChat = () => {
     // Simulate speaking duration for 5 seconds
     setTimeout(() => {
       setIsSpeaking(false); // Return to idle
-      statusTextRef.current.textContent = 'NAO-AI is idle...';
+      statusTextRef.current.textContent = 'Ali1ion is idle...';
 
       clearInterval(particleIntervalRef.current); // Stop particle generation
     }, 5000);
@@ -74,7 +74,7 @@ const VoiceChat = () => {
 
       {/* Status text below the sphere */}
       <div className="text-status" id="statusText" ref={statusTextRef}>
-        NAO-AI is idle...
+        Ali1ion is idle...
       </div>
 
       {/* Speak button */}

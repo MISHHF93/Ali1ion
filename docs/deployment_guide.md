@@ -16,8 +16,8 @@ Ensure you have the following prerequisites before deploying the project:
 
 1. Clone the repository:
    \`\`\`sh
-   git clone https://github.com/your-repo/nao-ai-project.git
-   cd nao-ai-project
+   git clone https://github.com/your-repo/ali1ion-project.git
+   cd ali1ion-project
    \`\`\`
 
 2. Install Node.js dependencies:

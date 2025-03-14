@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import ExampleModel
-from .nao_ai_app.nao_ai_functions import (
+from .ali1ion_app.ali1ion_functions import (
     transcribe_audio,
     synthesize_speech_basic,
     synthesize_speech_hd,

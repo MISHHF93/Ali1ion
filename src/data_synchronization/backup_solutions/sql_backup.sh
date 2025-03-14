@@ -5,7 +5,7 @@ DB_HOST="your-database-host"
 DB_USER="your-database-username"
 DB_PASS="your-database-password"
 DB_NAME="your-database-name"
-BACKUP_DIR="/home/mishari_borah/nao-ai-project/src/data_synchronization/backup_solutions/backup-directory"
+BACKUP_DIR="/home/mishari_borah/ali1ion-project/src/data_synchronization/backup_solutions/backup-directory"
 DATE=$(date +%Y%m%d%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup-$DATE.sql"
 

@@ -2,9 +2,9 @@
 
 # Set variables
 PROJECT_ID="proverbial-will-427815-r9"
-BUCKET_NAME="nao-ai-bucket"
+BUCKET_NAME="ali1ion-bucket"
 REGION="northamerica-northeast1"
-SERVICE_ACCOUNT="nao-ai-sa@$PROJECT_ID.iam.gserviceaccount.com"
+SERVICE_ACCOUNT="ali1ion-sa@$PROJECT_ID.iam.gserviceaccount.com"
 
 # Enable the Cloud Storage API
 echo "Enabling Cloud Storage API..."
@@ -24,7 +24,7 @@ gsutil ls -L -b gs://$BUCKET_NAME
 
 # Set environment variables in a .env file for future reference
 echo "Setting up environment variables..."
-cat <<EOF > /home/mishari_borah/nao_ai_project/.env
+cat <<EOF > /home/mishari_borah/ali1ion_project/.env
 export GCS_BUCKET=$BUCKET_NAME
 export GCS_PROJECT=$PROJECT_ID
 export GCS_REGION=$REGION
@@ -32,6 +32,6 @@ EOF
 
 # Source the .env file to apply the environment variables immediately
 echo "Loading environment variables..."
-source /home/mishari_borah/nao_ai_project/.env
+source /home/mishari_borah/ali1ion_project/.env
 
 echo "Cloud Storage setup completed successfully."

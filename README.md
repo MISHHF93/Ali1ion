@@ -1,6 +1,6 @@
-# NAO-AI Project
+# Ali1ion Project
 
-NAO-AI is a sophisticated AI tool built for marketing automation, integrating GPT-4o for generating targeted marketing campaigns, analyzing real-time market trends, voice-based interactions, and producing AI-generated images. This project aims to provide an actionable, Siri/Jarvis-like assistant for enhancing customer engagement and streamlining marketing workflows.
+Ali1ion is a sophisticated AI tool built for marketing automation, integrating GPT-4o for generating targeted marketing campaigns, analyzing real-time market trends, voice-based interactions, and producing AI-generated images. This project aims to provide an actionable, Siri/Jarvis-like assistant for enhancing customer engagement and streamlining marketing workflows.
 
 ---
 
@@ -18,7 +18,7 @@ NAO-AI is a sophisticated AI tool built for marketing automation, integrating GP
 
 ## Project Objectives
 
-NAO-AI is designed to:
+Ali1ion is designed to:
 - Generate targeted marketing campaigns using natural language processing (NLP).
 - Provide real-time market analysis for effective strategy development.
 - Create compelling visual content using AI-based image generation (e.g., DALL-E).
@@ -36,7 +36,7 @@ Below is a high-level overview of the project's folder structure:
 ├── docker-compose.yml          # Docker Compose for setting up multi-container services
 ├── gpt_config/                 # GPT-4o configurations
 ├── src/                        # Backend services and core functionalities
-│   ├── nao_ai_module/          # Core AI functionalities, models, and views
+│   ├── ali1ion_module/          # Core AI functionalities, models, and views
 │   ├── campaign_management/    # Campaign creation and tracking scripts
 │   ├── application_integration/ # Integration with marketing tools (Google Ads, HubSpot)
 │   └── ...                     # Additional backend services
@@ -63,8 +63,8 @@ Before running the project, ensure that you have the following prerequisites ins
 ### Installation Steps
 
 1. **Clone the Repository**:
-   git clone https://github.com/yourusername/NAO-AI.git
-   cd NAO-AI
+   git clone https://github.com/yourusername/Ali1ion.git
+   cd Ali1ion
 
 2. **Configure Environment Variables**:
    Create an `.env` file at the root level based on the `.env.sample` provided. Set up any necessary environment variables, including API keys and database URLs.
@@ -102,7 +102,7 @@ Alternatively, you can run services individually:
 - Once the project is running, access the frontend UI by navigating to `http://localhost:3000/` in your web browser.
 
 ### Features
-- **Voice Assistant**: Interact with NAO-AI through voice commands using the `VoiceChat` component.
+- **Voice Assistant**: Interact with Ali1ion through voice commands using the `VoiceChat` component.
 - **Campaign Management**: Create and manage marketing campaigns.
 - **Analytics Dashboard**: View real-time analytics and market insights.
 

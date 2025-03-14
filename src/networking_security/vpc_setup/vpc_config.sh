@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-VPC_NAME="nao-ai-vpc"
-SUBNET_NAME="nao-ai-subnet"
+VPC_NAME="ali1ion-vpc"
+SUBNET_NAME="ali1ion-subnet"
 REGION="me-central1"
 FIREWALL_RULE_INTERNAL="allow-internal"
 FIREWALL_RULE_SSH="allow-ssh"

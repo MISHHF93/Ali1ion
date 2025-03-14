@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
-  title: NAO-AI API
-  description: API for NAO-AI services
+  title: Ali1ion API
+  description: API for Ali1ion services
   version: "1.0.0"
 paths:
   /:
@@ -18,7 +18,7 @@ paths:
         address: https://your-backend-url  # Replace with your actual backend URL
   /status:
     get:
-      summary: Get the status of the NAO-AI module
+      summary: Get the status of the Ali1ion module
       operationId: getStatus
       responses:
         200:
@@ -33,7 +33,7 @@ paths:
         address: https://your-backend-url/status  # Replace with your actual backend URL
   /predict:
     post:
-      summary: Get predictions from the NAO-AI module
+      summary: Get predictions from the Ali1ion module
       operationId: getPredictions
       consumes:
         - application/json

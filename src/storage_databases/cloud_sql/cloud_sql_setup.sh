@@ -2,8 +2,8 @@
 
 # Variables
 PROJECT_ID="proverbial-will-427815-r9"
-INSTANCE_NAME="nao-ai-cloudsql"
-DB_NAME="nao_ai_db"
+INSTANCE_NAME="ali1ion-cloudsql"
+DB_NAME="ali1ion_db"
 DB_USER="nao_user"
 DB_PASSWORD="secure_password"
 REGION="northamerica-northeast1"
@@ -52,11 +52,11 @@ echo "Database User: $DB_USER"
 echo "Database Password: $DB_PASSWORD"
 
 # Store connection details in a secure file
-cat << EOF > /home/mishari_borah/nao_ai_project/src/storage_databases/cloud_sql/connection_details.txt
+cat << EOF > /home/mishari_borah/ali1ion_project/src/storage_databases/cloud_sql/connection_details.txt
 Connection Name: $CONNECTION_NAME
 Database Name: $DB_NAME
 Database User: $DB_USER
 Database Password: $DB_PASSWORD
 EOF
 
-echo "Connection details saved to /home/mishari_borah/nao_ai_project/src/storage_databases/cloud_sql/connection_details.txt"
+echo "Connection details saved to /home/mishari_borah/ali1ion_project/src/storage_databases/cloud_sql/connection_details.txt"

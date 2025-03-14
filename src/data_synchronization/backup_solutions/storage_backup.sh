@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Variables
-SOURCE_DIR="/home/mishari_borah/nao-ai-function/source_directory"
+SOURCE_DIR="/home/mishari_borah/ali1ion-function/source_directory"
 BACKUP_DIR="/tmp"
 DATE=$(date +%Y%m%d%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup-$DATE.tar.gz"
-GCS_BUCKET="nao-ai-backups"  # Replace with your new bucket name
+GCS_BUCKET="ali1ion-backups"  # Replace with your new bucket name
 
 # Create backup directory if it doesn't exist
 mkdir -p $BACKUP_DIR

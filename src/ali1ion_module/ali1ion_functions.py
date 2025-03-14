@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set up logging
-log_file_path = 'src/nao_ai_module/logs/debug.log'
+log_file_path = 'src/ali1ion_module/logs/debug.log'
 os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
 logging.basicConfig(filename=log_file_path, level=logging.DEBUG, 
                     format='%(asctime)s - %(levelname)s - %(message)s')

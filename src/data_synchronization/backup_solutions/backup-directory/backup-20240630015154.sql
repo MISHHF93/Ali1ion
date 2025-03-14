@@ -2,10 +2,10 @@
 -- Date: 7860-06-30 15:15:54
 
 -- Create database
-CREATE DATABASE IF NOT EXISTS nao_ai_db;
+CREATE DATABASE IF NOT EXISTS ali1ion_db;
 
 -- Use the database
-USE nao_ai_db;
+USE ali1ion_db;
 
 -- Drop existing tables if they exist
 DROP TABLE IF EXISTS users;

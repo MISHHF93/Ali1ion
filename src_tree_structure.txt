@@ -1,4 +1,4 @@
-/workspaces/NAO-AI/src
+/workspaces/Ali1ion/src
 ├── __init__.py
 ├── __pycache__
 │   └── __init__.cpython-312.pyc
@@ -80,14 +80,14 @@
 │   │   └── logging_config.json
 │   └── stackdriver_monitoring
 │       └── monitoring_setup.sh
-├── nao_ai_module
+├── ali1ion_module
 │   ├── __init__.py
 │   ├── __pycache__
 │   │   ├── __init__.cpython-312.pyc
 │   │   ├── admin.cpython-312.pyc
 │   │   ├── apps.cpython-312.pyc
 │   │   ├── models.cpython-312.pyc
-│   │   ├── nao_ai_functions.cpython-312.pyc
+│   │   ├── ali1ion_functions.cpython-312.pyc
 │   │   ├── settings.cpython-312.pyc
 │   │   ├── signals.cpython-312.pyc
 │   │   ├── tests.cpython-312.pyc
@@ -107,12 +107,12 @@
 │   │   ├── personalized_campaign_generator.py
 │   │   └── real_time_analysis.py
 │   ├── models.py
-│   ├── nao_ai_functions.py
+│   ├── ali1ion_functions.py
 │   ├── server_output.txt
 │   ├── settings.py
 │   ├── signals.py
 │   ├── tests
-│   │   └── test_nao_ai_functions.py
+│   │   └── test_ali1ion_functions.py
 │   ├── tests.py
 │   ├── tree.txt
 │   ├── urls.py
@@ -150,10 +150,10 @@
 │   │   ├── __init__.cpython-312.pyc
 │   │   ├── test_environment.cpython-312.pyc
 │   │   ├── test_install.cpython-312.pyc
-│   │   └── test_nao_ai_functions.cpython-312.pyc
+│   │   └── test_ali1ion_functions.cpython-312.pyc
 │   ├── test_environment.py
 │   ├── test_install.py
-│   └── test_nao_ai_functions.py
+│   └── test_ali1ion_functions.py
 └── visual_content
     └── image_generation_logs
         └── generation_log.txt

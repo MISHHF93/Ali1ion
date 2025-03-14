@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import patch
-from src.nao_ai_module.nao_ai_functions import generate_text
+from src.ali1ion_module.ali1ion_functions import generate_text
 
 class TestNaoAiFunctions(unittest.TestCase):
 
-    @patch('src.nao_ai_module.nao_ai_functions.openai.ChatCompletion.create')
+    @patch('src.ali1ion_module.ali1ion_functions.openai.ChatCompletion.create')
     def test_openai_request(self, mock_chat_completion):
         """
         Tests the generate_text (openai_request) function with a mock API response.

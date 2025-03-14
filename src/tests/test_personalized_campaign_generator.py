@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from src.nao_ai_module.marketing_ai.personalized_campaign_generator import generate_personalized_campaign, log_campaign_generation
+from src.ali1ion_module.marketing_ai.personalized_campaign_generator import generate_personalized_campaign, log_campaign_generation
 
 class TestPersonalizedCampaignGenerator(unittest.TestCase):
 

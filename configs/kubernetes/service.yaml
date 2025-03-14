@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nao-ai-service
+  name: ali1ion-service
   labels:
-    app: nao-ai
+    app: ali1ion
 spec:
   selector:
-    app: nao-ai
+    app: ali1ion
   ports:
     - protocol: TCP
       port: 80

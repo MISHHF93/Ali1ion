@@ -1,7 +1,7 @@
-# /home/mishari_borah/nao_ai_project/src/nao_ai_module/tests/test_nao_ai_functions.py
+# /home/mishari_borah/ali1ion_project/src/ali1ion_module/tests/test_ali1ion_functions.py
 
 import unittest
-from nao_ai_module.nao_ai_app.nao_ai_functions import (
+from ali1ion_module.ali1ion_app.ali1ion_functions import (
     transcribe_audio,
     synthesize_speech_basic,
     synthesize_speech_hd,

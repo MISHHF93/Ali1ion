@@ -15,7 +15,7 @@
       }
     },
     {
-      "logName": "projects/proverbial-will-427815-r9/logs/nao-ai-log",
+      "logName": "projects/proverbial-will-427815-r9/logs/ali1ion-log",
       "resource": {
         "type": "global",
         "labels": {
@@ -25,14 +25,14 @@
       "entries": [
         {
           "jsonPayload": {
-            "message": "NAO-AI log entry",
+            "message": "Ali1ion log entry",
             "severity": "INFO"
           }
         }
       ],
       "labels": {
         "environment": "production",
-        "application": "nao-ai"
+        "application": "ali1ion"
       }
     }
   ],

@@ -2,8 +2,8 @@
 
 # Set variables from environment or defaults
 PROJECT_ID=${PROJECT_ID:-"proverbial-will-427815-r9"}
-INSTANCE_NAME=${INSTANCE_NAME:-"nao-ai-sql"}
-DB_NAME=${DB_NAME:-"nao_ai_database"}
+INSTANCE_NAME=${INSTANCE_NAME:-"ali1ion-sql"}
+DB_NAME=${DB_NAME:-"ali1ion_database"}
 REGION=${REGION:-"northamerica-northeast1"}
 TIER=${TIER:-"db-f1-micro"}
 ROOT_PASSWORD=${ROOT_PASSWORD:-""}

@@ -10,7 +10,7 @@ def test_gpt4o():
         response = client.chat.completions.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": "You are NAO-AI, a helpful assistant."},
+                {"role": "system", "content": "You are Ali1ion, a helpful assistant."},
                 {"role": "user", "content": "What is the capital of France?"}
             ],
             max_tokens=50
@@ -84,7 +84,7 @@ def test_embeddings(text):
 
 # Main testing function
 if __name__ == "__main__":
-    print("Starting NAO-AI Multimodal Testing...")
+    print("Starting Ali1ion Multimodal Testing...")
 
     # Test GPT-4o
     print("\nTesting GPT-4o...")
@@ -100,11 +100,11 @@ if __name__ == "__main__":
 
     # Test Whisper speech-to-text (provide an actual file path)
     print("\nTesting Whisper speech-to-text...")
-    test_whisper("/workspaces/NAO-AI/sample_audio.wav")  # Make sure this file exists
+    test_whisper("/workspaces/Ali1ion/sample_audio.wav")  # Make sure this file exists
 
     # Test text-to-speech
     print("\nTesting Text-to-Speech...")
-    test_text_to_speech("Hello, this is a test of the NAO-AI text-to-speech system.")
+    test_text_to_speech("Hello, this is a test of the Ali1ion text-to-speech system.")
 
     # Test Embedding generation
     print("\nTesting Embedding generation...")

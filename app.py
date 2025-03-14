@@ -23,7 +23,7 @@ else:
     client = OpenAI(api_key=MODEL_API_KEY)
     logger.info("OpenAI client initialized.")
 
-from src.nao_ai_module.nao_ai_functions import generate_embeddings, moderate_content
+from src.ali1ion_module.ali1ion_functions import generate_embeddings, moderate_content
 
 # FastAPI app setup
 app = FastAPI()
@@ -46,7 +46,7 @@ headers = {
 
 ### GPT-4 Text Generation Functions ###
 
-def chat_completion(prompt, system_message="You are NAO-AI, a helpful assistant."):
+def chat_completion(prompt, system_message="You are Ali1ion, a helpful assistant."):
     logger.info(f"Processing chat completion for prompt: {prompt}")
     try:
         data = {
@@ -149,7 +149,7 @@ def multi_function_interface(option, input_data=None, input_file=None):
 ### Gradio UI ###
 
 with gr.Blocks() as demo:
-    gr.Markdown("# NAO-AI GPT-4 Powered AI Assistant")
+    gr.Markdown("# Ali1ion GPT-4 Powered AI Assistant")
 
     # Dropdown for selecting function
     function_choice = gr.Dropdown(
@@ -192,5 +192,5 @@ app = gr.mount_gradio_app(app, demo, path="/")
 
 if __name__ == "__main__":
     import uvicorn
-    logger.info("Starting NAO-AI application on port 7860")
+    logger.info("Starting Ali1ion application on port 7860")
     uvicorn.run(app, host="0.0.0.0", port=7860)

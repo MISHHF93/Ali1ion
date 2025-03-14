@@ -1,4 +1,4 @@
-# NAO-AI Setup Guide
+# Ali1ion Setup Guide
 
 ## Prerequisites:
 1. Docker installed.

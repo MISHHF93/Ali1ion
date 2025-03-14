@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nao-ai-deployment
+  name: ali1ion-deployment
   labels:
-    app: nao-ai
+    app: ali1ion
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nao-ai
+      app: ali1ion
   template:
     metadata:
       labels:
-        app: nao-ai
+        app: ali1ion
     spec:
       containers:
-      - name: nao-ai-container
-        image: gcr.io/nao-ai-project/nao-ai-node-app:latest
+      - name: ali1ion-container
+        image: gcr.io/ali1ion-project/ali1ion-node-app:latest
         ports:
         - containerPort: 7860
         env:
@@ -36,10 +36,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nao-ai-service
+  name: ali1ion-service
 spec:
   selector:
-    app: nao-ai
+    app: ali1ion
   ports:
     - protocol: TCP
       port: 80

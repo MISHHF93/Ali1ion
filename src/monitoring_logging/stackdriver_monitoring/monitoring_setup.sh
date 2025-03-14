@@ -3,8 +3,8 @@
 # Set variables
 PROJECT_ID="proverbial-will-427815-r9"
 REGION="northamerica-northeast1"
-ALERT_POLICY_FILE="/home/mishari_borah/nao_ai_project/src/monitoring_logging/stackdriver_monitoring/alert_policies.json"
-NOTIFICATION_CHANNEL_FILE="/home/mishari_borah/nao_ai_project/src/monitoring_logging/stackdriver_monitoring/notification_channels.json"
+ALERT_POLICY_FILE="/home/mishari_borah/ali1ion_project/src/monitoring_logging/stackdriver_monitoring/alert_policies.json"
+NOTIFICATION_CHANNEL_FILE="/home/mishari_borah/ali1ion_project/src/monitoring_logging/stackdriver_monitoring/notification_channels.json"
 AUTH_TOKEN=$(gcloud auth print-access-token)
 
 # Enable necessary APIs

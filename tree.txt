@@ -1,6 +1,8 @@
 .
 ├── Dockerfile
 ├── README.md
+├── STEP2: setup_dev_environment.sh
+├── STEP3: : clean_and_install_dependencies.sh
 ├── app.py
 ├── build
 │   ├── ci
@@ -13,9 +15,9 @@
 │           └── deploy_staging.sh
 ├── configs
 │   ├── cloud
+│   │   ├── ali1ion-config.yaml
 │   │   ├── cloud_sql_setup.sh
 │   │   ├── firestore_setup.sh
-│   │   ├── nao-ai-config.yaml
 │   │   └── storage_setup.sh
 │   ├── kubernetes
 │   │   ├── deployment.yaml
@@ -424,13 +426,9 @@
 ├── gpt_config
 │   └── gpt4o_settings.yaml
 ├── manage.py
+├── package-lock.json
 ├── package.json
-├── public
-│   ├── apple-icon.png
-│   ├── favicon.png
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
+├── rename_nao_to_ali1ion.sh
 ├── requirements.txt
 ├── scripts
 │   ├── organize_project.sh
@@ -438,6 +436,31 @@
 │   └── recreate_init_files.sh
 ├── setup_frontend_structure.sh
 ├── src
+│   ├── ali1ion_module
+│   │   ├── README.md
+│   │   ├── admin.py
+│   │   ├── ali1ion_functions.py
+│   │   ├── api
+│   │   │   └── api.py
+│   │   ├── app.js
+│   │   ├── apps.py
+│   │   ├── main.py
+│   │   ├── manage.py
+│   │   ├── marketing_ai
+│   │   │   ├── customer_engagement_bot.py
+│   │   │   ├── personalized_campaign_generator.py
+│   │   │   └── real_time_analysis.py
+│   │   ├── models.py
+│   │   ├── server_output.txt
+│   │   ├── settings.py
+│   │   ├── signals.py
+│   │   ├── tests
+│   │   │   └── test_ali1ion_functions.py
+│   │   ├── tests.py
+│   │   ├── tree.txt
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── wsgi.py
 │   ├── application_integration
 │   │   ├── after_effects_plugin
 │   │   │   └── plugin.js
@@ -494,31 +517,6 @@
 │   │   │   └── logging_config.json
 │   │   └── stackdriver_monitoring
 │   │       └── monitoring_setup.sh
-│   ├── nao_ai_module
-│   │   ├── README.md
-│   │   ├── admin.py
-│   │   ├── api
-│   │   │   └── api.py
-│   │   ├── app.js
-│   │   ├── apps.py
-│   │   ├── main.py
-│   │   ├── manage.py
-│   │   ├── marketing_ai
-│   │   │   ├── customer_engagement_bot.py
-│   │   │   ├── personalized_campaign_generator.py
-│   │   │   └── real_time_analysis.py
-│   │   ├── models.py
-│   │   ├── nao_ai_functions.py
-│   │   ├── server_output.txt
-│   │   ├── settings.py
-│   │   ├── signals.py
-│   │   ├── tests
-│   │   │   └── test_nao_ai_functions.py
-│   │   ├── tests.py
-│   │   ├── tree.txt
-│   │   ├── urls.py
-│   │   ├── views.py
-│   │   └── wsgi.py
 │   ├── networking_security
 │   │   ├── cloud_armor
 │   │   │   └── armor_config.json
@@ -540,13 +538,13 @@
 │   │   └── firestore
 │   │       └── add_user_document.py
 │   ├── tests
+│   │   ├── test_ali1ion_functions.py
 │   │   ├── test_campaign_creation.py
 │   │   ├── test_campaign_tracking.py
 │   │   ├── test_chatbot_integration.py
 │   │   ├── test_data_anonymization_tool.py
 │   │   ├── test_environment.py
 │   │   ├── test_install.py
-│   │   ├── test_nao_ai_functions.py
 │   │   ├── test_notification_services.py
 │   │   ├── test_personalized_campaign_generator.py
 │   │   └── test_realtime_analytics.py
@@ -554,7 +552,7 @@
 │       └── image_generation_logs
 │           └── generation_log.txt
 ├── src_tree_structure.txt
-├── test_nao_ai.py
+├── test_ali1ion.py
 └── tree.txt
 
-176 directories, 381 files
+175 directories, 380 files

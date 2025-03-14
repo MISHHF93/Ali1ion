@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .nao_ai_functions import generate_text, generate_image, create_embedding  # Import NAO-AI functions
+from .ali1ion_functions import generate_text, generate_image, create_embedding  # Import Ali1ion functions
 
 def home(request):
     """
@@ -67,9 +67,9 @@ def create_embedding(request):
         return JsonResponse({'embedding': embedding})
     return JsonResponse({'error': 'Invalid request method. Use POST to create embedding.'})
 
-def nao_ai_response(request):
+def ali1ion_response(request):
     """
-    Handles requests from the NAO-AI widget.
+    Handles requests from the Ali1ion widget.
     """
     if request.method == 'POST':
         action = request.POST.get('action', '')
@@ -97,6 +97,6 @@ def nao_ai_response(request):
 
 def widget_view(request):
     """
-    Renders the NAO-AI widget page.
+    Renders the Ali1ion widget page.
     """
     return render(request, 'widget/index.html')

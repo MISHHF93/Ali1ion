@@ -12,7 +12,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # Define the Firestore database name
-database_name = "nao-ai-database"
+database_name = "ali1ion-database"
 
 # Define a sample document
 sample_data = {

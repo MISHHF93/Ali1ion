@@ -2,11 +2,11 @@
 
 # Variables
 PROJECT_ID="your-project-id"
-INSTANCE_ID="nao-ai-instance"
-CLUSTER_ID="nao-ai-cluster"
+INSTANCE_ID="ali1ion-instance"
+CLUSTER_ID="ali1ion-cluster"
 CLUSTER_ZONE="northamerica-northeast1-b"
-TABLE_ID="nao-ai-table"
-COLUMN_FAMILY_ID="nao-ai-family"
+TABLE_ID="ali1ion-table"
+COLUMN_FAMILY_ID="ali1ion-family"
 
 # Enable the necessary services
 echo "Enabling Bigtable APIs..."

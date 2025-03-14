@@ -32,16 +32,16 @@ class TestInstallation(unittest.TestCase):
         """Test if essential files are present in the project."""
         # Update paths based on your current workspace
         essential_files = [
-            "/workspaces/NAO-AI/requirements.txt",
-            "/workspaces/NAO-AI/src/nao_ai_module/manage.py",  # Corrected path
-            "/workspaces/NAO-AI/src/backend/app.js"  # Corrected path for app.js
+            "/workspaces/Ali1ion/requirements.txt",
+            "/workspaces/Ali1ion/src/ali1ion_module/manage.py",  # Corrected path
+            "/workspaces/Ali1ion/src/backend/app.js"  # Corrected path for app.js
         ]
         for file_path in essential_files:
             self.assertTrue(os.path.exists(file_path), f"Essential file {file_path} is missing")
 
     def test_database_connection(self):
         """Test if the application can connect to the database."""
-        manage_py_path = "/workspaces/NAO-AI/src/nao_ai_module/manage.py"  # Corrected path
+        manage_py_path = "/workspaces/Ali1ion/src/ali1ion_module/manage.py"  # Corrected path
         if os.path.exists(manage_py_path):
             try:
                 subprocess.check_output(["python3", manage_py_path, "migrate"])

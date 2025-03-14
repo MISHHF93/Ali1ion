@@ -14,15 +14,15 @@
 ├── apps.py
 ├── manage.py
 ├── models.py
-├── nao_ai_app
+├── ali1ion_app
 │   ├── __pycache__
-│   │   └── nao_ai_functions.cpython-312.pyc
-│   └── nao_ai_functions.py
+│   │   └── ali1ion_functions.cpython-312.pyc
+│   └── ali1ion_functions.py
 ├── settings.py
 ├── signals.py
 ├── staticfiles
 ├── tests
-│   └── test_nao_ai_functions.py
+│   └── test_ali1ion_functions.py
 ├── tests.py
 ├── tree.txt
 ├── urls.py

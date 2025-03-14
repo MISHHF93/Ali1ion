@@ -5,7 +5,7 @@ class TestEnvironment(unittest.TestCase):
 
     def test_environment_variables(self):
         """Check if all required environment variables are set."""
-        required_env_vars = ['PROJECT_ID', 'VPC_NAME', 'SUBNET_NAME', 'BUCKET_NAME', 'NAO_AI_INSTANCE']
+        required_env_vars = ['PROJECT_ID', 'VPC_NAME', 'SUBNET_NAME', 'BUCKET_NAME', 'Ali1ion_INSTANCE']
         for var in required_env_vars:
             self.assertIsNotNone(os.getenv(var), f"{var} is not set")
 
@@ -19,7 +19,7 @@ class TestEnvironment(unittest.TestCase):
 
     def test_bigtable_setup(self):
         """Check if Bigtable instance exists."""
-        instance_name = os.getenv('NAO_AI_INSTANCE', 'nao-ai-instance')
+        instance_name = os.getenv('Ali1ion_INSTANCE', 'ali1ion-instance')
         self.assertEqual(os.system(f'gcloud bigtable instances describe {instance_name} > /dev/null 2>&1'), 0, f"Bigtable instance {instance_name} does not exist")
 
     def test_bucket_exists(self):

@@ -3,55 +3,55 @@
     {
       "role": "roles/viewer",
       "members": [
-        "serviceAccount:viewer-account@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:viewer-account@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/editor",
       "members": [
-        "serviceAccount:editor-account@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:editor-account@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/storage.admin",
       "members": [
-        "serviceAccount:storage-admin@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:storage-admin@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/pubsub.publisher",
       "members": [
-        "serviceAccount:pubsub-publisher@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:pubsub-publisher@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/pubsub.subscriber",
       "members": [
-        "serviceAccount:pubsub-subscriber@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:pubsub-subscriber@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/logging.logWriter",
       "members": [
-        "serviceAccount:log-writer@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:log-writer@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/compute.instanceAdmin.v1",
       "members": [
-        "serviceAccount:compute-admin@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:compute-admin@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/monitoring.metricWriter",
       "members": [
-        "serviceAccount:monitoring-writer@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:monitoring-writer@ali1ion-project.iam.gserviceaccount.com"
       ]
     },
     {
       "role": "roles/cloudsql.client",
       "members": [
-        "serviceAccount:cloudsql-client@nao-ai-project.iam.gserviceaccount.com"
+        "serviceAccount:cloudsql-client@ali1ion-project.iam.gserviceaccount.com"
       ]
     }
   ],

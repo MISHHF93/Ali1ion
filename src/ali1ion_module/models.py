@@ -1,4 +1,4 @@
-# /home/mishari_borah/nao_ai_project/src/nao_ai_module/models.py
+# /home/mishari_borah/ali1ion_project/src/ali1ion_module/models.py
 
 from django.db import models
 
